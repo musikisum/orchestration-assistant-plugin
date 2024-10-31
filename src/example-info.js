@@ -2,6 +2,7 @@ import joi from 'joi';
 import React from 'react';
 import { ClockCircleOutlined } from '@ant-design/icons';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
+import { PLUGIN_GROUP } from '@educandu/educandu/domain/constants.js';
 import { couldAccessUrlFromRoom } from '@educandu/educandu/utils/source-utils.js';
 import GithubFlavoredMarkdown from '@educandu/educandu/common/github-flavored-markdown.js';
 
@@ -22,6 +23,10 @@ class ServerTimeInfo {
 
   getIcon() {
     return <ClockCircleOutlined />;
+  }
+
+  getGroups() {
+    return [PLUGIN_GROUP.mostUsed, PLUGIN_GROUP.other];
   }
 
   async resolveDisplayComponent() {
