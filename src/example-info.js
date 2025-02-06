@@ -6,10 +6,10 @@ import { PLUGIN_GROUP } from '@educandu/educandu/domain/constants.js';
 import { couldAccessUrlFromRoom } from '@educandu/educandu/utils/source-utils.js';
 import GithubFlavoredMarkdown from '@educandu/educandu/common/github-flavored-markdown.js';
 
-class GapGeniusInfo {
+class ServerTimeInfo {
   static dependencies = [GithubFlavoredMarkdown];
 
-  static typeName = 'musikisum/educandu-plugin-gap-genius';
+  static typeName = 'educandu/educandu-plugin-example';
 
   allowsInput = true;
 
@@ -18,7 +18,7 @@ class GapGeniusInfo {
   }
 
   getDisplayName(t) {
-    return t('musikisum/educandu-plugin-gap-genius:name');
+    return t('educandu/educandu-plugin-example:name');
   }
 
   getIcon() {
@@ -26,15 +26,15 @@ class GapGeniusInfo {
   }
 
   getGroups() {
-    return [PLUGIN_GROUP.textImage];
+    return [PLUGIN_GROUP.mostUsed, PLUGIN_GROUP.other];
   }
 
   async resolveDisplayComponent() {
-    return (await import('./gapgenius-display.js')).default;
+    return (await import('./example-display.js')).default;
   }
 
   async resolveEditorComponent() {
-    return (await import('./gapgenius-editor.js')).default;
+    return (await import('./example-editor.js')).default;
   }
 
   getDefaultContent() {
@@ -73,4 +73,4 @@ class GapGeniusInfo {
   }
 }
 
-export default GapGeniusInfo;
+export default ServerTimeInfo;

@@ -1,7 +1,7 @@
 {
-  "name": "@musikisum/educandu-plugin-gap-genius",
+  "name": "@educandu/educandu-plugin-example",
   "version": "0.0.0",
-  "description": "A plugin for gap texts to assess knowledge",
+  "description": "An example plugin for educandu",
   "type": "module",
   "exports": {
     ".": "./dist/index.js",
@@ -14,15 +14,13 @@
     "educandu"
   ],
   "license": "MIT",
-  "author": "Educandu Team <team@educandu.dev>, Ulrich Kaiser <kontakt@kaiser-ulrich.de>",
-  "homepage": "https://kaiser-ulrich.de",
+  "author": "Educandu Team <team@educandu.dev>",
+  "homepage": "https://github.com/educandu/educandu-plugin-example",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/educandu/educandu-plugin-example"
   },
-  "dependencies": {
-    "didyoumean": "^1.2.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@ant-design/icons": "5.5.1",
     "@educandu/dev-tools": "^14.0.0",

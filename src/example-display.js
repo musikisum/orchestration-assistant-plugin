@@ -13,11 +13,11 @@ const POLL_INTERVAL_IN_MS = 5000;
 
 const logger = new Logger(import.meta.url);
 
-export default function GapgeniusDisplay({ content, input, canModifyInput, onInputChanged }) {
+export default function ServerTimeDisplay({ content, input, canModifyInput, onInputChanged }) {
   const { formatDate } = useDateFormat();
   const httpClient = useService(HttpClient);
   const [serverTime, setServerTime] = useState(null);
-  const { t } = useTranslation('musikisum/educandu-plugin-gap-genius');
+  const { t } = useTranslation('educandu/educandu-plugin-example');
 
   const handleCurrentValueChange = event => {
     onInputChanged({ value: event.target.value });
@@ -76,6 +76,6 @@ export default function GapgeniusDisplay({ content, input, canModifyInput, onInp
   );
 }
 
-GapgeniusDisplay.propTypes = {
+ServerTimeDisplay.propTypes = {
   ...sectionDisplayProps
 };
