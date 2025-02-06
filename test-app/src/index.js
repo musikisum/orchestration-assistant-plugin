@@ -3,7 +3,7 @@ import path from 'node:path';
 import parseBool from 'parseboolean';
 import educandu from '@educandu/educandu';
 import customResolvers from './custom-resolvers.js';
-import ExampleController from '../../src/example-controller.js';
+import ExampleController from '../../src/gapgenius-controller.js';
 
 const thisDir = path.dirname(url.fileURLToPath(import.meta.url));
 
@@ -48,7 +48,7 @@ const config = {
   emailSenderAddress: process.env.TEST_APP_EMAIL_SENDER_ADDRESS,
   adminEmailAddress: process.env.TEST_APP_ADMIN_EMAIL_ADDRESS,
   initialUser: JSON.parse(process.env.TEST_APP_INITIAL_USER),
-  plugins: ['markdown', 'image', 'educandu/educandu-plugin-example'],
+  plugins: ['markdown', 'image', 'musikisum/educandu-plugin-gap-genius'],
   exposeErrorDetails: true
 };
 

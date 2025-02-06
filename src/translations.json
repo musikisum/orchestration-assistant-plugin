@@ -1,8 +1,8 @@
 {
-  "educandu/educandu-plugin-example": {
+  "musikisum/educandu-plugin-gap-genius": {
     "name": {
       "en": "Example plugin",
-      "de": "Beispiel-Plugin"
+      "de": "Lückentext-Plugin"
     },
     "label": {
       "en": "Example label",
@@ -10,7 +10,7 @@
     },
     "currentServerTime": {
       "en": "Current server time",
-      "de": "Aktuelle Serverzeit"
+      "de": "Test erfolgreich!"
     }
   }
 }
