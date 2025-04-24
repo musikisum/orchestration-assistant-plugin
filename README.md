@@ -6,7 +6,7 @@ An example plugin for educandu
 
 ## Prerequisites
 
-* node.js ^18.0.0
+* node.js ^20.0.0
 * optional: globally installed gulp: `npm i -g gulp-cli`
 
 The output of this repository is an npm package (`@educandu/educandu-plugin-example`).
