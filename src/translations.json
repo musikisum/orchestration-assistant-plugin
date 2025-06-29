@@ -1,16 +1,12 @@
 {
-  "educandu/educandu-plugin-example": {
+  "musikisum/educandu-plugin-orchestration-assistant": {
     "name": {
-      "en": "Example plugin",
-      "de": "Beispiel-Plugin"
+      "en": "Orchestration Assistant",
+      "de": "Orchestrationshilfe"
     },
     "label": {
-      "en": "Example label",
-      "de": "Beispiel-Label"
-    },
-    "currentServerTime": {
-      "en": "Current server time",
-      "de": "Aktuelle Serverzeit"
+      "en": "Orchestration Label",
+      "de": "Orchestrationslabel"
     }
   }
 }

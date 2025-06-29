@@ -9,7 +9,7 @@ import GithubFlavoredMarkdown from '@educandu/educandu/common/github-flavored-ma
 class ServerTimeInfo {
   static dependencies = [GithubFlavoredMarkdown];
 
-  static typeName = 'educandu/educandu-plugin-example';
+  static typeName = 'musikisum/educandu-plugin-orchestration-assistant';
 
   allowsInput = true;
 
@@ -18,7 +18,7 @@ class ServerTimeInfo {
   }
 
   getDisplayName(t) {
-    return t('educandu/educandu-plugin-example:name');
+    return t('musikisum/educandu-plugin-orchestration-assistant:name');
   }
 
   getIcon() {
@@ -30,11 +30,11 @@ class ServerTimeInfo {
   }
 
   async resolveDisplayComponent() {
-    return (await import('./example-display.js')).default;
+    return (await import('./orchestration-assistant-display.js')).default;
   }
 
   async resolveEditorComponent() {
-    return (await import('./example-editor.js')).default;
+    return (await import('./orchestration-assistant-editor.js')).default;
   }
 
   getDefaultContent() {
