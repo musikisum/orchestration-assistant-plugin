@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Input } from 'antd';
+import test from './image-factorry.js'; 
 import { useTranslation } from 'react-i18next';
 import Markdown from '@educandu/educandu/components/markdown.js';
 import { sectionDisplayProps } from '@educandu/educandu/ui/default-prop-types.js';
@@ -18,7 +19,11 @@ export default function ServerTimeDisplay({ content, input, canModifyInput, onIn
         <Markdown renderAnchors>
           {content.text}
         </Markdown>
-        <Form layout="vertical">
+        { test[0] }
+        { test[1] }
+        { test[2] }
+
+        {/* <Form layout="vertical">
           <Form.Item label={t('label')}>
             <Input
               value={input.data?.value || ''}
@@ -28,7 +33,7 @@ export default function ServerTimeDisplay({ content, input, canModifyInput, onIn
               onChange={handleCurrentValueChange}
               />
           </Form.Item>
-        </Form>
+        </Form> */}
       </div>
     </div>
   );
