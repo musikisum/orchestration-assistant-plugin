@@ -40,14 +40,18 @@ class ServerTimeInfo {
   getDefaultContent() {
     return {
       text: '',
-      width: 100
+      width: 100,
+      fromMidi: 24,
+      toMidi: 108
     };
   }
 
   validateContent(content) {
     const schema = joi.object({
       text: joi.string().allow('').required(),
-      width: joi.number().min(0).max(100).required()
+      width: joi.number().min(0).max(100).required(),
+      fromMidi: joi.number().integer().min(24).max(108).required(),
+      toMidi: joi.number().integer().min(24).max(108).required()
     });
 
     joi.attempt(content, schema, { abortEarly: false, convert: false, noDefaults: true });
