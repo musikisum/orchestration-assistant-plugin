@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-const img39 = () => (
+const h1 = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={37.795}
     height={132.283}
     viewBox="0 0 28.346 99.213"
-    data-name="39"
+    data-name="h1"
     >
     <path
       d="M0 0h30.337"
@@ -138,7 +138,7 @@ const img39 = () => (
         strokeDasharray: 'none',
         stroke: '#000',
       }}
-      transform="translate(16.83 63.307)"
+      transform="translate(16.83 67.56)"
       />
     <path
       d="M1.634 4.604c2.786 0 3.347-2.466 3.347-3.057C4.98.609 4.3 0 3.316 0 .788 0 0 2.122 0 3.075c0 .969.712 1.529 1.634 1.529M2.921 3.14c-.757.56-1.287.757-1.649.757a.7.7 0 0 1-.667-.429.698.698 0 0 1-.106-.36c0-.888 2.438-2.353 3.24-2.353.317 0 .5.165.62.396a.788.788 0 0 1 .092.344c0 .363-.348.807-1.53 1.645"
@@ -147,8 +147,20 @@ const img39 = () => (
         fillRule: 'nonzero',
         stroke: 'none',
       }}
-      transform="translate(12.078 77.448)"
+      transform="translate(12.078 81.7)"
+      />
+    <path
+      d="M0 0h26.025v4.11"
+      style={{
+        fill: 'none',
+        strokeWidth: 0.452505,
+        strokeLinecap: 'butt',
+        strokeLinejoin: 'miter',
+        strokeDasharray: 'none',
+        stroke: '#000',
+      }}
+      transform="translate(-.205 60.818)"
       />
   </svg>);
 
-export default img39;
+export default h1;

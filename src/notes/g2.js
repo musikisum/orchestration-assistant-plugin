@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-const img35 = () => (
+const g2 = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={37.795}
     height={132.283}
     viewBox="0 0 28.346 99.213"
-    data-name="35"
+    data-name="g2"
     >
     <path
       d="M0 0h30.337"
@@ -151,4 +151,4 @@ const img35 = () => (
       />
   </svg>);
 
-export default img35;
+export default g2;

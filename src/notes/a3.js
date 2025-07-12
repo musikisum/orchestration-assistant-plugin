@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-const img25 = () => (
+const a3 = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={37.795}
     height={132.283}
     viewBox="0 0 28.346 99.213"
-    data-name="25"
+    data-name="a3"
     >
     <path
       d="M0 0h30.337"
@@ -129,18 +129,6 @@ const img25 = () => (
       transform="translate(0 87.97)"
       />
     <path
-      d="M0 0h8.006"
-      style={{
-        fill: 'none',
-        strokeWidth: 0.658038,
-        strokeLinecap: 'butt',
-        strokeLinejoin: 'bevel',
-        strokeDasharray: 'none',
-        stroke: '#000',
-      }}
-      transform="translate(10.565 92.08)"
-      />
-    <path
       d="M0 15.752V0"
       style={{
         fill: 'none',
@@ -150,7 +138,7 @@ const img25 = () => (
         strokeDasharray: 'none',
         stroke: '#000',
       }}
-      transform="translate(16.83 77.764)"
+      transform="translate(12.294 72.378)"
       />
     <path
       d="M1.634 4.604c2.786 0 3.347-2.466 3.347-3.057C4.98.609 4.3 0 3.316 0 .788 0 0 2.122 0 3.075c0 .969.712 1.529 1.634 1.529M2.921 3.14c-.757.56-1.287.757-1.649.757a.7.7 0 0 1-.667-.429.698.698 0 0 1-.106-.36c0-.888 2.438-2.353 3.24-2.353.317 0 .5.165.62.396a.788.788 0 0 1 .092.344c0 .363-.348.807-1.53 1.645"
@@ -159,20 +147,8 @@ const img25 = () => (
         fillRule: 'nonzero',
         stroke: 'none',
       }}
-      transform="translate(12.078 91.905)"
-      />
-    <path
-      d="M0 0h31.3v4.11"
-      style={{
-        fill: 'none',
-        strokeWidth: 0.452505,
-        strokeLinecap: 'butt',
-        strokeLinejoin: 'miter',
-        strokeDasharray: 'none',
-        stroke: '#000',
-      }}
-      transform="translate(-.057 60.818)"
+      transform="translate(12.078 69.227)"
       />
   </svg>);
 
-export default img25;
+export default a3;
