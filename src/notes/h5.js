@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-const h3 = () => (
+const h5 = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={37.795}
     height={132.283}
     viewBox="0 0 28.346 99.213"
-    data-name="h3"
+    data-name="h5"
     >
     <path
       d="M0 0h30.337"
@@ -138,7 +138,7 @@ const h3 = () => (
         strokeDasharray: 'none',
         stroke: '#000',
       }}
-      transform="translate(12.294 70.394)"
+      transform="translate(12.294 31.276)"
       />
     <path
       d="M1.634 4.604c2.786 0 3.347-2.466 3.347-3.057C4.98.609 4.3 0 3.316 0 .788 0 0 2.122 0 3.075c0 .969.712 1.529 1.634 1.529M2.921 3.14c-.757.56-1.287.757-1.649.757a.7.7 0 0 1-.667-.429.698.698 0 0 1-.106-.36c0-.888 2.438-2.353 3.24-2.353.317 0 .5.165.62.396a.788.788 0 0 1 .092.344c0 .363-.348.807-1.53 1.645"
@@ -147,7 +147,19 @@ const h3 = () => (
         fillRule: 'nonzero',
         stroke: 'none',
       }}
-      transform="translate(12.078 67.243)"
+      transform="translate(12.078 27.842)"
+      />
+    <path
+      d="M0 0h7.778"
+      style={{
+        fill: 'none',
+        strokeWidth: 0.533724,
+        strokeLinecap: 'butt',
+        strokeLinejoin: 'bevel',
+        strokeDasharray: 'none',
+        stroke: '#000',
+      }}
+      transform="translate(10.43 32.334)"
       />
     <path
       d="M0 0v35.208"
@@ -175,4 +187,4 @@ const h3 = () => (
       />
   </svg>);
 
-export default h3;
+export default h5;

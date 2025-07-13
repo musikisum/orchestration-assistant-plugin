@@ -129,30 +129,6 @@ const c2 = () => (
       transform="translate(0 87.97)"
       />
     <path
-      d="M0 0v35.208"
-      style={{
-        fill: 'none',
-        strokeWidth: 0.658038,
-        strokeLinecap: 'butt',
-        strokeLinejoin: 'bevel',
-        strokeDasharray: 'none',
-        stroke: '#000',
-      }}
-      transform="translate(.303 36.319)"
-      />
-    <path
-      d="M0 0v16.977"
-      style={{
-        fill: 'none',
-        strokeWidth: 0.658038,
-        strokeLinecap: 'butt',
-        strokeLinejoin: 'bevel',
-        strokeDasharray: 'none',
-        stroke: '#000',
-      }}
-      transform="translate(.303 71.26)"
-      />
-    <path
       d="M0 0h8.006"
       style={{
         fill: 'none',
