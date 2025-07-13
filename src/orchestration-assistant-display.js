@@ -19,7 +19,7 @@ export default function OrchestrationDisplay({ content, input, canModifyInput, o
         <Markdown renderAnchors>
           {content.text}
         </Markdown>
-        <NotesFactory />
+        <NotesFactory fromFirstNoteIndex={1} toLastNoteIndex={50} />
 
         {/* <Form layout="vertical">
           <Form.Item label={t('label')}>

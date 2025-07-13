@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import clefs from './notes/clefs.js';
+import Clefs from './notes/clefs.js';
 import c1 from './notes/c1.js';
 import d1 from './notes/d1.js';
 import e1 from './notes/e1.js';
@@ -37,16 +37,43 @@ import g5 from './notes/g5.js';
 import a5 from './notes/a5.js';
 import h5 from './notes/h5.js';
 import c6 from './notes/c6.js';
+import d6 from './notes/d6.js';
+import e6 from './notes/e6.js';
+import f6 from './notes/f6.js';
+import g6 from './notes/g6.js';
+import a6 from './notes/a6.js';
+import h6 from './notes/h6.js';
+import c7 from './notes/c7.js';
+import d7 from './notes/d7.js';
+import e7 from './notes/e7.js';
+import f7 from './notes/f7.js';
+import g7 from './notes/g7.js';
+import a7 from './notes/a7.js';
+import h7 from './notes/h7.js';
+import c8 from './notes/c8.js';
 
-export default function NotesFactory({ fromMidi, toMidi }) {
+export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
 
-  const noteArr = [ clefs, c1, d1, e1, f1, g1, a1, h1, c2, d2, e2, f2, g2, a2, h2, c3, d3, e3, f3, g3, a3, h3, c4, d4, e4, f4, g4, a4, h4, c5, d5, e5, f5, g5, a5, h5, c6 ];
-  const first = Math.max(fromMidi - 24, 0);
-  const last = Math.min(toMidi - 24, noteArr.length - 1);
-  const currentNotes = noteArr.slice(first, last + 1);
+  const noteArr = [
+    c1, d1, e1, f1, g1, a1, h1,
+    c2, d2, e2, f2, g2, a2, h2,
+    c3, d3, e3, f3, g3, a3, h3,
+    c4, d4, e4, f4, g4, a4, h4,
+    c5, d5, e5, f5, g5, a5, h5,
+    c6, d6, e6, f6, g6, a6, h6,
+    c7, d7, e7, f7, g7, a7, h7, 
+    c8
+  ];
+
+  const saveBeginnIndex = Math.max(1, fromFirstNoteIndex);
+  const saveEndIndex = Math.min(toLastNoteIndex, noteArr.length);  
+  const currentNotes = noteArr.slice(saveBeginnIndex - 1, saveEndIndex);
 
   return (
     <div className="notes-container">
+      <div className='note-wrapper'>
+        <Clefs />
+      </div>
       {currentNotes.map((NoteComponent, index) => (
         <div key={index} className='note-wrapper'>
           <NoteComponent />
@@ -57,11 +84,11 @@ export default function NotesFactory({ fromMidi, toMidi }) {
 } 
 
 NotesFactory.propTypes = {
-  fromMidi: PropTypes.number,
-  toMidi: PropTypes.number
+  fromFirstNoteIndex: PropTypes.number,
+  toLastNoteIndex: PropTypes.number
 };
 
 NotesFactory.defaultProps = {
-  fromMidi: 24,
-  toMidi: 108
+  fromFirstNoteIndex: 1,
+  toLastNoteIndex: 50
 };

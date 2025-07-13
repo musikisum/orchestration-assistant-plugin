@@ -9,15 +9,18 @@
   }
   .note-wrapper {
     flex: 1 1 0;
-    padding: 0 4px; /* optionaler Abstand */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+  .note-wrapper:nth-child(7n + 1):nth-child(n+8) {
+    border-right: 1px solid black;
   }
   .note-wrapper svg {
     width: 100%;
     height: auto;
     display: block;
+    margin-bottom: 12px;
   }
 
 }

@@ -149,30 +149,6 @@ const h2 = () => (
       }}
       transform="translate(12.078 81.416)"
       />
-    <path
-      d="M0 0v35.208"
-      style={{
-        fill: 'none',
-        strokeWidth: 0.658038,
-        strokeLinecap: 'butt',
-        strokeLinejoin: 'bevel',
-        strokeDasharray: 'none',
-        stroke: '#000',
-      }}
-      transform="translate(28.082 36.319)"
-      />
-    <path
-      d="M0 0v16.977"
-      style={{
-        fill: 'none',
-        strokeWidth: 0.658038,
-        strokeLinecap: 'butt',
-        strokeLinejoin: 'bevel',
-        strokeDasharray: 'none',
-        stroke: '#000',
-      }}
-      transform="translate(28.082 71.26)"
-      />
   </svg>);
 
 export default h2;

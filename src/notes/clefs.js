@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-const clefs = () => (
-  <svg
+export default function Clefs() {
+  return (<svg
     xmlns="http://www.w3.org/2000/svg"
     width={37.795}
     height={132.283}
@@ -199,7 +199,5 @@ const clefs = () => (
       }}
       transform="translate(0 88.997)"
       />
-  </svg>
-);
-
-export default clefs;
+  </svg>);
+}

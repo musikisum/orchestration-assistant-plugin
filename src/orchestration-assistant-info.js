@@ -38,8 +38,8 @@ class OrchestrationAssitantInfo {
     return {
       text: '',
       width: 100,
-      fromMidi: 24,
-      toMidi: 108
+      fromFirstNoteIndex: 1,
+      toLastNoteIndex: 50
     };
   }
 
