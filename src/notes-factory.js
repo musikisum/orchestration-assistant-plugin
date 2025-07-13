@@ -24,10 +24,17 @@ import a3 from './notes/a3.js';
 import h3 from './notes/h3.js';
 import c4 from './notes/c4.js';
 import d4 from './notes/d4.js';
+import e4 from './notes/e4.js';
+import f4 from './notes/f4.js';
+import g4 from './notes/g4.js';
+import a4 from './notes/a4.js';
+import h4 from './notes/h4.js';
+import c5 from './notes/c5.js';
+import d5 from './notes/d5.js';
 
 export default function NotesFactory({ fromMidi, toMidi }) {
 
-  const noteArr = [ clefs, c1, d1, e1, f1, g1, a1, h1, c2, d2, e2, f2, g2, a2, h2, c3, d3, e3, f3, g3, a3, h3, c4, d4 ];
+  const noteArr = [ clefs, c1, d1, e1, f1, g1, a1, h1, c2, d2, e2, f2, g2, a2, h2, c3, d3, e3, f3, g3, a3, h3, c4, d4, e4, f4, g4, a4, h4, c5, d5 ];
   const first = Math.max(fromMidi - 24, 0);
   const last = Math.min(toMidi - 24, noteArr.length - 1);
   const currentNotes = noteArr.slice(first, last + 1);

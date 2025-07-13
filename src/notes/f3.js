@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const img40 = () => (
+const f3 = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={37.795}
@@ -151,4 +151,4 @@ const img40 = () => (
       />
   </svg>);
 
-export default img40;
+export default f3;

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Markdown from '@educandu/educandu/components/markdown.js';
 import { sectionDisplayProps } from '@educandu/educandu/ui/default-prop-types.js';
 
-export default function ServerTimeDisplay({ content, input, canModifyInput, onInputChanged }) {
+export default function OrchestrationDisplay({ content, input, canModifyInput, onInputChanged }) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
@@ -37,6 +37,6 @@ export default function ServerTimeDisplay({ content, input, canModifyInput, onIn
   );
 }
 
-ServerTimeDisplay.propTypes = {
+OrchestrationDisplay.propTypes = {
   ...sectionDisplayProps
 };

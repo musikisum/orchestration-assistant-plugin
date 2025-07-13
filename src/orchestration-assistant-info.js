@@ -3,15 +3,12 @@ import React from 'react';
 import { ClockCircleOutlined } from '@ant-design/icons';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import { PLUGIN_GROUP } from '@educandu/educandu/domain/constants.js';
-import { couldAccessUrlFromRoom } from '@educandu/educandu/utils/source-utils.js';
 import GithubFlavoredMarkdown from '@educandu/educandu/common/github-flavored-markdown.js';
 
-class ServerTimeInfo {
+class OrchestrationAssitantInfo {
   static dependencies = [GithubFlavoredMarkdown];
 
   static typeName = 'musikisum/educandu-plugin-orchestration-assistant';
-
-  allowsInput = true;
 
   constructor(gfm) {
     this.gfm = gfm;
@@ -61,20 +58,13 @@ class ServerTimeInfo {
     return cloneDeep(content);
   }
 
-  redactContent(content, targetRoomId) {
-    const redactedContent = cloneDeep(content);
-
-    redactedContent.text = this.gfm.redactCdnResources(
-      redactedContent.text,
-      url => couldAccessUrlFromRoom(url, targetRoomId) ? url : ''
-    );
-
-    return redactedContent;
+  redactContent(content) {
+    return cloneDeep(content);
   }
 
-  getCdnResources(content) {
-    return this.gfm.extractCdnResources(content.text);
+  getCdnResources() {
+    return [];
   }
 }
 
-export default ServerTimeInfo;
+export default OrchestrationAssitantInfo;
