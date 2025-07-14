@@ -36,7 +36,7 @@ class OrchestrationAssitantInfo {
 
   getDefaultContent() {
     return {
-      text: '',
+      text: 'Hallo Welt!',
       width: 100,
       fromFirstNoteIndex: 1,
       toLastNoteIndex: 50
@@ -47,8 +47,8 @@ class OrchestrationAssitantInfo {
     const schema = joi.object({
       text: joi.string().allow('').required(),
       width: joi.number().min(0).max(100).required(),
-      fromMidi: joi.number().integer().min(24).max(108).required(),
-      toMidi: joi.number().integer().min(24).max(108).required()
+      fromFirstNoteIndex: joi.number().integer().min(1).max(50).required(),
+      toLastNoteIndex: joi.number().integer().min(1).max(50).required()
     });
 
     joi.attempt(content, schema, { abortEarly: false, convert: false, noDefaults: true });

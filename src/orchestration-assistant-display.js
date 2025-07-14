@@ -5,21 +5,19 @@ import { useTranslation } from 'react-i18next';
 import Markdown from '@educandu/educandu/components/markdown.js';
 import { sectionDisplayProps } from '@educandu/educandu/ui/default-prop-types.js';
 
-export default function OrchestrationDisplay({ content, input, canModifyInput, onInputChanged }) {
+export default function OrchestrationDisplay({ content }) {
+
+  const { text, fromFirstNoteIndex, toLastNoteIndex, width } = content;
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
-  const handleCurrentValueChange = event => {
-    onInputChanged({ value: event.target.value });
-  };
-
   return (
     <div className="EP_Educandu_Orchestration_Assistant_Display">
-      <div className={`u-horizontally-centered u-width-${content.width}`}>
+      <div className={`u-horizontally-centered u-width-${width}`}>
         <Markdown renderAnchors>
-          {content.text}
+          {text}
         </Markdown>
-        <NotesFactory fromFirstNoteIndex={1} toLastNoteIndex={50} />
+        <NotesFactory fromFirstNoteIndex={fromFirstNoteIndex} toLastNoteIndex={toLastNoteIndex} />
 
         {/* <Form layout="vertical">
           <Form.Item label={t('label')}>
