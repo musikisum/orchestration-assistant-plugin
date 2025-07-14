@@ -65,21 +65,38 @@ export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
     c8
   ];
 
-  const saveBeginnIndex = Math.max(1, fromFirstNoteIndex);
+  const saveBeginnIndex = Math.max(8, fromFirstNoteIndex);
   const saveEndIndex = Math.min(toLastNoteIndex, noteArr.length);  
   const currentNotes = noteArr.slice(saveBeginnIndex - 1, saveEndIndex);
 
   return (
-    <div className="notes-container">
-      <div className='note-wrapper'>
-        <Clefs />
-      </div>
-      {currentNotes.map((NoteComponent, index) => (
-        <div key={index} className='note-wrapper'>
-          <NoteComponent />
+    <div>
+      <div className="notes-container">
+        <div className='note-wrapper'>
+          <Clefs />
         </div>
-      ))}
+        {currentNotes.map((NoteComponent, index) => (
+          <div key={index} className='note-wrapper'>
+            <NoteComponent />             
+          </div>        
+        ))}      
+      </div>
+      <div style={{ height: '40px' }} />
+      <div className="notes-container">
+        <div className='note-wrapper'>
+          &nbsp;
+        </div>
+        {currentNotes.map((_, index) => (
+          <div key={index} className='instrument-wrapper'>
+            { (index > 10 && index < 40) && (
+            <div style={{ backgroundColor: '#5c4033', textAlign: 'center', color: 'white', height: '16px' }} />
+            )}                    
+          </div>        
+        ))}    
+      </div>
+
     </div>
+  
   );
 } 
 
