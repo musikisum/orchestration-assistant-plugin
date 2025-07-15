@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Input } from 'antd';
-import NotesFactory from './notes-factory.js'; 
+import Table from './table.js'; 
 import { useTranslation } from 'react-i18next';
 import Markdown from '@educandu/educandu/components/markdown.js';
 import { sectionDisplayProps } from '@educandu/educandu/ui/default-prop-types.js';
@@ -17,7 +17,7 @@ export default function OrchestrationDisplay({ content }) {
         <Markdown renderAnchors>
           {text}
         </Markdown>
-        <NotesFactory fromFirstNoteIndex={fromFirstNoteIndex} toLastNoteIndex={toLastNoteIndex} />
+        <Table fromFirstNoteIndex={fromFirstNoteIndex} toLastNoteIndex={toLastNoteIndex} />
 
         {/* <Form layout="vertical">
           <Form.Item label={t('label')}>

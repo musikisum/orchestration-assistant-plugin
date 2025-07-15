@@ -1,6 +1,3 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Clefs from './notes/clefs.js';
 import c1 from './notes/c1.js';
 import d1 from './notes/d1.js';
 import e1 from './notes/e1.js';
@@ -52,7 +49,7 @@ import a7 from './notes/a7.js';
 import h7 from './notes/h7.js';
 import c8 from './notes/c8.js';
 
-export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
+const notesFactory = (fromFirstNoteIndex, toLastNoteIndex) => {
 
   const noteArr = [
     c1, d1, e1, f1, g1, a1, h1,
@@ -65,47 +62,10 @@ export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
     c8
   ];
 
-  const saveBeginnIndex = Math.max(8, fromFirstNoteIndex);
+  const saveBeginnIndex = Math.max(1, fromFirstNoteIndex);
   const saveEndIndex = Math.min(toLastNoteIndex, noteArr.length);  
-  const currentNotes = noteArr.slice(saveBeginnIndex - 1, saveEndIndex);
-
-  return (
-    <div>
-      <div className="notes-container">
-        <div className='note-wrapper'>
-          <Clefs />
-        </div>
-        {currentNotes.map((NoteComponent, index) => (
-          <div key={index} className='note-wrapper'>
-            <NoteComponent />             
-          </div>        
-        ))}      
-      </div>
-      <div style={{ height: '40px' }} />
-      <div className="notes-container">
-        <div className='note-wrapper'>
-          &nbsp;
-        </div>
-        {currentNotes.map((_, index) => (
-          <div key={index} className='instrument-wrapper'>
-            { (index > 10 && index < 40) && (
-            <div style={{ backgroundColor: '#5c4033', textAlign: 'center', color: 'white', height: '16px' }} />
-            )}                    
-          </div>        
-        ))}    
-      </div>
-
-    </div>
-  
-  );
-} 
-
-NotesFactory.propTypes = {
-  fromFirstNoteIndex: PropTypes.number,
-  toLastNoteIndex: PropTypes.number
+  const providedNotes = noteArr.slice(saveBeginnIndex - 1, saveEndIndex);
+  return providedNotes;
 };
 
-NotesFactory.defaultProps = {
-  fromFirstNoteIndex: 1,
-  toLastNoteIndex: 50
-};
+export default notesFactory;
