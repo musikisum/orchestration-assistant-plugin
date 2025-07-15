@@ -7,12 +7,11 @@ export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
   
   const noteArr = notesFactory(fromFirstNoteIndex, toLastNoteIndex);
 
-  const columnCount = noteArr.length + 1; // +1 für Clef-Spalte
+  const columnCount = noteArr.length + 1; // +1 for clef column
   const gridStyle = { gridTemplateColumns: `repeat(${columnCount}, 1fr)` };
 
   return (
     <React.Fragment>
-      {/* Notenzeile */}
       <div className="notes-grid" style={gridStyle}>
         <div className="note-cell">
           <Clefs />
@@ -24,21 +23,18 @@ export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
         ))}
       </div>
       <div style={{ height: '20px' }} />
-      {/* Instrumentenzeile */}
-      <div className="instrument-balken-wrapper">
-        {/* Der Text über dem Balken */}
-        <div className="instrument-label">Violine</div>
 
-        {/* Der braune Balken – also dein Grid */}
+      <div className="instrument-wrapper">
         <div className="notes-grid" style={gridStyle}>
-          <div className="note-cell clefs-cell" />
-          {noteArr.map((_, index) => (
-            <div key={index} className="instrument-cell">
-              {(index > 17 && index < 47) && (
-              <div className="instrument-strings" />
-              )}
-            </div>
-          ))}
+          <div className="instrument-strings" style={{ gridColumn: '20/49' }}>
+            Violine
+          </div>
+          <div className="instrument-strings" style={{ gridColumn: '16/44' }}>
+            Viola
+          </div>
+          <div className="instrument-strings" style={{ gridColumn: '9/35' }}>
+            Violoncello
+          </div>
         </div>
       </div>
     </React.Fragment>

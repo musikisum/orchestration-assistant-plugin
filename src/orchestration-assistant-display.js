@@ -1,5 +1,4 @@
 import React from 'react';
-import { Form, Input } from 'antd';
 import Table from './table.js'; 
 import { useTranslation } from 'react-i18next';
 import Markdown from '@educandu/educandu/components/markdown.js';
@@ -18,18 +17,6 @@ export default function OrchestrationDisplay({ content }) {
           {text}
         </Markdown>
         <Table fromFirstNoteIndex={fromFirstNoteIndex} toLastNoteIndex={toLastNoteIndex} />
-
-        {/* <Form layout="vertical">
-          <Form.Item label={t('label')}>
-            <Input
-              value={input.data?.value || ''}
-              maxLength={100}
-              disabled={!canModifyInput}
-              readOnly={!canModifyInput}
-              onChange={handleCurrentValueChange}
-              />
-          </Form.Item>
-        </Form> */}
       </div>
     </div>
   );
