@@ -1,6 +1,7 @@
 import React from 'react';
-import Clefs from './notes/clefs.js';
 import PropTypes from 'prop-types';
+import Clefs from './notes/clefs.js';
+import Violine from './instruments/violin.js';
 import notesFactory from './notes-factory.js';
 
 export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
@@ -26,10 +27,8 @@ export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
 
       <div className="instrument-wrapper">
         <div className="notes-grid" style={gridStyle}>
-          <div className="instrument-strings" style={{ gridColumn: '20/49' }}>
-            Violine
-          </div>
-          <div className="instrument-strings" style={{ gridColumn: '16/44' }}>
+          <Violine />
+          <div className="instrument-strings" style={{ gridColumn: '16/37' }}>
             Viola
           </div>
           <div className="instrument-strings" style={{ gridColumn: '9/35' }}>
