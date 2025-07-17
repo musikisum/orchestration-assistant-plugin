@@ -13,7 +13,7 @@ export default function Viola({ from, to }) {
     setIsVisible(!isVisible);
   };
 
-  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(16, 37, from, to); 
+  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(16, 43, from, to); 
   const calculation = `${begin}/${end}`;
 
   const layout = {
@@ -32,7 +32,7 @@ export default function Viola({ from, to }) {
         ? <div className="instrument-annotations">
             <p style={layout}><b>Stimmung:</b> c-g-d<sup>1</sup>-a<sup>1</sup></p>
             <p style={layout}><b>Notation:</b> klingend, hohe Beweglichkeit</p>
-            <p style={layout}><b>Griffbrettgrenze:</b> A-Saite = a3, im Orchester Umfang bis c3 gut möglich</p>
+            <p style={layout}><b>Griffbrettgrenze:</b> A-Saite = a<sup>3</sup>, im Orchester Umfang bis c<sup>3</sup> gut möglich</p>
             <p style={layout}><b>Doppelgriffe:</b> Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), Quinten, Quarten und Terzen (schwer), Oktave und Einklang (sehr schwer)</p>
             <p style={layout}><b>Flageolett</b></p>
             <div className='instrument-image'>
