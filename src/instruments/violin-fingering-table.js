@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ViolinTable() {
+export default function ViolinFingeringTable() {
 
   const tableStyle = {
     margin: '12px auto',

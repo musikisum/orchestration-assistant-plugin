@@ -30,7 +30,6 @@ export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
           {instrumentsProvider.map((Instrument, index) => (
             <Instrument from={fromFirstNoteIndex - 1} to={toLastNoteIndex - 1} key={index} />
           ))}
-          <div className="instrument-strings" style={{ gridColumn: '16/37' }}>Viola</div>
           <div className="instrument-strings" style={{ gridColumn: '9/35' }}>Violoncello</div>
         </div>
       </div>
