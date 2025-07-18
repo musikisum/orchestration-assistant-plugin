@@ -38,7 +38,7 @@ export default function DoubleBass({ from, to }) {
             <p style={layout}><b>Basis-Positionen der Finger 1–4:</b> Große Sekunde, ab der 7. Lage = kleine Terz</p>
             <p style={layout}><b>Kombinationen:</b> Die Koppelung mit den Celli (klingend im Oktavabstand) ist im Orchester der Normalfall. Gute Effekte ergeben sich mit der Bassklarinette und dem Kontrafagott sowie im oktavierenden Spiel mit Hörnern und Posaunen. Die Koppelung mit der Tuba ist im Unisonospiel gut möglich.</p>
             <p style={layout}><b>Schulorhester:</b> Umfang bis zum d<sup>1</sup> (e<sup>1</sup>) nicht überschreiten, schnellere Bewegung nur als Tonwiederholungen fordern.</p>
-            <p style={layout}><b>Literaturbeispiele für eine solistische Violine im Orchestersatz:</b></p>
+            <p style={layout}><b>Literaturbeispiele für einen solistischen Kontrabass im Orchestersatz:</b></p>
             <ul style={layout}>
               <li>J. Haydn, Sinfonie Nr. 6 (Hob.I:6), »Le Matin«, 3. Satz</li>
               <li>C. Saint-Saëns, Karneval der Tiere, »Der Elephant«</li>

@@ -1,12 +1,13 @@
 import * as React from 'react';
 
-const a6 = () => (
+const a6 = ({ onClick }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={37.795}
     height={132.283}
     viewBox="0 0 28.346 99.213"
     data-name="a6"
+    onClick={onClick}
     >
     <path
       d="M0 0h30.337"

@@ -37,7 +37,7 @@ export default function Violoncello({ from, to }) {
             <p style={layout}><b>Basis-Positionen der Finger 1–4:</b> chromatisch</p>
             <p style={layout}><b>Kombinationen:</b> Streichinstrumente können gut zur Klangverstärkung von (anderen) Streichinstrumenten oktaviert werden (Achtung: durch die Klangfülle der Celli besteht Gefahr, dass in Koppelungen mit anderen Streichinstrumenten wie z. B. den Violinen diese überdeckt werden), Kombinationen mit den Holzbläsern (Oboe, Klarinette und Fagott) und insbesondere dem Horn gut möglich.</p>
             <p style={layout}><b>Schulorhester:</b> Umfang nicht in den »Daumenlagen« fordern (d. h. nicht über g<sup>1</sup>).</p>
-            <p style={layout}><b>Literaturbeispiele für eine solistische Violine im Orchestersatz:</b></p>
+            <p style={layout}><b>Literaturbeispiele für ein solistisches Violoncello im Orchestersatz:</b></p>
             <ul style={layout}>
               <li>G. Puccini, Tosca, 3. Akt, Einleitung zur Arie des »Cavaradossi«</li>
               <li>J. Brahms, Klavierkonzert Nr. 2, B-Dur, Op. 83, 3. Satz</li>

@@ -43,7 +43,7 @@ export default function Viola({ from, to }) {
             <p style={layout}><b>Grifftechnik:</b> Beispiele für die Basis-Positionen des Dur-Tetrachords, das mit den Fingern 1–4 gespielt wird auf der d&apos;-Saite:</p>
             <ViolaFingeringTable />
             <p style={layout}><b>Schulorchester:</b> Flageolett, Doppel- und Mehrfachgriffe meiden bzw. mit besonderer Vorsicht einsetzen, Umfang nur in Ausnahmefällen über der 3. Lage fordern (d&apos;&apos;&apos;).</p>
-            <p style={layout}><b>Literaturbeispiele für eine solistische Violine im Orchestersatz:</b></p>
+            <p style={layout}><b>Literaturbeispiele für eine solistische Viola im Orchestersatz:</b></p>
             <ul style={layout}>
               <li>H. Berlioz, Harold in Italien, Op. 16, 1. Satz</li>
               <li>R. Wagner, Die Meistersinger, 2. Akt (3. und 7. Szene), 3. Akt (5. Szene)</li>
