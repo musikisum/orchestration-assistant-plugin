@@ -17,25 +17,25 @@ const calculateGridColumnsForInstruments = (begin, end, fromFirstNoteIndex, toLa
   return [from, to];
 };
 
-const getOctaveName = tonName => {
-  if (tonName.length !== 2) {
+const getOctaveName = toneName => {
+  if (toneName.length !== 2) {
     return '';
   }
-  switch (tonName[1]) {
+  switch (toneName[1]) {
     case '1':
-      return 'Kontra-Oktave';
+      return 'kontra';
     case '2':
-      return 'große Oktave'; 
+      return 'große'; 
     case '3':
-      return 'kleine Oktave'; 
+      return 'kleine'; 
     case '4':
-      return 'eingestrichene Oktave';  
+      return 'eingestrichene';  
     case '5':
-      return 'zweigestrichene Oktave';  
+      return 'zweigestrichene';  
     case '6':
-      return 'dreigestrichene Oktave';   
+      return 'dreigestrichene';   
     case '7':
-      return 'viergestrichene Oktave'; 
+      return 'viergestrichene'; 
     default:
       return '';
   }

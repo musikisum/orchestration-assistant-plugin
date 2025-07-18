@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import Clefs from './notes/clefs.js';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import notesFactory from './notes-factory.js';
 import instrumentsProvider from './instruments-provider.js';
-import OrchestrationUtilities from './orchestration-utilities.js';
+
+import Contra from './octaves/contra.js';
 
 export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
   
@@ -14,14 +15,23 @@ export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
 
   const [name, setName] = useState('');
   const [isVisible, setIsVisible] = useState(false);
+  const lastClickedElementRef = useRef(null);
 
   const onClick = e => {
     const target = e.target.closest('[data-name]');
+    target.classList.add('note-highligted');
+    lastClickedElementRef.current = target;
     if (target) {
       const tonName = target.getAttribute('data-name');
       setName(tonName);
       setIsVisible(true);
     }
+  };
+
+  const onOctaveInfoClick = () => {
+    setIsVisible(false);
+    lastClickedElementRef.current.classList.remove('note-highligted');
+    lastClickedElementRef.current = null;
   };
 
   return (
@@ -36,12 +46,14 @@ export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
           </div>
         ))}
       </div>
-      { isVisible
-        ? <div className='octave-container'>
-          <h1>Die {OrchestrationUtilities.getOctaveName(name)}</h1>
-          Der Ton {name} gehört zur {OrchestrationUtilities.getOctaveName(name)}.
-        </div>
-        : null }
+      {isVisible
+        ? (
+          <div className="octave-container">
+            <div className='oc-close' onClick={() => onOctaveInfoClick(name)}>x</div>
+            <Contra toneName={name} />
+          </div>
+        )
+        : null}
       <div style={{ height: '20px' }} />
 
       <div className="instrument-wrapper">

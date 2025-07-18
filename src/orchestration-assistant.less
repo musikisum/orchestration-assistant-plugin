@@ -74,11 +74,28 @@
     background-color: @grey-3;
     border: 1px solid @grey-6;
     border-radius: 6px;
+    position: relative;
   }
   .octave-container h1 {
     font-size: 1.1em;
     margin: 0 auto 10px 0;
     color: @grey-9;
+  }
+  .oc-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    background-color: @edu-error-color;
+    color: white;
+  }
+
+  .note-highligted {
+    background-color: @edu-banner-orange-background-color;;
   }
   
 }
