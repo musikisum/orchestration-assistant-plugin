@@ -23,7 +23,7 @@ class OrchestrationAssitantInfo {
   }
 
   getGroups() {
-    return [PLUGIN_GROUP.mostUsed, PLUGIN_GROUP.other];
+    return [PLUGIN_GROUP.other];
   }
 
   async resolveDisplayComponent() {
