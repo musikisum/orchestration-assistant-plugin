@@ -129,7 +129,8 @@ function Flageolett({ width }) {
         d="m202.353 216.407 97.705-51.228M574.866 204.758l97.706-80.502M947.382 196.021l97.7-102.457M1300.752 198.9l54.87-93.939M1625.232 194.163l54.87-105.68"
         className="NoteLineSegment"
         />
-  </svg>);
+    </svg>
+  );
 }
 
 export default Flageolett;

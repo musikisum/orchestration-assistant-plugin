@@ -37,7 +37,7 @@ export default function Guitar({ from, to }) {
               Die Halbresonanz-Gitarre ist ein Bindeglied zwischen akustischer und elektrischer Gitarre, zur Verbesserung der Rückkoppelungseigenschaften wird seit 1955 in den hohlen Korpus ein massives Mittelsegment eingelassen. Die Bauweise heutiger elektrischer Gitarren lässt sich auf wenige Modelle zurückführen (von Gibson: ES-150, »Les Paul«, ES-335 sowie »Firebird« sowie von Fender: Telecaster und Stratocaster).
             </p>      
             <p style={layout}>
-              <b>Spielweisen:</b> Diverse Zupftechniken, Bottleneck-Spielweise (mit einem Glas- oder Metallröhrchen am Finger, das über die Saiten gleitet), Stringbending (Tonhöhenveränderung durch Ziehen an der Saite), Hammer-on und Pull-off (fließender Übergang zwischen Tönen ohne erneutes Anschlagen), Sustain (langes Aushalten von Tönen, z. B. durch Verstärkung), sowie bei elektronischer Verstärkung zusätzliche Effekte wie Flanger, Chorus, Delay (Echo), Reverb (Hall), Pitch Shifter (Tonhöhenveränderung), Phaser (phasenverschobener Effekt), Overdrive/Distortion (Verzerrung), Whammy Bar (Vibratohebel) und Wah-Wah-Pedal (Filter zur Erzeugung vokalähnlicher Klangverläufe) etc.
+              <b>Spielweisen:</b> Diverse Zupftechniken, Bottleneck-Spielweise (mit einem Glas- oder Metallröhrchen am Finger, das über die Saiten gleitet), Stringbending (Tonhöhenveränderung durch Ziehen an der Saite), Hammer-on und Pull-off (fließender Übergang zwischen Tönen ohne erneutes Anschlagen), Sustain (langes Aushalten von Tönen, z.B. durch Verstärkung), sowie bei elektronischer Verstärkung zusätzliche Effekte wie Flanger, Chorus, Delay (Echo), Reverb (Hall), Pitch Shifter (Tonhöhenveränderung), Phaser (phasenverschobener Effekt), Overdrive/Distortion (Verzerrung), Whammy Bar (Vibratohebel) und Wah-Wah-Pedal (Filter zur Erzeugung vokalähnlicher Klangverläufe) etc.
             </p>
             <p style={layout}><b>Literaturbeispiele für die Klangmöglichkeiten einer elektrischen Gitarre:</b></p>
             <ul style={layout}>
@@ -48,7 +48,8 @@ export default function Guitar({ from, to }) {
         </div>
         )
         : null}
-    </div>);
+    </div>
+  );
 }
 
 Guitar.propTypes = {
