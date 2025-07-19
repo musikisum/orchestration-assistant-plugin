@@ -36,10 +36,10 @@ class OrchestrationAssitantInfo {
 
   getDefaultContent() {
     return {
-      text: 'Hallo Welt!',
+      text: '# Die Instrumente des Orchesters',
       width: 100,
-      fromFirstNoteIndex: 1,
-      toLastNoteIndex: 50
+      from: 1,
+      to: 50
     };
   }
 
@@ -47,8 +47,8 @@ class OrchestrationAssitantInfo {
     const schema = joi.object({
       text: joi.string().allow('').required(),
       width: joi.number().min(0).max(100).required(),
-      fromFirstNoteIndex: joi.number().integer().min(1).max(50).required(),
-      toLastNoteIndex: joi.number().integer().min(1).max(50).required()
+      from: joi.number().integer().min(1).max(50).required(),
+      to: joi.number().integer().min(1).max(50).required()
     });
 
     joi.attempt(content, schema, { abortEarly: false, convert: false, noDefaults: true });

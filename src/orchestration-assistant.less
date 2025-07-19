@@ -13,7 +13,7 @@
   .note-cell,
   .instrument-cell {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 0;
     margin: 0;
@@ -69,15 +69,19 @@
     margin-bottom: 12px;
   }
 
-  .octave-container {
+  .octave-info-container {
+    margin-top: 16px;
     padding: 6px;
     background-color: @grey-3;
     border: 1px solid @grey-6;
     border-radius: 6px;
     position: relative;
   }
-  .octave-container h1 {
-    font-size: 1.1em;
+  .octave-info {
+    font-size: @edu-font-size-base;
+  }
+  .octave-info h1 {
+    font-size: @edu-heading-1-size;
     margin: 0 auto 10px 0;
     color: @grey-9;
   }
@@ -87,15 +91,31 @@
     right: 0.5rem;
     width: 25px;
     height: 25px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     font-size: 1.2rem;
-    background-color: @edu-error-color;
+    background-color: @edu-banner-red-background-color;
+    border: 1px solid @edu-banner-red-border-color;
     color: white;
   }
 
   .note-highligted {
     background-color: @edu-banner-orange-background-color;;
+  }
+
+  .octave-line {
+    margin-top: 12px;
+    display: grid;
+    width: 100%;
+    max-width: 100%;
+    gap: 0;
+    box-sizing: border-box;
+  }
+  .octave-line-marker {    
+    height: 4px;
+    background-color: @edu-border-color;
   }
   
 }

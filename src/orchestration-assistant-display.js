@@ -6,7 +6,7 @@ import { sectionDisplayProps } from '@educandu/educandu/ui/default-prop-types.js
 
 export default function OrchestrationDisplay({ content }) {
 
-  const { text, fromFirstNoteIndex, toLastNoteIndex, width } = content;
+  const { text, from, to, width } = content;
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
@@ -16,7 +16,7 @@ export default function OrchestrationDisplay({ content }) {
         <Markdown renderAnchors>
           {text}
         </Markdown>
-        <Table fromFirstNoteIndex={fromFirstNoteIndex} toLastNoteIndex={toLastNoteIndex} />
+        <Table from={from} to={to} />
       </div>
     </div>
   );

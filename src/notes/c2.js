@@ -1,11 +1,15 @@
 import * as React from 'react';
 
+//  originalHeight = 99.213;
+const cropHeight = 50;
+
 const c2 = ({ onClick }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={37.795}
-    height={132.283}
-    viewBox="0 0 28.346 99.213"
+    height="80"
+    viewBox={`0 0 28.346 ${cropHeight}`}
+    preserveAspectRatio="xMidYMin meet"
     data-name="c2"
     onClick={onClick}
     >
