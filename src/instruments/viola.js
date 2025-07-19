@@ -29,7 +29,8 @@ export default function Viola({ from, to }) {
         Viola
       </div>
       {isVisible
-        ? <div className="instrument-annotations">
+        ? (
+        <div className="instrument-annotations">
             <p style={layout}><b>Stimmung:</b> c-g-d<sup>1</sup>-a<sup>1</sup></p>
             <p style={layout}><b>Notation:</b> klingend, hohe Beweglichkeit</p>
             <p style={layout}><b>Griffbrettgrenze:</b> A-Saite = a<sup>3</sup>, im Orchester Umfang bis c<sup>3</sup> gut möglich</p>
@@ -48,7 +49,7 @@ export default function Viola({ from, to }) {
               <li>H. Berlioz, Harold in Italien, Op. 16, 1. Satz</li>
               <li>R. Wagner, Die Meistersinger, 2. Akt (3. und 7. Szene), 3. Akt (5. Szene)</li>
             </ul>
-          </div>
+        </div>)
         : null}
     </div>);
 }

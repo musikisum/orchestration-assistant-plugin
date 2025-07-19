@@ -27,7 +27,8 @@ export default function DoubleBass({ from, to }) {
         Kontrabass
       </div>
       {isVisible
-        ? <div className="instrument-annotations">
+        ? (
+        <div className="instrument-annotations">
             <p style={layout}><b>Stimmung:</b> E<sub>1</sub>-A<sub>1</sub>-D-G</p>
             <p style={layout}><b>Stimmung (fünf Saiten):</b> H<sup>2</sup> oder C<sub>1</sub>-E<sub>1</sub>-A<sub>1</sub>-D-G</p>
             <p style={layout}><b>Notation:</b> eine Oktave höher als klingend (transponierendes Instrument), Als Orchesterinstrument geringere Beweglichkeit als die hohen Streicher</p>
@@ -44,7 +45,7 @@ export default function DoubleBass({ from, to }) {
               <li>C. Saint-Saëns, Karneval der Tiere, »Der Elephant«</li>
               <li>G. Verdi, Otello, 4. Akt, Anfang</li>
             </ul>
-          </div>
+        </div>)
         : null}
     </div>);
 }

@@ -1,20 +1,11 @@
-const calculateGridColumnsForInstruments = (begin, end, fromFirstNoteIndex, toLastNoteIndex) => {
-  let from = begin;
-  let to = end;
-  if (fromFirstNoteIndex > 1) {
-    begin - fromFirstNoteIndex;
+const calculateGridColumnsForInstruments = (begin, end, from, to) => {
+  const head = Math.max(begin, from);
+  const tail = Math.min(end, to);
+  if (head > tail) {
+    return [0, 0];
   }
-  if (begin < fromFirstNoteIndex) {
-    from = fromFirstNoteIndex;
-  }
-  if (end < toLastNoteIndex) {
-    to = end;
-  }
-  if (from > end) {
-    from = 0;
-    to = 0; 
-  }
-  return [from, to];
+
+  return [head, tail];
 };
 
 const getOctaveName = toneName => {

@@ -27,7 +27,8 @@ export default function Violoncello({ from, to }) {
         Violoncello
       </div>
       {isVisible
-        ? <div className="instrument-annotations">
+        ? (
+        <div className="instrument-annotations">
             <p style={layout}><b>Stimmung:</b> C-G-d-a</p>
             <p style={layout}><b>Notation:</b> klingend, hohe Beweglichkeit</p>
             <p style={layout}><b>Griffbrettgrenze:</b> A-Saite = fis<sup>3</sup>, im Orchester Umfang bis c<sup>3</sup> gut möglich</p>
@@ -43,7 +44,7 @@ export default function Violoncello({ from, to }) {
               <li>J. Brahms, Klavierkonzert Nr. 2, B-Dur, Op. 83, 3. Satz</li>
               <li>G. Rossini, Ouverture Wilhelm Tell, Einleitung</li>
             </ul>
-          </div>
+        </div>)
         : null}
     </div>);
 }

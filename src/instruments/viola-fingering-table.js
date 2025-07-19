@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function ViolinFingeringTable() {
-  //TODO: Tabelle noch aktualisieren
+
   const tableStyle = {
     margin: '12px auto',
     width: '90%',

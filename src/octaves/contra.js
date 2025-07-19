@@ -1,14 +1,10 @@
 import React from 'react';
-import orchUtils from '../orchestration-utilities.js';
 
 const contra = ({ toneName }) => {
 
-  const octave = orchUtils.getOctaveName(toneName);
-  const upper = octave.charAt(0).toUpperCase() + octave.slice(1);
-
   return (
     <div>
-      <p><b><i>Das {octave} {toneName[0]} liegt in der {upper}oktave.</i></b></p>
+      <p><b><i>Das kontra {toneName[0].toUpperCase()}<sub>1</sub> liegt in der Kontraoktave.</i></b></p>
       <h1>Die Kontraoktave</h1>
       <p>
         Töne in der Kontraoktavektave können im Orchester nur noch von den ausgesprochenen Bassinstrumenten wie 

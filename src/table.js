@@ -4,7 +4,16 @@ import React, { useState, useRef } from 'react';
 import notesFactory from './notes-factory.js';
 import instrumentsProvider from './instruments-provider.js';
 
+import Gross from './octaves/gross.js';
 import Contra from './octaves/contra.js';
+
+const getOctaveComponent = (toneName, toneIndex) => {
+  const octaveDescriptions = [
+    <Contra key='tnC' toneName={toneName} />,
+    <Gross key='tnG' toneName={toneName}  />,
+  ];
+  return octaveDescriptions[toneIndex - 1];
+};
 
 export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
   
@@ -15,14 +24,16 @@ export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
 
   const [name, setName] = useState('');
   const [isVisible, setIsVisible] = useState(false);
+  const [visibleOctave, setVisibleOctave] = useState(null);
   const lastClickedElementRef = useRef(null);
 
   const onClick = e => {
     const target = e.target.closest('[data-name]');
-    target.classList.add('note-highligted');
-    lastClickedElementRef.current = target;
     if (target) {
+      target.classList.add('note-highligted');
+      lastClickedElementRef.current = target;
       const tonName = target.getAttribute('data-name');
+      setVisibleOctave(tonName[1]);
       setName(tonName);
       setIsVisible(true);
     }
@@ -50,7 +61,7 @@ export default function NotesFactory({ fromFirstNoteIndex, toLastNoteIndex }) {
         ? (
           <div className="octave-container">
             <div className='oc-close' onClick={() => onOctaveInfoClick(name)}>x</div>
-            <Contra toneName={name} />
+            {visibleOctave !== null && getOctaveComponent(name, visibleOctave)}
           </div>
         )
         : null}

@@ -27,7 +27,8 @@ export default function Guitar({ from, to }) {
         Gitarre
       </div>
       {isVisible
-        ? <div className="instrument-annotations">
+        ? (
+        <div className="instrument-annotations">
             <p style={layout}><b>Stimmung:</b> E-A-d-g-h-e<sup>1</sup></p>
             <p style={layout}><b>Notation:</b> eine Oktave höher als klingend (transponierendes Instrument), hohe Beweglichkeit</p>
             <p style={layout}><b>Tonumfänge:</b> bis e<sup>2</sup> mit allen Gitarrentypen möglich, Gitarren mit 19 Bünden in der Höhe bis h<sup>2</sup>, elektrische Gitarren mit »Cutaway« (Einbuchtung im Korpus) sogar bis e<sup>3</sup></p>
@@ -44,7 +45,8 @@ export default function Guitar({ from, to }) {
               <li>Santana, Samba PaTi</li>
               <li>Van Halen, Jump</li>
             </ul>
-          </div>
+        </div>
+        )
         : null}
     </div>);
 }

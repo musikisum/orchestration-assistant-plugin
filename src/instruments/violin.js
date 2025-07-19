@@ -29,7 +29,8 @@ export default function Violin({ from, to }) {
         Violine
       </div>
       {isVisible
-        ? <div className="instrument-annotations">
+        ? (
+        <div className="instrument-annotations">
             <p style={layout}><b>Stimmung:</b> g-d<sup>1</sup>-a<sup>1</sup>-e<sup>2</sup></p>
             <p style={layout}><b>Notation:</b> klingend, hohe Beweglichkeit</p>
             <p style={layout}><b>Griffbrettgrenze:</b> E-Saite = g<sup>4</sup>, im Orchester Umfang bis c<sup>4</sup> gut möglich</p>
@@ -49,7 +50,7 @@ export default function Violin({ from, to }) {
               <li>J. Brahms, 1. Sinfonie, Op. 68, 2. Satz</li>
               <li>City, Am Fenster</li>
             </ul>
-          </div>
+        </div>)
         : null}
     </div>);
 }
