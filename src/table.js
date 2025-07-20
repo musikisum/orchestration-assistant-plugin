@@ -40,7 +40,7 @@ export default function NotesFactory({ from, to }) {
 
   return (
     <React.Fragment>
-      <div className="notes-grid" style={gridStyle}>
+      <div className="orchester-grid" style={gridStyle}>
         <div className="note-cell">
           <Clefs />
         </div>
@@ -71,9 +71,9 @@ export default function NotesFactory({ from, to }) {
       <div style={{ height: '20px' }} />
 
       <div className="instrument-wrapper">
-        <div className="notes-grid" style={gridStyle}>
+        <div className="orchester-grid" style={gridStyle}>
           {instrumentsProvider.map((Instrument, index) => (
-            <Instrument key={`instrument-index-${index}`} from={from - 1} to={to - 1} />
+            <Instrument key={`instrument-index-${index}`} from={from - 1} to={to - 1} row={index + 1}  />
           ))}
         </div>
       </div>
