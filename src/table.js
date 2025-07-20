@@ -55,7 +55,7 @@ export default function NotesFactory({ from, to }) {
           ? (
             <div 
               className='octave-line-marker' 
-              style={{ gridColumn: octaveInfoProvider.getOctaveLineFractions(name, from, to) }} 
+              style={{ gridColumn: octaveInfoProvider.getOctaveLineFractions(name,from, to) }} 
               />
           )
           : null}

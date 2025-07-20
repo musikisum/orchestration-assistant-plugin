@@ -13,7 +13,7 @@ import PiccoloFlute from './instruments/piccoloFlute.js';
 const strings = { Violin, Viola, Violoncello, DoubleBass, Guitar };
 const winds = { SopranRecorder, AltoRecorder, Flute, PiccoloFlute, Oboe, EnglishHorn };
 
-const collection = { ... strings, ...winds };
+const collection = { ...strings, ...winds };
 
 const loadInstruments = names => {
   const selection = [];

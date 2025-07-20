@@ -1,11 +1,15 @@
 const calculateGridColumnsForInstruments = (begin, end, from, to) => {
-  const head = Math.max(begin + 1, from + 1);
-  const tail = Math.min(end + 2, to + 2);
-  if (head > tail) {
+
+  if (end < from || begin > to) {
     return [0, 0];
   }
 
-  return [head, tail];
+  let head = 1;  
+  if (from <= begin) {
+    head = begin - from + 1;
+  } 
+
+  return [head + 1, (end - from + 1) + 2];
 };
 
 const OrchestrationUtilities = {
