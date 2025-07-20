@@ -52,11 +52,11 @@
     color: white;  
   }
   .instrument-wood {
-    background-color: @edu-success-color;
+    background-color: #008800;
     color: white; 
   }
   .instrument-brass {
-    background-color: @edu-banner-yellow-background-color;
+    background-color: gold;
     color: @edu-text-color;
   }
 
@@ -73,6 +73,7 @@
     line-height: normal !important;
     margin: 0;
     margin-bottom: 6px;
+    position: relative;
   }
   .instrument-image {
     width: 100%;
@@ -86,11 +87,16 @@
 
   .octave-info-container {
     margin-top: 16px;
-    padding: 6px;
+    padding: 25px;
     background-color: @grey-3;
     border: 1px solid @grey-6;
     border-radius: 6px;
     position: relative;
+    line-height: normal;
+  }
+  .octave-info-container > p {
+    line-height: normal !important;
+    margin-bottom: 6px;
   }
   .octave-info {
     font-size: @edu-font-size-base;

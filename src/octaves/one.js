@@ -20,7 +20,7 @@ const one = ({ toneName }) => {
       </ul>
       <p>
         Für die <b>Violinen</b> ist die eingestrichene Oktave ein tieferes Register, das auf der D- und A-Saite unauffällig, auf der G-Saite dunkel und sehr intensiv klingt. Für <b>Cello</b> und <b>Viola</b> ist die eingestrichene Oktave eine gute solistische Lage (vgl. für das Cello: G. Rossini, Ouverture zu Wilhelm Tell, Anfang; J. Brahms, Sinfonie Nr. 3, 3. Satz, Anfang sowie für eine Melodie von Viola und Cello um das c1: L. v. Beethoven, 7. Sinfonie, 2. Satz, Anfang).<br />
-        Der Klang der <b>Klarinette</b> ist in der eingestrichenen Oktave gegenüber dem tieferen, sog. Chalumeau-Register und ihrem höheren Hauptklangbereich etwas schwächer und stumpfer (insbesondere zwischen f<up>1</up> und a<sup>1</sup>).<br />
+        Der Klang der <b>Klarinette</b> ist in der eingestrichenen Oktave gegenüber dem tieferen, sog. Chalumeau-Register und ihrem höheren Hauptklangbereich etwas schwächer und stumpfer (insbesondere zwischen f<sup>1</sup> und a<sup>1</sup>).<br />
         Für das <b>Englischhorn</b> ist die eingestrichene Oktave eine gute solistische Lage (vgl. G. Rossini, Ouvertüre zu Wilhelm Tell, Andante in G, T. 176 ff. sowie G. Donizetti, Liebestrank, Romanze des Nemorino »Una furtiva lagrima« Nr. 19).<br />
         Für das <b>Horn</b> ist die eingestrichene Oktave eine gute, solistische Lage (Tenorlage) mit warmem Timbre (vgl. J. Brahms, 3. Sinfonie, 3. Satz, Buchstabe F). Der Klang des <b>Fagotts</b> ist in dieser Lage dagegen intensiv und dünn (vgl. I. Stravinsky, Le sacre du printemps, Anfang).<br />
         Für <b>Altsaxofone</b> ist die eingestrichene Oktave eine klangvolle Mittellage (auch vom Sopran- und Tenorsaxofon spielbar).<br />

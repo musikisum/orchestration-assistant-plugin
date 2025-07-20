@@ -13,7 +13,7 @@ export default function Violin({ from, to, row }) {
     setIsVisible(!isVisible);
   };
 
-  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(20, 47, from, to);  
+  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(19, 44, from, to);  
   const calculation = `${begin}/${end}`;
 
   return (

@@ -11,7 +11,7 @@ export default function Violoncello({ from, to, row }) {
     setIsVisible(!isVisible);
   };
 
-  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(9, 41, from, to); 
+  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(8, 34, from, to); 
   const calculation = `${begin}/${end}`;
 
   return (
@@ -24,7 +24,7 @@ export default function Violoncello({ from, to, row }) {
         <div className="instrument-annotations">
             <p><b>Stimmung:</b> C-G-d-a</p>
             <p><b>Notation:</b> klingend, hohe Beweglichkeit</p>
-            <p><b>Griffbrettgrenze:</b> A-Saite = fis<sup>3</sup>, im Orchester Umfang bis c<sup>3</sup> gut möglich</p>
+            <p><b>Griffbrettgrenze:</b> A-Saite = fis<sup>3</sup>, im Orchester Umfang bis a<sup>2</sup> gut möglich</p>
             <p><b>Doppelgriffe:</b> Intervalle mit einer leeren Saite (leicht), Quinten, Quarten, Terzen und Sexten sowie Oktaven ab der 7. Lage (sehr schwer)</p>
             <p><b>Flageolett:</b> Quart- und Quintflageolett (mit Daumenaufsatz) möglich</p>        
             <p><b>Spielweisen:</b> liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken) Hand gezupft (pizzicato), glissando (geschliffen), Vibrato / non Vibrato, mit Dämpfer (con sordino)</p>

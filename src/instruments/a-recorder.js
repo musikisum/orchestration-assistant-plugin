@@ -11,7 +11,7 @@ export default function AltoRecorder({ from, to, row }) {
     setIsVisible(!isVisible);
   };
 
-  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(23, 41, from, to); 
+  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(26, 40, from, to); 
   const calculation = `${begin}/${end}`;
 
   return (

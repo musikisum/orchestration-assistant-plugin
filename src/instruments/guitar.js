@@ -11,7 +11,7 @@ export default function Guitar({ from, to, row }) {
     setIsVisible(!isVisible);
   };
 
-  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(12, 37, from, to); 
+  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(10, 38, from, to); 
   const calculation = `${begin}/${end}`;
 
   return (

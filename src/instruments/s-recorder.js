@@ -11,7 +11,7 @@ export default function SopranRecorder({ from, to, row }) {
     setIsVisible(!isVisible);
   };
 
-  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(30, 46, from, to); 
+  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(29, 45, from, to); 
   const calculation = `${begin}/${end}`;
 
   return (

@@ -72,8 +72,8 @@ export default function NotesFactory({ from, to }) {
 
       <div className="instrument-wrapper">
         <div className="orchester-grid" style={gridStyle}>
-          {instrumentsProvider.map((Instrument, index) => (
-            <Instrument key={`instrument-index-${index}`} from={from - 1} to={to - 1} row={index + 1}  />
+          {instrumentsProvider.loadInstruments().map((Instrument, index) => (
+            <Instrument key={`instrument-index-${index}`} from={from} to={to} row={index + 1}  />
           ))}
         </div>
       </div>
