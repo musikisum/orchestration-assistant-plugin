@@ -22,7 +22,7 @@ export default function Oboe({ from, to, row }) {
       {isVisible
         ? (
         <div className="instrument-annotations">
-            <p>Die Oboe ist ein Längsblasinstrument aus Holz mit Doppelrohrblatt in den folgenden Stimmlagen:.</p>
+            <p>Die Oboe ist ein Längsblasinstrument aus Holz mit Doppelrohrblatt in den folgenden Stimmlagen:</p>
             <ul>
               <li>Oboe (Sopran), Stimmumfang: b-g<sup>3</sup> (a<sup>3</sup>, in neuerer Musik auch höher)</li>
               <li>Oboe d&apos;amore in A (Mezzosopran bzw. Alt), Stimmumfang: gis-cis<sup>3</sup></li>
