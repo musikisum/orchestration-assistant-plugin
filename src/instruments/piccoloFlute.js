@@ -22,7 +22,7 @@ export default function PiccoloFlute({ from, to, row }) {
       {isVisible
         ? (
         <div className="instrument-annotations">
-            <p>Blasinstrument aus Metall (auch Holz), erweitert den Umfang der (großen) Flöten im Orchester um eine Oktave nach oben.</p>
+            <p>Die Piccoloflöte ist ein Blasinstrument aus Metall (auch Holz), erweitert den Umfang der (großen) Flöten im Orchester um eine Oktave nach oben.</p>
             <p><b>Tonumfang;</b> d<sup>2</sup>-c<sup>5</sup></p>
             <p><b>Notation:</b> eine Oktave tiefer als klingend (transponierendes Instrument)</p>
             <p><b>Klangfarbe:</b> im untersten Register leiser und hohler Klang, in der 2-3-gestrichenen Oktave dann weich und lieblich, in der 3-4-gestrichenen Oktave sehr hell und klar und im obersten Register schrill und schneidend</p>      

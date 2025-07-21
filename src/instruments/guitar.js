@@ -22,6 +22,7 @@ export default function Guitar({ from, to, row }) {
       {isVisible
         ? (
         <div className="instrument-annotations">
+          <p>Die Gitarre iszt ein Saiteninstrument mit Bünden.</p>
             <p><b>Stimmung:</b> E-A-d-g-h-e<sup>1</sup></p>
             <p><b>Notation:</b> eine Oktave höher als klingend (transponierendes Instrument), hohe Beweglichkeit</p>
             <p><b>Tonumfänge:</b> bis e<sup>2</sup> mit allen Gitarrentypen möglich, Gitarren mit 19 Bünden in der Höhe bis h<sup>2</sup>, elektrische Gitarren mit »Cutaway« (Einbuchtung im Korpus) sogar bis e<sup>3</sup></p>

@@ -9,11 +9,30 @@ import DoubleBass from './instruments/doubleBass.js';
 import EnglishHorn from './instruments/englishHorn.js';
 import Violoncello from './instruments/violoncello.js';
 import AltoRecorder from './instruments/a-recorder.js';
+import BassClarinet from './instruments/bassClarinet.js';
 import SopranRecorder from './instruments/s-recorder.js';
 import PiccoloFlute from './instruments/piccoloFlute.js';
+import ContraBassoon from './instruments/contraBassoon.js';
 
-const strings = { Violin, Viola, Violoncello, DoubleBass, Guitar };
-const winds = { SopranRecorder, AltoRecorder, Flute, PiccoloFlute, Oboe, EnglishHorn, Clarinet, Bassoon };
+const strings = { 
+  Violin, 
+  Viola, 
+  Violoncello, 
+  DoubleBass, 
+  Guitar 
+};
+const winds = { 
+  SopranRecorder, 
+  AltoRecorder, 
+  Flute, 
+  PiccoloFlute, 
+  Oboe, 
+  EnglishHorn, 
+  Clarinet, 
+  BassClarinet, 
+  Bassoon, 
+  ContraBassoon 
+};
 
 const collection = { ...strings, ...winds };
 

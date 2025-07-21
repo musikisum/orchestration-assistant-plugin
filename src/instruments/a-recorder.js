@@ -17,12 +17,12 @@ export default function AltoRecorder({ from, to, row }) {
   return (
     <div className='instrument instrument-wood' style={{ gridColumn: calculation, gridRow: row }}>
       <div className='instrument-beam' onClick={onInstrumentClick} style={{ cursor: 'pointer' }}>
-        Alt-Blockflöt in f
+        Altblockflöte in F
       </div>
       {isVisible
         ? (
         <div className="instrument-annotations">
-            <p>Längsflöte aus Holz in verschiedenen Größen:</p>
+            <p>Die Altblockflöte ist eine Längsflöte aus Holz in verschiedenen Größen:</p>
             <ul>
               <li>Garkleinflöte in c<sup>3</sup>, Stimmumfang: c<sup>3</sup>-d<sup>5</sup> (g<sup>5</sup>)</li>
               <li>Sopranino (Piccolo, Diskant) in f<sup>2</sup>, Stimmumfang: f<sup>2</sup>-as<sup>4</sup> (c<sup>5</sup>)</li>

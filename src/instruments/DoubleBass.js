@@ -22,6 +22,7 @@ export default function DoubleBass({ from, to, row }) {
       {isVisible
         ? (
         <div className="instrument-annotations">
+            <p>Der Kontrabass ist ein vier- (oder fünfsaitiges) Streichinstrument, das sowohl bauliche Merkmale der Geigen- als auch der Gambenfamilie aufweist. Für eine Zuordnung zur Geigenfamilie sprechen die F-förmigen Schalllöcher, die Anzahl der Saiten (bei viersaitigen Instrumenten), die Schnecke am Wirbelkasten sowie das bundlose Griffbrett. Merkmale, die auf die Gambenfamilie verweisen, sind die schräg abfallenden Schultern und die Stimmung in Quarten.</p>
             <p><b>Stimmung:</b> E<sub>1</sub>-A<sub>1</sub>-D-G</p>
             <p><b>Stimmung (fünf Saiten):</b> H<sup>2</sup> oder C<sub>1</sub>-E<sub>1</sub>-A<sub>1</sub>-D-G</p>
             <p><b>Notation:</b> eine Oktave höher als klingend (transponierendes Instrument), als Orchesterinstrument geringere Beweglichkeit als die hohen Streicher</p>

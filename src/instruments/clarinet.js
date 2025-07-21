@@ -22,7 +22,7 @@ export default function Clarinet({ from, to, row }) {
       {isVisible
         ? (
         <div className="instrument-annotations">
-            <p>Die Oboe ist ein Längsblasinstrument aus Holz mit einfachem Rohrblatt in den folgenden Stimmungen:</p>
+            <p>Die Klarinette ist ein Längsblasinstrument aus Holz mit einfachem Rohrblatt in den folgenden Stimmungen:</p>
             <ul>
               <li>Klarinette in B</li>
               <li>Klarinette in A</li>
