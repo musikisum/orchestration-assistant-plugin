@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Clefs from './notes/clefs.js';
 import notesFactory from './notes-factory.js';
 import React, { useState, useRef } from 'react';
-import octaveInfoProvider from './octave-info-provider.js';
+import OrchestrationUtilities from './orchestration-utilities.js';
 import instrumentsProvider from './instruments-provider.js';
 
 export default function NotesFactory({ from, to }) {
@@ -55,7 +55,7 @@ export default function NotesFactory({ from, to }) {
           ? (
             <div 
               className='octave-line-marker' 
-              style={{ gridColumn: octaveInfoProvider.getOctaveLineFractions(name,from, to) }} 
+              style={{ gridColumn: OrchestrationUtilities.getOctaveLineFractions(name,from, to) }} 
               />
           )
           : null}
@@ -64,16 +64,30 @@ export default function NotesFactory({ from, to }) {
         ? (
           <div className="octave-info-container">
             <div className='oc-close' onClick={() => onOctaveInfoClick(name)}>x</div>
-            {visibleOctave !== null && octaveInfoProvider.getInfo(name, visibleOctave)}
+            {visibleOctave !== null && OrchestrationUtilities.getInfo(name, visibleOctave)}
           </div>
         )
         : null}
-      <div style={{ height: '20px' }} />
-
+      <div className='instrument-wrapper'>
+        <div className='orchester-grid lightGray' style={gridStyle}>
+          <div style={{ marginBottom: '12px' }}>&nbsp;</div>
+          {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
+            <div key={`toneName-${index}`}>{tn}</div>
+          ))}
+        </div>
+      </div>
       <div className="instrument-wrapper">
         <div className="orchester-grid" style={gridStyle}>
           {instrumentsProvider.loadInstruments().map((Instrument, index) => (
             <Instrument key={`instrument-index-${index}`} from={from} to={to} row={index + 1}  />
+          ))}
+        </div>
+      </div>
+      <div className='instrument-wrapper'>
+        <div className='orchester-grid lightGray' style={gridStyle}>
+          <div>&nbsp;</div>
+          {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
+            <div key={`toneName-${index}`}>{tn}</div>
           ))}
         </div>
       </div>
