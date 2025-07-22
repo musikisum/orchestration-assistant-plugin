@@ -68,24 +68,42 @@ export default function NotesFactory({ from, to }) {
           </div>
         )
         : null}
-      <div className='instrument-wrapper'>
+      <div className="instrument-wrapper">
         <div className='orchester-grid lightGray' style={gridStyle}>
           <div style={{ marginBottom: '12px' }}>&nbsp;</div>
           {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
             <div key={`toneName-${index}`}>{tn}</div>
           ))}
         </div>
-      </div>
-      <div className="instrument-wrapper">
         <div className="orchester-grid" style={gridStyle}>
-          {instrumentsProvider.loadInstruments().map((Instrument, index) => (
+          {instrumentsProvider.loadStrings().map((Instrument, index) => (
             <Instrument key={`instrument-index-${index}`} from={from} to={to} row={index + 1}  />
           ))}
         </div>
-      </div>
-      <div className='instrument-wrapper'>
         <div className='orchester-grid lightGray' style={gridStyle}>
-          <div>&nbsp;</div>
+          <div style={{ marginBottom: '12px' }}>&nbsp;</div>
+          {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
+            <div key={`toneName-${index}`}>{tn}</div>
+          ))}
+        </div>
+        <div className="orchester-grid" style={gridStyle}>
+          {instrumentsProvider.loadWinds().map((Instrument, index) => (
+            <Instrument key={`instrument-index-${index}`} from={from} to={to} row={index + 1}  />
+          ))}
+        </div>
+        <div className='orchester-grid lightGray' style={gridStyle}>
+          <div style={{ marginBottom: '12px' }}>&nbsp;</div>
+          {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
+            <div key={`toneName-${index}`}>{tn}</div>
+          ))}
+        </div>
+        <div className="orchester-grid" style={gridStyle}>
+          {instrumentsProvider.loadBrass().map((Instrument, index) => (
+            <Instrument key={`instrument-index-${index}`} from={from} to={to} row={index + 1}  />
+          ))}
+        </div>
+        <div className='orchester-grid lightGray' style={gridStyle}>
+          <div style={{ marginBottom: '12px' }}>&nbsp;</div>
           {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
             <div key={`toneName-${index}`}>{tn}</div>
           ))}

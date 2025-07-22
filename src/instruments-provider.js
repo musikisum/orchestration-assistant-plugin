@@ -1,6 +1,8 @@
 import Oboe from './instruments/oboe.js';
 import Horn from './instruments/horn.js';
 import Tuba from './instruments/tuba.js';
+import Harp from './instruments/harp.js'; 
+import Piano from './instruments/piano.js';
 import Viola from './instruments/viola.js';
 import Flute from './instruments/flute.js';
 import Guitar from './instruments/guitar.js';
@@ -9,6 +11,7 @@ import Bassoon from './instruments/bassoon.js';
 import Trumpet from './instruments/trumpet.js';
 import Clarinet from './instruments/clarinet.js';
 import Trombone from './instruments/trombone.js';
+import ElectricBass from './instruments/e-bass.js';
 import DoubleBass from './instruments/doubleBass.js';
 import EnglishHorn from './instruments/englishHorn.js';
 import Violoncello from './instruments/violoncello.js';
@@ -25,7 +28,10 @@ const strings = {
   Viola, 
   Violoncello, 
   DoubleBass, 
-  Guitar 
+  Guitar,
+  ElectricBass,
+  Piano, 
+  Harp
 };
 const winds = { 
   SopranRecorder, 
@@ -49,7 +55,20 @@ const brass = {
   Tuba
 };
 
+const selections = { strings, winds, brass };
 const collection = { ...strings, ...winds, ... brass };
+
+const loadStrings = () => {
+  return [...Object.values(selections.strings)];
+};
+
+const loadWinds = () => {
+  return [...Object.values(selections.winds)];
+};
+
+const loadBrass = () => {
+  return [...Object.values(selections.brass)];
+};
 
 const loadInstruments = names => {
   const selection = [];
@@ -64,6 +83,9 @@ const loadInstruments = names => {
 };
 
 const instrumentsProvider = {
+  loadStrings,
+  loadWinds,
+  loadBrass,
   loadInstruments
 };
 export default instrumentsProvider;
