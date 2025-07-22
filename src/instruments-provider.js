@@ -1,10 +1,14 @@
 import Oboe from './instruments/oboe.js';
+import Horn from './instruments/horn.js';
+import Tuba from './instruments/tuba.js';
 import Viola from './instruments/viola.js';
 import Flute from './instruments/flute.js';
 import Guitar from './instruments/guitar.js';
 import Violin from './instruments/violin.js';
 import Bassoon from './instruments/bassoon.js';
+import Trumpet from './instruments/trumpet.js';
 import Clarinet from './instruments/clarinet.js';
+import Trombone from './instruments/trombone.js';
 import DoubleBass from './instruments/doubleBass.js';
 import EnglishHorn from './instruments/englishHorn.js';
 import Violoncello from './instruments/violoncello.js';
@@ -38,7 +42,14 @@ const winds = {
   TenorSaxophone
 };
 
-const collection = { ...strings, ...winds };
+const brass = {
+  Horn,
+  Trumpet,
+  Trombone,
+  Tuba
+};
+
+const collection = { ...strings, ...winds, ... brass };
 
 const loadInstruments = names => {
   const selection = [];
