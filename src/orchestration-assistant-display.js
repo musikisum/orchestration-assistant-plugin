@@ -1,10 +1,9 @@
 import React from 'react';
 import Table from './table.js'; 
 // import { useTranslation } from 'react-i18next';
-import Markdown from '@educandu/educandu/components/markdown.js';
 import { sectionDisplayProps } from '@educandu/educandu/ui/default-prop-types.js';
 
-export default function OrchestrationDisplay({ content }) {
+export default function OrchestrationAssistantDisplay({ content }) {
 
   const { text, from, to, width } = content;
 
@@ -13,15 +12,12 @@ export default function OrchestrationDisplay({ content }) {
   return (
     <div className="EP_Educandu_Orchestration_Assistant_Display">
       <div className={`u-horizontally-centered u-width-${width}`}>
-        <Markdown renderAnchors>
-          {text}
-        </Markdown>
         <Table from={from} to={to} />
       </div>
     </div>
   );
 }
 
-OrchestrationDisplay.propTypes = {
+OrchestrationAssistantDisplay.propTypes = {
   ...sectionDisplayProps
 };

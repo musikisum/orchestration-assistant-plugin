@@ -36,7 +36,6 @@ class OrchestrationAssitantInfo {
 
   getDefaultContent() {
     return {
-      text: '# Die Instrumente des Orchesters',
       width: 100,
       from: 1,
       to: 50
@@ -45,7 +44,6 @@ class OrchestrationAssitantInfo {
 
   validateContent(content) {
     const schema = joi.object({
-      text: joi.string().allow('').required(),
       width: joi.number().min(0).max(100).required(),
       from: joi.number().integer().min(1).max(50).required(),
       to: joi.number().integer().min(1).max(50).required()
