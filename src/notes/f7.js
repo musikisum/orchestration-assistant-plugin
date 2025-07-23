@@ -6,8 +6,8 @@ const cropHeight = 99.213;
 const f7 = ({ onClick }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={37.795}
-    height={132.283}
+    width="100%"
+    height="100%"
     viewBox={`0 0 28.346 ${cropHeight}`}
     preserveAspectRatio="xMidYMin meet"
     data-name="f7"

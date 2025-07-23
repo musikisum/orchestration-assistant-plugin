@@ -46,7 +46,7 @@ export default function NotesFactory({ from, to }) {
         </div>
         {noteArr.map((NoteComponent, index) => (
           <div key={`note-component-${index}`} className="note-cell">
-            <NoteComponent onClick={onClick} />
+            <NoteComponent onClick={onClick} style={{ flexGrow: 1 }} />
           </div>
         ))}
       </div>
