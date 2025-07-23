@@ -1,6 +1,10 @@
 /* eslint-disable react/jsx-indent */
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+import Pedale1 from '../images/pedale-1.js';
+import Pedale2 from '../images/pedale-2.js';
+import Pedale3 from '../images/pedale-3.js';
+import Pedale4 from '../images/pedale-4.js';
 import OrchestrationUtilities from '../orchestration-utilities.js';
 
 export default function Harp({ from, to, row }) {
@@ -26,8 +30,19 @@ export default function Harp({ from, to, row }) {
             <p><b>Notation:</b> klingend, in zwei Systemen (wie das Pianoforte)</p>
             <p><b>Tonumfang:</b> Ces<sub>1</sub>-g<sup>4</sup></p>
             <p><b>Pedaltechnik:</b> Es gibt 7 Pedale zur chromatischen Veränderung der Stammtöne:</p>
-            
+            <div className='svg-container' style={{ margin: '24px' }}>
+              <Pedale1 />
+            </div>      
+            <div className='svg-container' style={{ margin: '24px' }}>
+              <Pedale2 />
+            </div>      
+            <div className='svg-container' style={{ margin: '24px' }}>
+              <Pedale3 />
+            </div>            
             <p>Beispiel: Die Pedalstellung für die harmonische d-Molltonleiter (Zählung der Pedale von links nach rechts):</p>
+            <div className='svg-container' style={{ margin: '24px' }}>
+              <Pedale4 />
+            </div>    
             <ul>
               <li>d = Mittelstellung des 1. Pedals</li>
               <li>e = Mittelstellung des 4. Pedals</li>
