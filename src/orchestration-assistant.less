@@ -66,6 +66,18 @@
     color: @edu-text-color;
   }
 
+  .toneName-grid {
+    margin: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+    width: max-content;
+    gap: 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+  }
+
   .instrument-beam { }
   .instrument-annotations {
     text-align: left;
@@ -158,5 +170,15 @@
 }
 
 .EP_Educandu_Orchestration_Assistant_Editor {
-  
+
+  .annotationText {
+    display: flex;
+    justify-content: center;
+    text-align: center; 
+    font-weight: bold;
+    font-style: italic;
+    font-size: small;
+    color: @grey-7;
+  }
+
 }

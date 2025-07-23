@@ -84,7 +84,7 @@ const getToneNames = (from, to) => {
     'c', 'd', 'e', 'f', 'g', 'a', 'h',
     'c'
   ];
-  return toneNames.slice(from - 1, to - from + 2);
+  return toneNames.slice(from - 1, to);
 };
 
 const OrchestrationUtilities = {

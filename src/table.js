@@ -69,10 +69,10 @@ export default function NotesFactory({ from, to }) {
         )
         : null}
       <div className="instrument-wrapper">
-        <div className='orchester-grid lightGray' style={gridStyle}>
+        <div className='toneName-grid lightGray' style={gridStyle}>
           <div style={{ marginBottom: '12px' }}>&nbsp;</div>
           {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
-            <div key={`toneName-${index}`}>{tn}</div>
+            <div key={`toneName1-${index}`}>{tn}</div>
           ))}
         </div>
         <div className="orchester-grid" style={gridStyle}>
@@ -80,10 +80,10 @@ export default function NotesFactory({ from, to }) {
             <Instrument key={`instrument-index-${index}`} from={from} to={to} row={index + 1}  />
           ))}
         </div>
-        <div className='orchester-grid lightGray' style={gridStyle}>
+        <div className='toneName-grid lightGray' style={gridStyle}>
           <div style={{ marginBottom: '12px' }}>&nbsp;</div>
           {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
-            <div key={`toneName-${index}`}>{tn}</div>
+            <div key={`toneName2-${index}`}>{tn}</div>
           ))}
         </div>
         <div className="orchester-grid" style={gridStyle}>
@@ -91,10 +91,10 @@ export default function NotesFactory({ from, to }) {
             <Instrument key={`instrument-index-${index}`} from={from} to={to} row={index + 1}  />
           ))}
         </div>
-        <div className='orchester-grid lightGray' style={gridStyle}>
+        <div className='toneName-grid lightGray' style={gridStyle}>
           <div style={{ marginBottom: '12px' }}>&nbsp;</div>
           {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
-            <div key={`toneName-${index}`}>{tn}</div>
+            <div key={`toneName3-${index}`}>{tn}</div>
           ))}
         </div>
         <div className="orchester-grid" style={gridStyle}>
@@ -102,7 +102,7 @@ export default function NotesFactory({ from, to }) {
             <Instrument key={`instrument-index-${index}`} from={from} to={to} row={index + 1}  />
           ))}
         </div>
-        <div className='orchester-grid lightGray' style={gridStyle}>
+        <div className='toneName-grid lightGray' style={gridStyle}>
           <div style={{ marginBottom: '12px' }}>&nbsp;</div>
           {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
             <div key={`toneName-${index}`}>{tn}</div>
