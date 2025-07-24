@@ -10,7 +10,7 @@ const h3 = ({ onClick }) => (
     height="100%"
     viewBox={`0 0 28.346 ${cropHeight}`}
     preserveAspectRatio="xMidYMin meet"
-    data-name="h4"
+    data-name="h3"
     onClick={onClick}
     >
     <path

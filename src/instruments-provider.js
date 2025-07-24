@@ -23,6 +23,35 @@ import PiccoloFlute from './instruments/piccoloFlute.js';
 import TenorSaxophone from './instruments/t-saxophone.js';
 import ContraBassoon from './instruments/contraBassoon.js';
 
+const getSortedInstrumentNames = () => {
+  return [
+    'Violin', 
+    'Viola', 
+    'Violoncello', 
+    'DoubleBass', 
+    'Guitar',
+    'ElectricBass',
+    'Piano', 
+    'Harp', 
+    'SopranRecorder', 
+    'AltoRecorder', 
+    'Flute', 
+    'PiccoloFlute', 
+    'Oboe', 
+    'EnglishHorn', 
+    'Clarinet', 
+    'BassClarinet', 
+    'Bassoon', 
+    'ContraBassoon',
+    'AltSaxophone',
+    'TenorSaxophone', 
+    'Horn', 
+    'Trumpet', 
+    'Trombone', 
+    'Tuba'
+  ];
+}; 
+
 const strings = { 
   Violin, 
   Viola, 
@@ -58,16 +87,18 @@ const brass = {
 const selections = { strings, winds, brass };
 const collection = { ...strings, ...winds, ... brass };
 
-const loadStrings = () => {
-  return [...Object.values(selections.strings)];
-};
-
-const loadWinds = () => {
-  return [...Object.values(selections.winds)];
-};
-
-const loadBrass = () => {
-  return [...Object.values(selections.brass)];
+const loadSection = section => {
+  switch (section) {
+    case 'strings':
+      return [...Object.values(selections.strings)];
+    case 'winds':
+      return [...Object.values(selections.winds)];
+    case 'brass':
+      return [...Object.values(selections.brass)];  
+    default:
+      return [... Object.values(collection)];
+  }
+  
 };
 
 const loadInstruments = names => {
@@ -83,9 +114,8 @@ const loadInstruments = names => {
 };
 
 const instrumentsProvider = {
-  loadStrings,
-  loadWinds,
-  loadBrass,
-  loadInstruments
+  loadSection,
+  loadInstruments,
+  getSortedInstrumentNames
 };
 export default instrumentsProvider;

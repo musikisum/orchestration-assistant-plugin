@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import Clefs from './notes/clefs.js';
 import notesFactory from './notes-factory.js';
@@ -38,28 +39,52 @@ export default function NotesFactory({ from, to }) {
     lastClickedElementRef.current = null;
   };
 
+  const getToneNameGrid = () => {
+    return (
+      <div className='toneName-grid lightGray' style={gridStyle}>
+        <div style={{ marginBottom: '12px' }}>&nbsp;</div>
+        {OrchestrationUtilities.getToneNames(from, to).map(tn => (
+          <div key={nanoid(10)}>{tn}</div>
+        ))}
+      </div>
+    );
+  };
+
+  const getOrchesterInstrument = (instrumentNames, index) => {
+    return (
+      <div className="orchester-grid" style={gridStyle}>
+        { instrumentsProvider.loadInstruments([instrumentNames]).map(Instrument => (
+          <Instrument key={nanoid(10)} from={from} to={to} row={index + 1}  />
+        ))}
+      </div>      
+    );
+  };
+
   return (
     <React.Fragment>
+      {/* create line of notes */}
       <div className="orchester-grid" style={gridStyle}>
         <div className="note-cell">
           <Clefs />
         </div>
         {noteArr.map((NoteComponent, index) => (
           <div key={`note-component-${index}`} className="note-cell">
-            <NoteComponent onClick={onClick} style={{ flexGrow: 1 }} />
+            <NoteComponent key={nanoid(10)} onClick={onClick} style={{ flexGrow: 1 }} />
           </div>
         ))}
       </div>
+      {/* create octave marker  */}
       <div className='octave-line' style={gridStyle}>
         {isVisible 
           ? (
             <div 
               className='octave-line-marker' 
-              style={{ gridColumn: OrchestrationUtilities.getOctaveLineFractions(name,from, to) }} 
+              style={{ gridColumn: OrchestrationUtilities.getOctaveLineFractions(name, from, to) }} 
               />
           )
           : null}
       </div>
+      {/* create octave info container */}
       {isVisible
         ? (
           <div className="octave-info-container">
@@ -68,46 +93,25 @@ export default function NotesFactory({ from, to }) {
           </div>
         )
         : null}
-      <div className="instrument-wrapper">
-        <div className='toneName-grid lightGray' style={gridStyle}>
-          <div style={{ marginBottom: '12px' }}>&nbsp;</div>
-          {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
-            <div key={`toneName1-${index}`}>{tn}</div>
-          ))}
-        </div>
-        <div className="orchester-grid" style={gridStyle}>
-          {instrumentsProvider.loadStrings().map((Instrument, index) => (
-            <Instrument key={`instrument-index-${index}`} from={from} to={to} row={index + 1}  />
-          ))}
-        </div>
-        <div className='toneName-grid lightGray' style={gridStyle}>
-          <div style={{ marginBottom: '12px' }}>&nbsp;</div>
-          {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
-            <div key={`toneName2-${index}`}>{tn}</div>
-          ))}
-        </div>
-        <div className="orchester-grid" style={gridStyle}>
-          {instrumentsProvider.loadWinds().map((Instrument, index) => (
-            <Instrument key={`instrument-index-${index}`} from={from} to={to} row={index + 1}  />
-          ))}
-        </div>
-        <div className='toneName-grid lightGray' style={gridStyle}>
-          <div style={{ marginBottom: '12px' }}>&nbsp;</div>
-          {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
-            <div key={`toneName3-${index}`}>{tn}</div>
-          ))}
-        </div>
-        <div className="orchester-grid" style={gridStyle}>
-          {instrumentsProvider.loadBrass().map((Instrument, index) => (
-            <Instrument key={`instrument-index-${index}`} from={from} to={to} row={index + 1}  />
-          ))}
-        </div>
-        <div className='toneName-grid lightGray' style={gridStyle}>
-          <div style={{ marginBottom: '12px' }}>&nbsp;</div>
-          {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
-            <div key={`toneName-${index}`}>{tn}</div>
-          ))}
-        </div>
+      {/* create instruments and tone names  */}
+      <div className="instrument-wrapper">    
+        { 
+          instrumentsProvider.getSortedInstrumentNames().map((instrumentNames, index) => {
+            if (index === 0 || index === 8 || index === 20) {
+              return (
+                <React.Fragment key={nanoid(10)}>
+                  { getToneNameGrid() }
+                  { getOrchesterInstrument(instrumentNames, index) }
+                </React.Fragment>
+              );    
+            } 
+            return (
+              <React.Fragment key={nanoid(10)}>
+                { getOrchesterInstrument(instrumentNames, index) }                
+              </React.Fragment>
+            );                                    
+          })
+        }
       </div>
     </React.Fragment>
   );
