@@ -77,7 +77,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
             1 = Kontra-C / 2 = Kontra-D ... 49 = h&apos;&apos;&apos;&apos; / 50 = c&apos;&apos;&apos;&apos;&apos; <span style={{ display: 'inline-block', margin: '0 12px' }}><b> | </b></span>c = 1, 8, 15 ... / d = 2, 9, 16 ... / usw.
           </div>
         </Form.Item>
-        <Form.Item>
+        <Form.Item label="Instrumente" {...FORM_ITEM_LAYOUT}>
           {
             customInstruments.length === 0 
               ? <div className='noModelContainer'>{t('noModel')}</div> 
@@ -88,7 +88,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
                   />
           }
         </Form.Item>
-        <Form.Item>
+        <Form.Item label={t('addLabel')} {...FORM_ITEM_LAYOUT}>
           <Inspector content={content} updateContent={updateContent} />
         </Form.Item>
         <Form.Item

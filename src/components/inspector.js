@@ -10,7 +10,7 @@ import { Button, Select, InputNumber, Checkbox, Typography, Tooltip } from 'antd
 
 function Inspector({ content, updateContent }) {
 
-  const { t } = useTranslation('musikisum/educandu-plugin-progression-models');
+  const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   const { Text } = Typography;
   const { customInstruments } = content; 
 

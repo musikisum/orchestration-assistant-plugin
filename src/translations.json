@@ -8,9 +8,13 @@
       "en": "Orchestration Label",
       "de": "Orchestrationslabel"
     },
+    "addLabel": {
+      "en": "add",
+      "de": "Hinzufügen"
+    },
     "addInstrument": {
-      "en": "Add instrument",
-      "de": "Instrument hinzufügen"
+      "en": "instrument",
+      "de": "Instrument"
     }
   }
 }
