@@ -1,7 +1,8 @@
+import { Form } from 'antd';
 import { nanoid } from 'nanoid';
 import React, { useRef } from 'react';
-import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
+import Inspector from './components/inspector.js';
 import ToneSlider from './components/tone-slider.js';
 import Info from '@educandu/educandu/components/info.js';
 import CustomInstrument from './components/custom-instrument.js';
@@ -86,6 +87,9 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
                   onItemMove={handleItemMove}
                   />
           }
+        </Form.Item>
+        <Form.Item>
+          <Inspector content={content} updateContent={updateContent} />
         </Form.Item>
         <Form.Item
           label={<Info tooltip={t('common:widthInfo')}>{t('common:width')}</Info>}

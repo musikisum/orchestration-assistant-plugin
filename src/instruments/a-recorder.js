@@ -28,7 +28,7 @@ export default function AltoRecorder({ from, to, row }) {
               <li>Sopranino (Piccolo, Diskant) in f<sup>2</sup>, Stimmumfang: f<sup>2</sup>-as<sup>4</sup> (c<sup>5</sup>)</li>
               <li>Sopranblockflöte in c<sup>2</sup>, Stimmumfang: c<sup>2</sup>-es<sup>4</sup> (g<sup>4</sup>)</li>
               <li>Altblockflöte in f<sup>1</sup>, Stimmumfang: f<sup>1</sup>-as<sup>3</sup> (c<sup>4</sup>)</li>
-              <li>Tenorblockflöte in c1, Stimmumfang: c<sup>1</sup>-es<sup>3</sup> (g<sup>3</sup>)</li>
+              <li>Tenorblockflöte in c<sup>1</sup>, Stimmumfang: c<sup>1</sup>-es<sup>3</sup> (g<sup>3</sup>)</li>
               <li>Bassblockflöte in f, Stimmumfang: f-e<sup>2</sup> (as<sup>2</sup>)</li>
               <li>daneben noch Großbass- und Subbassblockflöte (in c und F), Stimmumfänge: c-es<sup>2</sup> bzw. F-g<sup>1</sup></li>
             </ul>  

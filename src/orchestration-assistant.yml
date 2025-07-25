@@ -5,3 +5,6 @@ musikisum/educandu-plugin-orchestration-assistant:
   label:
     en: Orchestration Label
     de: Orchestrationslabel
+  addInstrument:
+    en: Add instrument
+    de: Instrument hinzufügen

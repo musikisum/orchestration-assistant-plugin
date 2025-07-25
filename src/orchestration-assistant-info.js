@@ -39,14 +39,7 @@ class OrchestrationAssitantInfo {
       width: 100,
       from: 1,
       to: 50,
-      customInstruments: [{
-        name: 'E-Violin',
-        key: 'abcd'
-      },
-      {
-        name: 'Accordeon',
-        key: 'yxcv'
-      }]
+      customInstruments: []
     };
   }
 
