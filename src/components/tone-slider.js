@@ -8,9 +8,7 @@ export  default function ToneSlider({ content, updateContent }) {
 
   const onChangeComplete = values => {
     const newFrom = values[0];
-    console.log('newFrom:', newFrom)
     const newTo = values[1];
-    console.log('newTo:', newTo)
     updateContent({ from: newFrom, to: newTo });
   };
 

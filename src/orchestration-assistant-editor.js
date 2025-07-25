@@ -1,30 +1,71 @@
-import React from 'react';
-import { Form, Typography } from 'antd';
+import { nanoid } from 'nanoid';
+import React, { useRef } from 'react';
+import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import ToneSlider from './components/tone-slider.js';
 import Info from '@educandu/educandu/components/info.js';
+import CustomInstrument from './components/custom-instrument.js';
 import { FORM_ITEM_LAYOUT } from '@educandu/educandu/domain/constants.js';
-import MarkdownInput from '@educandu/educandu/components/markdown-input.js';
 import { sectionEditorProps } from '@educandu/educandu/ui/default-prop-types.js';
 import ObjectWidthSlider from '@educandu/educandu/components/object-width-slider.js';
+import DragAndDropContainer from '@educandu/educandu/components/drag-and-drop-container.js';
+import { swapItemsAt, removeItemAt, moveItem } from '@educandu/educandu/utils/array-utils.js';
+
 
 export default function OrchestrationAssistantEditor({ content, onContentChanged }) {
 
-  const { t } = useTranslation('educandu/educandu-plugin-example');
-  const { text, width, from, to } = content;
-  const { Title, Paragraph, Text, Link } = Typography;
+  // const validatedContent = updateValidation.validateContentAfterUpdates(content);
+
+  const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
+  const { width, customInstruments } = content;
 
   const updateContent = newContentValues => {
     onContentChanged({ ...content, ...newContentValues });
   };
 
-  // const handleTextChanged = event => {
-  //   updateContent({ text: event.target.value });
-  // };
+  const droppableIdRef = useRef(nanoid(10));
+
+  const handleItemMove = (fromIndex, toIndex) => {
+    const newCustomInstruments = moveItem(customInstruments, fromIndex, toIndex);
+    updateContent({ customInstruments: newCustomInstruments });
+  };
+
+  const handleMoveModelUp = index => {
+    const newCustomInstruments = swapItemsAt(customInstruments, index, index - 1);
+    updateContent({ customInstruments: newCustomInstruments });
+  };
+
+  const handleMoveModelDown = index => {
+    const newCustomInstruments = swapItemsAt(customInstruments, index, index + 1);
+    updateContent({ customInstruments: newCustomInstruments });
+  };
+
+  const handleDeleteModel = index => {
+    const newCustomInstruments = removeItemAt(customInstruments, index);
+    updateContent({ customInstruments: newCustomInstruments });
+  };
 
   const handleWidthChange = value => {
     updateContent({ width: value });
   };
+
+  const dragAndDropItems = customInstruments.map((instrument, index, arr) => ({
+    key: instrument.key,
+    render: ({ dragHandleProps, isDragged, isOtherDragged }) => 
+      (<CustomInstrument 
+        index={index}
+        dragHandleProps={dragHandleProps}
+        isDragged={isDragged} 
+        isOtherDragged={isOtherDragged} 
+        itemsCount={arr.length}
+        canDeleteLastItem
+        onMoveUp={handleMoveModelUp}
+        onMoveDown={handleMoveModelDown}
+        onDelete={handleDeleteModel}
+        content={content}
+        updateContent={updateContent}
+        />)
+  }));
 
   return (
     <div className="EP_Educandu_Orchestration_Assistant_Editor">
@@ -35,9 +76,17 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
             1 = Kontra-C / 2 = Kontra-D ... 49 = h&apos;&apos;&apos;&apos; / 50 = c&apos;&apos;&apos;&apos;&apos; <span style={{ display: 'inline-block', margin: '0 12px' }}><b> | </b></span>c = 1, 8, 15 ... / d = 2, 9, 16 ... / usw.
           </div>
         </Form.Item>
-        {/* <Form.Item label={t('common:text')} {...FORM_ITEM_LAYOUT}>
-          <MarkdownInput value={text} onChange={handleTextChanged} renderAnchors />
-        </Form.Item> */}
+        <Form.Item>
+          {
+            customInstruments.length === 0 
+              ? <div className='noModelContainer'>{t('noModel')}</div> 
+              : <DragAndDropContainer
+                  droppableId={droppableIdRef.current} 
+                  items={dragAndDropItems} 
+                  onItemMove={handleItemMove}
+                  />
+          }
+        </Form.Item>
         <Form.Item
           label={<Info tooltip={t('common:widthInfo')}>{t('common:width')}</Info>}
           {...FORM_ITEM_LAYOUT}

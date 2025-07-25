@@ -38,7 +38,15 @@ class OrchestrationAssitantInfo {
     return {
       width: 100,
       from: 1,
-      to: 50
+      to: 50,
+      customInstruments: [{
+        name: 'E-Violin',
+        key: 'abcd'
+      },
+      {
+        name: 'Accordeon',
+        key: 'yxcv'
+      }]
     };
   }
 
@@ -46,7 +54,8 @@ class OrchestrationAssitantInfo {
     const schema = joi.object({
       width: joi.number().min(0).max(100).required(),
       from: joi.number().integer().min(1).max(50).required(),
-      to: joi.number().integer().min(1).max(50).required()
+      to: joi.number().integer().min(1).max(50).required(),
+      customInstruments: joi.array().items(joi.object())
     });
 
     joi.attempt(content, schema, { abortEarly: false, convert: false, noDefaults: true });
