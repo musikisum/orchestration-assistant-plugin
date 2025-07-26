@@ -12,7 +12,7 @@ export default function OrchestrationAssistantDisplay({ content }) {
   return (
     <div className="EP_Educandu_Orchestration_Assistant_Display">
       <div className={`u-horizontally-centered u-width-${width}`}>
-        <TableOfInstruments from={from} to={to} />
+        <TableOfInstruments from={from} to={to} selection={content.instrumentSelection} />
       </div>
     </div>
   );

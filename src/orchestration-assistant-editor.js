@@ -1,17 +1,17 @@
-import { Form } from 'antd';
 import { nanoid } from 'nanoid';
+import { Form, Select } from 'antd';
 import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import Inspector from './components/inspector.js';
 import ToneSlider from './components/tone-slider.js';
 import Info from '@educandu/educandu/components/info.js';
+import instrumentsProvider from './instruments-provider.js';
 import CustomInstrument from './components/custom-instrument.js';
 import { FORM_ITEM_LAYOUT } from '@educandu/educandu/domain/constants.js';
 import { sectionEditorProps } from '@educandu/educandu/ui/default-prop-types.js';
 import ObjectWidthSlider from '@educandu/educandu/components/object-width-slider.js';
 import DragAndDropContainer from '@educandu/educandu/components/drag-and-drop-container.js';
 import { swapItemsAt, removeItemAt, moveItem } from '@educandu/educandu/utils/array-utils.js';
-
 
 export default function OrchestrationAssistantEditor({ content, onContentChanged }) {
 
@@ -50,6 +50,24 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ width: value });
   };
 
+  const handleSelectChange = values => {
+    const newSelection = instrumentsProvider.createInstrumentsFromSelection(values);
+    updateContent({ instrumentSelection: newSelection });
+  };
+
+  const createInstrumentSelectOptions = () => {
+    // TODO: Add custom instruments
+    const allInstruments = instrumentsProvider.getSortedInstrumentNames();
+    const options = [{ value: 'strings', label: 'strings' }, { value: 'winds', label: 'winds' }, { value: 'brass', label: 'brass' }];
+    for (let i = 0; i < allInstruments.length; i += 1) {
+      options.push({
+        value: allInstruments[i],
+        label: allInstruments[i]
+      });
+    }
+    return options;
+  };  
+
   const dragAndDropItems = customInstruments.map((instrument, index, arr) => ({
     key: instrument.key,
     render: ({ dragHandleProps, isDragged, isOtherDragged }) => 
@@ -76,6 +94,17 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
           <div className="annotationText">
             1 = Kontra-C / 2 = Kontra-D ... 49 = h&apos;&apos;&apos;&apos; / 50 = c&apos;&apos;&apos;&apos;&apos; <span style={{ display: 'inline-block', margin: '0 12px' }}><b> | </b></span>c = 1, 8, 15 ... / d = 2, 9, 16 ... / usw.
           </div>
+        </Form.Item>
+        <Form.Item label="Auswahl" {...FORM_ITEM_LAYOUT}>
+          <Select
+            mode="multiple"
+            size='middle'
+            placeholder="Instrumente wählen"
+            value={content.instrumentSelection}
+            onChange={handleSelectChange}
+            style={{ width: '100%' }}
+            options={createInstrumentSelectOptions()}
+            />
         </Form.Item>
         <Form.Item label="Instrumente" {...FORM_ITEM_LAYOUT}>
           {

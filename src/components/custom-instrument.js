@@ -8,6 +8,8 @@ import MoveUpIcon from '@educandu/educandu/components/icons/general/move-up-icon
 import MoveDownIcon from '@educandu/educandu/components/icons/general/move-down-icon.js';
 import { confirmDeleteItem } from '@educandu/educandu/components/confirmation-dialogs.js';
 
+import EditableInput from './editable-input.js';
+
 export default function CustomInstrument({
   index,
   dragHandleProps,
@@ -109,6 +111,10 @@ export default function CustomInstrument({
     );
   };
 
+  const onEditableInputSave = (input, itemIndex) => {
+    console.log('input/itemIndex', input, itemIndex);
+  };
+
   return (
     <Collapse
       collapsible="icon"
@@ -119,11 +125,7 @@ export default function CustomInstrument({
         label: (<div {...dragHandleProps} className="ItemPanel-header">{createHaeder()}</div>),
         extra: renderActionButtons(),
         children: (
-          <div>
-            <div key={index}>
-              Hallo Item-Panel {customInstrument.name}
-            </div>
-          </div>
+          <EditableInput key={index} line={`Hallo Editable-Input ${customInstrument.name}`} onSave={onEditableInputSave} />
         )
       }]}
       />

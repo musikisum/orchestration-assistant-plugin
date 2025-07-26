@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Slider } from 'antd';
 
-export  default function ToneSlider({ content, updateContent }) {
+export default function ToneSlider({ content, updateContent }) {
 
   const { from, to } = content;
 

@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import Clefs from './notes/clefs.js';
 import notesFactory from './notes-factory.js';
@@ -6,7 +5,7 @@ import React, { useState, useRef } from 'react';
 import OrchestrationUtilities from './orchestration-utilities.js';
 import instrumentsProvider from './instruments-provider.js';
 
-export default function NotesFactory({ from, to }) {
+export default function NotesFactory({ from, to, selection }) {
   
   const noteArr = notesFactory(from, to);
 
@@ -43,8 +42,8 @@ export default function NotesFactory({ from, to }) {
     return (
       <div className='toneName-grid lightGray' style={gridStyle}>
         <div style={{ marginBottom: '12px' }}>&nbsp;</div>
-        {OrchestrationUtilities.getToneNames(from, to).map(tn => (
-          <div key={nanoid(10)}>{tn}</div>
+        {OrchestrationUtilities.getToneNames(from, to).map((tn, index) => (
+          <div key={index}>{tn}</div>
         ))}
       </div>
     );
@@ -53,8 +52,8 @@ export default function NotesFactory({ from, to }) {
   const getOrchesterInstrument = (instrumentNames, index) => {
     return (
       <div className="orchester-grid" style={gridStyle}>
-        { instrumentsProvider.loadInstruments([instrumentNames]).map(Instrument => (
-          <Instrument key={nanoid(10)} from={from} to={to} row={index + 1}  />
+        { instrumentsProvider.loadInstruments([instrumentNames]).map((Instrument, subIndex) => (
+          <Instrument key={subIndex} from={from} to={to} row={index + 1}  />
         ))}
       </div>      
     );
@@ -69,7 +68,7 @@ export default function NotesFactory({ from, to }) {
         </div>
         {noteArr.map((NoteComponent, index) => (
           <div key={`note-component-${index}`} className="note-cell">
-            <NoteComponent key={nanoid(10)} onClick={onClick} style={{ flexGrow: 1 }} />
+            <NoteComponent key={index} onClick={onClick} style={{ flexGrow: 1 }} />
           </div>
         ))}
       </div>
@@ -96,18 +95,18 @@ export default function NotesFactory({ from, to }) {
       {/* create instruments and tone names  */}
       <div className="instrument-wrapper">    
         { 
-          instrumentsProvider.getSortedInstrumentNames().map((instrumentNames, index) => {
-            if (index === 0 || index === 8 || index === 20) {
+          instrumentsProvider.createInstrumentsFromSelection(selection).map((instrumentName, index) => {
+            if (index === 0 || index === 4 || index === 12) {
               return (
-                <React.Fragment key={nanoid(10)}>
+                <React.Fragment key={index}>
                   { getToneNameGrid() }
-                  { getOrchesterInstrument(instrumentNames, index) }
+                  { getOrchesterInstrument(instrumentName, index) }
                 </React.Fragment>
               );    
             } 
             return (
-              <React.Fragment key={nanoid(10)}>
-                { getOrchesterInstrument(instrumentNames, index) }                
+              <React.Fragment key={index}>
+                { getOrchesterInstrument(instrumentName, index) }                
               </React.Fragment>
             );                                    
           })
@@ -119,10 +118,12 @@ export default function NotesFactory({ from, to }) {
 
 NotesFactory.propTypes = {
   from: PropTypes.number,
-  to: PropTypes.number
+  to: PropTypes.number,
+  selection: PropTypes.array
 };
 
 NotesFactory.defaultProps = {
   from: 1,
-  to: 50
+  to: 50,
+  selection: []
 };
