@@ -1,11 +1,12 @@
 import { nanoid } from 'nanoid';
-import { Form, Select } from 'antd';
-import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import Inspector from './components/inspector.js';
+import React, { useState, useRef } from 'react';
+import { PlusOutlined } from '@ant-design/icons';
 import ToneSlider from './components/tone-slider.js';
 import Info from '@educandu/educandu/components/info.js';
 import instrumentsProvider from './instruments-provider.js';
+import { Form, Select, Button, Checkbox, Space } from 'antd';
+import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import CustomInstrument from './components/custom-instrument.js';
 import { FORM_ITEM_LAYOUT } from '@educandu/educandu/domain/constants.js';
 import { sectionEditorProps } from '@educandu/educandu/ui/default-prop-types.js';
@@ -18,7 +19,15 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   // const validatedContent = updateValidation.validateContentAfterUpdates(content);
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
-  const { width, customInstruments } = content;
+  const { 
+    width, 
+    customInstruments, 
+    instrumentSelection, 
+    noteNameBreakPoints, 
+    noteNamesAfterLastLine 
+  } = content;
+
+  const [hasStrings, setHasStrings] = useState();
 
   const updateContent = newContentValues => {
     onContentChanged({ ...content, ...newContentValues });
@@ -55,18 +64,59 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentSelection: newSelection });
   };
 
-  const createInstrumentSelectOptions = () => {
+  const handleNoteNameSelectChange = values => {
+    const newBraekPoints = [...values];
+    updateContent({ noteNameBreakPoints: newBraekPoints });
+  };
+
+  const onCheckBoxChange = e => {
+    const checked = e.target.checked;
+    updateContent({ noteNamesAfterLastLine: checked });
+  };
+
+  const createInstrumentSelectOptions = selection => {
     // TODO: Add custom instruments
+    const options = [];
+    const hasOrchestraStrings = selection.some(instr => instrumentsProvider.getSectionInstrumentNames('strings').includes(instr));
+    const hasOrchestraWinds = selection.some(instr => instrumentsProvider.getSectionInstrumentNames('winds').includes(instr));
+    const hasOrchestraBrass = selection.some(instr => instrumentsProvider.getSectionInstrumentNames('brass').includes(instr));
+    if(!hasOrchestraStrings) {
+      options.push({ value: 'strings', label: t('strings') });
+    }
+    if(!hasOrchestraWinds) {
+      options.push({ value: 'winds', label: t('winds') });
+    }
+    if(!hasOrchestraBrass) {
+      options.push({ value: 'brass', label: t('brass') });
+    }
     const allInstruments = instrumentsProvider.getSortedInstrumentNames();
-    const options = [{ value: 'strings', label: 'strings' }, { value: 'winds', label: 'winds' }, { value: 'brass', label: 'brass' }];
     for (let i = 0; i < allInstruments.length; i += 1) {
       options.push({
         value: allInstruments[i],
-        label: allInstruments[i]
+        label: t(`${allInstruments[i]}`)
       });
     }
     return options;
   };  
+
+  const createNoteNameSelectOptions = () => {
+    const options = [];
+    const allInstruments = instrumentsProvider.getSortedInstrumentNames();
+    for (let i = 0; i < allInstruments.length; i += 1) {
+      options.push({
+        value: allInstruments[i],
+        label: t(`${allInstruments[i]}`)
+      });
+    }
+    return options;
+  };  
+
+  const handleAddCustomInstrumentButtonClick = () => {
+    const instrumentTemplate = cloneDeep(instrumentsProvider.getCustomInstrumentTemplate());
+    instrumentTemplate.key = nanoid(10);
+    customInstruments.push(instrumentTemplate);
+    updateContent({ customInstruments });
+  };
 
   const dragAndDropItems = customInstruments.map((instrument, index, arr) => ({
     key: instrument.key,
@@ -89,36 +139,55 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   return (
     <div className="EP_Educandu_Orchestration_Assistant_Editor">
       <Form labelAlign="left">
-        <Form.Item label='Tonumfang' {...FORM_ITEM_LAYOUT}>               
-          <ToneSlider content={content} updateContent={updateContent} />
-          <div className="annotationText">
-            1 = Kontra-C / 2 = Kontra-D ... 49 = h&apos;&apos;&apos;&apos; / 50 = c&apos;&apos;&apos;&apos;&apos; <span style={{ display: 'inline-block', margin: '0 12px' }}><b> | </b></span>c = 1, 8, 15 ... / d = 2, 9, 16 ... / usw.
-          </div>
-        </Form.Item>
-        <Form.Item label="Auswahl" {...FORM_ITEM_LAYOUT}>
+        <Form.Item label={t('selection')} {...FORM_ITEM_LAYOUT}>
           <Select
             mode="multiple"
             size='middle'
-            placeholder="Instrumente wählen"
+            placeholder={t('chooseInstrument')}
             value={content.instrumentSelection}
             onChange={handleSelectChange}
             style={{ width: '100%' }}
-            options={createInstrumentSelectOptions()}
+            options={createInstrumentSelectOptions(instrumentSelection)}
             />
         </Form.Item>
-        <Form.Item label="Instrumente" {...FORM_ITEM_LAYOUT}>
-          {
-            customInstruments.length === 0 
-              ? <div className='noModelContainer'>{t('noModel')}</div> 
-              : <DragAndDropContainer
-                  droppableId={droppableIdRef.current} 
-                  items={dragAndDropItems} 
-                  onItemMove={handleItemMove}
-                  />
-          }
+        <Form.Item label={t('noteNames')} {...FORM_ITEM_LAYOUT}>
+          <Select
+            mode="multiple"
+            size='middle'
+            placeholder={t('noteNameText')}
+            value={noteNameBreakPoints}
+            onChange={handleNoteNameSelectChange}
+            style={{ width: '100%' }}
+            options={createNoteNameSelectOptions()}
+            />
+          <Checkbox checked={noteNamesAfterLastLine} onChange={onCheckBoxChange} style={{ marginTop: '6px' }}>
+            {t('lastLine')}
+          </Checkbox>
         </Form.Item>
+        { customInstruments.length
+          ? (
+            <Form.Item label={customInstruments.length === 0 ? ' ' : t('ownInstruments')} {...FORM_ITEM_LAYOUT}>
+              <DragAndDropContainer
+                droppableId={droppableIdRef.current} 
+                items={dragAndDropItems} 
+                onItemMove={handleItemMove}
+                />
+            </Form.Item>)
+          : null}
         <Form.Item label={t('addLabel')} {...FORM_ITEM_LAYOUT}>
-          <Inspector content={content} updateContent={updateContent} />
+          <Button 
+            type="primary" 
+            icon={<PlusOutlined />} 
+            onClick={handleAddCustomInstrumentButtonClick}
+            >
+            {t('addInstrument')}
+          </Button>
+        </Form.Item>
+        <Form.Item label={t('range')} {...FORM_ITEM_LAYOUT}>               
+          <ToneSlider content={content} updateContent={updateContent} />
+          <div className="annotationText">
+            {t('rangeText')}
+          </div>
         </Form.Item>
         <Form.Item
           label={<Info tooltip={t('common:widthInfo')}>{t('common:width')}</Info>}

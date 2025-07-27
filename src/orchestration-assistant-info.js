@@ -39,8 +39,10 @@ class OrchestrationAssitantInfo {
       width: 100,
       from: 1,
       to: 50,
-      instrumentSelection: ['strings', 'winds', 'brass'],
-      customInstruments: []
+      instrumentSelection: ['violin'],
+      customInstruments: [],
+      noteNameBreakPoints: ['violin'],
+      noteNamesAfterLastLine: false
     };
   }
 
@@ -50,7 +52,9 @@ class OrchestrationAssitantInfo {
       from: joi.number().integer().min(1).max(50).required(),
       to: joi.number().integer().min(1).max(50).required(),
       instrumentSelection: joi.array().items(joi.string()),
-      customInstruments: joi.array().items(joi.object())
+      customInstruments: joi.array().items(joi.object()),
+      noteNameBreakPoints: joi.array().items(joi.string()),
+      noteNamesAfterLastLine: joi.bool()
     });
     joi.attempt(content, schema, { abortEarly: false, convert: false, noDefaults: true });
   }

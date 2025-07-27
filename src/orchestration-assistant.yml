@@ -2,12 +2,121 @@ musikisum/educandu-plugin-orchestration-assistant:
   name:
     en: Orchestration Assistant
     de: Orchestrationshilfe
-  label:
-    en: Orchestration Label
-    de: Orchestrationslabel
+  selection:
+    en: selection
+    de: Auswahl
+  noteNames:
+    en: Mote Names
+    de: Tonnamen
+  noteNameText:
+    en: Note names at the end
+    de: Notennamen am Ende
+  lastLine:
+    en: After last instrument
+    de: Nach dem letzten Instrument
+  newInstument:
+    en: New
+    de: Neu
+  ownInstruments:
+    en: Custom instr.
+    de: Eigene Instr.
+  noInstrument:
+    en: Create a new instrument
+    de: Erstelle ein neues Instrument ...
+  chooseInstrument:
+    en: Choose instruments
+    de: Wähle Instrumente aus ...
   addLabel:
     en: add
     de: Hinzufügen
   addInstrument:
     en: instrument
     de: Instrument
+  range:
+    en: Range
+    de: Tonumfang
+  rangeText:
+    en: 1 = Contra-C / 2 = Contra-D ... 49 = b'''' / 50 = c''''' | c = 1, 8, 15 ... / d = 2, 9, 16 ... / etc.
+    de: 1 = Kontra-C / 2 = Kontra-D ... 49 = h'''' / 50 = c''''' | c = 1, 8, 15 ... / d = 2, 9, 16 ... / usw.
+  strings:
+    en: Strings
+    de: Streicher
+  winds:
+    en: Winds
+    de: Bläser
+  brass:
+    en: Brass
+    de: Blechbläser
+  violin:
+    en: Violin
+    de: Violine
+  viola:
+    en: Viol
+    de: Viola
+  violoncello:
+    en: Violoncello
+    de: Violoncello
+  doublebass:
+    en: Double bass
+    de: Kontrabass
+  guitar:
+    en: Guitar
+    de: Gitarre
+  electricbass:
+    en: E-Bass
+    de: E-Bass
+  piano:
+    en: Piano
+    de: Klavier
+  harp:
+    en: Harp
+    de: Harfe
+  sopranrecorder:
+    en: Discant recorder
+    de: Sopranblockflöte
+  altorecorder:
+    en: Alto recorder
+    de: Altblockflöte
+  flute:
+    en: Flute
+    de: Flöte
+  piccoloflute:
+    en: Flautino
+    de: Piccoloflöte
+  oboe:
+    en: Oboe
+    de: Oboe
+  englishhorn:
+    en: Cor Englaise
+    de: Englischhorn
+  clarinet:
+    en: Clarinet
+    de: Klarinette
+  bassclarinet:
+    en: Bass clarinet
+    de: Bassklarinette
+  bassoon:
+    en: Bassoon
+    de: Fagotte
+  contrabassoon:
+    en: Contra bassoon
+    de: Kontrafagott
+  altosaxophone:
+    en: Alto saxophone
+    de: Altsaxofon
+  tenorsaxophone:
+    en: Tenor Saxophone
+    de: Tenorsaxofon
+  horn:
+    en: French Horn
+    de: Horn (Tenor)
+  trumpet:
+    en: Trumpet
+    de: Trompete
+  trombone:
+    en: Trombone
+    de: Posaune
+  tuba:
+    en: Tuba
+    de: Tuba
+

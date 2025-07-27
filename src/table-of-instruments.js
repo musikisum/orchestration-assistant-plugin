@@ -5,7 +5,7 @@ import React, { useState, useRef } from 'react';
 import OrchestrationUtilities from './orchestration-utilities.js';
 import instrumentsProvider from './instruments-provider.js';
 
-export default function NotesFactory({ from, to, selection }) {
+export default function NotesFactory({ from, to, selection, noteNameBreakPoints, noteNamesAfterLastLine }) {
   
   const noteArr = notesFactory(from, to);
 
@@ -93,22 +93,18 @@ export default function NotesFactory({ from, to, selection }) {
         )
         : null}
       {/* create instruments and tone names  */}
-      <div className="instrument-wrapper">    
-        { 
+      <div className="instrument-wrapper">
+        {
           instrumentsProvider.createInstrumentsFromSelection(selection).map((instrumentName, index) => {
-            if (index === 0 || index === 4 || index === 12) {
-              return (
-                <React.Fragment key={index}>
-                  { getToneNameGrid() }
-                  { getOrchesterInstrument(instrumentName, index) }
-                </React.Fragment>
-              );    
-            } 
+            const showNoteNames = noteNameBreakPoints.includes(instrumentName);
+            const isLastInstrument = selection.length - 1 === index;
             return (
               <React.Fragment key={index}>
-                { getOrchesterInstrument(instrumentName, index) }                
+                { showNoteNames ? getToneNameGrid() : null }
+                { getOrchesterInstrument(instrumentName, index) }
+                { noteNamesAfterLastLine && isLastInstrument ? getToneNameGrid() : null }
               </React.Fragment>
-            );                                    
+            );
           })
         }
       </div>
@@ -119,11 +115,13 @@ export default function NotesFactory({ from, to, selection }) {
 NotesFactory.propTypes = {
   from: PropTypes.number,
   to: PropTypes.number,
-  selection: PropTypes.array
+  selection: PropTypes.array,
+  noteNameBreakPoints: PropTypes.array
 };
 
 NotesFactory.defaultProps = {
   from: 1,
   to: 50,
-  selection: []
+  selection: [],
+  noteNameBreakPoints: []
 };

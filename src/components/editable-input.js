@@ -10,6 +10,12 @@ function EditableInput({ line, footnotes, onSave }) {
 
   const [editing, setEditing] = useState(false);
   const [inputLine, setInputLine] = useState('');
+  const inputStyle = {
+    display: 'flex',
+    gap: '8px',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  };
 
   useEffect(() => {    
     setInputLine(line);
@@ -25,7 +31,7 @@ function EditableInput({ line, footnotes, onSave }) {
   /* eslint-disable react/jsx-indent */
   const content = editing 
     ? (
-      <React.Fragment>
+      <div style={inputStyle}>
         <Input
           className="text-editable-input"
           value={inputLine}
@@ -37,14 +43,11 @@ function EditableInput({ line, footnotes, onSave }) {
         <Tooltip title={t('saveButtonText')}>
           <Button type="primary" icon={<CheckOutlined />} onClick={handleSave} />
         </Tooltip>
-      </React.Fragment>
+      </div>
     )
     : (
-      <React.Fragment>
-        <div
-          className="text-editable-input-display"
-          onClick={() => setEditing(true)}
-          >
+      <div style={inputStyle}>
+        <div className="text-editable-input-display" onClick={() => setEditing(true)}>
           {inputLine || (
             <div style={{ color: '#aaa' }}>
               {footnotes ? t('defaultFootnoteInputText') : t('defaultGapInputText')}
@@ -54,7 +57,7 @@ function EditableInput({ line, footnotes, onSave }) {
         <Tooltip title={t('inputButtonText')}>
           <Button type="link" icon={<EditOutlined />} onClick={() => setEditing(true)} />
         </Tooltip>
-      </React.Fragment>
+      </div>
     );
   /* eslint-enable react/jsx-indent */
 
