@@ -9,7 +9,6 @@ import MoveUpIcon from '@educandu/educandu/components/icons/general/move-up-icon
 import MoveDownIcon from '@educandu/educandu/components/icons/general/move-down-icon.js';
 import { confirmDeleteItem } from '@educandu/educandu/components/confirmation-dialogs.js';
 
-
 export default function CustomInstrument({
   index,
   dragHandleProps,
