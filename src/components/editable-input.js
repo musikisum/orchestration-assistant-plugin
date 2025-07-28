@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import { Input, Button, Tooltip } from 'antd';
 import { useTranslation } from 'react-i18next';
 import React, { useState, useEffect } from 'react';
-import { EditOutlined, CheckOutlined } from '@ant-design/icons';
+import { EditOutlined, CheckOutlined, PlusOutlined } from '@ant-design/icons';
 
-function EditableInput({ line, footnotes, onSave }) {
+function EditableInput({ key, content, updateContent }) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-gap-genius');
 
@@ -18,18 +18,22 @@ function EditableInput({ line, footnotes, onSave }) {
   };
 
   useEffect(() => {    
-    setInputLine(line);
-  }, [line]);
+    // setInputLine(line);
+  }, []);
 
   const handleSave = () => {
     setEditing(false);
-    const temp = inputLine ? inputLine.trim() : '';
-    setInputLine(temp);
-    onSave(temp);
+    // const temp = inputLine ? inputLine.trim() : '';
+    // setInputLine(temp);
+    // onSave(temp);
+  };
+
+  const handleAddPropertyButtonClick = e => {
+    console.log('e:', e);
   };
 
   /* eslint-disable react/jsx-indent */
-  const content = editing 
+  const keyValueProp = editing 
     ? (
       <div style={inputStyle}>
         <Input
@@ -50,7 +54,7 @@ function EditableInput({ line, footnotes, onSave }) {
         <div className="text-editable-input-display" onClick={() => setEditing(true)}>
           {inputLine || (
             <div style={{ color: '#aaa' }}>
-              {footnotes ? t('defaultFootnoteInputText') : t('defaultGapInputText')}
+              {t('defaultFootnoteInputText')}
             </div>
           )}
         </div>
@@ -61,19 +65,34 @@ function EditableInput({ line, footnotes, onSave }) {
     );
   /* eslint-enable react/jsx-indent */
 
-  return <div className='editable-input-container'>{content}</div>;
+  return (
+    <div>
+      <div className='editable-input-container' style={{ marginBottom: '12px', borderBottom: '1px solid gray' }}>
+        {keyValueProp}
+      </div>
+      <div>
+        <Button 
+          type="primary" 
+          icon={<PlusOutlined />} 
+          onClick={handleAddPropertyButtonClick}
+          >
+          {t('addInstrument')}
+        </Button>
+      </div>
+    </div>
+  );
 }
 
 EditableInput.propTypes = {
-  line: PropTypes.string,
-  footnotes: PropTypes.bool,
-  onSave: PropTypes.func
+  key: PropTypes.string,
+  content: PropTypes.object,
+  updateContent: PropTypes.func
 };
 
 EditableInput.defaultProps = {
-  line: null,
-  footnotes: false,
-  onSave: null,
+  key: null,
+  content: false,
+  updateContent: null,
 };
 
 export default EditableInput;

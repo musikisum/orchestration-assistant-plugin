@@ -5,7 +5,7 @@ import { PlusOutlined } from '@ant-design/icons';
 import ToneSlider from './components/tone-slider.js';
 import Info from '@educandu/educandu/components/info.js';
 import instrumentsProvider from './instruments-provider.js';
-import { Form, Select, Button, Checkbox, Space } from 'antd';
+import { Form, Select, Button, Checkbox } from 'antd';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import CustomInstrument from './components/custom-instrument.js';
 import { FORM_ITEM_LAYOUT } from '@educandu/educandu/domain/constants.js';

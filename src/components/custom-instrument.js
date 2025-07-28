@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { Button, Collapse, Tooltip, Typography } from 'antd';
+import CustomInstrumentTemplate from './custom-instrument-template.js';
 import DeleteIcon from '@educandu/educandu/components/icons/general/delete-icon.js';
 import MoveUpIcon from '@educandu/educandu/components/icons/general/move-up-icon.js';
 import MoveDownIcon from '@educandu/educandu/components/icons/general/move-down-icon.js';
 import { confirmDeleteItem } from '@educandu/educandu/components/confirmation-dialogs.js';
 
-import EditableInput from './editable-input.js';
 
 export default function CustomInstrument({
   index,
@@ -125,7 +125,7 @@ export default function CustomInstrument({
         label: (<div {...dragHandleProps} className="ItemPanel-header">{createHaeder()}</div>),
         extra: renderActionButtons(),
         children: (
-          <EditableInput key={index} line={`Hallo Editable-Input ${customInstrument.name}`} onSave={onEditableInputSave} />
+          <CustomInstrumentTemplate key={index} content={content} updateContent={updateContent} />
         )
       }]}
       />

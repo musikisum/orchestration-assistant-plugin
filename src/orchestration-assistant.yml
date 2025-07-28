@@ -9,8 +9,8 @@ musikisum/educandu-plugin-orchestration-assistant:
     en: Mote Names
     de: Tonnamen
   noteNameText:
-    en: Note names at the end
-    de: Notennamen am Ende
+    en: Note names before the selected instrument
+    de: Notennamen vor dem ausgewählten Instrument
   lastLine:
     en: After last instrument
     de: Nach dem letzten Instrument
