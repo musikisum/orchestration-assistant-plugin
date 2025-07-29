@@ -3,6 +3,7 @@ import React from 'react';
 import { ClockCircleOutlined } from '@ant-design/icons';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import { PLUGIN_GROUP } from '@educandu/educandu/domain/constants.js';
+import { couldAccessUrlFromRoom } from '@educandu/educandu/utils/source-utils.js';
 import GithubFlavoredMarkdown from '@educandu/educandu/common/github-flavored-markdown.js';
 
 class OrchestrationAssitantInfo {
@@ -51,8 +52,14 @@ class OrchestrationAssitantInfo {
       width: joi.number().min(0).max(100).required(),
       from: joi.number().integer().min(1).max(50).required(),
       to: joi.number().integer().min(1).max(50).required(),
-      instrumentSelection: joi.array().items(joi.string()),
-      customInstruments: joi.array().items(joi.object()),
+      instrumentSelection: joi.array().items(joi.string()).required(),
+      customInstruments: joi.array().items(joi.object({
+        id: joi.string().required(),
+        name: joi.string().allow(null, ''),
+        begin: joi.number().min(1).max(49),
+        end: joi.number().min(2).max(50),
+        text: joi.string().allow(null, '')
+      })),
       noteNameBreakPoints: joi.array().items(joi.string()),
       noteNamesAfterLastLine: joi.bool()
     });
@@ -63,12 +70,19 @@ class OrchestrationAssitantInfo {
     return cloneDeep(content);
   }
 
-  redactContent(content) {
-    return cloneDeep(content);
+  redactContent(content, targetRoomId) {
+    const redactedContent = cloneDeep(content);
+
+    redactedContent.text = this.gfm.redactCdnResources(
+      redactedContent.text,
+      url => couldAccessUrlFromRoom(url, targetRoomId) ? url : ''
+    );
+
+    return redactedContent;
   }
 
-  getCdnResources() {
-    return [];
+  getCdnResources(content) {
+    return this.gfm.extractCdnResources(content.text);
   }
 }
 

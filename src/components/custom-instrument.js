@@ -1,9 +1,10 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { Button, Collapse, Tooltip, Typography } from 'antd';
-import CustomInstrumentTemplate from './custom-instrument-template.js';
+import MarkdownInput from '@educandu/educandu/components/markdown-input.js';
 import DeleteIcon from '@educandu/educandu/components/icons/general/delete-icon.js';
 import MoveUpIcon from '@educandu/educandu/components/icons/general/move-up-icon.js';
 import MoveDownIcon from '@educandu/educandu/components/icons/general/move-down-icon.js';
@@ -104,14 +105,20 @@ export default function CustomInstrument({
     );
   };
 
-  const createHaeder = () => {
-    return (
-      <Text className='iu-first'>{customInstrument.name}</Text>
-    );
+  const handleTextChanged = event => {    
+    const newText = event.target.value;
+    customInstruments[index].text = newText;
+    updateContent({ customInstruments });
   };
 
-  const onEditableInputSave = (input, itemIndex) => {
-    console.log('input/itemIndex', input, itemIndex);
+  const createChild = () => {
+    return (
+      <div>
+        <Text className='iu-first'>{customInstrument.name}</Text>
+        <Text>{`ID: ${customInstrument.id} | begin: ${customInstrument.begin} end: ${customInstrument.end}`}</Text>
+        <MarkdownInput value={customInstrument.text} onChange={handleTextChanged} renderAnchors />
+      </div>
+    );
   };
 
   return (
@@ -121,11 +128,9 @@ export default function CustomInstrument({
       className={classNames('ItemPanel', { 'is-dragged': isDragged, 'is-other-dragged': isOtherDragged })}
       items={[{
         key: 'panel',
-        label: (<div {...dragHandleProps} className="ItemPanel-header">{createHaeder()}</div>),
+        label: (<div {...dragHandleProps} className="ItemPanel-header">{customInstrument.name}</div>),
         extra: renderActionButtons(),
-        children: (
-          <CustomInstrumentTemplate key={index} content={content} updateContent={updateContent} />
-        )
+        children: createChild()
       }]}
       />
   );

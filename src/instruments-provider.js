@@ -145,10 +145,11 @@ const loadInstruments = names => {
 
 const getCustomInstrumentTemplate = () => {
   return {
+    id: '',
     name: 'neues Instrument',
-    beginn: 1,
+    begin: 1,
     end: 50,
-    props: []
+    text: ''
   };
 };
 

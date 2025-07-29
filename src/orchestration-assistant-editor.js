@@ -113,13 +113,13 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
 
   const handleAddCustomInstrumentButtonClick = () => {
     const instrumentTemplate = cloneDeep(instrumentsProvider.getCustomInstrumentTemplate());
-    instrumentTemplate.key = nanoid(10);
+    instrumentTemplate.id = nanoid(10);
     customInstruments.push(instrumentTemplate);
     updateContent({ customInstruments });
   };
 
   const dragAndDropItems = customInstruments.map((instrument, index, arr) => ({
-    key: instrument.key,
+    key: instrument.id,
     render: ({ dragHandleProps, isDragged, isOtherDragged }) => 
       (<CustomInstrument 
         index={index}
