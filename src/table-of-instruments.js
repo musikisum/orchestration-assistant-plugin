@@ -4,8 +4,16 @@ import notesFactory from './notes-factory.js';
 import React, { useState, useRef } from 'react';
 import OrchestrationUtilities from './orchestration-utilities.js';
 import instrumentsProvider from './instruments-provider.js';
+import CustomInstrumentTemplate from './components/custom-instrument-template.js';
 
-export default function NotesFactory({ from, to, selection, noteNameBreakPoints, noteNamesAfterLastLine }) {
+export default function TableOfInstruments({ 
+  from, 
+  to, 
+  selection, 
+  noteNameBreakPoints, 
+  noteNamesAfterLastLine,
+  customInstruments 
+}) {
   
   const noteArr = notesFactory(from, to);
 
@@ -59,6 +67,14 @@ export default function NotesFactory({ from, to, selection, noteNameBreakPoints,
     );
   };
 
+  const getCustomInstrument = (instrument, index) => {
+    return (
+      <div key={instrument.id} className="orchester-grid" style={gridStyle}>
+        <CustomInstrumentTemplate from={from} to={to} customInstrument={instrument} row={index} />
+      </div>      
+    );
+  };
+
   return (
     <React.Fragment>
       {/* create line of notes */}
@@ -102,26 +118,43 @@ export default function NotesFactory({ from, to, selection, noteNameBreakPoints,
               <React.Fragment key={index}>
                 { showNoteNames ? getToneNameGrid() : null }
                 { getOrchesterInstrument(instrumentName, index) }
-                { noteNamesAfterLastLine && isLastInstrument ? getToneNameGrid() : null }
+                { !customInstruments.length && noteNamesAfterLastLine && isLastInstrument ? getToneNameGrid() : null }
               </React.Fragment>
             );
           })
         }
+        <div className="instrument-wrapper">
+          {
+            customInstruments.map((instrument, index) => {
+              const isLastCustomInstrument = customInstruments.length - 1 === index;
+              return (
+                <React.Fragment key={instrument.id}>
+                  {getCustomInstrument(instrument, index)}
+                  {customInstruments.length && noteNamesAfterLastLine && isLastCustomInstrument ? getToneNameGrid() : null}
+                </React.Fragment>
+              );
+            })
+          }
+        </div>
       </div>
     </React.Fragment>
   );
 } 
 
-NotesFactory.propTypes = {
+TableOfInstruments.propTypes = {
   from: PropTypes.number,
   to: PropTypes.number,
   selection: PropTypes.array,
-  noteNameBreakPoints: PropTypes.array
+  noteNameBreakPoints: PropTypes.array,
+  noteNamesAfterLastLine: PropTypes.bool,
+  customInstruments: PropTypes.array
 };
 
-NotesFactory.defaultProps = {
+TableOfInstruments.defaultProps = {
   from: 1,
   to: 50,
   selection: [],
-  noteNameBreakPoints: []
+  noteNameBreakPoints: [],
+  noteNamesAfterLastLine: false,
+  customInstruments: []
 };

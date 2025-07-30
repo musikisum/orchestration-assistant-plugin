@@ -119,4 +119,12 @@ musikisum/educandu-plugin-orchestration-assistant:
   tuba:
     en: Tuba
     de: Tuba
-
+  ciColor:
+    en: Color 
+    de: Farbe
+  begin: 
+    en: Lowest tone 
+    de: Tiefster Ton
+  end: 
+    en: Highest tone 
+    de: Höchster Ton 

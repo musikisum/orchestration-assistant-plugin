@@ -58,6 +58,7 @@ class OrchestrationAssitantInfo {
         name: joi.string().allow(null, ''),
         begin: joi.number().min(1).max(49),
         end: joi.number().min(2).max(50),
+        color: joi.string().allow(null, ''),
         text: joi.string().allow(null, '')
       })),
       noteNameBreakPoints: joi.array().items(joi.string()),

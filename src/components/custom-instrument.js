@@ -1,9 +1,9 @@
 import React from 'react';
-import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { Button, Collapse, Tooltip, Typography } from 'antd';
+import { Form, Button, Collapse, Tooltip, Typography } from 'antd';
+import { FORM_ITEM_LAYOUT } from '@educandu/educandu/domain/constants.js';
 import MarkdownInput from '@educandu/educandu/components/markdown-input.js';
 import DeleteIcon from '@educandu/educandu/components/icons/general/delete-icon.js';
 import MoveUpIcon from '@educandu/educandu/components/icons/general/move-up-icon.js';
@@ -114,8 +114,20 @@ export default function CustomInstrument({
   const createChild = () => {
     return (
       <div>
-        <Text className='iu-first'>{customInstrument.name}</Text>
-        <Text>{`ID: ${customInstrument.id} | begin: ${customInstrument.begin} end: ${customInstrument.end}`}</Text>
+        <div className='ciPropStyleContainer'>
+          <div className='ciPropStyle'>
+            <p><b>Name:</b></p><p>{ customInstrument.name }</p>
+          </div>
+          <div className='ciPropStyle'>
+            <p><b>{t('ciColor')}</b></p><p>{ customInstrument.color }</p>
+          </div>
+          <div className='ciPropStyle'>
+            <p><b>{t('begin')}</b></p><p>{ customInstrument.begin }</p>
+          </div>
+          <div className='ciPropStyle'>
+            <p><b>{t('end')}</b></p><p>{ customInstrument.end }</p>
+          </div>
+        </div>
         <MarkdownInput value={customInstrument.text} onChange={handleTextChanged} renderAnchors />
       </div>
     );

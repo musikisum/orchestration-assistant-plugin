@@ -5,7 +5,14 @@ import { sectionDisplayProps } from '@educandu/educandu/ui/default-prop-types.js
 
 export default function OrchestrationAssistantDisplay({ content }) {
 
-  const { from, to, width, noteNameBreakPoints, noteNamesAfterLastLine } = content;
+  const { 
+    from, 
+    to, 
+    width, 
+    noteNameBreakPoints, 
+    noteNamesAfterLastLine,
+    customInstruments 
+  } = content;
   // const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
   return (
@@ -16,7 +23,8 @@ export default function OrchestrationAssistantDisplay({ content }) {
           to={to} 
           selection={content.instrumentSelection} 
           noteNameBreakPoints={noteNameBreakPoints}
-          noteNamesAfterLastLine={noteNamesAfterLastLine} 
+          noteNamesAfterLastLine={noteNamesAfterLastLine}
+          customInstruments={customInstruments} 
           />
       </div>
     </div>
