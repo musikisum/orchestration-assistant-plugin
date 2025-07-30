@@ -16,14 +16,14 @@ export default function ToneSlider({ content, updateContent }) {
     'c5'
   ];
 
-  const onChangeComplete = values => {
+  const onChange = values => {
     const newFrom = values[0];
     const newTo = values[1];    
     updateContent({ from: newFrom, to: newTo });
   };
 
   return (
-    <Slider min={1} max={50} range defaultValue={[from, to]} tooltip={{ formatter: value => tipFormatterList[value - 1] }} onChangeComplete={onChangeComplete} />
+    <Slider min={1} max={50} range value={[from, to]} tooltip={{ formatter: value => tipFormatterList[value - 1] }} onChange={onChange} />
   );
 
 }

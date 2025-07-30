@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import { useTranslation } from 'react-i18next';
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import ToneSlider from './components/tone-slider.js';
 import { Form, Select, Button, Checkbox } from 'antd';
@@ -26,8 +26,6 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     noteNameBreakPoints, 
     noteNamesAfterLastLine 
   } = content;
-
-  const [hasStrings, setHasStrings] = useState();
 
   const updateContent = newContentValues => {
     onContentChanged({ ...content, ...newContentValues });

@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { Form, Button, Collapse, Tooltip, Typography } from 'antd';
-import { FORM_ITEM_LAYOUT } from '@educandu/educandu/domain/constants.js';
+import EditableInput from './editable-input.js';
+import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
+import { Button, Collapse, Tooltip, Typography, Slider } from 'antd';
+import ColorPicker from '@educandu/educandu/components/color-picker.js';
 import MarkdownInput from '@educandu/educandu/components/markdown-input.js';
 import DeleteIcon from '@educandu/educandu/components/icons/general/delete-icon.js';
 import MoveUpIcon from '@educandu/educandu/components/icons/general/move-up-icon.js';
@@ -27,8 +29,7 @@ export default function CustomInstrument({
 }) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
-  const { customInstruments } = content;
-  const customInstrument = customInstruments[index];
+  const customInstruments = cloneDeep(content.customInstruments);
   const { Text } = Typography;
 
   const handleActionButtonWrapperClick = (event, actionButton) => {
@@ -46,7 +47,7 @@ export default function CustomInstrument({
       case 'moveDown':
         return onMoveDown(index);
       case 'delete':
-        return confirmDeleteItem(t, customInstrument.name, () => onDelete(index));
+        return confirmDeleteItem(t, customInstruments[index].name, () => onDelete(index));
       default:
         return onExtraActionButtonClick(actionButton.key);
     }
@@ -111,24 +112,47 @@ export default function CustomInstrument({
     updateContent({ customInstruments });
   };
 
+  const handleColorChange = color => {
+    customInstruments[index].color = color;
+    updateContent({ customInstruments });
+  };
+
+  const handleBeginChange = begin => {
+    if (begin < customInstruments[index].end) {
+      customInstruments[index].begin = begin;
+      updateContent({ customInstruments });
+    }  
+  };
+
+  const handleEndChange = end => {
+    if (end > customInstruments[index].begin) {
+      customInstruments[index].end = end;
+      updateContent({ customInstruments });
+    }
+  };
+
   const createChild = () => {
     return (
       <div>
         <div className='ciPropStyleContainer'>
           <div className='ciPropStyle'>
-            <p><b>Name:</b></p><p>{ customInstrument.name }</p>
+            <p><b>Name:</b></p>
+            <EditableInput index={index} customInstruments={content.customInstruments} updateContent={updateContent} />
           </div>
           <div className='ciPropStyle'>
-            <p><b>{t('ciColor')}</b></p><p>{ customInstrument.color }</p>
+            <p><b>{t('ciColor')}</b></p>
+            <ColorPicker color={customInstruments[index].color} onChange={handleColorChange} />
           </div>
           <div className='ciPropStyle'>
-            <p><b>{t('begin')}</b></p><p>{ customInstrument.begin }</p>
+            <p><b>{t('begin')}</b></p>
+            <Slider style={{ width: '100%' }} min={1} max={49} onChange={handleBeginChange} value={customInstruments[index].begin} />
           </div>
           <div className='ciPropStyle'>
-            <p><b>{t('end')}</b></p><p>{ customInstrument.end }</p>
+            <p><b>{t('end')}</b></p>
+            <Slider style={{ width: '100%' }} min={2} max={50} onChange={handleEndChange} value={customInstruments[index].end} />
           </div>
         </div>
-        <MarkdownInput value={customInstrument.text} onChange={handleTextChanged} renderAnchors />
+        <MarkdownInput value={customInstruments[index].text} onChange={handleTextChanged} renderAnchors />
       </div>
     );
   };
@@ -140,7 +164,7 @@ export default function CustomInstrument({
       className={classNames('ItemPanel', { 'is-dragged': isDragged, 'is-other-dragged': isOtherDragged })}
       items={[{
         key: 'panel',
-        label: (<div {...dragHandleProps} className="ItemPanel-header">{customInstrument.name}</div>),
+        label: (<div {...dragHandleProps} className="ItemPanel-header">{customInstruments[index].name}</div>),
         extra: renderActionButtons(),
         children: createChild()
       }]}

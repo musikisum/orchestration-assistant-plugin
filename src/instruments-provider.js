@@ -149,6 +149,7 @@ const getCustomInstrumentTemplate = () => {
     name: 'neues Instrument',
     begin: 1,
     end: 50,
+    color: '#6D8BB1',
     text: ''
   };
 };

@@ -1,41 +1,29 @@
 import PropTypes from 'prop-types';
 import { Input, Button, Tooltip } from 'antd';
 import { useTranslation } from 'react-i18next';
-import React, { useState, useEffect } from 'react';
-import { EditOutlined, CheckOutlined, PlusOutlined } from '@ant-design/icons';
+import React, { useState } from 'react';
+import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
+import { EditOutlined, CheckOutlined } from '@ant-design/icons';
 
-function EditableInput({ key, content, updateContent }) {
-
+function EditableInput({ index, customInstruments, updateContent }) {
+  
   const { t } = useTranslation('musikisum/educandu-plugin-gap-genius');
-
   const [editing, setEditing] = useState(false);
-  const [inputLine, setInputLine] = useState('');
-  const inputStyle = {
-    display: 'flex',
-    gap: '8px',
-    alignItems: 'center',
-    justifyContent: 'space-between'
-  };
-
-  useEffect(() => {    
-    // setInputLine(line);
-  }, []);
+  const [inputLine, setInputLine] = useState(customInstruments[index].name);
 
   const handleSave = () => {
     setEditing(false);
-    // const temp = inputLine ? inputLine.trim() : '';
-    // setInputLine(temp);
-    // onSave(temp);
+    const trimmed = inputLine ? inputLine.trim() : '';
+    setInputLine(trimmed);
+
+    const instrumentsCopy = cloneDeep(customInstruments);
+    instrumentsCopy[index].name = trimmed;
+    updateContent({ customInstruments: instrumentsCopy });
   };
 
-  const handleAddPropertyButtonClick = e => {
-    console.log('e:', e);
-  };
-
-  /* eslint-disable react/jsx-indent */
-  const keyValueProp = editing 
+  const keyValueProp = editing
     ? (
-      <div style={inputStyle}>
+      <div className='editable-input'>
         <Input
           className="text-editable-input"
           value={inputLine}
@@ -50,48 +38,28 @@ function EditableInput({ key, content, updateContent }) {
       </div>
     )
     : (
-      <div style={inputStyle}>
+      <div className='editable-input'>
         <div className="text-editable-input-display" onClick={() => setEditing(true)}>
-          {inputLine || (
-            <div style={{ color: '#aaa' }}>
-              {t('defaultFootnoteInputText')}
-            </div>
-          )}
+          {inputLine || <div style={{ color: '#aaa' }}>{}</div>}
         </div>
         <Tooltip title={t('inputButtonText')}>
           <Button type="link" icon={<EditOutlined />} onClick={() => setEditing(true)} />
         </Tooltip>
       </div>
     );
-  /* eslint-enable react/jsx-indent */
 
-  return (
-    <div>
-      <div className='editable-input-container' style={{ marginBottom: '12px', borderBottom: '1px solid gray' }}>
-        {keyValueProp}
-      </div>
-      <div>
-        <Button 
-          type="primary" 
-          icon={<PlusOutlined />} 
-          onClick={handleAddPropertyButtonClick}
-          >
-          {t('addInstrument')}
-        </Button>
-      </div>
-    </div>
-  );
+  return <div className='editable-input-container' style={{ width: '100%' }}>{keyValueProp}</div>;
 }
 
 EditableInput.propTypes = {
-  key: PropTypes.string,
-  content: PropTypes.object,
+  index: PropTypes.number,
+  customInstruments: PropTypes.array,
   updateContent: PropTypes.func
 };
 
 EditableInput.defaultProps = {
-  key: null,
-  content: false,
+  index: null,
+  customInstruments: [],
   updateContent: null,
 };
 
