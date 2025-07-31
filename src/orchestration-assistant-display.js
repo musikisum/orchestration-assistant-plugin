@@ -13,6 +13,7 @@ export default function OrchestrationAssistantDisplay({ content }) {
     noteNamesAfterLastLine,
     customInstruments 
   } = content;
+  
   // const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
   return (
