@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import EditableInput from './editable-input.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
+import OrchestrationUtilities from '../orchestration-utilities.js'; 
 import { Button, Collapse, Tooltip, Typography, Slider } from 'antd';
 import ColorPicker from '@educandu/educandu/components/color-picker.js';
 import MarkdownInput from '@educandu/educandu/components/markdown-input.js';
@@ -145,11 +146,25 @@ export default function CustomInstrument({
           </div>
           <div className='ciPropStyle'>
             <p><b>{t('begin')}</b></p>
-            <Slider style={{ width: '100%' }} min={1} max={49} onChange={handleBeginChange} value={customInstruments[index].begin} />
+            <Slider 
+              style={{ width: '100%' }} 
+              min={1} 
+              max={49} 
+              onChange={handleBeginChange}
+              value={customInstruments[index].begin} 
+              tooltip={{ formatter: value => OrchestrationUtilities.tipFormatterList[value - 1] }}
+              />
           </div>
           <div className='ciPropStyle'>
             <p><b>{t('end')}</b></p>
-            <Slider style={{ width: '100%' }} min={2} max={50} onChange={handleEndChange} value={customInstruments[index].end} />
+            <Slider 
+              style={{ width: '100%' }} 
+              min={2} 
+              max={50} 
+              onChange={handleEndChange} 
+              value={customInstruments[index].end}
+              tooltip={{ formatter: value => OrchestrationUtilities.tipFormatterList[value - 1] }}
+              />
           </div>
         </div>
         <MarkdownInput value={customInstruments[index].text} onChange={handleTextChanged} renderAnchors />

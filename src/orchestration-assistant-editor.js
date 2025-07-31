@@ -73,7 +73,6 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   };
 
   const createInstrumentSelectOptions = selection => {
-    // TODO: Add custom instruments
     const options = [];
     const hasOrchestraStrings = selection.some(instr => instrumentsProvider.getSectionInstrumentNames('strings').includes(instr));
     const hasOrchestraWinds = selection.some(instr => instrumentsProvider.getSectionInstrumentNames('winds').includes(instr));
