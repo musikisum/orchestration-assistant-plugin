@@ -110,7 +110,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   };  
 
   const handleAddCustomInstrumentButtonClick = () => {
-    const instrumentTemplate = cloneDeep(instrumentsProvider.getCustomInstrumentTemplate());
+    const instrumentTemplate = cloneDeep(instrumentsProvider.getInstrumentTemplate());
     instrumentTemplate.id = nanoid(10);
     customInstruments.push(instrumentTemplate);
     updateContent({ customInstruments });

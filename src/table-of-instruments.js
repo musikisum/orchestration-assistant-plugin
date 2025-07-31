@@ -4,7 +4,7 @@ import notesFactory from './notes-factory.js';
 import React, { useState, useRef } from 'react';
 import OrchestrationUtilities from './orchestration-utilities.js';
 import instrumentsProvider from './instruments-provider.js';
-import CustomInstrumentTemplate from './components/custom-instrument-template.js';
+import InstrumentTemplate from './components/instrument-template.js';
 
 export default function TableOfInstruments({ 
   from, 
@@ -57,20 +57,10 @@ export default function TableOfInstruments({
     );
   };
 
-  const getOrchesterInstrument = (instrumentNames, index) => {
-    return (
-      <div className="orchester-grid" style={gridStyle}>
-        { instrumentsProvider.loadInstruments([instrumentNames]).map((Instrument, subIndex) => (
-          <Instrument key={subIndex} from={from} to={to} row={index + 1}  />
-        ))}
-      </div>      
-    );
-  };
-
-  const getCustomInstrument = (instrument, index) => {
+  const getInstrument = (instrument, index) => {
     return (
       <div key={instrument.id} className="orchester-grid" style={gridStyle}>
-        <CustomInstrumentTemplate from={from} to={to} customInstrument={instrument} row={index} />
+        <InstrumentTemplate from={from} to={to} instrument={instrument} row={index} />
       </div>      
     );
   };
@@ -117,7 +107,7 @@ export default function TableOfInstruments({
             return (
               <React.Fragment key={index}>
                 { showNoteNames ? getToneNameGrid() : null }
-                { getOrchesterInstrument(instrumentName, index) }
+                { getInstrument(instrumentsProvider.loadInstrument(instrumentName), index) }
                 { !customInstruments.length && noteNamesAfterLastLine && isLastInstrument ? getToneNameGrid() : null }
               </React.Fragment>
             );
@@ -129,7 +119,7 @@ export default function TableOfInstruments({
               const isLastCustomInstrument = customInstruments.length - 1 === index;
               return (
                 <React.Fragment key={instrument.id}>
-                  {getCustomInstrument(instrument, index)}
+                  {getInstrument(instrument, index)}
                   {customInstruments.length && noteNamesAfterLastLine && isLastCustomInstrument ? getToneNameGrid() : null}
                 </React.Fragment>
               );

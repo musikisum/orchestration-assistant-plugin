@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import Oboe from './instruments/oboe.js';
 import Horn from './instruments/horn.js';
 import Tuba from './instruments/tuba.js';
@@ -143,7 +142,7 @@ const loadInstruments = names => {
   return selection;
 };
 
-const getCustomInstrumentTemplate = () => {
+const getInstrumentTemplate = () => {
   return {
     id: '',
     name: 'neues Instrument',
@@ -154,11 +153,16 @@ const getCustomInstrumentTemplate = () => {
   };
 };
 
+const loadInstrument = name => {
+  return collection[name] || getInstrumentTemplate();
+};
+
 const instrumentsProvider = {
+  loadInstrument,
   loadInstruments,
   getSortedInstrumentNames,
   getSectionInstrumentNames,
   createInstrumentsFromSelection,
-  getCustomInstrumentTemplate
+  getInstrumentTemplate
 };
 export default instrumentsProvider;

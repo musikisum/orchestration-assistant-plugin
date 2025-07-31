@@ -1,6 +1,5 @@
 import React from 'react';
 import TableOfInstruments from './table-of-instruments.js'; 
-// import { useTranslation } from 'react-i18next';
 import { sectionDisplayProps } from '@educandu/educandu/ui/default-prop-types.js';
 
 export default function OrchestrationAssistantDisplay({ content }) {

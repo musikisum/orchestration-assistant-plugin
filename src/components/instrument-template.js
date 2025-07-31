@@ -1,21 +1,23 @@
 /* eslint-disable react/jsx-indent */
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Markdown from '@educandu/educandu/components/markdown.js';
 import OrchestrationUtilities from '../orchestration-utilities.js';
 import { getContrastColor } from '@educandu/educandu/ui/color-helper.js';
 
-export default function CustomInstrumentTemplate({ from, to, customInstrument, row }) {
+export default function InstrumentTemplate({ from, to, instrument, row }) {
 
+  const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   const [isVisible, setIsVisible] = useState(false);
 
   const onInstrumentClick = () => {
     setIsVisible(!isVisible);
   };
 
-  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(customInstrument.begin, customInstrument.end, from, to);
-  const bgColor = customInstrument.color;
-  const color = getContrastColor(customInstrument.color);
+  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(instrument.begin, instrument.end, from, to);
+  const bgColor = instrument.color;
+  const color = getContrastColor(instrument.color);
   const calculation = `${begin}/${end}`;
 
   const gridElemStyle = {
@@ -27,26 +29,26 @@ export default function CustomInstrumentTemplate({ from, to, customInstrument, r
   };
 
   return (
-    <div key={customInstrument.id} className='instrument' style={gridElemStyle}>
+    <div key={instrument.id} className='instrument' style={gridElemStyle}>
       <div className='instrument-beam' onClick={onInstrumentClick}>
-        {customInstrument.name}
+        {t(instrument.name)}
       </div>
       {isVisible
-        ? <Markdown className='customInstrument' renderAnchors>{customInstrument.text}</Markdown>
+        ? <Markdown className='instrumentDescription' renderAnchors>{instrument.text}</Markdown>
         : null}
     </div>);
 }
 
-CustomInstrumentTemplate.propTypes = {
+InstrumentTemplate.propTypes = {
   from: PropTypes.number,
   to: PropTypes.number, 
-  customInstrument: PropTypes.object,
+  instrument: PropTypes.object,
   row: PropTypes.number
 };
 
-CustomInstrumentTemplate.defaultProps = {
+InstrumentTemplate.defaultProps = {
   from: 1,
   to: 50,
-  customInstrument: null,
+  instrument: null,
   row: 0
 };
