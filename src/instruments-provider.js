@@ -16,9 +16,9 @@ import DoubleBass from './instruments/doubleBass.js';
 import EnglishHorn from './instruments/englishHorn.js';
 import Violoncello from './instruments/violoncello.js';
 import AltoRecorder from './instruments/a-recorder.js';
-import AltSaxophone from './instruments/a-saxophone.js';
+import AltoSaxophone from './instruments/a-saxophone.js';
 import BassClarinet from './instruments/bassClarinet.js';
-import SopranRecorder from './instruments/s-recorder.js';
+import SopranoRecorder from './instruments/s-recorder.js';
 import PiccoloFlute from './instruments/piccoloFlute.js';
 import TenorSaxophone from './instruments/t-saxophone.js';
 import ContraBassoon from './instruments/contraBassoon.js';
@@ -37,10 +37,10 @@ const getSortedInstrumentNames = () => {
     'electricbass',
     'piano', 
     'harp', 
-    'sopranrecorder', 
+    'sopranorecorder', 
     'altorecorder', 
-    'flute', 
     'piccoloflute', 
+    'flute', 
     'oboe', 
     'englishhorn', 
     'clarinet', 
@@ -68,7 +68,7 @@ const strings = {
 };
 
 const winds = { 
-  sopranrecorder: SopranRecorder, 
+  sopranorecorder: SopranoRecorder, 
   altorecorder: AltoRecorder, 
   flute: Flute, 
   piccoloflute: PiccoloFlute, 
@@ -78,7 +78,7 @@ const winds = {
   bassclarinet: BassClarinet, 
   bassoon: Bassoon, 
   contrabassoon: ContraBassoon,
-  altsaxophone: AltSaxophone,
+  altosaxophone: AltoSaxophone,
   tenorsaxophone: TenorSaxophone
 };
 
@@ -89,11 +89,42 @@ const brass = {
   tuba: Tuba
 };
 
+const tutti = {
+  violin: Violin,
+  viola: Viola,
+  violoncello: Violoncello,
+  doublebass: DoubleBass,
+  guitar: Guitar,
+  electricbass: ElectricBass,
+  piano: Piano,
+  harp: Harp,
+  sopranorecorder: SopranoRecorder,
+  altorecorder: AltoRecorder,
+  flute: Flute,
+  piccoloflute: PiccoloFlute,
+  oboe: Oboe,
+  englishhorn: EnglishHorn,
+  clarinet: Clarinet,
+  bassclarinet: BassClarinet,
+  bassoon: Bassoon,
+  contrabassoon: ContraBassoon,
+  altosaxophon: AltoSaxophone,
+  tenorsaxophone: TenorSaxophone,
+  horn: Horn,
+  trumpet: Trumpet,
+  trombone: Trombone,
+  tuba: Tuba
+};
+
+const collection = { ...strings, ...winds, ... brass };
+
 const createInstrumentsFromSelection = selection => {
   const instruments = [];
   for (let index = 0; index < selection.length; index += 1) {
     const label = selection[index];
     switch (label) {
+      case 'tutti':
+        return getSortedInstrumentNames();
       case 'strings':
         instruments.push(...orchestraStrings);
         break;
@@ -125,10 +156,11 @@ const getSectionInstrumentNames = collectionName => {
   if (collectionName === 'brass') {
     return orchestraBrass;
   }
+  if (collectionName === 'tutti') {
+    return tutti;
+  }
   return [];
 };
-
-const collection = { ...strings, ...winds, ... brass };
 
 const loadInstruments = names => {
   const selection = [];

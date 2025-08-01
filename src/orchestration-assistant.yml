@@ -38,6 +38,9 @@ musikisum/educandu-plugin-orchestration-assistant:
   rangeText:
     en: 1 = Contra-C / 2 = Contra-D ... 49 = b'''' / 50 = c''''' | c = 1, 8, 15 ... / d = 2, 9, 16 ... / etc.
     de: 1 = Kontra-C / 2 = Kontra-D ... 49 = h'''' / 50 = c''''' | c = 1, 8, 15 ... / d = 2, 9, 16 ... / usw.
+  tutti:
+    en: All instruments
+    de: Alle Instrumente
   strings:
     en: Strings
     de: Streicher
@@ -71,7 +74,7 @@ musikisum/educandu-plugin-orchestration-assistant:
   harp:
     en: Harp
     de: Harfe
-  sopranrecorder:
+  sopranorecorder:
     en: Discant recorder
     de: Sopranblockflöte
   altorecorder:
@@ -97,7 +100,7 @@ musikisum/educandu-plugin-orchestration-assistant:
     de: Bassklarinette
   bassoon:
     en: Bassoon
-    de: Fagotte
+    de: Fagott
   contrabassoon:
     en: Contra bassoon
     de: Kontrafagott

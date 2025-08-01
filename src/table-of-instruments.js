@@ -119,8 +119,8 @@ export default function TableOfInstruments({
               const isLastCustomInstrument = customInstruments.length - 1 === index;
               return (
                 <React.Fragment key={instrument.id}>
-                  {getInstrument(instrument, index)}
-                  {customInstruments.length && noteNamesAfterLastLine && isLastCustomInstrument ? getToneNameGrid() : null}
+                  { getInstrument(instrument, index) }
+                  { customInstruments.length && noteNamesAfterLastLine && isLastCustomInstrument ? getToneNameGrid() : null }
                 </React.Fragment>
               );
             })

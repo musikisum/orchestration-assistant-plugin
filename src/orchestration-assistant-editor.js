@@ -74,9 +74,13 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
 
   const createInstrumentSelectOptions = selection => {
     const options = [];
+    const hasNoInstruments = selection.length === 0;
     const hasOrchestraStrings = selection.some(instr => instrumentsProvider.getSectionInstrumentNames('strings').includes(instr));
     const hasOrchestraWinds = selection.some(instr => instrumentsProvider.getSectionInstrumentNames('winds').includes(instr));
     const hasOrchestraBrass = selection.some(instr => instrumentsProvider.getSectionInstrumentNames('brass').includes(instr));
+    if (hasNoInstruments) {
+      options.push({ value: 'tutti', label: t('tutti') });
+    }
     if(!hasOrchestraStrings) {
       options.push({ value: 'strings', label: t('strings') });
     }

@@ -1,56 +1,32 @@
-/* eslint-disable react/jsx-indent */
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
-import OrchestrationUtilities from '../orchestration-utilities.js';
+import colors from '../colors.js';
 
-export default function AltoRecorder({ from, to, row }) {
+const altorecorder = { 
+  id: 'oap-default-altorecorder',
+  name: 'altorecorder',
+  begin: 26,
+  end: 40,
+  color: colors.wood,
+  text: `# Die Altblockflöte
 
-  const [isVisible, setIsVisible] = useState(false);
+Die Blockflöte ist eine Längsflöte aus Holz in verschiedenen Größen:
 
-  const onInstrumentClick = () => {
-    setIsVisible(!isVisible);
-  };
+- Garkleinflöte in c³, Stimmumfang: c³–d⁵ (g⁵)  
+- Sopranino (Piccolo, Diskant) in f², Stimmumfang: f²–as⁴ (c⁵)  
+- Sopranblockflöte in c², Stimmumfang: c²–es⁴ (g⁴)  
+- Altblockflöte in f¹, Stimmumfang: f¹–as³ (c⁴)  
+- Tenorblockflöte in c¹, Stimmumfang: c¹–es³ (g³)  
+- Bassblockflöte in f, Stimmumfang: f–e² (as²)  
+- Daneben noch Großbass- und Subbassblockflöte (in c und F), Stimmumfänge: c–es² bzw. F–g¹
 
-  const [begin, end] = OrchestrationUtilities.calculateGridColumnsForInstruments(26, 40, from, to); 
-  const calculation = `${begin}/${end}`;
+**Notation:** oktavierend (transponierende Instrumente, Ausnahme: Sololiteratur für Altblockflöte)
 
-  return (
-    <div className='instrument instrument-wood' style={{ gridColumn: calculation, gridRow: row }}>
-      <div className='instrument-beam' onClick={onInstrumentClick} style={{ cursor: 'pointer' }}>
-        Altblockflöte in F
-      </div>
-      {isVisible
-        ? (
-        <div className="instrument-annotations">
-            <p>Die Altblockflöte ist eine Längsflöte aus Holz in verschiedenen Größen:</p>
-            <ul>
-              <li>Garkleinflöte in c<sup>3</sup>, Stimmumfang: c<sup>3</sup>-d<sup>5</sup> (g<sup>5</sup>)</li>
-              <li>Sopranino (Piccolo, Diskant) in f<sup>2</sup>, Stimmumfang: f<sup>2</sup>-as<sup>4</sup> (c<sup>5</sup>)</li>
-              <li>Sopranblockflöte in c<sup>2</sup>, Stimmumfang: c<sup>2</sup>-es<sup>4</sup> (g<sup>4</sup>)</li>
-              <li>Altblockflöte in f<sup>1</sup>, Stimmumfang: f<sup>1</sup>-as<sup>3</sup> (c<sup>4</sup>)</li>
-              <li>Tenorblockflöte in c<sup>1</sup>, Stimmumfang: c<sup>1</sup>-es<sup>3</sup> (g<sup>3</sup>)</li>
-              <li>Bassblockflöte in f, Stimmumfang: f-e<sup>2</sup> (as<sup>2</sup>)</li>
-              <li>daneben noch Großbass- und Subbassblockflöte (in c und F), Stimmumfänge: c-es<sup>2</sup> bzw. F-g<sup>1</sup></li>
-            </ul>  
-            <p><b>Notation:</b> oktavierend (transponierende Instrumente, Ausnahme: Sololiteratur für Altblockflöte)</p>
-            <p><b>Spielweisen:</b> legato (gebunden), gestoßen (staccato), mit viel Nebenluft (sibilando, sputato), &raquo;weißes Rauschen&laquo; (tonlos), Überblasen (Flageolett) etc., hohe Beweglichkeit</p>
-            <p><b>Literaturbeispiel:</b></p>
-            <ul>
-              <li>J. S. Bach, Brandenburgisches Konzert Nr. 4, G-Dur, BWV 1049</li>
-            </ul>
-        </div>)
-        : null}
-    </div>);
-}
+**Spielweisen:** legato (gebunden), gestoßen (staccato), mit viel Nebenluft (sibilando, sputato), „weißes Rauschen“ (tonlos), Überblasen (Flageolett) etc., hohe Beweglichkeit
 
-AltoRecorder.propTypes = {
-  from: PropTypes.number,
-  to: PropTypes.number,
-  row: PropTypes.number
+**Literaturbeispiel:**
+
+- J. S. Bach, *Brandenburgisches Konzert Nr. 4, G-Dur*, BWV 1049
+
+` 
 };
 
-AltoRecorder.defaultProps = {
-  from: 1,
-  to: 50,
-  row: null
-};
+export default altorecorder;
