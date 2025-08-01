@@ -5,11 +5,11 @@
       "de": "Orchestrationshilfe"
     },
     "selection": {
-      "en": "selection",
+      "en": "Selection",
       "de": "Auswahl"
     },
     "noteNames": {
-      "en": "Mote Names",
+      "en": "Note names",
       "de": "Tonnamen"
     },
     "noteNameText": {
@@ -37,11 +37,11 @@
       "de": "Wähle Instrumente aus ..."
     },
     "addLabel": {
-      "en": "add",
+      "en": "Add",
       "de": "Hinzufügen"
     },
     "addInstrument": {
-      "en": "instrument",
+      "en": "Instrument",
       "de": "Instrument"
     },
     "range": {
@@ -73,7 +73,7 @@
       "de": "Violine"
     },
     "viola": {
-      "en": "Viol",
+      "en": "Viola",
       "de": "Viola"
     },
     "violoncello": {
@@ -120,8 +120,8 @@
       "en": "Oboe",
       "de": "Oboe"
     },
-    "englishhorn": {
-      "en": "Cor Englaise",
+    "coranglais": {
+      "en": "Cor anglaise",
       "de": "Englischhorn"
     },
     "clarinet": {

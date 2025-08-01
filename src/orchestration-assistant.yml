@@ -3,10 +3,10 @@ musikisum/educandu-plugin-orchestration-assistant:
     en: Orchestration Assistant
     de: Orchestrationshilfe
   selection:
-    en: selection
+    en: Selection
     de: Auswahl
   noteNames:
-    en: Mote Names
+    en: Note names
     de: Tonnamen
   noteNameText:
     en: Note names before the selected instrument
@@ -27,10 +27,10 @@ musikisum/educandu-plugin-orchestration-assistant:
     en: Choose instruments
     de: Wähle Instrumente aus ...
   addLabel:
-    en: add
+    en: Add
     de: Hinzufügen
   addInstrument:
-    en: instrument
+    en: Instrument
     de: Instrument
   range:
     en: Range
@@ -54,7 +54,7 @@ musikisum/educandu-plugin-orchestration-assistant:
     en: Violin
     de: Violine
   viola:
-    en: Viol
+    en: Viola
     de: Viola
   violoncello:
     en: Violoncello
@@ -89,8 +89,8 @@ musikisum/educandu-plugin-orchestration-assistant:
   oboe:
     en: Oboe
     de: Oboe
-  englishhorn:
-    en: Cor Englaise
+  coranglais:
+    en: Cor anglaise
     de: Englischhorn
   clarinet:
     en: Clarinet

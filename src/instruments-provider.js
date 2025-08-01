@@ -13,7 +13,7 @@ import Clarinet from './instruments/clarinet.js';
 import Trombone from './instruments/trombone.js';
 import ElectricBass from './instruments/e-bass.js';
 import DoubleBass from './instruments/doubleBass.js';
-import EnglishHorn from './instruments/englishHorn.js';
+import CorAnglais from './instruments/corAnglais.js';
 import Violoncello from './instruments/violoncello.js';
 import AltoRecorder from './instruments/a-recorder.js';
 import AltoSaxophone from './instruments/a-saxophone.js';
@@ -42,7 +42,7 @@ const getSortedInstrumentNames = () => {
     'piccoloflute', 
     'flute', 
     'oboe', 
-    'englishhorn', 
+    'coranglais', 
     'clarinet', 
     'bassclarinet', 
     'bassoon', 
@@ -73,7 +73,7 @@ const winds = {
   flute: Flute, 
   piccoloflute: PiccoloFlute, 
   oboe: Oboe, 
-  englishhorn: EnglishHorn, 
+  coranglais: CorAnglais, 
   clarinet: Clarinet, 
   bassclarinet: BassClarinet, 
   bassoon: Bassoon, 
@@ -103,7 +103,7 @@ const tutti = {
   flute: Flute,
   piccoloflute: PiccoloFlute,
   oboe: Oboe,
-  englishhorn: EnglishHorn,
+  coranglais: CorAnglais,
   clarinet: Clarinet,
   bassclarinet: BassClarinet,
   bassoon: Bassoon,

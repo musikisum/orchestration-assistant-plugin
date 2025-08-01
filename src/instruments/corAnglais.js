@@ -1,8 +1,8 @@
 import colors from '../colors.js';
 
-const englishhorn = { 
-  id: 'oap-default-englishhorn',
-  name: 'englishhorn',
+const coranglais = { 
+  id: 'oap-default-coranglais',
+  name: 'coranglais',
   begin: 18,
   end: 35,
   color: colors.wood,
@@ -26,4 +26,4 @@ Das Englischhorn ist das Tenorinstrument der Oboenfamilie (siehe Oboe).
 ` 
 };
 
-export default englishhorn;
+export default coranglais;
