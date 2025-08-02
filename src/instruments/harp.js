@@ -47,9 +47,53 @@ Die Harfe ist ein bevorzugt solistisches Instrument, das sehr leise ist und leic
 - P. Tschaikowsky, *Schwanensee-Suite*, Nr. 4, »Szene«  
 - Cl. Debussy, *Prélude à l'après-midi d'un faune*  
 - G. Mahler, *Sinfonie Nr. 5* in cis-Moll, 4. Satz, *Adagietto*  
-- A. Webern, *Sechs Stücke für Orchester*, Op. 6
+- A. Webern, *Sechs Stücke für Orchester*, Op. 6`,
+  en: `# The Harp
 
-` 
+The double-action harp is a string instrument tuned to C♭ major and has 47 strings.
+
+**Notation:**  
+Written at concert pitch, using two staves (as in piano notation)
+
+**Range:**  
+C♭1–G7
+
+**Pedal technique:**  
+There are 7 pedals used to chromatically alter the pitch of the diatonic tones.
+
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/pedalstellungen-Seite001.svg)
+
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/pedalstellungen-Seite002.svg)
+
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/pedalstellungen-Seite003.svg)
+
+**Example:** Pedal configuration for the harmonic D minor scale (pedals counted from left to right):
+
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/pedalstellungen-Seite004.svg)
+
+- D = middle position of the 1st pedal  
+- E = middle position of the 4th pedal  
+- F = middle position of the 5th pedal  
+- G = middle position of the 6th pedal  
+- A = middle position of the 7th pedal  
+- B♭ = top position of the 3rd pedal  
+- C♯ = bottom position of the 2nd pedal  
+
+A pedal movement affects the given note and all of its octave equivalents across the entire instrument.
+
+**Playing techniques:**  
+Played with the hands, palms, fingers (the little finger is not used), backs of the hands, plucking, striking, snapping the strings, damped with the fingernails (creating a metallic sound), or immediately after plucking (*sons étouffés*), playing close to the soundboard (*près de la table*), glissando (non-chromatic), harmonics (only octave harmonics), etc.
+
+**Combinations:**  
+The harp is primarily a soloistic instrument. It is relatively soft and easily overpowered. It blends well with the strings (e.g., harp harmonics and violins); in *piano*, its low tones can even substitute for the double bass. It also combines well with the flute and horn.
+
+**Repertoire examples:**
+
+- P. Tchaikovsky, *Swan Lake Suite*, No. 4, “Scene”  
+- Cl. Debussy, *Prélude à l'après-midi d'un faune*  
+- G. Mahler, *Symphony No. 5 in C♯ minor*, 4th movement: *Adagietto*  
+- A. Webern, *Six Pieces for Orchestra*, Op. 6`
+
 };
 
 export default harp;

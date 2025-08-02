@@ -29,9 +29,41 @@ Die Posaune ist ein Instrument aus Metall aus der Familie der Blechblasinstrumen
 
 - W. A. Mozart, *Requiem*, *Tuba mirum*, Anfang  
 - G. Rossini, *Ouverture zu Wilhelm Tell*, Buchstabe C (T. 92ff.)  
-- P. Tschaikowsky, *Sinfonie Nr. 6 in h-Moll*, 1. Satz, Ziffer 16
+- P. Tschaikowsky, *Sinfonie Nr. 6 in h-Moll*, 1. Satz, Ziffer 16`,
+  en: `# The Trombone
 
-` 
+The trombone is a brass instrument made of metal and belongs to the brass instrument family. Instruments of the trombone family are built in different registers:
+
+- Alto trombone  
+- Tenor trombone  
+- Bass trombone  
+- Contrabass trombone (e.g. in Wagner)
+
+**Ranges:**  
+- Alto trombone: A2–E♭5  
+- Tenor trombone: E2–D5 (F5)  
+- Bass trombone: B♭1–F4  
+Each also includes seven so-called pedal tones (fundamental tones of each slide position, rarely used in the past due to difficulty of production, but now common and more easily playable on modern instruments). The upper range depends strongly on the player's ability.
+
+**Notation:**  
+Despite having different fundamental tunings, trombones are notated at concert pitch (in bass clef; higher ranges may be written in tenor clef).
+
+**Playing techniques:**  
+Various articulation options (different consonants when tonguing), tonguing techniques (double, triple, and flutter tongue), vibrato, legato, with mute, trills (lip trills), *glissando* (up to the span of a diminished fifth), etc. The slide mechanism limits agility somewhat compared to valved instruments.
+
+**Timbre:**  
+Pedal tones have a metallic, dark, and narrow timbre. In the low register, trombones sound weighty and dark, threatening in forte; in the middle register, heroic and powerful, full and solemn in piano; in the high register, the tone becomes softer (similar in quality to the horn in this range).
+
+**Combinations:**  
+Excellent blending with all brass instruments. Despite timbral differences, the tuba is used as the bass instrument in the trombone section. Less blend with woodwinds (minimal fusion), though it can be used in forte (tutti) with low woodwinds for reinforcement. Very homogeneous tonal blend with the strings is possible.
+
+**Repertoire examples:**
+
+- W. A. Mozart, *Requiem*, *Tuba mirum*, opening  
+- G. Rossini, *William Tell Overture*, letter C (from bar 92)  
+- P. Tchaikovsky, *Symphony No. 6 in B minor*, 1st movement, rehearsal figure 16
+`
+
 };
 
 export default trombone;

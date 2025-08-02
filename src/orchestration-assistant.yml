@@ -130,4 +130,7 @@ musikisum/educandu-plugin-orchestration-assistant:
     de: Tiefster Ton
   end: 
     en: Highest tone 
-    de: Höchster Ton 
+    de: Höchster Ton
+  language:
+    en: en
+    de: text

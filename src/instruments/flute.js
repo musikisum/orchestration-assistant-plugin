@@ -38,9 +38,47 @@ Mit und ohne Vibrato, Legato (gebunden), Staccato (gestoßen), Flatterzunge, Gut
 - J. S. Bach, *Orchestersuite in h-Moll*, BWV 1067 – *Double* und *Badinerie*  
 - Cl. Debussy, *Prélude à l'après-midi d'un faune*  
 - A. Schönberg, *Pierrot Lunaire* Op. 21, 7. »Der kranke Mond«  
-- Jethro Tull, *Bourée*
+- Jethro Tull, *Bourée*`,
+  en: `# The Flute
 
-` 
+The transverse flute (though typically made of metal and reedless) is classified as a woodwind instrument due to its historical wooden construction.
+
+**Range:**  
+(B) C4–C7 (depending on technical ability, also D7–F7 possible)  
+Additionally, alto flute in G (range: G3–G6) and bass flute (range: C3–C6) are occasionally required.
+
+**Notation:**
+
+- Concert pitch (for the concert flute)  
+- Transposing (for the alto flute, down a fourth; for the bass flute, down an octave)
+
+**Timbre:**  
+- Lowest register: weak but full  
+- 1st to 2nd octave: soft and lacking power  
+- 2nd to 3rd octave: clear and brilliant  
+- Highest register: increasingly shrill
+
+**Playing techniques:**  
+With or without vibrato, legato (smooth), staccato (detached), flutter tongue, guttural tones (simultaneous with written notes), much breath noise (sibilando, sputato), glissando-like tone onset, *whistle tones* (relaxed embouchure and minimal airflow, producing overtone harmonics), overblowing (harmonics), underblowing (drum-like tones), key clicks only, wide dynamic range
+
+**Combinations:**
+
+- Excellent blend with oboe and clarinet  
+- With bassoon in double-octave spacing: unusual tonal effect  
+- With brass instruments: difficult due to dynamic imbalance  
+  - Exception: flute + horn  
+  - In *piano* dynamics and low registers: flute + trumpet can work  
+- Strong tonal fusion with strings  
+  - In the upper octave with violins: flute stands out as solo voice  
+  - In unison: violin sound tends to dominate
+
+**Repertoire examples featuring solo flute in orchestral writing (or rock band):**
+
+- J. S. Bach, *Orchestral Suite in B minor*, BWV 1067 – *Double* and *Badinerie*  
+- Cl. Debussy, *Prélude à l'après-midi d'un faune*  
+- A. Schönberg, *Pierrot Lunaire*, Op. 21, No. 7 “Der kranke Mond”  
+- Jethro Tull, *Bourée*`
+
 };
 
 export default flute;

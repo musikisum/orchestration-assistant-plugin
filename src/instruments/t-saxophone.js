@@ -33,9 +33,48 @@ Das Tenorsaxofon ist ein Instrument aus der Saxofonfamilie. Dazu gehören:
 - M. Ravel, *Boléro* (nach Ziffer 7: Sopranino in F und Sopran in B)  
 - D. Milhaud, *Suite Scaramouche*  
 - M. Mussorgsky / M. Ravel, *Bilder einer Ausstellung*, instrumentierte Fassung, 2. *Il Vecchio Castello* (Altsaxophon)  
-- A. K. Glasunow, *Saxophonkonzert in Es-Dur*, Op. 109
+- A. K. Glasunow, *Saxophonkonzert in Es-Dur*, Op. 109`,
+  en: `# The Tenor Saxophone
 
-` 
+The tenor saxophone is part of the saxophone family, which includes:
+
+- Sopranino in E♭  
+- Soprano saxophone in B♭  
+- Alto saxophone in E♭  
+- Tenor saxophone in B♭  
+- Baritone saxophone in E♭  
+- Bass saxophone in B♭
+
+**Ranges:**  
+All saxophones have a written range from B♭3 to F♯6. This results in the following sounding ranges:
+
+- Sopranino: D♭5–D♭7  
+- Soprano saxophone: A♭3–E6  
+- Alto saxophone: D♭4–A5  
+- Tenor saxophone: A♭2–E5  
+- Baritone saxophone: D♭3–A4  
+- Bass saxophone: A♭1–E4  
+
+Notes above the indicated upper range are considered harmonics (altissimo register).
+
+**Notation:** transposing, meaning:  
+– a minor third higher than sounding (sopranino)  
+– a major second, major ninth, or major second plus two octaves lower than sounding (soprano, tenor, and bass saxophones)  
+– a major sixth, or a major sixth plus an octave lower than sounding (alto and baritone saxophones)
+
+**Playing techniques:**  
+Legato, staccato, trills, vibrato, growling, key clicks and false fingerings, flutter tongue, slap tongue, glissando (bending), overblowing (to octave and twelfth), underblowing (air tones, air without pitch), subtone, etc. The instrument is highly agile.
+
+**Special features:**  
+Four- to five-part *reed section* voicings, such as the *Four Brothers sound* (3 tenor saxophones and 1 baritone saxophone, known since 1948 through Woody Herman’s orchestra) appear in classical modernism (Stravinsky, Gershwin, Berg, Webern, etc.) and in popular music (Miller, Ellington, etc.). The five-part reed section (popularized by Benny Carter) can be considered the standard reed section in big bands (2 alto saxes, 2 tenor saxes, 1 baritone sax).
+
+**Repertoire examples:**
+
+- M. Ravel, *Boléro* (after rehearsal figure 7: sopranino in F and soprano in B♭)  
+- D. Milhaud, *Suite Scaramouche*  
+- M. Mussorgsky / M. Ravel, *Pictures at an Exhibition*, orchestrated version, 2nd movement: *Il Vecchio Castello* (alto saxophone)  
+- A. K. Glazunov, *Concert for saxophone in E♭ Op. 109*`
+
 };
 
 export default tenorsaxophone;

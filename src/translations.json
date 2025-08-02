@@ -175,6 +175,10 @@
     "end": {
       "en": "Highest tone",
       "de": "Höchster Ton"
+    },
+    "language": {
+      "en": "en",
+      "de": "text"
     }
   }
 }

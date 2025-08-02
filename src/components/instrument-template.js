@@ -34,7 +34,7 @@ export default function InstrumentTemplate({ from, to, instrument, row }) {
         {t(instrument.name)}
       </div>
       {isVisible
-        ? <Markdown className='instrumentDescription' renderAnchors>{instrument.text}</Markdown>
+        ? <Markdown className='instrumentDescription' renderAnchors>{instrument[t('language')]}</Markdown>
         : null}
     </div>);
 }

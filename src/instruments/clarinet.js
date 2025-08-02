@@ -33,9 +33,56 @@ Selten auch kleine Klarinetten (Piccolo) z.B. in D und Es, die Mediumklarinette 
 - J. S. Bach, *Kantate BWV 8 „Liebster Gott…“*, Arie Nr. 2 *„Was willst du dich…“* (Oboe d’amore)  
 - W. A. Mozart, *Sinfonie in Es*, KV 543, 3. Satz, Trio (Klarinetten in B)  
 - A. Schönberg, *Pierrot Lunaire* Op. 21, Nr. 9 *„Gebet an Pierrot“* (Klarinette in A)  
-- W. A. Mozart, *Requiem*, *„Recordare“* (Bassetthörner)
+- W. A. Mozart, *Requiem*, *„Recordare“* (Bassetthörner)`,
+  en: `# The Clarinet
 
-` 
+The clarinet is a wooden vertical wind instrument with a single reed, available in the following transpositions:
+
+- Clarinet in B♭  
+- Clarinet in A  
+- Clarinet in C  
+- Basset horn in F  
+- Bass clarinet in B♭  
+
+Less common are small clarinets (piccolo clarinets), e.g. in D and E♭, the medium clarinet in G, alto clarinets in F and E♭, and various contrabass clarinets.
+
+**Ranges:**  
+The high clarinets generally share the same **written range**: E3–A6  
+Thus, their **sounding ranges** are:  
+- B♭ clarinet: D3–G6  
+- A clarinet: C♯3–F♯6  
+- etc.
+
+**Notation:**  
+Transposing instrument:  
+- B♭ clarinet: written a major second higher than sounding  
+- A clarinet: written a minor third higher  
+- Basset horn: written a perfect fifth higher  
+- Bass clarinet: written a major ninth higher
+
+**Timbre:**  
+- Lowest register: soft but full  
+- 1st–2nd octave: smooth, low in intensity  
+- 2nd–3rd octave: clear and brilliant  
+- Highest register: increasingly shrill
+
+**Playing techniques:**  
+The clarinet overblows at the twelfth (octave + fifth).  
+It has an extremely wide **dynamic range**, from the softest *pianissimo* to powerful *forte*, including *crescendo from nothing* (*niente attack*), *legato*, *staccato*, double, triple, and flutter tonguing (except in very high ranges), slap tongue (reed slap with pitch), smooth portamento, glissando (notably challenging between G♯5 and A5), tone effects using teeth on the reed, *tremolo* and *trills*, *harmonics*, microtones (in contemporary music), etc.
+
+**Combinations:**  
+The clarinet blends well in unison or octave combinations with all woodwinds.  
+In high registers, it shines when played in unison with the trumpet; however, it does not blend well with trombones.  
+Excellent fusion with the horn in unison; octave or double-octave pairings with the horn are also highly effective.  
+It combines exceptionally well with strings in all registers.
+
+**Repertoire examples:**
+
+- J. S. Bach, *Cantata BWV 8 “Liebster Gott…”*, Aria No. 2 *“Was willst du dich…”* (Oboe d’amore)  
+- W. A. Mozart, *Symphony in E♭ major*, K. 543, 3rd movement, Trio (B♭ clarinets)  
+- A. Schönberg, *Pierrot Lunaire*, Op. 21, No. 9 *“Gebet an Pierrot”* (A clarinet)  
+- W. A. Mozart, *Requiem*, *“Recordare”* (Basset horns)`
+
 };
 
 export default clarinet;

@@ -28,9 +28,38 @@ Die Celesta ist das häufigste Klavierinstrument im Orchester.
 - I. Stravinsky, *Psalmensinfonie* (mit Klavier)  
 - B. Bartók, *Musik für Saiteninstrumente, Schlagzeug und Celesta*  
 - Chris de Burgh, *Crusader* (mit Cembalo)  
-- Emerson, Lake & Palmer, *Pictures At An Exhibition* (mit Orgel, Synthesizer)
+- Emerson, Lake & Palmer, *Pictures At An Exhibition* (mit Orgel, Synthesizer)`,
+  en: `# Keyboard Instruments
 
-` 
+Keyboard instruments (from Latin *claves* = keys) come in various constructions, such as:
+
+- **Pianoforte** (piano, grand piano; commonly referred to as the "piano" in the narrow sense):  
+  Instrument with a range of over 7 octaves (A2–C8, depending on the construction)
+
+- **Organ**:  
+  A modern instrument with the widest range (C–C7); with 32′ and 2′ stops, the range can be extended by one and two octaves, respectively
+
+- **Harpsichord**:  
+  Range varies depending on the construction; modern instruments range from F1–C6, and may be extended by one octave using 16′ and 4′ stops  
+  *Sound:* plucked string (with mechanical noise)
+
+- **Celesta**:  
+  Uses an upward-striking hammer mechanism (on steel bars with wooden resonators), long resonance that can be dampened using a pedal; range: C4–C8  
+  *Sound:* delicate tone, similar in color to the glockenspiel or glass harmonica
+
+**Notation:**  
+- *Celesta:* written one octave lower than it sounds (transposing instrument, similar to double bass or bass guitar)  
+- *Other keyboard instruments:* written at sounding pitch, sometimes notated with octave signs (8va or 15ma)
+
+The celesta is the most common keyboard instrument in the orchestra.
+
+**Repertoire examples:**
+
+- I. Stravinsky, *Symphony of Psalms* (with piano)  
+- B. Bartók, *Music for Strings, Percussion and Celesta*  
+- Chris de Burgh, *Crusader* (with harpsichord)  
+- Emerson, Lake & Palmer, *Pictures at an Exhibition* (with organ and synthesizer)`
+
 };
 
 export default piano;

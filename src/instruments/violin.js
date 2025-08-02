@@ -49,7 +49,51 @@ Die Violine ist das Sopraninstrument der Geigenfamilie (Quintenstimmung, F-Löch
 
 - J. Haydn, Sinfonie Nr. 6 (Hob.I:6), »Le Matin«, 4. Satz
 - J. Brahms, 1. Sinfonie, Op. 68, 2. Satz
-- City, Am Fenster`
+- City, Am Fenster`,
+  en:`# The Violin
+
+The violin is the soprano instrument of the violin family (tuned in fifths, with F-holes and the typical body shape), reaching down into the alto range.
+
+**Tuning:** G–D1–A1–E2
+
+**Notation:** written at sounding pitch, highly agile
+
+**Fingering range:** E string up to G6; in orchestral context, up to C6 is commonly achievable
+
+**Double stops:** Intervals involving an open string (very easy), sixths (easy), fifths, fourths, and thirds (difficult), octaves and unisons (very difficult)
+
+**Harmonics:**
+
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/a0bc600e2b5bd68ee031bd5e79671dea7ecbc095/assets/Flageolett-Violine-1.svg)
+
+**Playing techniques:** sustained (*détaché*), connected (*legato*), detached (from *non-legato* to *staccato*), accented (*martelé*), bouncing bow (*spiccato*), falling on the string (*ricochet*), over the fingerboard (*flautando*), striking with the wood of the bow (*col legno*), plucked with the right hand (or also the left hand in solo playing) (*pizzicato*), *glissando* (sliding), *vibrato* / *non-vibrato*, muted (*con sordino*)
+
+**Combinations:** String instruments can be effectively used to reinforce (other) string instruments by doubling at the octave (e.g. Violin I by Violin II, Viola, or even Cello one octave lower); strong timbral blending with all woodwinds and the horn, weaker blending with trumpet, trombone, and tuba.
+
+**Fingering technique:** Examples of basic positions for the major tetrachord played with fingers 1–4 on the A string:
+
+| Notes        | ½ Pos.     | 1st Pos.     | 2nd Pos.     | 3rd Pos.     | 4th Pos.      |
+|--------------|------------|--------------|--------------|--------------|---------------|
+| B            | 1          |              |              |              |               |
+| B♯ / C       |            | 1            |              |              |               |
+| C            | 2          |              | 1            |              |               |
+| C♯           |            | 2            |              |              |               |
+| D            | 3          |              | 2            | 1            |               |
+| D♯ / E♭      | 4          | 3            |              |              |               |
+| E            |            | 4            | 3            | 2            | 1             |
+| F            |            |              | 4            |              |               |
+| F♯           |            |              |              | 3            | 2             |
+| G            |            |              |              | 4            |               |
+| G♯           |            |              |              |              | 3             |
+| A            |            |              |              |              | 4             |
+
+**School orchestra:** Avoid or use with caution harmonics, double and multiple stops; range above 3rd position (E6 / d''') should be required only in exceptional cases.
+
+**Repertoire examples for a solo violin within the orchestra:**
+
+- J. Haydn, Symphony No. 6 (Hob.I:6), *"Le Matin"*, 4th movement  
+- J. Brahms, Symphony No. 1, Op. 68, 2nd movement  
+- City, *Am Fenster*`
   
 };
 

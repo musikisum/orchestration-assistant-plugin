@@ -41,9 +41,50 @@ Da Bariton- und Bassoboe nur selten in Orchestern verfügbar sind, wird auch das
 - I. Stravinsky, *Pulcinella-Suite* nach Pergolesi, 2. Satz, Serenata (Oboe)  
 - J. S. Bach, *Weihnachtsoratorium*, Eingangssatz zum 2. Teil, Sinfonia  
   (vierstimmiger Oboensatz mit zwei Oboen d’amore und zwei Oboen da caccia)  
-- Repertoirestellen zum Englischhorn siehe unter *Englischhorn*
+- Repertoirestellen zum Englischhorn siehe unter *Englischhorn*`,
+  en: `# The Oboe
 
-` 
+The oboe is a vertical woodwind instrument with a double reed, available in the following pitch ranges:
+
+- **Oboe (soprano)**  
+  Range: B♭3–G6 (A6; even higher in contemporary music)
+- **Oboe d’amore in A (mezzo-soprano or alto)**  
+  Range: G♯3–C♯6
+- **English horn in F and Oboe da caccia in F (tenor or alto)**  
+  Range: (E♭3) E3–B♭5 (C6)
+- **Baritone or bass oboe, Heckelphone (tenor or bass)**  
+  Range: (A2) B2–E5
+
+As baritone and bass oboes are rarely available in orchestras, the bassoon is often used or referred to as the bass voice of the oboe family.
+
+**Notation:**  
+- Oboe: at concert pitch  
+- Oboe d’amore: written a minor third higher than sounding  
+- English horn: written a perfect fifth higher than sounding  
+- Bass oboe & Heckelphone: written one octave higher than sounding (like the double bass)
+
+**Timbre:**  
+- Lowest register: weak but full  
+- 1st to 2nd octave: soft, little power  
+- 2nd to 3rd octave: clear and brilliant  
+- Highest register: increasingly shrill
+
+**Playing techniques:**  
+Limited vibrato (controlled with diaphragm, up to a major second), legato, staccato, triple tongue (limited), finger glissando (limited), lip glissando (up to a major second), trills, harmonics, some double harmonics, microtones, less agile than flutes
+
+**Combinations:**  
+Very effective with all woodwinds; in the upper octave, can be paired with trumpet or horn; otherwise rarely combined with brass (due to dynamic balance issues). Very effective and common combinations with strings (e.g., unison with violins or in octaves with cellos)
+
+**Repertoire examples:**
+
+- J. S. Bach, Cantata BWV 8 *Liebster Gott…*, Aria No. 2 *Was willst du dich…* (Oboe d’amore)  
+- P. Tchaikovsky, *Symphony No. 4 in F minor*, Op. 36, 2nd movement (Oboe)  
+- J. Brahms, *Violin Concerto in D major*, Op. 77, 2nd movement (Oboe)  
+- I. Stravinsky, *Pulcinella Suite* after Pergolesi, 2nd movement: *Serenata* (Oboe)  
+- J. S. Bach, *Christmas Oratorio*, opening of Part II, *Sinfonia*  
+  (four-part oboe ensemble with two oboes d’amore and two oboes da caccia)  
+- For English horn excerpts, see section on *English horn*`
+
 };
 
 export default oboe;

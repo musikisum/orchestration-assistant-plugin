@@ -24,9 +24,28 @@ Die Blockflöte ist eine Längsflöte aus Holz in verschiedenen Größen:
 
 **Literaturbeispiel:**
 
-- J. S. Bach, *Brandenburgisches Konzert Nr. 4, G-Dur*, BWV 1049
+- J. S. Bach, *Brandenburgisches Konzert Nr. 4, G-Dur*, BWV 1049`,
+  en: `# The Soprano Recorder
 
-` 
+The recorder is a vertical (duct) flute made of wood, available in various sizes:
+
+- Garklein recorder in C6, range: C6–D8 (up to G8)  
+- Sopranino (piccolo, descant) in F5, range: F5–A♭7 (up to C8)  
+- Soprano recorder in C5, range: C5–E♭7 (up to G7)  
+- Alto recorder in F4, range: F4–A♭6 (up to C7)  
+- Tenor recorder in C4, range: C4–E♭6 (up to G6)  
+- Bass recorder in F3, range: F3–E5 (up to A♭5)  
+- Additionally: Great bass and sub-bass recorders (in C and F), ranges: C3–E♭5 and F2–G4 respectively
+
+**Notation:** octave-transposing (transposing instruments, exception: solo literature for alto recorder is typically written at sounding pitch)
+
+**Playing techniques:**  
+Legato (smooth), staccato (detached), with much breath noise (sibilando, sputato), "white noise" (soundless air), overblowing (harmonics), etc. The recorder is highly agile.
+
+**Repertoire example:**
+
+- J. S. Bach, *Brandenburg Concerto No. 4 in G major*, BWV 1049`
+
 };
 
 export default sopranorecorder;

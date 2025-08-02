@@ -16,9 +16,26 @@ Der E-Bass wurde Mitte des 20. Jahrhunderts entwickelt. Er hat einen massiven Ho
 
 **Bauweise:** Mit bis zu 22 Bünden gebräuchlich
 
-**Spielweisen:** diverse Zupftechniken, insbesondere **Slap-Technik** (mit dem Daumen der Zupfhand angeschlagen, angerissen, gedämpft etc.) und mit **Oktaver** (Oktavkoppel). Weitere Effekte siehe *Gitarre* (in der Praxis werden elektronische Effekte selten bzw. ausschließlich zum Solospiel verwendet). Hohe Beweglichkeit.
+**Spielweisen:** diverse Zupftechniken, insbesondere **Slap-Technik** (mit dem Daumen der Zupfhand angeschlagen, angerissen, gedämpft etc.) und mit **Oktaver** (Oktavkoppel). Weitere Effekte siehe *Gitarre* (in der Praxis werden elektronische Effekte selten bzw. ausschließlich zum Solospiel verwendet). Hohe Beweglichkeit.`,
+  en: `# The Electric Bass (E-Bass)
 
-` 
+The electric bass was developed in the mid-20th century. It features a solid wooden body and four steel strings, tuned like the double bass. In addition to this standard form, there are many variations, including models with more strings, alternative tunings, hollow bodies, or fretless fingerboards (*fretless*).
+
+**Tuning:**  
+E₁–A₁–D–G  
+Five-string bass: with a low B₀ or C₁ string  
+Six-string bass: with an additional high C string
+
+**Notation:**  
+Written one octave higher than it sounds (transposing instrument, like the double bass)
+
+**Construction:**  
+Typically built with up to 22 frets
+
+**Playing techniques:**  
+Various plucking techniques, especially the **slap technique** (played with the thumb of the plucking hand—slapped, popped, muted, etc.), and use of an **octaver** (octave-doubling effect).  
+Additional effects are similar to those used with electric guitar (see *Guitar* section), though in practice, electronic effects are rarely used outside of solo playing. Highly agile instrument.`
+
 };
 
 export default electricbass;

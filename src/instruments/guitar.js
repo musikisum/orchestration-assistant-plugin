@@ -48,9 +48,54 @@ Die Bauweise heutiger elektrischer Gitarren lässt sich auf wenige Modelle zurü
 
 - Jimi Hendrix – *Star Spangled Banner*  
 - Santana – *Samba PaTi*  
-- Van Halen – *Jump*
+- Van Halen – *Jump*`,
+  en: `# The Guitar
 
-` 
+The guitar is a string instrument with frets.
+
+**Tuning:** E–A–D–G–B–e¹
+
+**Notation:**  
+Written one octave higher than it sounds (transposing instrument), highly agile
+
+**Range:**  
+Up to E5 is playable on all guitar types; guitars with 19 frets can reach B5; electric guitars with a "cutaway" (body indentation) can reach up to E6
+
+**Construction:**  
+Acoustic guitars have a resonating body (e.g. classical guitar, steel-string acoustic or "western guitar") and can be amplified using pickups for use in band settings.
+
+Among electric guitars, a distinction is made between:
+
+- Hollow-body guitars  
+- Semi-hollow-body guitars  
+- Solid-body guitars
+
+The **hollow-body guitar** is the oldest type of electric guitar, with a resonating body, F-holes, and built-in pickups; today it is used almost exclusively in jazz. The **semi-hollow-body guitar** bridges the gap between acoustic and electric models. To reduce feedback, a solid center block has been added to the hollow body since 1955.
+
+Modern electric guitar construction can be traced back to a few key models:
+
+- Gibson: ES-150, "Les Paul", ES-335, *Firebird*  
+- Fender: Telecaster and Stratocaster
+
+**Playing techniques:**  
+Various plucking techniques, bottleneck/slide playing (using a glass or metal tube on the finger to glide over the strings), string bending (pitch change by pulling the string), hammer-on and pull-off (smooth transitions without re-plucking), sustain (long tone duration, often via amplification), and a wide range of effects when electronically amplified, including:
+
+- Flanger  
+- Chorus  
+- Delay (echo)  
+- Reverb  
+- Pitch shifter  
+- Phaser  
+- Overdrive / distortion  
+- Whammy bar (vibrato arm)  
+- Wah-wah pedal (filter producing vocal-like sounds), and many more
+
+**Repertoire examples demonstrating the sound possibilities of electric guitar:**
+
+- Jimi Hendrix – *Star Spangled Banner*  
+- Santana – *Samba Pa Ti*  
+- Van Halen – *Jump*`
+
 };
 
 export default guitar;

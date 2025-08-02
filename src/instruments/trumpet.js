@@ -41,9 +41,51 @@ Durch das Wiederaufleben der Trompete als Soloinstrument des Barock nach 1950 wu
 
 - G. Mahler, 5. Sinfonie, 1. Satz, Anfang  
 - M. Mussorgsky / M. Ravel, *Bilder einer Ausstellung* (orch. durch M. Ravel), *Promenade* und *Samuel Goldenberg und Schmuyle* (mit Dämpfer und Tripelzunge)  
-- Beatles, *Penny Lane*, John Lennon und Paul McCartney, 1967 (Piccolo-Trompete)
+- Beatles, *Penny Lane*, John Lennon und Paul McCartney, 1967 (Piccolo-Trompete)`,
+  en: `# The Trumpet
 
-` 
+The trumpet is a brass wind instrument made of metal, belonging to the brass instrument family (either as a natural trumpet or a valved trumpet).
+
+**Range:** Natural trumpets can only produce a limited set of tones (natural harmonics).
+
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/Obertonreihe-1.svg)
+
+Composers in the 18th century wrote with this limited set of tones in mind. The marked (+) tones are impure; tones below the third and above the 12th harmonic were rarely used. From around 1850 onward, tones not found in the harmonic series could be played using a technique called "stopping," producing a different timbre. Even in the 19th century, when the valved horn had already become common, melodies were still occasionally written that adhered to the tone set of natural instruments — such as the famous horn melody in the fourth movement of J. Brahms' *Symphony No. 1*.
+
+**Notation:** transposing (except for the natural trumpet in high C or altus). In the 18th century, common tonalities had matching trumpet tunings:
+
+- Trumpet in C (concert pitch)  
+- Trumpet in D (transposing up)  
+- Trumpet in E♭ (transposing up)  
+- Trumpet in E (transposing up)  
+- Trumpet in F (transposing up)  
+- Trumpet in G (transposing up)  
+- Trumpet in B (transposing down)  
+- Trumpet in B♭ (transposing down)  
+- Trumpet in A (transposing down)
+
+The valved trumpet (B♭ trumpet) is a chromatic instrument with a narrower bore and roughly half the tube length of the natural trumpet. Its sound is brighter and sharper (even slightly more piercing) than that of the natural trumpet. There are two construction types: instruments with Périnet valves ("jazz trumpet") or with rotary valves.  
+With the revival of the trumpet as a solo Baroque instrument after 1950, the piccolo trumpet was developed. It is pitched in high A or B♭ (transposing up), with a tube length approximately half that of the modern valved trumpet. The piccolo trumpet is used not only as a solo instrument but also occasionally in orchestras to facilitate the execution of high passages. Due to its narrow bore, the piccolo trumpet has an even brighter (more brilliant) tone. In modern construction, there are also trumpets pitched in high G (transposing up).
+
+**Typical ranges:** For natural trumpets, the typical notated orchestral range is G3 to G5. This corresponds to a sounding range of:
+
+- F3–F5 for the B♭ trumpet  
+- A3–A5 for the D trumpet  
+- etc.
+
+Modern instruments can play well beyond the notated G5. In jazz, depending on technical ability, tones above C6 are common (up to F6, and in some solo cases even to C7).
+
+**Playing techniques:** various articulation styles (different consonants when tonguing), tonguing techniques (double, triple, and flutter tongue), vibrato, legato, stopped (no longer common), use of mute, various trills (using valves or lips), "blazing tones" (in the middle octave), glissando, etc.
+
+**Combinations:** Can be paired with the horn in unison (for reinforcement) or in the lower octave (to soften the trumpet sound). Trumpets and trombones together produce a powerful effect, especially in forte. Blending with strings is minimal (exception: viola). Dynamic imbalances can occur when combined with woodwinds (the trumpet sound can be reinforced by doubling with bass clarinet or bassoon at the octave). Trumpet and clarinet in unison produce a brighter tone than with other woodwinds.
+
+**Repertoire examples:**
+
+- G. Mahler, *Symphony No. 5*, 1st movement, opening  
+- M. Mussorgsky / M. Ravel, *Pictures at an Exhibition* (orch. by Ravel), *Promenade* and *Samuel Goldenberg and Schmuyle* (with mute and triple tongue)  
+- The Beatles, *Penny Lane*, John Lennon and Paul McCartney, 1967 (piccolo trumpet)
+`
+
 };
 
 export default trumpet;

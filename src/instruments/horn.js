@@ -42,9 +42,60 @@ In der Orchesterpraxis werden die hohen Stimmen in der Regel vom 1. und 3. Horn,
 
 - F. Schubert, *Sinfonie in C-Dur* („Die Große“), Anfang  
 - R. Wagner, *Siegfried*, 1. Akt, 2. Szene  
-- The Beatles, *For No One*, John Lennon und Paul McCartney, 1966
+- The Beatles, *For No One*, John Lennon und Paul McCartney, 1966`,
+  en: `# The Horn
 
-` 
+The horn is a brass wind instrument made of metal, available as a natural horn or valved horn.
+
+**Range:**  
+Natural horns can only produce a limited set of pitches (natural harmonics).
+
+*[Graphic: Harmonic Series]*
+
+Composers in the 18th century took this specific tone set into account; the marked (+) tones are impure. Tones below the 3rd and above the 12th harmonic were rarely used. From around 1850 onward, tones not found in the harmonic series could be produced by "hand-stopping," though this changed the timbre. Even in the 19th century, when valved horns were already established, melodies were still occasionally composed to fit the natural horn’s limited harmonic series — e.g. the famous horn melody in the fourth movement of J. Brahms’ *Symphony No. 1*.
+
+**Notation:**  
+Transposing (except for the natural horn in high C / altus). In the 18th century, different tunings matched the keys of compositions:
+
+- Horn in B♭ (high and low)  
+- Horn in C (high and low)  
+- Horn in A (high and low)  
+- Horn in G  
+- Horn in F  
+- Horn in E  
+- Horn in E♭  
+- Horn in D
+
+A modern valved horn (double horn in F) combines the functions of a horn in F and a high B♭ horn. The chromatic scale is achieved through valves.
+
+**Playable ranges (notation):**  
+All natural horns typically use the notated range G3–G5 in orchestral writing.  
+This corresponds to the following sounding ranges:  
+- Horn in B♭ (high): F3–F5  
+- Horn in B♭ (low): F2–F4  
+- Horn in F: C3–C5  
+- etc.
+
+**Timbre (valved horn in F):**  
+- F2–C4: dark and somewhat diffuse  
+- C4–F4: warm and powerful  
+- F4–C6: ideal solo register  
+- Above C6: brilliant but thin and piercing
+
+**Playing techniques:**  
+Various articulations (using different consonants for attacks), tonguing techniques (double, triple, and flutter tongue), vibrato, legato, hand-stopping, use of mute, trills, etc.  
+In orchestral settings, higher parts are usually played by 1st and 3rd horn, lower parts by 2nd and 4th horn.
+
+**Combinations:**  
+The tuba blends well with the horn. Horns combine well with other brass instruments (in piano dynamics, also with trumpets and trombones — though in forte, horns only reach about half the volume of the rest of the brass).  
+Excellent blending also with strings and with oboe, clarinet, and bassoon (strong fusion when playing in unison).
+
+**Repertoire examples:**
+
+- F. Schubert, *Symphony in C major* ("The Great"), opening  
+- R. Wagner, *Siegfried*, Act I, Scene 2  
+- The Beatles, *For No One*, John Lennon and Paul McCartney, 1966`
+
 };
 
 export default horn;
