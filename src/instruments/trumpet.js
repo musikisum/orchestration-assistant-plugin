@@ -12,7 +12,7 @@ Die Trompete ist ein Blasinstrument aus Metall aus der Familie der Blechblasinst
 
 **Tonumfang:** Naturtrompeten können nur einen begrenzten Tonvorrat produzieren (Naturtöne).
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/Obertonreihe-1.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/Obertonreihe-1.svg)
 
 Komponisten haben im 18. Jahrhundert diesen speziellen Tonvorrat berücksichtigt, die markierten (+) Töne sind unrein, Töne unter dem dritten und über dem 12. Oberton wurden selten verwendet. Darüber konnten ab ca. 1850 benötigte und nicht in der Obertonreihe vorhandene Töne durch sogenanntes »Stopfen« mit einer anderen Klangqualität gespielt werden. Selbst im 19. Jahrhundert, in dem sich das Ventilhorn bereits durchgesetzt hatte, wurden gelegentlich noch Melodien komponiert, die auf den Tonvorrat der Naturinstrumente zugeschnitten waren, wie z.B. die berühmte Hornmelodie im vierten Satz der 1. Sinfonie von J. Brahms.
 
@@ -48,7 +48,7 @@ The trumpet is a brass wind instrument made of metal, belonging to the brass ins
 
 **Range:** Natural trumpets can only produce a limited set of tones (natural harmonics).
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/Obertonreihe-1.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/Obertonreihe-1.svg)
 
 Composers in the 18th century wrote with this limited set of tones in mind. The marked (+) tones are impure; tones below the third and above the 12th harmonic were rarely used. From around 1850 onward, tones not found in the harmonic series could be played using a technique called "stopping," producing a different timbre. Even in the 19th century, when the valved horn had already become common, melodies were still occasionally written that adhered to the tone set of natural instruments — such as the famous horn melody in the fourth movement of J. Brahms' *Symphony No. 1*.
 

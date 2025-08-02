@@ -16,15 +16,15 @@ Die Doppelharfe ist ein Saiteninstrument mit Ces-Dur-Stimmung und 47 Saiten.
 
 **Pedaltechnik:** Es gibt 7 Pedale zur chromatischen Veränderung der Stammtöne.
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/pedalstellungen-Seite001.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/pedalstellungen-Seite001.svg)
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/pedalstellungen-Seite002.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/pedalstellungen-Seite002.svg)
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/pedalstellungen-Seite003.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/pedalstellungen-Seite003.svg)
 
 Beispiel: Die Pedalstellung für die harmonische d-Molltonleiter (Zählung der Pedale von links nach rechts):
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/pedalstellungen-Seite004.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/pedalstellungen-Seite004.svg)
 
 - d = Mittelstellung des 1. Pedals  
 - e = Mittelstellung des 4. Pedals  
@@ -61,15 +61,15 @@ C♭1–G7
 **Pedal technique:**  
 There are 7 pedals used to chromatically alter the pitch of the diatonic tones.
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/pedalstellungen-Seite001.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/pedalstellungen-Seite001.svg)
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/pedalstellungen-Seite002.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/pedalstellungen-Seite002.svg)
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/pedalstellungen-Seite003.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/pedalstellungen-Seite003.svg)
 
 **Example:** Pedal configuration for the harmonic D minor scale (pedals counted from left to right):
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/6e3646dd5ebe03a52a1972a9337bbff9cba683a2/assets/pedalstellungen-Seite004.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/pedalstellungen-Seite004.svg)
 
 - D = middle position of the 1st pedal  
 - E = middle position of the 4th pedal  

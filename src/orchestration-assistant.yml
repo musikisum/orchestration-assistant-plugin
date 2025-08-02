@@ -5,9 +5,15 @@ musikisum/educandu-plugin-orchestration-assistant:
   selection:
     en: Selection
     de: Auswahl
+  selectionTt:
+    en: Here you can select instruments to be displayed as bars below a line of notes.
+    de: Hier kannst du Instrumente an- und abwählen, die als Balken unter einer Tonskala angezeigt werden.
   noteNames:
     en: Note names
     de: Tonnamen
+  noteNamesTt:
+    en: Here you can define before which instruments a row of note names should be displayed.
+    de: Hier kannst du festlegen, vor welchen Instrumenten eine Reihe mit Notennamen angezeigt wird. 
   noteNameText:
     en: Note names before the selected instrument
     de: Notennamen vor dem ausgewählten Instrument
@@ -29,15 +35,18 @@ musikisum/educandu-plugin-orchestration-assistant:
   addLabel:
     en: Add
     de: Hinzufügen
+  addLabelTt:
+    en: Here you can add your own instruments and descriptions to your collection.
+    de: Hier kannst du deiner Instrumentensammlung eigene Instrumente und Instrumentenbeschreibungen hinzufügen. 
   addInstrument:
     en: Instrument
     de: Instrument
   range:
     en: Range
     de: Tonumfang
-  rangeText:
-    en: 1 = Contra-C / 2 = Contra-D ... 49 = b'''' / 50 = c''''' | c = 1, 8, 15 ... / d = 2, 9, 16 ... / etc.
-    de: 1 = Kontra-C / 2 = Kontra-D ... 49 = h'''' / 50 = c''''' | c = 1, 8, 15 ... / d = 2, 9, 16 ... / usw.
+  rangeTt:
+    en: Here you can specify the pitch at which the line of notes begins and ends.
+    de: Hier kannst du festlegen, mit welchem Ton die Tonskala beginnt und mit welchem sie endet.
   tutti:
     en: All instruments
     de: Alle Instrumente

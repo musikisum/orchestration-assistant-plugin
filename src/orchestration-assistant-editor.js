@@ -140,7 +140,10 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   return (
     <div className="EP_Educandu_Orchestration_Assistant_Editor">
       <Form labelAlign="left">
-        <Form.Item label={t('selection')} {...FORM_ITEM_LAYOUT}>
+        <Form.Item 
+          label={<Info tooltip={t('selectionTt')}>{t('selection')}</Info>} 
+          {...FORM_ITEM_LAYOUT}
+          >
           <Select
             mode="multiple"
             size='middle'
@@ -151,7 +154,10 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
             options={createInstrumentSelectOptions(instrumentSelection)}
             />
         </Form.Item>
-        <Form.Item label={t('noteNames')} {...FORM_ITEM_LAYOUT}>
+        <Form.Item 
+          label={<Info tooltip={t('noteNamesTt')}>{t('noteNames')}</Info>} 
+          {...FORM_ITEM_LAYOUT}
+          >
           <Select
             mode="multiple"
             size='middle'
@@ -175,7 +181,10 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
                 />
             </Form.Item>)
           : null}
-        <Form.Item label={t('addLabel')} {...FORM_ITEM_LAYOUT}>
+        <Form.Item 
+          label={<Info tooltip={t('addLabelTt')}>{t('addLabel')}</Info>} 
+          {...FORM_ITEM_LAYOUT}
+          >
           <Button 
             type="primary" 
             icon={<PlusOutlined />} 
@@ -184,11 +193,11 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
             {t('addInstrument')}
           </Button>
         </Form.Item>
-        <Form.Item label={t('range')} {...FORM_ITEM_LAYOUT}>               
+        <Form.Item  
+          label={<Info tooltip={t('rangeTt')}>{t('range')}</Info>} 
+          {...FORM_ITEM_LAYOUT}
+          >               
           <ToneSlider content={content} updateContent={updateContent} />
-          <div className="annotationText">
-            {t('rangeText')}
-          </div>
         </Form.Item>
         <Form.Item
           label={<Info tooltip={t('common:widthInfo')}>{t('common:width')}</Info>}

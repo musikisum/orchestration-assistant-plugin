@@ -21,7 +21,7 @@ Doppelgriffe: Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), 
 
 **Flageolett:**
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/2ebe2195e25c0a74023b37065a39dcfafd31b8d7/assets/Flageolett-Viola-1.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/Flageolett-Viola-1.svg)
 
 **Spielweisen:** liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken) Hand gezupft (pizzicato), glissando (geschliffen), Vibrato / non Vibrato, mit Dämpfer (con sordino)
 
@@ -66,7 +66,7 @@ The viola is the alto instrument of the violin family (tuned in fifths, with F-h
 
 **Harmonics:**
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/2ebe2195e25c0a74023b37065a39dcfafd31b8d7/assets/Flageolett-Viola-1.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/Flageolett-Viola-1.svg)
 
 **Playing techniques:** sustained (*détaché*), connected (*legato*), detached (from *non-legato* to *staccato*), accented (*martelé*), bouncing bow (*spiccato*), falling on the string (*ricochet*), over the fingerboard (*flautando*), striking with the wood of the bow (*col legno*), plucked with the right hand (or also the left hand in solo playing) (*pizzicato*), *glissando* (sliding), *vibrato* / *non-vibrato*, muted (*con sordino*)
 

@@ -1,4 +1,5 @@
 import colors from '../colors.js';
+import flageolett from '../images/flageolett-violine.js';
 
 const violin = {
   id: 'oap-default-violine',
@@ -20,7 +21,7 @@ Die Violine ist das Sopraninstrument der Geigenfamilie (Quintenstimmung, F-Löch
 
 **Flageolett:**
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/a0bc600e2b5bd68ee031bd5e79671dea7ecbc095/assets/Flageolett-Violine-1.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/Flageolett-Violine-1.svg)
 
 **Spielweisen:** liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken) Hand gezupft (pizzicato), glissando (geschliffen), Vibrato / non Vibrato, mit Dämpfer (con sordino)
 
@@ -30,18 +31,18 @@ Die Violine ist das Sopraninstrument der Geigenfamilie (Quintenstimmung, F-Löch
 
 | Töne | 1/2 Lage | 1. Lage | 2. Lage | 3. Lage | 4. Lage
 | -----|----------|---------|---------|---------|--------
-| b' | 1 | | | | 
-| h' | | 1 | | | 
-| c' | 2 | | 1 | | 
-| c♯'| | 2 | | | 
-| d' | 3 | | 2 | 1 | 
-| e♭'/d♯'| 4 | 3 | | | 
-| e' | | 4 | 3 | 2 | 1
-| f' | | | 4 | | 
-| f♯'| | | | 3 | 2
-| g' | | | | 4 | 
-| g♯'| | | | | 3
-| a' | | | | | 4
+| b'   |    1     |         |         |         | 
+| h'   |          |    1    |         |         | 
+| c'   |    2     |         |    1    |         | 
+| c♯'  |          |    2    |         |         | 
+| d'   |    3     |         |    2    |    1    | 
+| e♭'/d♯'|  4     |    3    |         |         | 
+| e'   |          |    4    |    3    |    2    |    1
+| f'   |          |         |    4    |         | 
+| f♯'  |          |         |         |    3    |    2
+| g'   |          |         |         |    4    | 
+| g♯'  |          |         |         |         |    3
+| a'   |          |         |         |         |    4
 
 **Schulorchester:** Flageolett, Doppel- und Mehrfachgriffe meiden bzw. mit besonderer Vorsicht einsetzen, Umfang nur in Ausnahmefällen über der 3. Lage fordern (d''').
 
@@ -64,7 +65,7 @@ The violin is the soprano instrument of the violin family (tuned in fifths, with
 
 **Harmonics:**
 
-![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin/a0bc600e2b5bd68ee031bd5e79671dea7ecbc095/assets/Flageolett-Violine-1.svg)
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/Flageolett-Violine-1.svg)
 
 **Playing techniques:** sustained (*détaché*), connected (*legato*), detached (from *non-legato* to *staccato*), accented (*martelé*), bouncing bow (*spiccato*), falling on the string (*ricochet*), over the fingerboard (*flautando*), striking with the wood of the bow (*col legno*), plucked with the right hand (or also the left hand in solo playing) (*pizzicato*), *glissando* (sliding), *vibrato* / *non-vibrato*, muted (*con sordino*)
 
