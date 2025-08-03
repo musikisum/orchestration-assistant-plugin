@@ -25,7 +25,7 @@ Da Bariton- und Bassoboe nur selten in Orchestern verfügbar sind, wird auch das
 - Oboe: klingend  
 - Oboe d’amore: eine kleine Terz höher als klingend  
 - Englischhorn: eine Quinte höher als klingend  
-- Bassoboe & Heckelphon: oktavierend (eine Oktave höher als klingend, vgl. z. B. Kontrabass)
+- Bassoboe & Heckelphon: oktavierend (eine Oktave höher als klingend, vgl. z.B. Kontrabass)
 
 **Klangfarbe:** Im untersten Register: schwach (aber voll), 1–2-gestrichene Oktave: weich (wenig Kraft), 2–3-gestrichene Oktave: klar, brilliant und im höchstes Register: zunehmend schrill
 

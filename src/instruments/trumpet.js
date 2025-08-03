@@ -35,7 +35,7 @@ Durch das Wiederaufleben der Trompete als Soloinstrument des Barock nach 1950 wu
 
 **Spielweisen:** mit div. Artikulationsmöglichkeiten (verschiedene Konsonanten beim Anblasen), Zungentechnik (Doppel-, Tripel- und Flatterzunge), Vibrato, Legato, gestopft (heute nicht mehr üblich) und mit Dämpfer, versch. Triller (über Ventile oder Lippen), Schmettertöne (eingestrichene Oktave), Glissando, etc.
 
-**Kombinationen:** Kann mit dem Horn im Unisono (Klangverstärkung) und in der Unteroktave (Klangmodifizierung, d. h. der Trompetenklang wird weicher) verwendet werden. Trompeten und Posaunen ergeben eine gute, im Forte wuchtige Wirkung. Die Klangverschmelzung mit den Streichern ist dagegen eher gering (Ausnahme: Viola). Dynamische Probleme können bei Kombinationen mit Holzbläsern entstehen (der Trompetenklang lässt sich durch oktavierendes Spiel mit der Bassklarinette oder dem Fagott verstärken). Die Kombination von Trompete und Klarinette im Unisono ist heller als die mit anderen Holzblasinstrumenten.
+**Kombinationen:** Kann mit dem Horn im Unisono (Klangverstärkung) und in der Unteroktave (Klangmodifizierung, d.h. der Trompetenklang wird weicher) verwendet werden. Trompeten und Posaunen ergeben eine gute, im Forte wuchtige Wirkung. Die Klangverschmelzung mit den Streichern ist dagegen eher gering (Ausnahme: Viola). Dynamische Probleme können bei Kombinationen mit Holzbläsern entstehen (der Trompetenklang lässt sich durch oktavierendes Spiel mit der Bassklarinette oder dem Fagott verstärken). Die Kombination von Trompete und Klarinette im Unisono ist heller als die mit anderen Holzblasinstrumenten.
 
 **Literaturbeispiele:**
 

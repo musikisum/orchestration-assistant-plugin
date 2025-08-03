@@ -1,8 +1,8 @@
 {
   "musikisum/educandu-plugin-orchestration-assistant": {
     "name": {
-      "en": "Orchestration Assistant",
-      "de": "Orchestrationshilfe"
+      "en": "Orchestration \nAssistant\n",
+      "de": "Orchester-\nAssistent\n"
     },
     "selection": {
       "en": "Selection",

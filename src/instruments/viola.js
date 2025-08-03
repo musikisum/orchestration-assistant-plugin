@@ -25,7 +25,7 @@ Doppelgriffe: Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), 
 
 **Spielweisen:** liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken) Hand gezupft (pizzicato), glissando (geschliffen), Vibrato / non Vibrato, mit Dämpfer (con sordino)
 
-**Kombinationen:** Streichinstrumente können gut zur Klangverstärkung von (anderen) Streichinstrumenten oktaviert werden (z. B. die Violine I durch Violine II, Viola oder auch Cello in der Unteroktave); hohe Klangverschmelzung mit allen Holzbläsern und dem Horn, geringere Klangverschmelzung mit Trompete, Posaune und Tuba.
+**Kombinationen:** Streichinstrumente können gut zur Klangverstärkung von (anderen) Streichinstrumenten oktaviert werden (z.B. die Violine I durch Violine II, Viola oder auch Cello in der Unteroktave); hohe Klangverschmelzung mit allen Holzbläsern und dem Horn, geringere Klangverschmelzung mit Trompete, Posaune und Tuba.
 
 **Grifftechnik:** Beispiele für die Basis-Positionen des Dur-Tetrachords, das mit den Fingern 1–4 gespielt wird auf der d'-Saite:
 
@@ -97,6 +97,7 @@ The viola is the alto instrument of the violin family (tuned in fifths, with F-h
 - R. Wagner, *Die Meistersinger*  
   - Act II (Scenes 3 and 7)  
   - Act III (Scene 5)`
+
 };
 
 export default viola;

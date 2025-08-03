@@ -40,7 +40,7 @@ Eine Pedalbewegung wirkt sich auf einen Ton und alle seine Oktaväquivalente aus
 Mit der Hand, dem Handballen, den Fingern (der kleine Finger wird nicht verwendet), Handflächen und -rücken, schlagen, zupfen und reißen, mit den Fingernägeln gedämpft (Klirreffekt), bzw. gleich nach dem Zupfen abgedämpft (*Sons étouffés*), nahe am Resonanzkörper (*Prés de la table*), Glissando (nicht chromatisch), Flageolett (nur Oktav-) etc.
 
 **Kombinationen:**  
-Die Harfe ist ein bevorzugt solistisches Instrument, das sehr leise ist und leicht überdeckt werden kann. Gute Klangverbindungen bestehen mit den Streichern (z. B. Harfenflageolett und Violinen), im *piano* kann die Harfe mit ihren tiefen Tönen auch den Kontrabass ersetzen. Gute Kombinationen gibt es auch mit Flöte und Horn.
+Die Harfe ist ein bevorzugt solistisches Instrument, das sehr leise ist und leicht überdeckt werden kann. Gute Klangverbindungen bestehen mit den Streichern (z.B. Harfenflageolett und Violinen), im *piano* kann die Harfe mit ihren tiefen Tönen auch den Kontrabass ersetzen. Gute Kombinationen gibt es auch mit Flöte und Horn.
 
 **Literaturbeispiele:**
 

@@ -1,7 +1,11 @@
 musikisum/educandu-plugin-orchestration-assistant:
   name:
-    en: Orchestration Assistant
-    de: Orchestrationshilfe
+    en: |
+      Orchestration 
+      Assistant
+    de: | 
+      Orchester-
+      Assistent
   selection:
     en: Selection
     de: Auswahl

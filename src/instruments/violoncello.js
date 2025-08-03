@@ -24,9 +24,9 @@ Das Violoncello ist das Bassinstrument der Geigenfamilie (Quintenstimmung, F-Lö
 
 **Basis-Positionen der Finger 1–4:** chromatisch
 
-**Kombinationen:** Streichinstrumente können gut zur Klangverstärkung von (anderen) Streichinstrumenten oktaviert werden (Achtung: durch die Klangfülle der Celli besteht Gefahr, dass in Koppelungen mit anderen Streichinstrumenten wie z. B. den Violinen diese überdeckt werden), Kombinationen mit den Holzbläsern (Oboe, Klarinette und Fagott) und insbesondere dem Horn gut möglich.
+**Kombinationen:** Streichinstrumente können gut zur Klangverstärkung von (anderen) Streichinstrumenten oktaviert werden (Achtung: durch die Klangfülle der Celli besteht Gefahr, dass in Koppelungen mit anderen Streichinstrumenten wie z.B. den Violinen diese überdeckt werden), Kombinationen mit den Holzbläsern (Oboe, Klarinette und Fagott) und insbesondere dem Horn gut möglich.
 
-**Schulorchester:** Umfang nicht in den »Daumenlagen« fordern (d. h. nicht über g¹).
+**Schulorchester:** Umfang nicht in den »Daumenlagen« fordern (d.h. nicht über g¹).
 
 **Literaturbeispiele für ein solistisches Violoncello im Orchestersatz:**
 

@@ -1,5 +1,4 @@
 import colors from '../colors.js';
-import flageolett from '../images/flageolett-violine.js';
 
 const violin = {
   id: 'oap-default-violine',

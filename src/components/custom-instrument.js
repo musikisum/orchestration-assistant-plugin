@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import EditableInput from './editable-input.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import OrchestrationUtilities from '../orchestration-utilities.js'; 
-import { Button, Collapse, Tooltip, Typography, Slider } from 'antd';
+import { Button, Collapse, Tooltip, Slider } from 'antd';
 import ColorPicker from '@educandu/educandu/components/color-picker.js';
 import MarkdownInput from '@educandu/educandu/components/markdown-input.js';
 import DeleteIcon from '@educandu/educandu/components/icons/general/delete-icon.js';
@@ -31,7 +31,6 @@ export default function CustomInstrument({
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   const customInstruments = cloneDeep(content.customInstruments);
-  const { Text } = Typography;
 
   const handleActionButtonWrapperClick = (event, actionButton) => {
     if (actionButton.disabled) {

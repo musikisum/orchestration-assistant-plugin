@@ -1,6 +1,6 @@
 import joi from 'joi';
 import React from 'react';
-import { ClockCircleOutlined } from '@ant-design/icons';
+import PluginIcon from './orchestration-assistant-icon.js'; 
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import { PLUGIN_GROUP } from '@educandu/educandu/domain/constants.js';
 import { couldAccessUrlFromRoom } from '@educandu/educandu/utils/source-utils.js';
@@ -20,7 +20,7 @@ class OrchestrationAssitantInfo {
   }
 
   getIcon() {
-    return <ClockCircleOutlined />;
+    return <PluginIcon />;
   }
 
   getGroups() {
@@ -59,7 +59,8 @@ class OrchestrationAssitantInfo {
         begin: joi.number().min(1).max(49),
         end: joi.number().min(2).max(50),
         color: joi.string().allow(null, ''),
-        text: joi.string().allow(null, '')
+        text: joi.string().allow(null, ''),
+        en: joi.string().allow(null, '')
       })),
       noteNameBreakPoints: joi.array().items(joi.string()),
       noteNamesAfterLastLine: joi.bool()

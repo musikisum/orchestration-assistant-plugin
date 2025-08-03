@@ -13,7 +13,7 @@ Die Posaune ist ein Instrument aus Metall aus der Familie der Blechblasinstrumen
 - Altposaune  
 - Tenorposaune  
 - Bassposaune  
-- Kontrabassposaune (z. B. bei Wagner)
+- Kontrabassposaune (z.B. bei Wagner)
 
 **Stimmumfänge:** Die Altposaune von A–es², die Tenorposaune von E–d² (f²) und die Bassposaune von B₁–f¹, dazu jeweils 7 sog. Pedaltöne (Grundtöne der Zugpositionen, früher wegen schwerer Ansprache nur selten gefordert, heute dagegen gebräuchlich und auf modernen Instrumenten auch leichter realisierbar). Der Tonumfang in der Höhe ist stark abhängig vom Spielvermögen.
 

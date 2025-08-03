@@ -32,7 +32,7 @@ Die Bauweise heutiger elektrischer Gitarren lässt sich auf wenige Modelle zurü
 - von Gibson: ES-150, »Les Paul«, ES-335 sowie *Firebird*  
 - von Fender: Telecaster und Stratocaster
 
-**Spielweisen:** Diverse Zupftechniken, Bottleneck-Spielweise (mit einem Glas- oder Metallröhrchen am Finger, das über die Saiten gleitet), Stringbending (Tonhöhenveränderung durch Ziehen an der Saite), Hammer-on und Pull-off (fließender Übergang zwischen Tönen ohne erneutes Anschlagen), Sustain (langes Aushalten von Tönen, z. B. durch Verstärkung), sowie bei elektronischer Verstärkung zusätzliche Effekte wie:
+**Spielweisen:** Diverse Zupftechniken, Bottleneck-Spielweise (mit einem Glas- oder Metallröhrchen am Finger, das über die Saiten gleitet), Stringbending (Tonhöhenveränderung durch Ziehen an der Saite), Hammer-on und Pull-off (fließender Übergang zwischen Tönen ohne erneutes Anschlagen), Sustain (langes Aushalten von Tönen, z.B. durch Verstärkung), sowie bei elektronischer Verstärkung zusätzliche Effekte wie:
 
 - Flanger  
 - Chorus  
