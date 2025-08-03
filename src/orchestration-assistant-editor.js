@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 import React, { useRef } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import ToneSlider from './components/tone-slider.js';
-import { Form, Select, Button, Checkbox } from 'antd';
 import Info from '@educandu/educandu/components/info.js';
 import instrumentsProvider from './instruments-provider.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
+import { Form, Select, Button, Checkbox, Tooltip } from 'antd';
 import CustomInstrument from './components/custom-instrument.js';
 import { FORM_ITEM_LAYOUT } from '@educandu/educandu/domain/constants.js';
 import { sectionEditorProps } from '@educandu/educandu/ui/default-prop-types.js';
@@ -141,7 +141,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     <div className="EP_Educandu_Orchestration_Assistant_Editor">
       <Form labelAlign="left">
         <Form.Item 
-          label={<Info tooltip={t('selectionTt')}>{t('selection')}</Info>} 
+          label={<Tooltip title={t('selectionTt')}><span>{t('selection')}</span></Tooltip>} 
           {...FORM_ITEM_LAYOUT}
           >
           <Select
@@ -155,7 +155,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
             />
         </Form.Item>
         <Form.Item 
-          label={<Info tooltip={t('noteNamesTt')}>{t('noteNames')}</Info>} 
+          label={<Tooltip title={t('noteNamesTt')}><span>{t('noteNames')}</span></Tooltip>} 
           {...FORM_ITEM_LAYOUT}
           >
           <Select
@@ -168,7 +168,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
             options={createNoteNameSelectOptions()}
             />
           <Checkbox checked={noteNamesAfterLastLine} onChange={onCheckBoxChange} style={{ marginTop: '6px' }}>
-            {t('lastLine')}
+            <Tooltip title={t('lastLineTt')}>{t('lastLine')}</Tooltip>
           </Checkbox>
         </Form.Item>
         { customInstruments.length
@@ -182,7 +182,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
             </Form.Item>)
           : null}
         <Form.Item 
-          label={<Info tooltip={t('addLabelTt')}>{t('addLabel')}</Info>} 
+          label={<Tooltip title={t('addLabelTt')}><span>{t('addLabel')}</span></Tooltip>} 
           {...FORM_ITEM_LAYOUT}
           >
           <Button 
@@ -194,7 +194,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
           </Button>
         </Form.Item>
         <Form.Item  
-          label={<Info tooltip={t('rangeTt')}>{t('range')}</Info>} 
+          label={<Tooltip title={t('rangeTt')}><span>{t('range')}</span></Tooltip>} 
           {...FORM_ITEM_LAYOUT}
           >               
           <ToneSlider content={content} updateContent={updateContent} />

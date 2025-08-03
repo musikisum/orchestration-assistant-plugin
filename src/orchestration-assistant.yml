@@ -24,6 +24,9 @@ musikisum/educandu-plugin-orchestration-assistant:
   lastLine:
     en: After last instrument
     de: Nach dem letzten Instrument
+  lastLineTt:
+    en: Here you can specify that a row with note names is displayed after the last instrument.
+    de: Hier kannst du festlegen, dass eine Reihe mit Notennamen nach dem letzten Instrment angezeigt wird. 
   newInstument:
     en: New
     de: Neu
@@ -40,8 +43,8 @@ musikisum/educandu-plugin-orchestration-assistant:
     en: Add
     de: Hinzufügen
   addLabelTt:
-    en: Here you can add your own instruments and descriptions to your collection.
-    de: Hier kannst du deiner Instrumentensammlung eigene Instrumente und Instrumentenbeschreibungen hinzufügen. 
+    en: Here you can add own instruments and descriptions to the collection.
+    de: Hier kannst du der Instrumentensammlung eigene Instrumente und Instrumentenbeschreibungen hinzufügen. 
   addInstrument:
     en: Instrument
     de: Instrument
