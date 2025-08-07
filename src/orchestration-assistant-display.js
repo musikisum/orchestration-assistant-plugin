@@ -10,7 +10,6 @@ export default function OrchestrationAssistantDisplay({ content }) {
     width, 
     noteNameBreakPoints, 
     noteNamesAfterLastLine,
-    customInstruments 
   } = content;
   
   // const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
@@ -24,7 +23,6 @@ export default function OrchestrationAssistantDisplay({ content }) {
           selection={content.instrumentSelection} 
           noteNameBreakPoints={noteNameBreakPoints}
           noteNamesAfterLastLine={noteNamesAfterLastLine}
-          customInstruments={customInstruments} 
           />
       </div>
     </div>

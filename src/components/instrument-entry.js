@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
-import EditableInput from './editable-input.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import OrchestrationUtilities from '../orchestration-utilities.js'; 
 import { Button, Collapse, Tooltip, Slider } from 'antd';
@@ -20,18 +19,16 @@ export default function InstrumentEntry({
   isOtherDragged,
   itemsCount,
   canDeleteLastItem,
-  extraActionButtons,
   onMoveUp,
   onMoveDown,
   onDelete,
-  onExtraActionButtonClick,
+  onInstrumentName,
   content,
   updateContent
 }) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
-  const customInstruments = cloneDeep(content.customInstruments);
-  console.log('customInstruments:', customInstruments[index].name)
+  const instrumentSelection = cloneDeep(content.instrumentSelection);
 
   const handleActionButtonWrapperClick = (event, actionButton) => {
     if (actionButton.disabled) {
@@ -48,9 +45,9 @@ export default function InstrumentEntry({
       case 'moveDown':
         return onMoveDown(index);
       case 'delete':
-        return confirmDeleteItem(t, customInstruments[index].name, () => onDelete(index));
+        return confirmDeleteItem(t, instrumentSelection[index].name, () => onDelete(index));
       default:
-        return onExtraActionButtonClick(actionButton.key);
+        return null;
     }
   };
 
@@ -81,14 +78,13 @@ export default function InstrumentEntry({
       disabled: isDeleteDisabled
     });
   }
-  actionButtons.push(...extraActionButtons);
 
   const renderActionButtons = () => {
     if (!actionButtons.length) {
       return null;
     }
     return (
-      <div className="ItemPanel-actionButtons">
+      <div className='dadActionButtons'>
         {actionButtons.map(actionButton => (
           <div key={actionButton.key} onClick={event => handleActionButtonWrapperClick(event, actionButton)}>
             <Tooltip title={actionButton.title}>
@@ -108,8 +104,9 @@ export default function InstrumentEntry({
   };
 
   return (
-    <div key={index}>
-      {customInstruments[index].name} | {renderActionButtons()}
+    <div className="instrument-entry" {...dragHandleProps}>
+      <div className='instrumen-name' onClick={e => onInstrumentName(e, instrumentSelection[index].name)}>{t(instrumentSelection[index].name)}</div>
+      {renderActionButtons()}
     </div>
   );
 }
@@ -132,6 +129,7 @@ InstrumentEntry.propTypes = {
   onExtraActionButtonClick: PropTypes.func,
   onMoveDown: PropTypes.func,
   onMoveUp: PropTypes.func,
+  onInstrumentName: PropTypes.func,
   content: PropTypes.object,
   updateContent: PropTypes.func
 };
@@ -148,6 +146,7 @@ InstrumentEntry.defaultProps = {
   onExtraActionButtonClick: () => {},
   onMoveDown: null,
   onMoveUp: null,
+  onInstrumentName: null,
   content: null,
   updateContent: null
 };

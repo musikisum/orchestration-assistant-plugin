@@ -38,7 +38,6 @@ describe('OrchestrationAssitantInfo', () => {
       from: 1,
       to: 50,
       instrumentSelection: ['violin'],
-      customInstruments: [],
       noteNameBreakPoints: ['violin'],
       noteNamesAfterLastLine: false
     });
@@ -50,7 +49,6 @@ describe('OrchestrationAssitantInfo', () => {
       from: 1,
       to: 20,
       instrumentSelection: ['violin'],
-      customInstruments: [],
       noteNameBreakPoints: ['violin'],
       noteNamesAfterLastLine: true
     };
@@ -62,7 +60,6 @@ describe('OrchestrationAssitantInfo', () => {
       width: 80,
       to: 20,
       instrumentSelection: ['violin'],
-      customInstruments: [],
       noteNameBreakPoints: ['violin'],
       noteNamesAfterLastLine: true
     };

@@ -12,7 +12,6 @@ export default function TableOfInstruments({
   selection, 
   noteNameBreakPoints, 
   noteNamesAfterLastLine,
-  customInstruments 
 }) {
   
   const noteArr = notesFactory(from, to);
@@ -108,24 +107,11 @@ export default function TableOfInstruments({
               <React.Fragment key={index}>
                 { showNoteNames ? getToneNameGrid() : null }
                 { getInstrument(instrumentsProvider.loadInstrument(instrumentName), index) }
-                { !customInstruments.length && noteNamesAfterLastLine && isLastInstrument ? getToneNameGrid() : null }
+                { selection.length && noteNamesAfterLastLine && isLastInstrument ? getToneNameGrid() : null }
               </React.Fragment>
             );
           })
         }
-        <div className="instrument-wrapper">
-          {
-            customInstruments.map((instrument, index) => {
-              const isLastCustomInstrument = customInstruments.length - 1 === index;
-              return (
-                <React.Fragment key={instrument.id}>
-                  { getInstrument(instrument, index) }
-                  { customInstruments.length && noteNamesAfterLastLine && isLastCustomInstrument ? getToneNameGrid() : null }
-                </React.Fragment>
-              );
-            })
-          }
-        </div>
       </div>
     </React.Fragment>
   );
@@ -137,7 +123,6 @@ TableOfInstruments.propTypes = {
   selection: PropTypes.array,
   noteNameBreakPoints: PropTypes.array,
   noteNamesAfterLastLine: PropTypes.bool,
-  customInstruments: PropTypes.array
 };
 
 TableOfInstruments.defaultProps = {
@@ -146,5 +131,4 @@ TableOfInstruments.defaultProps = {
   selection: [],
   noteNameBreakPoints: [],
   noteNamesAfterLastLine: false,
-  customInstruments: []
 };

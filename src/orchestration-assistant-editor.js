@@ -7,7 +7,6 @@ import Info from '@educandu/educandu/components/info.js';
 import instrumentsProvider from './instruments-provider.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import { Form, Select, Button, Checkbox, Tooltip } from 'antd';
-import CustomInstrument from './components/custom-instrument.js';
 import { FORM_ITEM_LAYOUT } from '@educandu/educandu/domain/constants.js';
 import { sectionEditorProps } from '@educandu/educandu/ui/default-prop-types.js';
 import ObjectWidthSlider from '@educandu/educandu/components/object-width-slider.js';
@@ -22,7 +21,6 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   const { 
     width, 
-    customInstruments, 
     instrumentSelection, 
     noteNameBreakPoints, 
     noteNamesAfterLastLine 
@@ -35,77 +33,40 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const droppableIdRef = useRef(nanoid(10));
 
   const handleItemMove = (fromIndex, toIndex) => {
-    const newCustomInstruments = moveItem(customInstruments, fromIndex, toIndex);
-    updateContent({ customInstruments: newCustomInstruments });
+    const newSelection = moveItem(instrumentSelection, fromIndex, toIndex);
+    updateContent({ instrumentSelection: newSelection });
   };
 
   const handleMoveModelUp = index => {
-    const newCustomInstruments = swapItemsAt(customInstruments, index, index - 1);
-    updateContent({ customInstruments: newCustomInstruments });
+    const newSelection = swapItemsAt(instrumentSelection, index, index - 1);
+    updateContent({ instrumentSelection: newSelection });
   };
 
   const handleMoveModelDown = index => {
-    const newCustomInstruments = swapItemsAt(customInstruments, index, index + 1);
-    updateContent({ customInstruments: newCustomInstruments });
+    const newSelection = swapItemsAt(instrumentSelection, index, index - 1);
+    updateContent({ instrumentSelection: newSelection });
   };
 
   const handleDeleteModel = index => {
-    const newCustomInstruments = removeItemAt(customInstruments, index);
-    updateContent({ customInstruments: newCustomInstruments });
+    const newSelection = removeItemAt(instrumentSelection, index);
+    updateContent({ instrumentSelection: newSelection });
+  };
+
+  const handleSelectChange = () => {
+    // missing: modal dialog for choosing instruments 
+    const newSelection = instrumentsProvider.loadInstruments();
+    updateContent({ instrumentSelection: newSelection });
+  };
+
+  const handleInstrumentNameButtonClick = (event, name) => {
+    console.log('Instrument name clicked', name);
   };
 
   const handleWidthChange = value => {
     updateContent({ width: value });
   };
 
-  const handleSelectChange = value => {
-    // missing: modal dialog for choosing instruments 
-    const newSelection = instrumentsProvider.loadInstruments(['violin', 'clarinet', 'bassoon']);
-    updateContent({ customInstruments: newSelection });
-  };
-
-  const handleNoteNameSelectChange = values => {
-    const newBraekPoints = [...values];
-    updateContent({ noteNameBreakPoints: newBraekPoints });
-  };
-
-  const onCheckBoxChange = e => {
-    const checked = e.target.checked;
-    updateContent({ noteNamesAfterLastLine: checked });
-  };
-
-  const createInstrumentSelectOptions = () => {
-    const options = [];
-    const allInstruments = instrumentsProvider.getSortedInstrumentNames();
-    for (let i = 0; i < allInstruments.length; i += 1) {
-      options.push({
-        value: allInstruments[i],
-        label: t(`${allInstruments[i]}`)
-      });
-    }
-    return options;
-  };  
-
-  const createNoteNameSelectOptions = () => {
-    const options = [];
-    const allInstruments = instrumentsProvider.getSortedInstrumentNames();
-    for (let i = 0; i < allInstruments.length; i += 1) {
-      options.push({
-        value: allInstruments[i],
-        label: t(`${allInstruments[i]}`)
-      });
-    }
-    return options;
-  };  
-
-  const handleAddCustomInstrumentButtonClick = () => {
-    const instrumentTemplate = cloneDeep(instrumentsProvider.getInstrumentTemplate());
-    instrumentTemplate.id = nanoid(10);
-    customInstruments.push(instrumentTemplate);
-    updateContent({ customInstruments });
-  };
-
-  const dragAndDropItems = customInstruments.map((instrument, index, arr) => ({
+  const dragAndDropItems = instrumentSelection.map((instrument, index, arr) => ({
     key: instrument.id,
     render: ({ dragHandleProps, isDragged, isOtherDragged }) => 
       (<InstrumentEntry 
@@ -118,6 +79,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         onMoveUp={handleMoveModelUp}
         onMoveDown={handleMoveModelDown}
         onDelete={handleDeleteModel}
+        onInstrumentName={handleInstrumentNameButtonClick}
         content={content}
         updateContent={updateContent}
         />)
