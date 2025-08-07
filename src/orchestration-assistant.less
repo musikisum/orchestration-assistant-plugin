@@ -181,5 +181,57 @@
     gap: 8px;
     align-items: center;
   }
+  
+  // new layout
+
+  .edit-wrapper {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+  /* Container */
+  .edit-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  /* Liste y - 1/3 */
+  .instruments-list {
+    flex: 1;
+    min-width: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Container z - 2/3 */
+  .prop-container {
+    flex: 1;
+    min-width: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Optional: Inhalte verhindern, dass sie überlaufen */
+  .list-y, .container-z {
+    overflow: hidden;
+  }
+
+  /* Kein Zeilenumbruch bei kleinen Viewports */
+  @media (max-width: 800px) {
+    .edit-container {
+        flex-direction: column;
+      }
+
+    .instruments-list,
+    .prop-container {
+      width: 100%;
+      flex: none;
+    }
+  }
 
 }

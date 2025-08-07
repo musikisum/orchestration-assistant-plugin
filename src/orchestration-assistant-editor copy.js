@@ -13,7 +13,6 @@ import { sectionEditorProps } from '@educandu/educandu/ui/default-prop-types.js'
 import ObjectWidthSlider from '@educandu/educandu/components/object-width-slider.js';
 import DragAndDropContainer from '@educandu/educandu/components/drag-and-drop-container.js';
 import { swapItemsAt, removeItemAt, moveItem } from '@educandu/educandu/utils/array-utils.js';
-import InstrumentEntry from './components/instrument-entry.js';
 
 export default function OrchestrationAssistantEditor({ content, onContentChanged }) {
 
@@ -58,10 +57,9 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ width: value });
   };
 
-  const handleSelectChange = value => {
-    // missing: modal dialog for choosing instruments 
-    const newSelection = instrumentsProvider.loadInstruments(['violin', 'clarinet', 'bassoon']);
-    updateContent({ customInstruments: newSelection });
+  const handleSelectChange = values => {
+    const newSelection = instrumentsProvider.createInstrumentsFromSelection(values);
+    updateContent({ instrumentSelection: newSelection });
   };
 
   const handleNoteNameSelectChange = values => {
@@ -74,8 +72,24 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ noteNamesAfterLastLine: checked });
   };
 
-  const createInstrumentSelectOptions = () => {
+  const createInstrumentSelectOptions = selection => {
     const options = [];
+    const hasNoInstruments = selection.length === 0;
+    const hasOrchestraStrings = selection.some(instr => instrumentsProvider.getSectionInstrumentNames('strings').includes(instr));
+    const hasOrchestraWinds = selection.some(instr => instrumentsProvider.getSectionInstrumentNames('winds').includes(instr));
+    const hasOrchestraBrass = selection.some(instr => instrumentsProvider.getSectionInstrumentNames('brass').includes(instr));
+    if (hasNoInstruments) {
+      options.push({ value: 'tutti', label: t('tutti') });
+    }
+    if(!hasOrchestraStrings) {
+      options.push({ value: 'strings', label: t('strings') });
+    }
+    if(!hasOrchestraWinds) {
+      options.push({ value: 'winds', label: t('winds') });
+    }
+    if(!hasOrchestraBrass) {
+      options.push({ value: 'brass', label: t('brass') });
+    }
     const allInstruments = instrumentsProvider.getSortedInstrumentNames();
     for (let i = 0; i < allInstruments.length; i += 1) {
       options.push({
@@ -108,7 +122,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const dragAndDropItems = customInstruments.map((instrument, index, arr) => ({
     key: instrument.id,
     render: ({ dragHandleProps, isDragged, isOtherDragged }) => 
-      (<InstrumentEntry 
+      (<CustomInstrument 
         index={index}
         dragHandleProps={dragHandleProps}
         isDragged={isDragged} 
@@ -125,22 +139,73 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
 
   return (
     <div className="EP_Educandu_Orchestration_Assistant_Editor">
-      <div className="edit-wrapper">
-        <div className="edit-container">
-          <div className="instruments-list">
-            <DragAndDropContainer
-              droppableId={droppableIdRef.current} 
-              items={dragAndDropItems} 
-              onItemMove={handleItemMove}
-              />
-          </div>
-          <div className="prop-container">
-            <div>
-              <Button onClick={handleSelectChange}>Instrument hinzufügen</Button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Form labelAlign="left">
+        <Form.Item 
+          label={<Tooltip title={t('selectionTt')}><span>{t('selection')}</span></Tooltip>} 
+          {...FORM_ITEM_LAYOUT}
+          >
+          <Select
+            mode="multiple"
+            size='middle'
+            placeholder={t('chooseInstrument')}
+            value={content.instrumentSelection}
+            onChange={handleSelectChange}
+            style={{ width: '100%' }}
+            options={createInstrumentSelectOptions(instrumentSelection)}
+            />
+        </Form.Item>
+        <Form.Item 
+          label={<Tooltip title={t('noteNamesTt')}><span>{t('noteNames')}</span></Tooltip>} 
+          {...FORM_ITEM_LAYOUT}
+          >
+          <Select
+            mode="multiple"
+            size='middle'
+            placeholder={t('noteNameText')}
+            value={noteNameBreakPoints}
+            onChange={handleNoteNameSelectChange}
+            style={{ width: '100%' }}
+            options={createNoteNameSelectOptions()}
+            />
+          <Checkbox checked={noteNamesAfterLastLine} onChange={onCheckBoxChange} style={{ marginTop: '6px' }}>
+            <Tooltip title={t('lastLineTt')}>{t('lastLine')}</Tooltip>
+          </Checkbox>
+        </Form.Item>
+        { customInstruments.length
+          ? (
+            <Form.Item label={customInstruments.length === 0 ? ' ' : t('ownInstruments')} {...FORM_ITEM_LAYOUT}>
+              <DragAndDropContainer
+                droppableId={droppableIdRef.current} 
+                items={dragAndDropItems} 
+                onItemMove={handleItemMove}
+                />
+            </Form.Item>)
+          : null}
+        <Form.Item 
+          label={<Tooltip title={t('addLabelTt')}><span>{t('addLabel')}</span></Tooltip>} 
+          {...FORM_ITEM_LAYOUT}
+          >
+          <Button 
+            type="primary" 
+            icon={<PlusOutlined />} 
+            onClick={handleAddCustomInstrumentButtonClick}
+            >
+            {t('addInstrument')}
+          </Button>
+        </Form.Item>
+        <Form.Item  
+          label={<Tooltip title={t('rangeTt')}><span>{t('range')}</span></Tooltip>} 
+          {...FORM_ITEM_LAYOUT}
+          >               
+          <ToneSlider content={content} updateContent={updateContent} />
+        </Form.Item>
+        <Form.Item
+          label={<Info tooltip={t('common:widthInfo')}>{t('common:width')}</Info>}
+          {...FORM_ITEM_LAYOUT}
+          >
+          <ObjectWidthSlider value={width} onChange={handleWidthChange} />
+        </Form.Item>
+      </Form>
     </div>
   );
 }
