@@ -40,9 +40,10 @@ class OrchestrationAssitantInfo {
       width: 100,
       from: 1,
       to: 50,
-      instrumentSelection: ['violin'],
-      noteNameBreakPoints: ['violin'],
-      noteNamesAfterLastLine: false
+      showInstrEdit: false,
+      selectedInstrument: '',
+      instrumentsSelection: [],
+      noteNameBreakPoints: []
     };
   }
 
@@ -51,7 +52,9 @@ class OrchestrationAssitantInfo {
       width: joi.number().min(0).max(100).required(),
       from: joi.number().integer().min(1).max(50).required(),
       to: joi.number().integer().min(1).max(50).required(),
-      instrumentSelection: joi.array().items(joi.object({
+      showInstrEdit: joi.bool(),
+      selectedInstrument: joi.string().allow(null, ''),
+      instrumentsSelection: joi.array().items(joi.object({
         id: joi.string().required(),
         name: joi.string().allow(null, ''),
         begin: joi.number().min(1).max(49),
@@ -60,8 +63,7 @@ class OrchestrationAssitantInfo {
         text: joi.string().allow(null, ''),
         en: joi.string().allow(null, '')
       })),
-      noteNameBreakPoints: joi.array().items(joi.string()),
-      noteNamesAfterLastLine: joi.bool()
+      noteNameBreakPoints: joi.array().items(joi.string())
     });
     joi.attempt(content, schema, { abortEarly: false, convert: false, noDefaults: true });
   }

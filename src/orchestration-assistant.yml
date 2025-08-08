@@ -39,9 +39,9 @@ musikisum/educandu-plugin-orchestration-assistant:
   chooseInstrument:
     en: Choose instruments
     de: Wähle Instrumente aus ...
-  addLabel:
-    en: Add
-    de: Hinzufügen
+  add:
+    en: add ...
+    de: hinzufügen ...
   addLabelTt:
     en: Here you can add own instruments and descriptions to the collection.
     de: Hier kannst du der Instrumentensammlung eigene Instrumente und Instrumentenbeschreibungen hinzufügen. 

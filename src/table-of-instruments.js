@@ -9,9 +9,7 @@ import InstrumentTemplate from './components/instrument-template.js';
 export default function TableOfInstruments({ 
   from, 
   to, 
-  selection, 
-  noteNameBreakPoints, 
-  noteNamesAfterLastLine,
+  selection
 }) {
   
   const noteArr = notesFactory(from, to);
@@ -99,15 +97,12 @@ export default function TableOfInstruments({
         : null}
       {/* create instruments and tone names  */}
       <div className="instrument-wrapper">
-        {
-          instrumentsProvider.createInstrumentsFromSelection(selection).map((instrumentName, index) => {
-            const showNoteNames = noteNameBreakPoints.includes(instrumentName);
-            const isLastInstrument = selection.length - 1 === index;
+        { getToneNameGrid() }
+        {          
+          selection.map((instrument, index) => {
             return (
               <React.Fragment key={index}>
-                { showNoteNames ? getToneNameGrid() : null }
-                { getInstrument(instrumentsProvider.loadInstrument(instrumentName), index) }
-                { selection.length && noteNamesAfterLastLine && isLastInstrument ? getToneNameGrid() : null }
+                { getInstrument(instrument, index) }
               </React.Fragment>
             );
           })
@@ -122,13 +117,11 @@ TableOfInstruments.propTypes = {
   to: PropTypes.number,
   selection: PropTypes.array,
   noteNameBreakPoints: PropTypes.array,
-  noteNamesAfterLastLine: PropTypes.bool,
 };
 
 TableOfInstruments.defaultProps = {
   from: 1,
   to: 50,
   selection: [],
-  noteNameBreakPoints: [],
-  noteNamesAfterLastLine: false,
+  noteNameBreakPoints: []
 };

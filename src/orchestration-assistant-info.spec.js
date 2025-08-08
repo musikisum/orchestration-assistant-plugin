@@ -37,9 +37,8 @@ describe('OrchestrationAssitantInfo', () => {
       width: 100,
       from: 1,
       to: 50,
-      instrumentSelection: ['violin'],
-      noteNameBreakPoints: ['violin'],
-      noteNamesAfterLastLine: false
+      instrumentsSelection: ['violin'],
+      noteNameBreakPoints: ['violin']
     });
   });
 
@@ -48,9 +47,8 @@ describe('OrchestrationAssitantInfo', () => {
       width: 80,
       from: 1,
       to: 20,
-      instrumentSelection: ['violin'],
-      noteNameBreakPoints: ['violin'],
-      noteNamesAfterLastLine: true
+      instrumentsSelection: ['violin'],
+      noteNameBreakPoints: ['violin']
     };
     expect(() => sut.validateContent(validContent)).not.toThrow();
   });
@@ -59,9 +57,8 @@ describe('OrchestrationAssitantInfo', () => {
     const invalidContent = {
       width: 80,
       to: 20,
-      instrumentSelection: ['violin'],
-      noteNameBreakPoints: ['violin'],
-      noteNamesAfterLastLine: true
+      instrumentsSelection: ['violin'],
+      noteNameBreakPoints: ['violin']
     };
     expect(() => sut.validateContent(invalidContent)).toThrow();
   });

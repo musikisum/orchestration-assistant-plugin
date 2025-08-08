@@ -23,39 +23,7 @@ import PiccoloFlute from './instruments/piccoloFlute.js';
 import TenorSaxophone from './instruments/t-saxophone.js';
 import ContraBassoon from './instruments/contraBassoon.js';
 
-const orchestraStrings = ['violin', 'viola', 'violoncello', 'doublebass'];
-const orchestraWinds = ['flute', 'oboe', 'clarinet', 'bassoon'];
-const orchestraBrass = ['horn', 'trumpet', 'trombone'];
-
-const getSortedInstrumentNames = () => {
-  return [
-    'violin', 
-    'viola', 
-    'violoncello', 
-    'doublebass', 
-    'guitar',
-    'electricbass',
-    'piano', 
-    'harp', 
-    'sopranorecorder', 
-    'altorecorder', 
-    'piccoloflute', 
-    'flute', 
-    'oboe', 
-    'coranglais', 
-    'clarinet', 
-    'bassclarinet', 
-    'bassoon', 
-    'contrabassoon',
-    'altosaxophone',
-    'tenorsaxophone', 
-    'horn', 
-    'trumpet', 
-    'trombone', 
-    'tuba'
-  ];
-};
-
+// section of instrument components
 const strings = { 
   violin: Violin, 
   viola: Viola, 
@@ -66,7 +34,6 @@ const strings = {
   piano: Piano, 
   harp: Harp
 };
-
 const winds = { 
   sopranorecorder: SopranoRecorder, 
   altorecorder: AltoRecorder, 
@@ -81,98 +48,13 @@ const winds = {
   altosaxophone: AltoSaxophone,
   tenorsaxophone: TenorSaxophone
 };
-
 const brass = {
   horn: Horn,
   trumpet: Trumpet,
   trombone: Trombone,
   tuba: Tuba
 };
-
-const tutti = {
-  violin: Violin,
-  viola: Viola,
-  violoncello: Violoncello,
-  doublebass: DoubleBass,
-  guitar: Guitar,
-  electricbass: ElectricBass,
-  piano: Piano,
-  harp: Harp,
-  sopranorecorder: SopranoRecorder,
-  altorecorder: AltoRecorder,
-  flute: Flute,
-  piccoloflute: PiccoloFlute,
-  oboe: Oboe,
-  coranglais: CorAnglais,
-  clarinet: Clarinet,
-  bassclarinet: BassClarinet,
-  bassoon: Bassoon,
-  contrabassoon: ContraBassoon,
-  altosaxophon: AltoSaxophone,
-  tenorsaxophone: TenorSaxophone,
-  horn: Horn,
-  trumpet: Trumpet,
-  trombone: Trombone,
-  tuba: Tuba
-};
-
 const collection = { ...strings, ...winds, ... brass };
-
-const createInstrumentsFromSelection = selection => {
-  const instruments = [];
-  for (let index = 0; index < selection.length; index += 1) {
-    const label = selection[index];
-    switch (label) {
-      case 'tutti':
-        return getSortedInstrumentNames();
-      case 'strings':
-        instruments.push(...orchestraStrings);
-        break;
-      case 'winds':
-        instruments.push(...orchestraWinds);
-        break;
-      case 'brass':
-        instruments.push(...orchestraBrass);
-        break;
-      default: {
-        const tempName = getSortedInstrumentNames().find(item => item === label);
-        if (tempName) {            
-          instruments.push(tempName);
-        }
-      }
-        break;
-    }      
-  }
-  return instruments;
-};
-
-const getSectionInstrumentNames = collectionName => {
-  if (collectionName === 'strings') {
-    return orchestraStrings;
-  }
-  if (collectionName === 'winds') {
-    return orchestraWinds;
-  }
-  if (collectionName === 'brass') {
-    return orchestraBrass;
-  }
-  if (collectionName === 'tutti') {
-    return tutti;
-  }
-  return [];
-};
-
-const loadInstruments = names => {
-  const selection = [];
-  if (Array.isArray(names) && names.length > 0 && names.every(name => collection[name])) {
-    names.forEach(name => {
-      selection.push(collection[name]);
-    });
-  } else {
-    selection.push(...Object.values(collection));
-  }
-  return selection;
-};
 
 const getInstrumentTemplate = () => {
   return {
@@ -185,16 +67,38 @@ const getInstrumentTemplate = () => {
   };
 };
 
-const loadInstrument = name => {
-  return collection[name] || getInstrumentTemplate();
+const loadInstrumentsFromNames = names => {
+  const selection = [];
+  if (Array.isArray(names) && names.length > 0) {
+    names.forEach(name => {
+      switch (name) {
+        case 'tutti':
+          selection.push(...Object.values(collection));
+          break;
+        case 'strings':
+          selection.push(...Object.values(strings));
+          break;
+        case 'winds':
+          selection.push(...Object.values(winds));
+          break;
+        case 'brass':
+          selection.push(...Object.values(brass));
+          break;
+        default: {
+          const instrument = collection?.[name];
+          instrument ? selection.push(instrument) : selection.push(getInstrumentTemplate());
+          break;
+        }
+      }      
+    });
+  }
+  const unique = [...new Map(selection.map(item => [item.id, item])).values()];
+  return unique;
 };
 
 const instrumentsProvider = {
-  loadInstrument,
-  loadInstruments,
-  getSortedInstrumentNames,
-  getSectionInstrumentNames,
-  createInstrumentsFromSelection,
-  getInstrumentTemplate
+  getInstrumentTemplate,
+  loadInstrumentsFromNames
 };
+
 export default instrumentsProvider;

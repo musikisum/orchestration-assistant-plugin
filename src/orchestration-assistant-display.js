@@ -7,9 +7,8 @@ export default function OrchestrationAssistantDisplay({ content }) {
   const { 
     from, 
     to, 
-    width, 
-    noteNameBreakPoints, 
-    noteNamesAfterLastLine,
+    width,
+    instrumentsSelection,
   } = content;
   
   // const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
@@ -20,9 +19,7 @@ export default function OrchestrationAssistantDisplay({ content }) {
         <TableOfInstruments 
           from={from} 
           to={to} 
-          selection={content.instrumentSelection} 
-          noteNameBreakPoints={noteNameBreakPoints}
-          noteNamesAfterLastLine={noteNamesAfterLastLine}
+          selection={instrumentsSelection}
           />
       </div>
     </div>

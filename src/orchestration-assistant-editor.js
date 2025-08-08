@@ -1,13 +1,16 @@
 import { nanoid } from 'nanoid';
 import { useTranslation } from 'react-i18next';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import EditSplitter from './components/edit-splitter.js';
 import { PlusOutlined } from '@ant-design/icons';
 import ToneSlider from './components/tone-slider.js';
 import Info from '@educandu/educandu/components/info.js';
 import instrumentsProvider from './instruments-provider.js';
+import SelectDialog from './components/select-dialog.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
-import { Form, Select, Button, Checkbox, Tooltip } from 'antd';
+import InstrumentEditor from './components/instrument-editor.js';
 import { FORM_ITEM_LAYOUT } from '@educandu/educandu/domain/constants.js';
+import { Form, Flex, Splitter, Typography, Button, Checkbox, Tooltip } from 'antd';
 import { sectionEditorProps } from '@educandu/educandu/ui/default-prop-types.js';
 import ObjectWidthSlider from '@educandu/educandu/components/object-width-slider.js';
 import DragAndDropContainer from '@educandu/educandu/components/drag-and-drop-container.js';
@@ -21,52 +24,66 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   const { 
     width, 
-    instrumentSelection, 
-    noteNameBreakPoints, 
-    noteNamesAfterLastLine 
+    showInstrEdit,
+    selectedInstrument, 
+    instrumentsSelection
   } = content;
 
   const updateContent = newContentValues => {
     onContentChanged({ ...content, ...newContentValues });
   };
-
+  
+  // Droppable
   const droppableIdRef = useRef(nanoid(10));
 
   const handleItemMove = (fromIndex, toIndex) => {
-    const newSelection = moveItem(instrumentSelection, fromIndex, toIndex);
-    updateContent({ instrumentSelection: newSelection });
+    const newSelection = moveItem(instrumentsSelection, fromIndex, toIndex);
+    updateContent({ instrumentsSelection: newSelection });
   };
 
   const handleMoveModelUp = index => {
-    const newSelection = swapItemsAt(instrumentSelection, index, index - 1);
-    updateContent({ instrumentSelection: newSelection });
+    const newSelection = swapItemsAt(instrumentsSelection, index, index - 1);
+    updateContent({ instrumentsSelection: newSelection });
   };
 
   const handleMoveModelDown = index => {
-    const newSelection = swapItemsAt(instrumentSelection, index, index - 1);
-    updateContent({ instrumentSelection: newSelection });
+    const newSelection = swapItemsAt(instrumentsSelection, index, index - 1);
+    updateContent({ instrumentsSelection: newSelection });
   };
 
   const handleDeleteModel = index => {
-    const newSelection = removeItemAt(instrumentSelection, index);
-    updateContent({ instrumentSelection: newSelection });
-  };
-
-  const handleSelectChange = () => {
-    // missing: modal dialog for choosing instruments 
-    const newSelection = instrumentsProvider.loadInstruments();
-    updateContent({ instrumentSelection: newSelection });
+    const newSelection = removeItemAt(instrumentsSelection, index);
+    updateContent({ instrumentsSelection: newSelection });
   };
 
   const handleInstrumentNameButtonClick = (event, name) => {
-    console.log('Instrument name clicked', name);
+    const instrumentName = name;
+    updateContent({ selectedInstrument: instrumentName, showInstrEdit: true });
   };
 
+  // Select dialog
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const handleOk = () => {
+    const tempSelection = cloneDeep(instrumentsSelection);
+    if(!tempSelection.length) {
+      tempSelection.push(...instrumentsProvider.loadInstrumentsFromNames(['tutti']));
+    }
+    updateContent({ instrumentsSelection: tempSelection });
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setOpen(false);
+    }, 300);
+  };
+
+  // Plugin width
   const handleWidthChange = value => {
     updateContent({ width: value });
   };
 
-  const dragAndDropItems = instrumentSelection.map((instrument, index, arr) => ({
+  // Instrument list (left plugin site)
+  const dragAndDropItems = instrumentsSelection.map((instrument, index, arr) => ({
     key: instrument.id,
     render: ({ dragHandleProps, isDragged, isOtherDragged }) => 
       (<InstrumentEntry 
@@ -85,24 +102,52 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         />)
   }));
 
+  const dragAndDropContainer = (
+    <div className="instruments-list">
+      <DragAndDropContainer
+        droppableId={droppableIdRef.current} 
+        items={dragAndDropItems} 
+        onItemMove={handleItemMove}
+        />
+    </div>
+  );
+
+  // Poperty section (right plugin site)
+  const propContainer = (
+    <div className="prop-container">
+      <div>
+        <Button type='primary' icon={<PlusOutlined />} onClick={() => setOpen(true)}>{t('add')}</Button>
+      </div>
+      { showInstrEdit ? <InstrumentEditor name={selectedInstrument} /> : null }
+    </div>
+  );
+
   return (
     <div className="EP_Educandu_Orchestration_Assistant_Editor">
       <div className="edit-wrapper">
         <div className="edit-container">
-          <div className="instruments-list">
-            <DragAndDropContainer
-              droppableId={droppableIdRef.current} 
-              items={dragAndDropItems} 
-              onItemMove={handleItemMove}
-              />
-          </div>
-          <div className="prop-container">
-            <div>
-              <Button onClick={handleSelectChange}>Instrument hinzufügen</Button>
-            </div>
-          </div>
+          <EditSplitter 
+            panelA={dragAndDropContainer}
+            panelB={propContainer}
+            />
         </div>
+        <Form labelAlign="left">
+          <Form.Item
+            label={<Info tooltip={t('common:widthInfo')}>{t('common:width')}</Info>}
+            {...FORM_ITEM_LAYOUT}
+            >
+            <ObjectWidthSlider value={width} onChange={handleWidthChange} />
+          </Form.Item>
+        </Form>
       </div>
+      <SelectDialog
+        open={open}
+        loading={loading}
+        onOk={handleOk}
+        onCancel={() => setOpen(false)}
+        instrumentsSelection={instrumentsSelection}
+        updateContent={updateContent}
+        />
     </div>
   );
 }
