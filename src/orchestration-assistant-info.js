@@ -42,6 +42,7 @@ class OrchestrationAssitantInfo {
       to: 50,
       showInstrEdit: false,
       selectedInstrument: '',
+      actuallyText: '',
       instrumentsSelection: [],
       noteNameBreakPoints: []
     };
@@ -54,6 +55,7 @@ class OrchestrationAssitantInfo {
       to: joi.number().integer().min(1).max(50).required(),
       showInstrEdit: joi.bool(),
       selectedInstrument: joi.string().allow(null, ''),
+      actuallyText: joi.string().allow(null, ''),
       instrumentsSelection: joi.array().items(joi.object({
         id: joi.string().required(),
         name: joi.string().allow(null, ''),

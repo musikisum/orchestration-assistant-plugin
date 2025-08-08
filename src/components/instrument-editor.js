@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import instrumentsProvider from '../instruments-provider.js';
-import Markdown from '@educandu/educandu/components/markdown.js';
+import MarkdownInput from '@educandu/educandu/components/markdown-input.js';
 
-function InstrumentEditor({ name }) {
-
+function InstrumentEditor({ content, updateContent }) {
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
-  const result = instrumentsProvider.loadInstrumentsFromNames([name]);
-  const instrument = result[0];
+  const instrument = content.instrumentsSelection.find(obj => obj.id === content.selectedInstrument);
+  const lastInitializedId = useRef(null);
+
+  useEffect(() => {
+    if (instrument && instrument.id !== lastInitializedId.current) {
+      updateContent({ actuallyText: instrument.text || '' });
+      lastInitializedId.current = instrument.id;
+    }
+  }, [instrument, updateContent]);
+
+  const handleTextChanged = event => {
+    const newText = event.target.value;
+    updateContent({ actuallyText: newText });
+  };
 
   return instrument
     ? (
-      <Markdown className='instrumentDescription' renderAnchors>{instrument[t('language')]}</Markdown>
+      <div className="instrumentText">
+        <MarkdownInput value={content.actuallyText} onChange={handleTextChanged} renderAnchors />
+      </div>
     )
     : (
       <div>Fehler!</div>
@@ -22,9 +34,13 @@ function InstrumentEditor({ name }) {
 export default InstrumentEditor;
 
 InstrumentEditor.propTypes = {
-  name: PropTypes.string
+  content: PropTypes.object,
+  instrumentsSelection: PropTypes.array,
+  updateContent: PropTypes.func
 };
 
 InstrumentEditor.defaultProps = {
-  name: ''
+  content: null,
+  instrumentsSelection: [],
+  updateContent: null
 };

@@ -56,9 +56,8 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: newSelection });
   };
 
-  const handleInstrumentNameButtonClick = (event, name) => {
-    const instrumentName = name;
-    updateContent({ selectedInstrument: instrumentName, showInstrEdit: true });
+  const handleInstrumentNameButtonClick = (_event, id) => {
+    updateContent({ selectedInstrument: id, showInstrEdit: true });
   };
 
   // Select dialog
@@ -118,7 +117,12 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
       <div>
         <Button type='primary' icon={<PlusOutlined />} onClick={() => setOpen(true)}>{t('add')}</Button>
       </div>
-      { showInstrEdit ? <InstrumentEditor name={selectedInstrument} /> : null }
+      { showInstrEdit 
+        ? <InstrumentEditor 
+            content={content} 
+            updateContent={updateContent}
+            /> 
+        : null }
     </div>
   );
 

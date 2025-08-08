@@ -38,7 +38,6 @@ export default function InstrumentEntry({
 
   const handleActionButtonClick = (event, actionButton) => {
     event.stopPropagation();
-
     switch (actionButton.key) {
       case 'moveUp':
         return onMoveUp(index);
@@ -107,7 +106,7 @@ export default function InstrumentEntry({
     <div className="instrument-entry" {...dragHandleProps}>
       <div 
         className='instrumen-name' 
-        onClick={e => onInstrumentName(e, instrumentsSelection[index].name)}
+        onClick={e => onInstrumentName(e, instrumentsSelection[index].id)}
         >
         {t(instrumentsSelection[index].name)}
       </div>
