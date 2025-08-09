@@ -24,7 +24,8 @@ export default function InstrumentEntry({
   onDelete,
   onInstrumentName,
   content,
-  updateContent
+  updateContent,
+  className
 }) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
@@ -103,7 +104,7 @@ export default function InstrumentEntry({
   };
 
   return (
-    <div className="instrument-entry" {...dragHandleProps}>
+    <div className={`instrument-entry ${className}`} {...dragHandleProps}>
       <div 
         className='instrumen-name' 
         onClick={e => onInstrumentName(e, instrumentsSelection[index].id)}

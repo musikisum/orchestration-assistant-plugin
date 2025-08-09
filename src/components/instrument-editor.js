@@ -20,13 +20,11 @@ function InstrumentEditor({ content, updateContent }) {
   }
 
   return (
-    <div>
-      <MarkdownInput
-        value={content.actuallyText[lang]}
-        onChange={handleChange}
-        renderAnchors
+    <MarkdownInput
+      value={content.actuallyText[lang]}
+      onChange={handleChange}
+      renderAnchors
       />
-    </div>
   );
 }
 

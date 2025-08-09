@@ -38,6 +38,8 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const selectionRef = useRef(instrumentsSelection);
   const updateRef = useRef(updateContent);
 
+  const [selectedItem, setSelectedItem] = useState(null);
+
   useEffect(() => {
     selectionRef.current = instrumentsSelection;
   }, [instrumentsSelection]);
@@ -52,8 +54,8 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
       return () => {};
     }
     const timer = setTimeout(() => {
-      const list = cloneDeep(selectionRef.current);
-      const target = list.find(i => i.id === selectedInstrument);
+      const list = [...instrumentsSelection];
+      const target = list.find(item => item.id === selectedInstrument);
       if (!target) {
         return;
       }
@@ -66,7 +68,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     return () => {
       clearTimeout(timer);
     };
-  }, [buffered, selectedInstrument, inputLanguage]);
+  }, [buffered, selectedInstrument, inputLanguage, instrumentsSelection]);
 
   // Droppable section
   const droppableIdRef = useRef(nanoid(10)); 
@@ -79,7 +81,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: newSelection });
   };
   const handleMoveModelDown = index => {
-    const newSelection = swapItemsAt(instrumentsSelection, index, index - 1);
+    const newSelection = swapItemsAt(instrumentsSelection, index, index + 1);
     updateContent({ instrumentsSelection: newSelection });
   };
   const handleDeleteModel = index => {
@@ -89,6 +91,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
 
   // Instrument select 
   const handleInstrumentNameButtonClick = (_event, id) => {
+    setSelectedItem(id);
     if (id === content.selectedInstrument) {
       updateContent({ showInstrEdit: true });
       return;
@@ -138,9 +141,9 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     render: ({ dragHandleProps, isDragged, isOtherDragged }) => (
       <InstrumentEntry
         index={index}
-        dragHandleProps={dragHandleProps}
         isDragged={isDragged}
         isOtherDragged={isOtherDragged}
+        dragHandleProps={dragHandleProps}
         itemsCount={arr.length}
         canDeleteLastItem
         onMoveUp={handleMoveModelUp}
@@ -149,6 +152,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         onInstrumentName={handleInstrumentNameButtonClick}
         content={content}
         updateContent={updateContent}
+        className={instrument.id === selectedItem ? 'selected-item' : ''}
         />
     )
   }));
