@@ -6,7 +6,7 @@ const trumpet = {
   begin: 18,
   end: 36,
   color: colors.brass,
-  text: `# Die Trompete
+  de: `# Die Trompete
     
 Die Trompete ist ein Blasinstrument aus Metall aus der Familie der Blechblasinstrumente (als Natur- oder Ventiltrompete).
 

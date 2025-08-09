@@ -6,7 +6,7 @@ const tuba = {
   begin: 2,
   end: 28,
   color: colors.brass,
-  text: `# Die Tuba
+  de: `# Die Tuba
     
 Die Tuba ist ein Instrument aus Metall aus der Familie der Blechblasinstrumente.
 

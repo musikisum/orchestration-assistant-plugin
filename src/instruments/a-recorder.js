@@ -6,7 +6,7 @@ const altorecorder = {
   begin: 26,
   end: 40,
   color: colors.wood,
-  text: `# Die Altblockflöte
+  de: `# Die Altblockflöte
 
 Die Blockflöte ist eine Längsflöte aus Holz in verschiedenen Größen:
 

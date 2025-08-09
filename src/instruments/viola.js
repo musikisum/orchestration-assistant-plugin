@@ -6,7 +6,7 @@ const viola = {
   begin: 15,
   end: 38,
   color: colors.strings,
-  text: `# Die Viola
+  de: `# Die Viola
     
 Die Viola (Bratsche) ist das Altinstrument der Geigenfamilie (Quintenstimmung, F-Löcher und die typische Korpusform), das bis in die Tenorlage hineinreicht.
 

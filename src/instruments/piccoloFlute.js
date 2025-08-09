@@ -6,7 +6,7 @@ const piccoloflute = {
   begin: 30,
   end: 51,
   color: colors.brass,
-  text: `# Die Piccoloflöte
+  de: `# Die Piccoloflöte
 
 Die Piccoloflöte ist ein Blasinstrument aus Metall (auch Holz), erweitert den Umfang der (großen) Flöten im Orchester um eine Oktave nach oben.
 

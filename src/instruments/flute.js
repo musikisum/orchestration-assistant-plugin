@@ -6,7 +6,7 @@ const flute = {
   begin: 22,
   end: 44,
   color: colors.wood,
-  text: `# Die Flöte
+  de: `# Die Flöte
 
 Die Querflöte (obwohl üblicherweise aus Metall und ohne Rohrblatt) zählt zu den Holzblasinstrumenten (historische Instrumente in Holzbauweise).
 

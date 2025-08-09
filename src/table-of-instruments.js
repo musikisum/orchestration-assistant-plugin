@@ -3,7 +3,6 @@ import Clefs from './notes/clefs.js';
 import notesFactory from './notes-factory.js';
 import React, { useState, useRef } from 'react';
 import OrchestrationUtilities from './orchestration-utilities.js';
-import instrumentsProvider from './instruments-provider.js';
 import InstrumentTemplate from './components/instrument-template.js';
 
 export default function TableOfInstruments({ 
@@ -116,12 +115,10 @@ TableOfInstruments.propTypes = {
   from: PropTypes.number,
   to: PropTypes.number,
   selection: PropTypes.array,
-  noteNameBreakPoints: PropTypes.array,
 };
 
 TableOfInstruments.defaultProps = {
   from: 1,
   to: 50,
   selection: [],
-  noteNameBreakPoints: []
 };

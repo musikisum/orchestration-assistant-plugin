@@ -6,7 +6,7 @@ const contrabassoon = {
   begin: 1,
   end: 28,
   color: colors.wood,
-  text: `# Das Kontrafagott
+  de: `# Das Kontrafagott
     
 Das Kontrafagott ist ein Blasinstrument aus Holz mit doppeltem Rohrblatt.
 

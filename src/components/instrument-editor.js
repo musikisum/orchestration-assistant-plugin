@@ -1,46 +1,38 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
 import MarkdownInput from '@educandu/educandu/components/markdown-input.js';
 
 function InstrumentEditor({ content, updateContent }) {
-  const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
-  const instrument = content.instrumentsSelection.find(obj => obj.id === content.selectedInstrument);
-  const lastInitializedId = useRef(null);
+  
+  const lang = content.inputLanguage || 'de';
+  const selectedId = content.selectedInstrument;
 
-  useEffect(() => {
-    if (instrument && instrument.id !== lastInitializedId.current) {
-      updateContent({ actuallyText: instrument.text || '' });
-      lastInitializedId.current = instrument.id;
-    }
-  }, [instrument, updateContent]);
-
-  const handleTextChanged = event => {
-    const newText = event.target.value;
-    updateContent({ actuallyText: newText });
+  const handleChange = event => {
+    const text = event.target.value;
+    updateContent({
+      actuallyText: { ...content.actuallyText, [lang]: text }
+    });
   };
 
-  return instrument
-    ? (
-      <div className="instrumentText">
-        <MarkdownInput value={content.actuallyText} onChange={handleTextChanged} renderAnchors />
-      </div>
-    )
-    : (
-      <div>Fehler!</div>
-    );
+  const hasInstrument = content.instrumentsSelection.some(i => i.id === selectedId);
+  if (!hasInstrument) {
+    return <div>Fehler!</div>;
+  }
+
+  return (
+    <div>
+      <MarkdownInput
+        value={content.actuallyText[lang]}
+        onChange={handleChange}
+        renderAnchors
+      />
+    </div>
+  );
 }
 
-export default InstrumentEditor;
-
 InstrumentEditor.propTypes = {
-  content: PropTypes.object,
-  instrumentsSelection: PropTypes.array,
-  updateContent: PropTypes.func
+  content: PropTypes.object.isRequired,
+  updateContent: PropTypes.func.isRequired
 };
 
-InstrumentEditor.defaultProps = {
-  content: null,
-  instrumentsSelection: [],
-  updateContent: null
-};
+export default InstrumentEditor;

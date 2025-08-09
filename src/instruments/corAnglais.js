@@ -6,7 +6,7 @@ const coranglais = {
   begin: 18,
   end: 35,
   color: colors.wood,
-  text: `# Das Englischhorn
+  de: `# Das Englischhorn
 
 Das Englischhorn ist das Tenorinstrument der Oboenfamilie (siehe Oboe).
 

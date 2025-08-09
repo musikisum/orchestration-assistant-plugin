@@ -6,7 +6,7 @@ const horn = {
   begin: 7,
   end: 32,
   color: colors.brass,
-  text: `# Das Horn
+  de: `# Das Horn
     
 Das Horn ist ein Blasinstrument aus Metall als Natur- oder Ventilhorn.
 

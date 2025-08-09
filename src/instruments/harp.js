@@ -6,7 +6,7 @@ const harp = {
   begin: 1,
   end: 47,
   color: colors.strings,
-  text: `# Die Harfe
+  de: `# Die Harfe
     
 Die Doppelharfe ist ein Saiteninstrument mit Ces-Dur-Stimmung und 47 Saiten.
 

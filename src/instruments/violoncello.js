@@ -6,7 +6,7 @@ const violoncello = {
   begin: 8,
   end: 34,
   color: colors.strings,
-  text: `# Das Violoncello
+  de: `# Das Violoncello
     
 Das Violoncello ist das Bassinstrument der Geigenfamilie (Quintenstimmung, F-Löcher und die typische Korpusform), das bis in die Tenorlage hineinreicht.
 

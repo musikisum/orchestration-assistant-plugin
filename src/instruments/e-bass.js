@@ -6,7 +6,7 @@ const electricbass = {
   begin: 3,
   end: 25,
   color: colors.strings,
-  text: `# Der E-Bass
+  de: `# Der E-Bass
     
 Der E-Bass wurde Mitte des 20. Jahrhunderts entwickelt. Er hat einen massiven Holzkorpus und vier Stahlsaiten (Stimmung wie der Kontrabass). Neben dieser Standardform gibt es zahlreiche Varianten, etwa Modelle mit mehr Saiten, alternativen Stimmungen, hohlem Korpus oder mit bundlosem Griffbrett (*fretless*).
 

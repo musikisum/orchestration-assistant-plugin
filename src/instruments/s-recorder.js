@@ -6,7 +6,7 @@ const sopranorecorder = {
   begin: 29,
   end: 45,
   color: colors.wood,
-  text: `# Die Sopranblockflöte
+  de: `# Die Sopranblockflöte
 
 Die Blockflöte ist eine Längsflöte aus Holz in verschiedenen Größen:
 

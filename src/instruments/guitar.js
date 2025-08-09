@@ -6,7 +6,7 @@ const guitar = {
   begin: 10,
   end: 38,
   color: colors.strings,
-  text: `# Die Gitarre
+  de: `# Die Gitarre
     
 Die Gitarre ist ein Saiteninstrument mit Bünden.
 

@@ -6,7 +6,7 @@ const bassclarinet = {
   begin: 9,
   end: 30,
   color: colors.wood,
-  text: `# Die Bassklarinette
+  de: `# Die Bassklarinette
     
 Die Bassklarinette ist ein Längsblasinstrument aus Holz mit einfachem Rohrblatt in B-Stimmung.
 

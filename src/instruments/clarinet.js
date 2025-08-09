@@ -6,7 +6,7 @@ const clarinet = {
   begin: 17,
   end: 40,
   color: colors.wood,
-  text: `# Die Klarinette
+  de: `# Die Klarinette
     
 Die Klarinette ist ein Längsblasinstrument aus Holz mit einfachem Rohrblatt in den folgenden Stimmungen:
 

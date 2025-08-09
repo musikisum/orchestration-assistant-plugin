@@ -6,7 +6,7 @@ const tenorsaxophone = {
   begin: 14,
   end: 31,
   color: colors.brass,
-  text: `# Das Tenorsaxofon
+  de: `# Das Tenorsaxofon
     
 Das Tenorsaxofon ist ein Instrument aus der Saxofonfamilie. Dazu gehören:
 

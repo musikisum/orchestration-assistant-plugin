@@ -6,7 +6,7 @@ const piano = {
   begin: 1,
   end: 51,
   color: colors.strings,
-  text: `# Klavierinstrumente
+  de: `# Klavierinstrumente
 
 Tasteninstrumente (von lat. *claves* = Taste) gibt es in unterschiedlichen Bauweisen, z.B. als:
 

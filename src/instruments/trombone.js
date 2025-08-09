@@ -6,7 +6,7 @@ const trombone = {
   begin: 10,
   end: 28,
   color: colors.brass,
-  text: `# Die Posaune
+  de: `# Die Posaune
     
 Die Posaune ist ein Instrument aus Metall aus der Familie der Blechblasinstrumente. Instrumente der Posaunenfamilie werden in verschiedenen Lagen gebaut:
 

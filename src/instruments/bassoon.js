@@ -6,7 +6,7 @@ const bassoon = {
   begin: 7,
   end: 32,
   color: colors.wood,
-  text: `# Das Fagott
+  de: `# Das Fagott
     
 Das Fagott ist ein Blasinstrument aus Holz mit doppeltem Rohrblatt.
 

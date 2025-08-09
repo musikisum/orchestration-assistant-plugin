@@ -6,7 +6,7 @@ const violin = {
   begin: 19,
   end: 44,
   color: colors.strings,
-  text: `# Die Violine
+  de: `# Die Violine
   
 Die Violine ist das Sopraninstrument der Geigenfamilie (Quintenstimmung, F-Löcher und die typische Korpusform), das bis in die Altlage hineinreicht.
 

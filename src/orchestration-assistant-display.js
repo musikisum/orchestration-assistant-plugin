@@ -10,8 +10,6 @@ export default function OrchestrationAssistantDisplay({ content }) {
     width,
     instrumentsSelection,
   } = content;
-  
-  // const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
   return (
     <div className="EP_Educandu_Orchestration_Assistant_Display">

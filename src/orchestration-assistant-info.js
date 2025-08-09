@@ -42,7 +42,8 @@ class OrchestrationAssitantInfo {
       to: 50,
       showInstrEdit: false,
       selectedInstrument: '',
-      actuallyText: '',
+      inputLanguage: 'de',
+      actuallyText: { de: '', en: '' },
       instrumentsSelection: [],
       noteNameBreakPoints: []
     };
@@ -55,14 +56,18 @@ class OrchestrationAssitantInfo {
       to: joi.number().integer().min(1).max(50).required(),
       showInstrEdit: joi.bool(),
       selectedInstrument: joi.string().allow(null, ''),
-      actuallyText: joi.string().allow(null, ''),
+      inputLanguage: joi.string().allow(null,''),
+      actuallyText: joi.object({
+        de: joi.string().allow(null, ''),
+        en: joi.string().allow(null, '')
+      }),
       instrumentsSelection: joi.array().items(joi.object({
         id: joi.string().required(),
         name: joi.string().allow(null, ''),
         begin: joi.number().min(1).max(49),
         end: joi.number().min(2).max(51),
         color: joi.string().allow(null, ''),
-        text: joi.string().allow(null, ''),
+        de: joi.string().allow(null, ''),
         en: joi.string().allow(null, '')
       })),
       noteNameBreakPoints: joi.array().items(joi.string())

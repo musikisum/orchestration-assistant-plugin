@@ -64,14 +64,14 @@ describe('OrchestrationAssitantInfo', () => {
   });
 
   it('clones content deeply', () => {
-    const content = { text: 'foo', width: 50, from: 1, to: 50 };
+    const content = { de: 'foo', width: 50, from: 1, to: 50 };
     const result = sut.cloneContent(content);
     expect(result).toEqual(content);
     expect(result).not.toBe(content);
   });
 
   it('redacts content text using GFM redactCdnResources', () => {
-    const content = { text: 'some-text' };
+    const content = { de: 'some-text' };
     const result = sut.redactContent(content, 'room123');
 
     expect(mockGfm.redactCdnResources).toHaveBeenCalledWith(
@@ -82,7 +82,7 @@ describe('OrchestrationAssitantInfo', () => {
   });
 
   it('extracts cdn resources using GFM', () => {
-    const content = { text: 'some-cdn-text' };
+    const content = { de: 'some-cdn-text' };
     const result = sut.getCdnResources(content);
 
     expect(mockGfm.extractCdnResources).toHaveBeenCalledWith('some-cdn-text');

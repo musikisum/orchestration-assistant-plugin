@@ -1,16 +1,15 @@
 import { nanoid } from 'nanoid';
 import { useTranslation } from 'react-i18next';
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import EditSplitter from './components/edit-splitter.js';
 import { PlusOutlined } from '@ant-design/icons';
-import ToneSlider from './components/tone-slider.js';
 import Info from '@educandu/educandu/components/info.js';
 import instrumentsProvider from './instruments-provider.js';
 import SelectDialog from './components/select-dialog.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import InstrumentEditor from './components/instrument-editor.js';
 import { FORM_ITEM_LAYOUT } from '@educandu/educandu/domain/constants.js';
-import { Form, Flex, Splitter, Typography, Button, Checkbox, Tooltip } from 'antd';
+import { Form, Button } from 'antd';
 import { sectionEditorProps } from '@educandu/educandu/ui/default-prop-types.js';
 import ObjectWidthSlider from '@educandu/educandu/components/object-width-slider.js';
 import DragAndDropContainer from '@educandu/educandu/components/drag-and-drop-container.js';
@@ -18,54 +17,106 @@ import { swapItemsAt, removeItemAt, moveItem } from '@educandu/educandu/utils/ar
 import InstrumentEntry from './components/instrument-entry.js';
 
 export default function OrchestrationAssistantEditor({ content, onContentChanged }) {
-
-  // const validatedContent = updateValidation.validateContentAfterUpdates(content);
-
-  const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
-  const { 
-    width, 
+  const {
+    width,
+    inputLanguage,
     showInstrEdit,
-    selectedInstrument, 
+    selectedInstrument,
     instrumentsSelection
   } = content;
 
-  const updateContent = newContentValues => {
-    onContentChanged({ ...content, ...newContentValues });
-  };
+  const updateContent = React.useCallback(
+    newContentValues => {
+      onContentChanged({ ...content, ...newContentValues });
+    },
+    [content, onContentChanged]
+  );
   
-  // Droppable
-  const droppableIdRef = useRef(nanoid(10));
+  const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
+  const buffered = content.actuallyText[inputLanguage];
 
+  const selectionRef = useRef(instrumentsSelection);
+  const updateRef = useRef(updateContent);
+
+  useEffect(() => {
+    selectionRef.current = instrumentsSelection;
+  }, [instrumentsSelection]);
+
+  useEffect(() => {
+    updateRef.current = updateContent;
+  }, [updateContent]);
+
+  // Autosave für Markdown-Buffer (debounced)
+  useEffect(() => {
+    if (!selectedInstrument) {
+      return () => {};
+    }
+    const timer = setTimeout(() => {
+      const list = cloneDeep(selectionRef.current);
+      const target = list.find(i => i.id === selectedInstrument);
+      if (!target) {
+        return;
+      }
+      if (target[inputLanguage] !== buffered) {
+        target[inputLanguage] = buffered;
+        updateRef.current({ instrumentsSelection: list });
+      }
+    }, 400);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [buffered, selectedInstrument, inputLanguage]);
+
+  // Droppable section
+  const droppableIdRef = useRef(nanoid(10)); 
   const handleItemMove = (fromIndex, toIndex) => {
     const newSelection = moveItem(instrumentsSelection, fromIndex, toIndex);
     updateContent({ instrumentsSelection: newSelection });
   };
-
   const handleMoveModelUp = index => {
     const newSelection = swapItemsAt(instrumentsSelection, index, index - 1);
     updateContent({ instrumentsSelection: newSelection });
   };
-
   const handleMoveModelDown = index => {
     const newSelection = swapItemsAt(instrumentsSelection, index, index - 1);
     updateContent({ instrumentsSelection: newSelection });
   };
-
   const handleDeleteModel = index => {
     const newSelection = removeItemAt(instrumentsSelection, index);
     updateContent({ instrumentsSelection: newSelection });
   };
 
+  // Instrument select 
   const handleInstrumentNameButtonClick = (_event, id) => {
-    updateContent({ selectedInstrument: id, showInstrEdit: true });
+    if (id === content.selectedInstrument) {
+      updateContent({ showInstrEdit: true });
+      return;
+    }
+    // flush buffer
+    const list = cloneDeep(content.instrumentsSelection);
+    const current = list.find(item => item.id === content.selectedInstrument);
+    if (current && current[inputLanguage] !== buffered) {
+      current[inputLanguage] = buffered;
+    }
+    // initialize new buffer
+    const nextInstrument = list.find(item => item.id === id);
+    const nextText = nextInstrument ? nextInstrument[inputLanguage] : '';
+    updateContent({
+      instrumentsSelection: list,
+      selectedInstrument: id,
+      showInstrEdit: true,
+      actuallyText: { ...content.actuallyText, [inputLanguage]: nextText }
+    });
   };
 
-  // Select dialog
+  // Modal dialog for instrument selection 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+
   const handleOk = () => {
     const tempSelection = cloneDeep(instrumentsSelection);
-    if(!tempSelection.length) {
+    if (!tempSelection.length) {
       tempSelection.push(...instrumentsProvider.loadInstrumentsFromNames(['tutti']));
     }
     updateContent({ instrumentsSelection: tempSelection });
@@ -81,15 +132,15 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ width: value });
   };
 
-  // Instrument list (left plugin site)
+  // List with instrument entries (left plugin side)
   const dragAndDropItems = instrumentsSelection.map((instrument, index, arr) => ({
     key: instrument.id,
-    render: ({ dragHandleProps, isDragged, isOtherDragged }) => 
-      (<InstrumentEntry 
+    render: ({ dragHandleProps, isDragged, isOtherDragged }) => (
+      <InstrumentEntry
         index={index}
         dragHandleProps={dragHandleProps}
-        isDragged={isDragged} 
-        isOtherDragged={isOtherDragged} 
+        isDragged={isDragged}
+        isOtherDragged={isOtherDragged}
         itemsCount={arr.length}
         canDeleteLastItem
         onMoveUp={handleMoveModelUp}
@@ -98,31 +149,30 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         onInstrumentName={handleInstrumentNameButtonClick}
         content={content}
         updateContent={updateContent}
-        />)
+        />
+    )
   }));
-
   const dragAndDropContainer = (
     <div className="instruments-list">
       <DragAndDropContainer
-        droppableId={droppableIdRef.current} 
-        items={dragAndDropItems} 
+        droppableId={droppableIdRef.current}
+        items={dragAndDropItems}
         onItemMove={handleItemMove}
         />
     </div>
   );
 
-  // Poperty section (right plugin site)
+  // Property section (right plugin side)
   const propContainer = (
     <div className="prop-container">
       <div>
-        <Button type='primary' icon={<PlusOutlined />} onClick={() => setOpen(true)}>{t('add')}</Button>
+        <Button type="primary" icon={<PlusOutlined />} onClick={() => setOpen(true)}>
+          {t('add')}
+        </Button>
       </div>
-      { showInstrEdit 
-        ? <InstrumentEditor 
-            content={content} 
-            updateContent={updateContent}
-            /> 
-        : null }
+      {showInstrEdit
+        ? <InstrumentEditor content={content} updateContent={updateContent} />
+        : null}
     </div>
   );
 
@@ -130,10 +180,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     <div className="EP_Educandu_Orchestration_Assistant_Editor">
       <div className="edit-wrapper">
         <div className="edit-container">
-          <EditSplitter 
-            panelA={dragAndDropContainer}
-            panelB={propContainer}
-            />
+          <EditSplitter panelA={dragAndDropContainer} panelB={propContainer} />
         </div>
         <Form labelAlign="left">
           <Form.Item
@@ -144,6 +191,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
           </Form.Item>
         </Form>
       </div>
+
       <SelectDialog
         open={open}
         loading={loading}

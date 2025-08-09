@@ -6,7 +6,7 @@ const doublebass = {
   begin: 3,
   end: 29,
   color: colors.strings,
-  text: `# Der Kontrabass
+  de: `# Der Kontrabass
     
 Der Kontrabass ist ein vier- (oder fünfsaitiges) Streichinstrument, das sowohl bauliche Merkmale der Geigen- als auch der Gambenfamilie aufweist. Für eine Zuordnung zur Geigenfamilie sprechen die F-förmigen Schalllöcher, die Anzahl der Saiten (bei viersaitigen Instrumenten), die Schnecke am Wirbelkasten sowie das bundlose Griffbrett. Merkmale, die auf die Gambenfamilie verweisen, sind die schräg abfallenden Schultern und die Stimmung in Quarten.
 

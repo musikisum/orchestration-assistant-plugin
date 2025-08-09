@@ -6,7 +6,7 @@ const oboe = {
   begin: 21,
   end: 40,
   color: colors.wood,
-  text: `# Die Oboe
+  de: `# Die Oboe
 
 Die Oboe ist ein Längsblasinstrument aus Holz mit Doppelrohrblatt in den folgenden Stimmlagen:
 
