@@ -19,7 +19,6 @@ import InstrumentEntry from './components/instrument-entry.js';
 export default function OrchestrationAssistantEditor({ content, onContentChanged }) {
   const {
     width,
-    inputLanguage,
     showInstrEdit,
     selectedInstrument,
     instrumentsSelection
@@ -33,42 +32,8 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   );
   
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
-  const buffered = content.actuallyText[inputLanguage];
-
-  const selectionRef = useRef(instrumentsSelection);
-  const updateRef = useRef(updateContent);
 
   const [selectedItem, setSelectedItem] = useState(null);
-
-  useEffect(() => {
-    selectionRef.current = instrumentsSelection;
-  }, [instrumentsSelection]);
-
-  useEffect(() => {
-    updateRef.current = updateContent;
-  }, [updateContent]);
-
-  // Autosave für Markdown-Buffer (debounced)
-  useEffect(() => {
-    if (!selectedInstrument) {
-      return () => {};
-    }
-    const timer = setTimeout(() => {
-      const list = [...instrumentsSelection];
-      const target = list.find(item => item.id === selectedInstrument);
-      if (!target) {
-        return;
-      }
-      if (target[inputLanguage] !== buffered) {
-        target[inputLanguage] = buffered;
-        updateRef.current({ instrumentsSelection: list });
-      }
-    }, 400);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [buffered, selectedInstrument, inputLanguage, instrumentsSelection]);
 
   // Droppable section
   const droppableIdRef = useRef(nanoid(10)); 
@@ -89,28 +54,31 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: newSelection });
   };
 
-  // Instrument select 
-  const handleInstrumentNameButtonClick = (_event, id) => {
-    setSelectedItem(id);
+  const saveInstrumentInContent = (_event, id, instrument) => {
+    if (instrument) {
+      const list = cloneDeep(instrumentsSelection);
+      const index = list.findIndex(item => item.id === instrument.id);
+      if (index !== -1) {
+        list[index] = instrument;        
+      }
+      updateContent({
+        showInstrEdit: true,
+        selectedInstrument: id,
+        instrumentsSelection: list
+      });
+      return;
+    }    
     if (id === content.selectedInstrument) {
       updateContent({ showInstrEdit: true });
       return;
-    }
-    // flush buffer
-    const list = cloneDeep(content.instrumentsSelection);
-    const current = list.find(item => item.id === content.selectedInstrument);
-    if (current && current[inputLanguage] !== buffered) {
-      current[inputLanguage] = buffered;
-    }
-    // initialize new buffer
-    const nextInstrument = list.find(item => item.id === id);
-    const nextText = nextInstrument ? nextInstrument[inputLanguage] : '';
-    updateContent({
-      instrumentsSelection: list,
-      selectedInstrument: id,
-      showInstrEdit: true,
-      actuallyText: { ...content.actuallyText, [inputLanguage]: nextText }
-    });
+    } 
+    setSelectedItem(id);
+    updateContent({ selectedInstrument: id, showInstrEdit: true });
+  };
+  
+  // Instrument select 
+  const handleInstrumentNameButtonClick = (_event, id, instrument) => {
+    saveInstrumentInContent(null, id, instrument);
   };
 
   // Modal dialog for instrument selection 
@@ -118,11 +86,10 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const [loading, setLoading] = useState(false);
 
   const handleOk = () => {
-    const tempSelection = cloneDeep(instrumentsSelection);
-    if (!tempSelection.length) {
-      tempSelection.push(...instrumentsProvider.loadInstrumentsFromNames(['tutti']));
-    }
-    updateContent({ instrumentsSelection: tempSelection });
+    const refreshSelection = [];
+    //TODO: Prohibit overwrite of own instruments
+    refreshSelection.push(...instrumentsProvider.loadInstrumentsFromNames(['tutti']));
+    updateContent({ instrumentsSelection: refreshSelection });
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -133,6 +100,11 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   // Plugin width
   const handleWidthChange = value => {
     updateContent({ width: value });
+  };
+
+  const getInstrumentCopy = id => {
+    const current = instrumentsSelection.find(item => item.id === id);
+    return instrumentsProvider.getInstrumentCopy(current);
   };
 
   // List with instrument entries (left plugin side)
@@ -149,7 +121,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         onMoveUp={handleMoveModelUp}
         onMoveDown={handleMoveModelDown}
         onDelete={handleDeleteModel}
-        onInstrumentName={handleInstrumentNameButtonClick}
+        onInstrumentName={event => handleInstrumentNameButtonClick(event, instrument.id)}
         content={content}
         updateContent={updateContent}
         className={instrument.id === selectedItem ? 'selected-item' : ''}
@@ -175,7 +147,10 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         </Button>
       </div>
       {showInstrEdit
-        ? <InstrumentEditor content={content} updateContent={updateContent} />
+        ? <InstrumentEditor 
+            instrument={getInstrumentCopy(selectedInstrument)} 
+            saveInstrumentInContent={saveInstrumentInContent} 
+            />
         : null}
     </div>
   );

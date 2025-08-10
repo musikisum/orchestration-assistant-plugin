@@ -22,6 +22,7 @@ import SopranoRecorder from './instruments/s-recorder.js';
 import PiccoloFlute from './instruments/piccoloFlute.js';
 import TenorSaxophone from './instruments/t-saxophone.js';
 import ContraBassoon from './instruments/contraBassoon.js';
+import defaultInstrument from './instruments/default-instrument.js';
 
 // section of instrument components
 const strings = { 
@@ -56,16 +57,30 @@ const brass = {
 };
 const collection = { ...strings, ...winds, ... brass };
 
-const getInstrumentTemplate = () => {
-  return {
-    id: '',
-    name: 'neues Instrument',
-    begin: 1,
-    end: 50,
-    color: '#6D8BB1',
-    de: '',
-    en: ''
-  };
+const getInstrumentCopy = (instrument, instrumentCopy) => {
+  if (instrument && !instrumentCopy) {
+    return defaultInstrument(
+      instrument.id, 
+      instrument.name,
+      instrument.begin, 
+      instrument.end, 
+      instrument.color,
+      instrument.de,
+      instrument.en
+    );
+  }
+  if(instrument && instrumentCopy) {
+    return defaultInstrument(
+      instrumentCopy.id, 
+      instrumentCopy.name,
+      instrumentCopy.begin, 
+      instrumentCopy.end, 
+      instrumentCopy.color,
+      instrumentCopy.de,
+      instrumentCopy.en
+    );
+  }
+  return defaultInstrument();
 };
 
 const loadInstrumentsFromNames = names => {
@@ -87,7 +102,7 @@ const loadInstrumentsFromNames = names => {
           break;
         default: {
           const instrument = collection?.[name];
-          instrument ? selection.push(instrument) : selection.push(getInstrumentTemplate());
+          instrument ? selection.push(instrument) : selection.push(defaultInstrument());
           break;
         }
       }      
@@ -98,7 +113,7 @@ const loadInstrumentsFromNames = names => {
 };
 
 const instrumentsProvider = {
-  getInstrumentTemplate,
+  getInstrumentCopy,
   loadInstrumentsFromNames
 };
 

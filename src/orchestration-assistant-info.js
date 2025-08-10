@@ -42,10 +42,7 @@ class OrchestrationAssitantInfo {
       to: 50,
       showInstrEdit: false,
       selectedInstrument: '',
-      inputLanguage: 'de',
-      actuallyText: { de: '', en: '' },
       instrumentsSelection: [],
-      noteNameBreakPoints: []
     };
   }
 
@@ -56,11 +53,6 @@ class OrchestrationAssitantInfo {
       to: joi.number().integer().min(1).max(50).required(),
       showInstrEdit: joi.bool(),
       selectedInstrument: joi.string().allow(null, ''),
-      inputLanguage: joi.string().allow(null,''),
-      actuallyText: joi.object({
-        de: joi.string().allow(null, ''),
-        en: joi.string().allow(null, '')
-      }),
       instrumentsSelection: joi.array().items(joi.object({
         id: joi.string().required(),
         name: joi.string().allow(null, ''),
@@ -70,7 +62,6 @@ class OrchestrationAssitantInfo {
         de: joi.string().allow(null, ''),
         en: joi.string().allow(null, '')
       })),
-      noteNameBreakPoints: joi.array().items(joi.string())
     });
     joi.attempt(content, schema, { abortEarly: false, convert: false, noDefaults: true });
   }

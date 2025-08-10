@@ -1,36 +1,51 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
 import MarkdownInput from '@educandu/educandu/components/markdown-input.js';
 
-function InstrumentEditor({ content, updateContent }) {
-  
-  const lang = content.inputLanguage || 'de';
-  const selectedId = content.selectedInstrument;
+function InstrumentEditor({ instrument, saveInstrumentInContent }) {
 
+  const lang = 'de'; // erst mal statisch, dafür mache ich später einen switch-Button
+  const [description, setDescription] = useState(instrument[lang]);
+
+  useEffect(() => {
+    setDescription(instrument[lang]);
+  }, [instrument, lang]);
+
+  useEffect(() => {
+    const handleClickOutside = event => {
+      const instrumentEditor = document.querySelector('.instrument-editor'); 
+      if (instrumentEditor && !instrumentEditor.contains(event.target)) {
+        if (description !== instrument[lang]) {
+          saveInstrumentInContent(null, null, { ...instrument, [lang]: description });
+        }        
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [instrument, lang, description, saveInstrumentInContent]);
+
+  // const handleChange = e => setDescription(e.target.value);
   const handleChange = event => {
     const text = event.target.value;
-    updateContent({
-      actuallyText: { ...content.actuallyText, [lang]: text }
-    });
+    setDescription(text);
   };
 
-  const hasInstrument = content.instrumentsSelection.some(i => i.id === selectedId);
-  if (!hasInstrument) {
-    return <div>Fehler!</div>;
-  }
-
   return (
-    <MarkdownInput
-      value={content.actuallyText[lang]}
-      onChange={handleChange}
-      renderAnchors
-      />
+    <div className='instrument-editor'>
+      <MarkdownInput
+        value={description}
+        onChange={handleChange}
+        renderAnchors
+        />
+    </div>    
   );
 }
 
 InstrumentEditor.propTypes = {
-  content: PropTypes.object.isRequired,
-  updateContent: PropTypes.func.isRequired
+  instrument: PropTypes.object.isRequired,
+  saveInstrumentInContent: PropTypes.func.isRequired
 };
 
 export default InstrumentEditor;
