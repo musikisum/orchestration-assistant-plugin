@@ -5,6 +5,8 @@ const guitar = {
   name: 'guitar',
   begin: 10,
   end: 38,
+  before: false,
+  after: false,
   color: colors.strings,
   de: `# Die Gitarre
     

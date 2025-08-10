@@ -5,6 +5,8 @@ const violin = {
   name: 'violin',
   begin: 19,
   end: 44,
+  before: false,
+  after: false,
   color: colors.strings,
   de: `# Die Violine
   

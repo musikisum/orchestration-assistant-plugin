@@ -5,6 +5,8 @@ const doublebass = {
   name: 'doublebass',
   begin: 3,
   end: 29,
+  before: false,
+  after: false,
   color: colors.strings,
   de: `# Der Kontrabass
     

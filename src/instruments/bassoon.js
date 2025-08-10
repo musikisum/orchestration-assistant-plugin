@@ -5,6 +5,8 @@ const bassoon = {
   name: 'bassoon',
   begin: 7,
   end: 32,
+  before: false,
+  after: false,
   color: colors.wood,
   de: `# Das Fagott
     

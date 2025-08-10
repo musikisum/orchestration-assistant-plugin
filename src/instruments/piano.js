@@ -5,6 +5,8 @@ const piano = {
   name: 'piano',
   begin: 1,
   end: 51,
+  before: false,
+  after: false,
   color: colors.strings,
   de: `# Klavierinstrumente
 

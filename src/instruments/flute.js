@@ -5,6 +5,8 @@ const flute = {
   name: 'flute',
   begin: 22,
   end: 44,
+  before: false,
+  after: false,
   color: colors.wood,
   de: `# Die Flöte
 

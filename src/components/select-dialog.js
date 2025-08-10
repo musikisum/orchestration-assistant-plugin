@@ -2,8 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Button } from 'antd';
 import instrumentsProvider from '../instruments-provider.js';
+import ModalSectionsContainer from './modal-sections-container.js';
 
 function SelectDialog({ open, loading, onOk, onCancel, instrumentsSelection, updateContent }) {
+
+  const tuttiFromDataFiles = instrumentsProvider.loadInstrumentsFromNames(['tutti']);
+  const strings = instrumentsProvider.loadInstrumentsFromNames(['strings']);
+  const winds = instrumentsProvider.loadInstrumentsFromNames(['winds']);
+  const brass = instrumentsProvider.loadInstrumentsFromNames(['brass']);
+
+  const tuttiInstrIds = tuttiFromDataFiles.map(item => item.id);
+  const customInstr = instrumentsSelection.reduce((accu, item) => {
+    if(!tuttiInstrIds.includes(item.id)) {
+      accu.push(item);
+    }
+    return accu;
+  }, []);
   
   const defaultFooter = [
     <Button key="back" onClick={onCancel}>
@@ -22,13 +36,11 @@ function SelectDialog({ open, loading, onOk, onCancel, instrumentsSelection, upd
       onCancel={onCancel}
       footer={defaultFooter}
       >
-      {instrumentsSelection.length 
-        ? instrumentsSelection.map((instr, index) => {
-          return <div key={index}>{instr.name}</div>;
-        }) 
-        : instrumentsProvider.loadInstrumentsFromNames(['tutti']).map((instr, index) => {
-          return <div key={index}>{instr.name}</div>;
-        })}
+      <ModalSectionsContainer 
+        instruments={tuttiFromDataFiles}
+        instrumentsSelection={instrumentsSelection}
+        updateContent={updateContent}
+        />
     </Modal>
   );
 }

@@ -5,6 +5,8 @@ const horn = {
   name: 'horn',
   begin: 7,
   end: 32,
+  before: false,
+  after: false,
   color: colors.brass,
   de: `# Das Horn
     

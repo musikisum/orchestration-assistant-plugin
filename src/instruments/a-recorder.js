@@ -5,6 +5,8 @@ const altorecorder = {
   name: 'altorecorder',
   begin: 26,
   end: 40,
+  before: false,
+  after: false,
   color: colors.wood,
   de: `# Die Altblockflöte
 

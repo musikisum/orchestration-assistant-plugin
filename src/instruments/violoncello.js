@@ -5,6 +5,8 @@ const violoncello = {
   name: 'violoncello',
   begin: 8,
   end: 34,
+  before: false,
+  after: false,
   color: colors.strings,
   de: `# Das Violoncello
     

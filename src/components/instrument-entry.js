@@ -106,7 +106,7 @@ export default function InstrumentEntry({
   return (
     <div className={`instrument-entry ${className}`} {...dragHandleProps}>
       <div 
-        className='instrumen-name' 
+        className='instrument-name' 
         onClick={e => onInstrumentName(e, instrumentsSelection[index].id)}
         >
         {t(instrumentsSelection[index].name)}

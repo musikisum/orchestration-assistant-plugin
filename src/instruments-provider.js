@@ -62,8 +62,11 @@ const getInstrumentCopy = (instrument, instrumentCopy) => {
     return defaultInstrument(
       instrument.id, 
       instrument.name,
+      instrument.section,
       instrument.begin, 
       instrument.end, 
+      instrument.before,
+      instrument.after,
       instrument.color,
       instrument.de,
       instrument.en
@@ -73,8 +76,11 @@ const getInstrumentCopy = (instrument, instrumentCopy) => {
     return defaultInstrument(
       instrumentCopy.id, 
       instrumentCopy.name,
+      instrumentCopy.section,
       instrumentCopy.begin, 
-      instrumentCopy.end, 
+      instrumentCopy.end,
+      instrumentCopy.before,
+      instrumentCopy.after, 
       instrumentCopy.color,
       instrumentCopy.de,
       instrumentCopy.en

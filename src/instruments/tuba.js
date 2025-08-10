@@ -5,6 +5,8 @@ const tuba = {
   name: 'tuba',
   begin: 2,
   end: 28,
+  before: false,
+  after: false,
   color: colors.brass,
   de: `# Die Tuba
     

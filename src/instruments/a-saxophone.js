@@ -5,7 +5,9 @@ const altosaxophone = {
   name: 'altosaxophone',
   begin: 17,
   end: 34,
-  color: colors.brass,
+  before: false,
+  after: false,
+  color: colors.wood,
   de: `# Das Altsaxofon
     
 Das Altsaxofon ist ein Instrument aus der Saxofonfamilie. Dazu gehören:

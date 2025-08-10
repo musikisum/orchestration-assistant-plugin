@@ -5,6 +5,8 @@ const harp = {
   name: 'harp',
   begin: 1,
   end: 47,
+  before: false,
+  after: false,
   color: colors.strings,
   de: `# Die Harfe
     

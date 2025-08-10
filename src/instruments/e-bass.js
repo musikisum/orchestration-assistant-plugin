@@ -5,6 +5,8 @@ const electricbass = {
   name: 'electricbass',
   begin: 3,
   end: 25,
+  before: false,
+  after: false,
   color: colors.strings,
   de: `# Der E-Bass
     

@@ -5,6 +5,8 @@ const viola = {
   name: 'viola',
   begin: 15,
   end: 38,
+  before: false,
+  after: false,
   color: colors.strings,
   de: `# Die Viola
     

@@ -24,12 +24,10 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     instrumentsSelection
   } = content;
 
-  const updateContent = React.useCallback(
-    newContentValues => {
-      onContentChanged({ ...content, ...newContentValues });
-    },
-    [content, onContentChanged]
-  );
+  const updateContent = newContentValues => {
+    console.log('newContentValues:', newContentValues)
+    onContentChanged({ ...content, ...newContentValues });
+  };
   
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
@@ -86,10 +84,6 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const [loading, setLoading] = useState(false);
 
   const handleOk = () => {
-    const refreshSelection = [];
-    //TODO: Prohibit overwrite of own instruments
-    refreshSelection.push(...instrumentsProvider.loadInstrumentsFromNames(['tutti']));
-    updateContent({ instrumentsSelection: refreshSelection });
     setLoading(true);
     setTimeout(() => {
       setLoading(false);

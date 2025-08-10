@@ -5,6 +5,8 @@ const trumpet = {
   name: 'trumpet',
   begin: 18,
   end: 36,
+  before: false,
+  after: false,
   color: colors.brass,
   de: `# Die Trompete
     

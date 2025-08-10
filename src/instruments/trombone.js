@@ -5,6 +5,8 @@ const trombone = {
   name: 'trombone',
   begin: 10,
   end: 28,
+  before: false,
+  after: false,
   color: colors.brass,
   de: `# Die Posaune
     

@@ -5,6 +5,8 @@ const clarinet = {
   name: 'clarinet',
   begin: 17,
   end: 40,
+  before: false,
+  after: false,
   color: colors.wood,
   de: `# Die Klarinette
     

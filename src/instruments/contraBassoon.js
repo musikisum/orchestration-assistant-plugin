@@ -5,6 +5,8 @@ const contrabassoon = {
   name: 'contrabassoon',
   begin: 1,
   end: 28,
+  before: false,
+  after: false,
   color: colors.wood,
   de: `# Das Kontrafagott
     

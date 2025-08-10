@@ -5,6 +5,8 @@ const oboe = {
   name: 'oboe',
   begin: 21,
   end: 40,
+  before: false,
+  after: false,
   color: colors.wood,
   de: `# Die Oboe
 

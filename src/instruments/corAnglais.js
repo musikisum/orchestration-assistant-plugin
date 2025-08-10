@@ -5,6 +5,8 @@ const coranglais = {
   name: 'coranglais',
   begin: 18,
   end: 35,
+  before: false,
+  after: false,
   color: colors.wood,
   de: `# Das Englischhorn
 

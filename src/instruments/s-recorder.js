@@ -5,6 +5,8 @@ const sopranorecorder = {
   name: 'sopranorecorder',
   begin: 29,
   end: 45,
+  before: false,
+  after: false,
   color: colors.wood,
   de: `# Die Sopranblockflöte
 

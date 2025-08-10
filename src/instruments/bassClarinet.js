@@ -5,6 +5,8 @@ const bassclarinet = {
   name: 'bassclarinet',
   begin: 9,
   end: 30,
+  before: false,
+  after: false,
   color: colors.wood,
   de: `# Die Bassklarinette
     
