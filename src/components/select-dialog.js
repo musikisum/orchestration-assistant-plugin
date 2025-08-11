@@ -24,6 +24,7 @@ function SelectDialog({ open, loading, onOk, onCancel, instrumentsSelection, mod
       onOk={onOk}
       onCancel={onCancel}
       footer={defaultFooter}
+      type='primary'
       >
       <ModalSectionsContainer 
         instrumentsSelection={instrumentsSelection}

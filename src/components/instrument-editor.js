@@ -34,6 +34,9 @@ function InstrumentEditor({ instrument, saveInstrumentInContent }) {
 
   return (
     <div className='instrument-editor'>
+      <div>
+        Einstellungen:
+      </div>
       <MarkdownInput
         value={description}
         onChange={handleChange}

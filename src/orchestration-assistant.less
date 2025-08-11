@@ -182,8 +182,7 @@
     align-items: center;
   }
   
-  // new layout
-
+  /* new layout */
   .edit-wrapper {
       width: 100%;
       max-width: 100%;
@@ -221,7 +220,9 @@
     padding: 1rem;
     box-sizing: border-box;
   }
-
+  .prop-container div {
+    margin-bottom: 20px;
+  }
   .instrument-entry {
     cursor: grab;
     display: flex;
@@ -245,27 +246,18 @@
     min-height: 200px;
   }
 
-  .modal-section-container {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  /* Optional: Inhalte verhindern, dass sie überlaufen */
-  .list-y, .container-z {
-    overflow: hidden;
-  }
-
-  /* Kein Zeilenumbruch bei kleinen Viewports */
+  /* small divices */
   @media (max-width: 800px) {
     .edit-container {
         flex-direction: column;
       }
-
     .instruments-list,
     .prop-container {
       width: 100%;
       flex: none;
+    }
+    .section-container {
+      display: block;
     }
   }
 
