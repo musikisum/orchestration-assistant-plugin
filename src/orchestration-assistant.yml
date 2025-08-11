@@ -40,8 +40,14 @@ musikisum/educandu-plugin-orchestration-assistant:
     en: Choose instruments
     de: Wähle Instrumente aus ...
   add:
-    en: Add instrument ...
-    de: Instrument hinzufügen ...
+    en: select ...
+    de: auswählen ...
+  tutti:
+   en: tutti
+   de: tutti
+  tacet:
+   en: tacet
+   de: tacet
   addLabelTt:
     en: Here you can add own instruments and descriptions to the collection.
     de: Hier kannst du der Instrumentensammlung eigene Instrumente und Instrumentenbeschreibungen hinzufügen. 
@@ -60,9 +66,6 @@ musikisum/educandu-plugin-orchestration-assistant:
   dialogSubmit:
     en: Submit 
     de: Speichern
-  tutti:
-    en: All instruments
-    de: Alle Instrumente
   strings:
     en: Strings
     de: Streicher
@@ -133,8 +136,8 @@ musikisum/educandu-plugin-orchestration-assistant:
     en: Tenor Saxophone
     de: Tenorsaxofon
   horn:
-    en: French Horn
-    de: Horn (Tenor)
+    en: Horn
+    de: Horn
   trumpet:
     en: Trumpet
     de: Trompete

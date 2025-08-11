@@ -1,11 +1,10 @@
 import { nanoid } from 'nanoid';
 import { Form, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
-import React, { useRef, useState } from 'react';
-import { PlusOutlined } from '@ant-design/icons';
 import EditSplitter from './components/edit-splitter.js';
 import Info from '@educandu/educandu/components/info.js';
 import SelectDialog from './components/select-dialog.js';
+import React, { useRef, useState, useEffect } from 'react';
 import instrumentsProvider from './instruments-provider.js';
 import InstrumentEntry from './components/instrument-entry.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
@@ -13,25 +12,27 @@ import InstrumentEditor from './components/instrument-editor.js';
 import { FORM_ITEM_LAYOUT } from '@educandu/educandu/domain/constants.js';
 import { sectionEditorProps } from '@educandu/educandu/ui/default-prop-types.js';
 import ObjectWidthSlider from '@educandu/educandu/components/object-width-slider.js';
+import { PlusOutlined, UnorderedListOutlined, MinusOutlined } from '@ant-design/icons';
 import DragAndDropContainer from '@educandu/educandu/components/drag-and-drop-container.js';
 import { swapItemsAt, removeItemAt, moveItem } from '@educandu/educandu/utils/array-utils.js';
 
 export default function OrchestrationAssistantEditor({ content, onContentChanged }) {
-  const {
-    width,
-    instrumentsSelection
-  } = content;
-  
+
+  const { width, instrumentsSelection } = content;
+
+  const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   const updateContent = newContentValues => {
     onContentChanged({ ...content, ...newContentValues });
-  };
-  
-  const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
+  };  
 
   const [selectedInstrument, setSelectedInstrment] = useState('');
   const [selectedInstrumentClass, setSelectedInstrmentClass] = useState(null);
   const [modalSelections, setModalSelections] = useState(instrumentsSelection.map(item => item.id));
   const [showInstrumentEditor, setShowInstrumentEditor] = useState(false);
+
+  useEffect(() => {
+    setModalSelections(instrumentsSelection.map(item => item.id));
+  }, [instrumentsSelection]);
 
   // Droppable section
   const droppableIdRef = useRef(nanoid(10)); 
@@ -83,6 +84,12 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   // Select instrument 
   const handleInstrumentNameButtonClick = (_event, id, instrument) => {
     saveInstrumentInContent(null, id, instrument);
+  };
+  const handleSetTuttiClick = () => {
+    updateContent({ instrumentsSelection: instrumentsProvider.loadInstrumentsFromNames(['tutti']) });
+  };  
+  const handleSetTactetClick = () => {
+    updateContent({ instrumentsSelection: [] });
   };
 
   // Modal dialog for instrument selection 
@@ -146,8 +153,14 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const propContainer = (
     <div className="prop-container">
       <div className='prop-container-header'>
-        <Button type="primary" icon={<PlusOutlined />} onClick={() => setOpen(true)}>
+        <Button type="primary" icon={<UnorderedListOutlined />} onClick={() => setOpen(true)}>
           {t('add')}
+        </Button>
+        <Button type="primary" color='#dee9bf' icon={<PlusOutlined />} onClick={handleSetTuttiClick}>
+          {t('tutti')}
+        </Button>
+        <Button type="primary" color='' icon={<MinusOutlined />} onClick={handleSetTactetClick}>
+          {t('tacet')}
         </Button>
       </div>
       {showInstrumentEditor

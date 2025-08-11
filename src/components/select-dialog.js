@@ -25,6 +25,8 @@ function SelectDialog({ open, loading, onOk, onCancel, modalSelections, setModal
       onCancel={onCancel}
       footer={defaultFooter}
       type='primary'
+      width='90%'
+      style={{ maxWidth:'800px' }}
       >
       <ModalSectionsContainer 
         modalSelections={modalSelections}

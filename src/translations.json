@@ -49,8 +49,16 @@
       "de": "Wähle Instrumente aus ..."
     },
     "add": {
-      "en": "Add instrument ...",
-      "de": "Instrument hinzufügen ..."
+      "en": "select ...",
+      "de": "auswählen ..."
+    },
+    "tutti": {
+      "en": "tutti",
+      "de": "tutti"
+    },
+    "tacet": {
+      "en": "tacet",
+      "de": "tacet"
     },
     "addLabelTt": {
       "en": "Here you can add own instruments and descriptions to the collection.",
@@ -75,10 +83,6 @@
     "dialogSubmit": {
       "en": "Submit",
       "de": "Speichern"
-    },
-    "tutti": {
-      "en": "All instruments",
-      "de": "Alle Instrumente"
     },
     "strings": {
       "en": "Strings",
@@ -173,8 +177,8 @@
       "de": "Tenorsaxofon"
     },
     "horn": {
-      "en": "French Horn",
-      "de": "Horn (Tenor)"
+      "en": "Horn",
+      "de": "Horn"
     },
     "trumpet": {
       "en": "Trumpet",
