@@ -22,8 +22,8 @@ export function OrchestrationIconComponent() {
         ry={101.377}
         style={{
           opacity: 1,
-          fill: 'transparent',
-          stroke: 'transparent',
+          fill: '#fff',
+          stroke: '#fff',
           strokeWidth: 20.2225,
           strokeDasharray: 'none',
           strokeOpacity: 1,

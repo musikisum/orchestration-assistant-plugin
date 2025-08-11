@@ -40,9 +40,6 @@ class OrchestrationAssitantInfo {
       width: 100,
       from: 1,
       to: 50,
-      showInstrEdit: false,
-      checkedInstruments: [],
-      selectedInstrument: '',
       instrumentsSelection: [],
     };
   }
@@ -52,9 +49,6 @@ class OrchestrationAssitantInfo {
       width: joi.number().min(0).max(100).required(),
       from: joi.number().integer().min(1).max(50).required(),
       to: joi.number().integer().min(1).max(50).required(),
-      showInstrEdit: joi.bool(),
-      checkedInstruments: joi.array().items(joi.string()),
-      selectedInstrument: joi.string().allow(null, ''),
       instrumentsSelection: joi.array().items(joi.object({
         id: joi.string().required(),
         name: joi.string().allow(null, ''),

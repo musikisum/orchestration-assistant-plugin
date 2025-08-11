@@ -19,9 +19,6 @@ import { swapItemsAt, removeItemAt, moveItem } from '@educandu/educandu/utils/ar
 export default function OrchestrationAssistantEditor({ content, onContentChanged }) {
   const {
     width,
-    showInstrEdit,
-    checkedInstruments,
-    selectedInstrument,
     instrumentsSelection
   } = content;
   
@@ -31,8 +28,10 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
+  const [selectedInstrument, setSelectedInstrment] = useState('');
   const [selectedInstrumentClass, setSelectedInstrmentClass] = useState(null);
-  const [modalSelections, setModalSelections] = useState(checkedInstruments);
+  const [modalSelections, setModalSelections] = useState(instrumentsSelection.map(item => item.id));
+  const [showInstrumentEditor, setShowInstrumentEditor] = useState(false);
 
   // Droppable section
   const droppableIdRef = useRef(nanoid(10)); 
@@ -49,6 +48,10 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: newSelection });
   };
   const handleDeleteModel = index => {
+    const id = instrumentsSelection[index].id;
+    const instrIdsCopy = [...modalSelections];
+    instrIdsCopy.splice(modalSelections.indexOf(id), 1);
+    setModalSelections(instrIdsCopy);
     const newSelection = removeItemAt(instrumentsSelection, index);
     updateContent({ instrumentsSelection: newSelection });
   };
@@ -61,19 +64,19 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
       if (index !== -1) {
         list[index] = instrument;        
       }
-      updateContent({
-        showInstrEdit: false,
-        selectedInstrument: '',
-        instrumentsSelection: list
-      });
+      setSelectedInstrment('');
+      setShowInstrumentEditor(false);
+      updateContent({ instrumentsSelection: list });
     } else { // handleInstrumentNameButtonClick
-      if(id === content.selectedInstrument) { // deselect instrument name
-        updateContent({ showInstrEdit: false, selectedInstrument: '' });
+      if(id === selectedInstrument) { // deselect instrument name
+        setShowInstrumentEditor(false);
+        setSelectedInstrment('');
         setSelectedInstrmentClass('');
         return;
       }
       setSelectedInstrmentClass(id);
-      updateContent({ selectedInstrument: id, showInstrEdit: true });
+      setSelectedInstrment(id);
+      setShowInstrumentEditor(true);
     }    
   };
   
@@ -88,7 +91,8 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
 
   const handleOk = () => {
     const newSelection = instrumentsProvider.loadInstrumentsFromIds(modalSelections);
-    updateContent({ instrumentsSelection: newSelection, checkedInstruments: modalSelections, selectedInstrument: '' });
+    setSelectedInstrment('');
+    updateContent({ instrumentsSelection: newSelection });
     setSelectedInstrmentClass('');
     setLoading(true);
     setTimeout(() => {
@@ -146,7 +150,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
           {t('add')}
         </Button>
       </div>
-      {showInstrEdit
+      {showInstrumentEditor
         ? <InstrumentEditor 
             instrument={getInstrumentCopy(selectedInstrument)} 
             saveInstrumentInContent={saveInstrumentInContent} 
@@ -176,7 +180,6 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         loading={loading}
         onOk={handleOk}
         onCancel={() => setOpen(false)}
-        instrumentsSelection={instrumentsSelection}
         modalSelections={modalSelections}
         setModalSelections={setModalSelections}
         />

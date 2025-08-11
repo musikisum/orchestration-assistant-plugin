@@ -4,7 +4,7 @@ import { Modal, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
 import ModalSectionsContainer from './modal-sections-container.js';
 
-function SelectDialog({ open, loading, onOk, onCancel, instrumentsSelection, modalSelections, setModalSelections }) {
+function SelectDialog({ open, loading, onOk, onCancel, modalSelections, setModalSelections }) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   
@@ -27,7 +27,6 @@ function SelectDialog({ open, loading, onOk, onCancel, instrumentsSelection, mod
       type='primary'
       >
       <ModalSectionsContainer 
-        instrumentsSelection={instrumentsSelection}
         modalSelections={modalSelections}
         setModalSelections={setModalSelections}
         />
@@ -42,7 +41,6 @@ SelectDialog.propTypes = {
   loading: PropTypes.bool,
   onOk: PropTypes.func,
   onCancel: PropTypes.func,
-  instrumentsSelection: PropTypes.array,
   modalSelections: PropTypes.array,
   setModalSelections: PropTypes.func
 };
@@ -52,7 +50,6 @@ SelectDialog.defaultProps = {
   loading: false,
   onOk: null,
   onCancel: null,
-  instrumentsSelection: [],
   modalSelections: [],
   setModalSelections: null
 };

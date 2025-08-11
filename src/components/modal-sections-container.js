@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import styles from '../styles-modal-dialog.js';
 import instrumentsProvider from '../instruments-provider.js';
 
-export default function ModalSectionsContainer({ instrumentsSelection, modalSelections, setModalSelections }) {
+export default function ModalSectionsContainer({  modalSelections, setModalSelections }) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
@@ -24,19 +24,19 @@ export default function ModalSectionsContainer({ instrumentsSelection, modalSele
     }
   };
 
-  const setCheck = id => {
-    return instrumentsSelection.some(item => item.id === id);
+  const setCheck = instrumentId => {
+    return modalSelections.includes(instrumentId);
   };
 
   const renderSection = section => {
-    return section.map(obj => {
+    return section.map(instrument => {
       return (
         <Checkbox 
-          key={obj.id} 
-          defaultChecked={setCheck(obj.id)}
-          onChange={e => onChange(e, obj.id)}
+          key={instrument.id} 
+          checked={setCheck(instrument.id)}
+          onChange={e => onChange(e, instrument.id)}
           >
-          {t(obj.name)}
+          {t(instrument.name)}
         </Checkbox>
       ); 
     });

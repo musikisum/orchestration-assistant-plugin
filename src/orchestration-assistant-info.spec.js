@@ -37,8 +37,6 @@ describe('OrchestrationAssitantInfo', () => {
       width: 100,
       from: 1,
       to: 50,
-      showInstrEdit: false,
-      selectedInstrument: '',
       instrumentsSelection: []
     });
   });
@@ -48,7 +46,6 @@ describe('OrchestrationAssitantInfo', () => {
       width: 80,
       from: 1,
       to: 52,
-      selectedInstrument: [],
       instrumentsSelection: []
     };
     expect(() => sut.validateContent(validContent)).not.toThrow();
