@@ -57,6 +57,36 @@ const brass = {
 };
 const collection = { ...strings, ...winds, ... brass };
 
+const getModalSectionObjects = section => {
+  switch (section) {
+    case 'strings':
+      return [...Object.values(strings)].reduce((accu, instr) => {
+        const modalObj = { id: instr.id, name: instr.name };
+        accu.push(modalObj);
+        return accu;
+      }, []);
+    case 'winds':
+      return [...Object.values(winds)].reduce((accu, instr) => {
+        const modalObj = { id: instr.id, name: instr.name };
+        accu.push(modalObj);
+        return accu;
+      }, []);
+    case 'brass':
+      return [...Object.values(brass)].reduce((accu, instr) => {
+        const modalObj = { id: instr.id, name: instr.name };
+        accu.push(modalObj);
+        return accu;
+      }, []);
+    default: {
+      return [...Object.values(collection)].reduce((accu, instr) => {
+        const modalObj = { id: instr.id, name: instr.name };
+        accu.push(modalObj);
+        return accu;
+      }, []);
+    }
+  }
+};
+
 const getInstrumentCopy = (instrument, instrumentCopy) => {
   if (instrument && !instrumentCopy) {
     return defaultInstrument(
@@ -119,6 +149,7 @@ const loadInstrumentsFromNames = names => {
 };
 
 const instrumentsProvider = {
+  getModalSectionObjects,
   getInstrumentCopy,
   loadInstrumentsFromNames
 };

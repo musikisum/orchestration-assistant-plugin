@@ -1,42 +1,51 @@
 import React from 'react';
+import { Checkbox } from 'antd';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import ModalSectionContainer from './modal-section-container.js';
+import instrumentsProvider from '../instruments-provider.js';
 
-export default function ModalSectionsContainer({ instruments, instrumentsSelection, updateContent }) {
+export default function ModalSectionsContainer({ instrumentsSelection, modalSelections, setModalSelections }) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
-  // const sections = instruments.reduce((accu, instrument) => {
-  //   if(!accu.includes(instrument.section)) {
-  //     accu.push(instrument.section);
-  //   } 
-  //   return accu;
-  // }, []);
-  const sections = ['strings', 'winds', 'brass'];
+  const strings = instrumentsProvider.getModalSectionObjects('strings');
+
+  const onChange = (event, id) => {
+    const value = event.target.checked;
+    const isInList = modalSelections.includes(id);
+    if (value && !isInList) {
+      setModalSelections([...modalSelections, id]);
+    }
+    if (!value && isInList) {
+      setModalSelections([...modalSelections.filter(item => item !== id)]);
+    }
+  };
 
   return (
-    <div className='modal-sections-container'>
-      {sections.map((section, index) => (
-        <ModalSectionContainer
-          key={`${section}-${index}`}
-          section={section}
-          instruments={instruments}
-          instrumentsSelection={instrumentsSelection}
-          updateContent={updateContent}
-          />))}
+    <div className='modal-section-container'>
+      {strings.map(obj => {
+        return (
+          <Checkbox 
+            key={obj.id} 
+            // checked={instrumentsSelection.includes(obj.id)}
+            onChange={e => onChange(e, obj.id)}
+            >
+            {t(obj.name)}
+          </Checkbox>
+        ); 
+      })}
     </div>
   );
 }
 
 ModalSectionsContainer.propTypes = {
-  instruments: PropTypes.array,
   instrumentsSelection: PropTypes.array,
-  updateContent: PropTypes.func
+  modalSelections: PropTypes.array,
+  setModalSelections: PropTypes.func
 };
 
 ModalSectionsContainer.defaultProps = {
   instrumentsSelection: [],
-  instruments: null,
-  updateContent: null
+  modalSelections: [],
+  setModalSelections: null
 };

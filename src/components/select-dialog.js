@@ -1,30 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Button } from 'antd';
-import instrumentsProvider from '../instruments-provider.js';
+import { useTranslation } from 'react-i18next';
 import ModalSectionsContainer from './modal-sections-container.js';
 
-function SelectDialog({ open, loading, onOk, onCancel, instrumentsSelection, updateContent }) {
+function SelectDialog({ open, loading, onOk, onCancel, instrumentsSelection, modalSelections, setModalSelections }) {
 
-  const tuttiFromDataFiles = instrumentsProvider.loadInstrumentsFromNames(['tutti']);
-  const strings = instrumentsProvider.loadInstrumentsFromNames(['strings']);
-  const winds = instrumentsProvider.loadInstrumentsFromNames(['winds']);
-  const brass = instrumentsProvider.loadInstrumentsFromNames(['brass']);
-
-  const tuttiInstrIds = tuttiFromDataFiles.map(item => item.id);
-  const customInstr = instrumentsSelection.reduce((accu, item) => {
-    if(!tuttiInstrIds.includes(item.id)) {
-      accu.push(item);
-    }
-    return accu;
-  }, []);
+  const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   
   const defaultFooter = [
     <Button key="back" onClick={onCancel}>
-      Return
+      {t('dialogReturn')}
     </Button>,
     <Button key="submit" type="primary" loading={loading} onClick={onOk}>
-      Submit
+      {t('dialogSubmit')}
     </Button>,
   ];
 
@@ -37,9 +26,9 @@ function SelectDialog({ open, loading, onOk, onCancel, instrumentsSelection, upd
       footer={defaultFooter}
       >
       <ModalSectionsContainer 
-        instruments={tuttiFromDataFiles}
         instrumentsSelection={instrumentsSelection}
-        updateContent={updateContent}
+        modalSelections={modalSelections}
+        setModalSelections={setModalSelections}
         />
     </Modal>
   );
@@ -53,7 +42,8 @@ SelectDialog.propTypes = {
   onOk: PropTypes.func,
   onCancel: PropTypes.func,
   instrumentsSelection: PropTypes.array,
-  updateContent: PropTypes.func
+  modalSelections: PropTypes.array,
+  setModalSelections: PropTypes.func
 };
 
 SelectDialog.defaultProps = {
@@ -62,5 +52,6 @@ SelectDialog.defaultProps = {
   onOk: null,
   onCancel: null,
   instrumentsSelection: [],
-  updateContent: null
+  modalSelections: [],
+  setModalSelections: null
 };

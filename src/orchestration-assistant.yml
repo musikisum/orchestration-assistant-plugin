@@ -54,6 +54,12 @@ musikisum/educandu-plugin-orchestration-assistant:
   rangeTt:
     en: Here you can specify the pitch at which the line of notes begins and ends.
     de: Hier kannst du festlegen, mit welchem Ton die Tonskala beginnt und mit welchem sie endet.
+  dialogReturn:
+    en: Return 
+    de: Abbrechen
+  dialogSubmit:
+    en: Submit 
+    de: Speichern
   tutti:
     en: All instruments
     de: Alle Instrumente
