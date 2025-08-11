@@ -39,13 +39,13 @@ musikisum/educandu-plugin-orchestration-assistant:
   chooseInstrument:
     en: Choose instruments
     de: Wähle Instrumente aus ...
-  add:
+  addButton:
     en: select ...
     de: auswählen ...
-  tutti:
+  tuttiButton:
    en: tutti
    de: tutti
-  tacet:
+  tacetButton:
    en: tacet
    de: tacet
   addLabelTt:
@@ -66,12 +66,15 @@ musikisum/educandu-plugin-orchestration-assistant:
   dialogSubmit:
     en: Submit 
     de: Speichern
+  tutti:
+    en: 
+    de: 
   strings:
-    en: Strings
-    de: Streicher
+    en: string instruments
+    de: Saiteninstrumente
   winds:
-    en: Winds
-    de: Bläser
+    en: Woodwinds
+    de: Holzbläser
   brass:
     en: Brass
     de: Blechbläser

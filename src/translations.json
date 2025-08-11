@@ -48,15 +48,15 @@
       "en": "Choose instruments",
       "de": "Wähle Instrumente aus ..."
     },
-    "add": {
+    "addButton": {
       "en": "select ...",
       "de": "auswählen ..."
     },
-    "tutti": {
+    "tuttiButton": {
       "en": "tutti",
       "de": "tutti"
     },
-    "tacet": {
+    "tacetButton": {
       "en": "tacet",
       "de": "tacet"
     },
@@ -84,13 +84,17 @@
       "en": "Submit",
       "de": "Speichern"
     },
+    "tutti": {
+      "en": null,
+      "de": null
+    },
     "strings": {
-      "en": "Strings",
-      "de": "Streicher"
+      "en": "string instruments",
+      "de": "Saiteninstrumente"
     },
     "winds": {
-      "en": "Winds",
-      "de": "Bläser"
+      "en": "Woodwinds",
+      "de": "Holzbläser"
     },
     "brass": {
       "en": "Brass",

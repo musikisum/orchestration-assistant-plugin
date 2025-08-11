@@ -57,6 +57,16 @@ const brass = {
 };
 const collection = { ...strings, ...winds, ... brass };
 
+const mergeSectionAndInstruments = (instruments, section) => {
+  const unique = [...new Set([...instruments, ...section])];
+  return unique;
+};
+
+const reduceSectionFromIntruments = (instruments, section) => {
+  const sectionSet = new Set(section);
+  return instruments.filter(item => !sectionSet.has(item));
+};
+
 const getModalSectionObjects = section => {
   switch (section) {
     case 'strings':
@@ -164,7 +174,9 @@ const instrumentsProvider = {
   getModalSectionObjects,
   getInstrumentCopy,
   loadInstrumentsFromNames,
-  loadInstrumentsFromIds
+  loadInstrumentsFromIds,
+  mergeSectionAndInstruments,
+  reduceSectionFromIntruments
 };
 
 export default instrumentsProvider;

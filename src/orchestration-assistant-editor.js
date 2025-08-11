@@ -154,13 +154,13 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     <div className="prop-container">
       <div className='prop-container-header'>
         <Button type="primary" icon={<UnorderedListOutlined />} onClick={() => setOpen(true)}>
-          {t('add')}
+          {t('addButton')}
         </Button>
         <Button type="primary" color='#dee9bf' icon={<PlusOutlined />} onClick={handleSetTuttiClick}>
-          {t('tutti')}
+          {t('tuttiButton')}
         </Button>
         <Button type="primary" color='' icon={<MinusOutlined />} onClick={handleSetTactetClick}>
-          {t('tacet')}
+          {t('tacetButton')}
         </Button>
       </div>
       {showInstrumentEditor

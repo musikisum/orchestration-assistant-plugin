@@ -15,17 +15,19 @@ const styles = {
     gridRow: '1 / 2',
     display: 'flex',
     height: '48px',
-    alignItems: 'center',
+    alignItems: 'center'
   },
 
   // Box All
   boxAll: {
     gridColumn: '1 / 5',
     gridRow: '2 / 3',
-    display: 'flex',
     height: '48px',
     alignItems: 'center',
     borderBottom: '1px solid gray',
+    display: 'flex',
+    gap: '24px',
+    flexDirection: 'row'
   },
 
   // Section Container
