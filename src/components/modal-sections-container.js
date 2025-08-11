@@ -27,7 +27,7 @@ export default function ModalSectionsContainer({ instrumentsSelection, modalSele
         return (
           <Checkbox 
             key={obj.id} 
-            // checked={instrumentsSelection.includes(obj.id)}
+            defaultChecked={instrumentsSelection.includes(obj.id)}
             onChange={e => onChange(e, obj.id)}
             >
             {t(obj.name)}

@@ -148,10 +148,23 @@ const loadInstrumentsFromNames = names => {
   return unique;
 };
 
+const loadInstrumentsFromIds = ids => {
+  const selection = [];
+  if (Array.isArray(ids) && ids.length > 0) {
+    ids.forEach(id => {
+      const instrument = Object.values(collection).find(item => item.id === id);
+      instrument ? selection.push(instrument) : selection.push(defaultInstrument());
+    });
+  }
+  const unique = [...new Map(selection.map(item => [item.id, item])).values()];
+  return unique;
+};
+
 const instrumentsProvider = {
   getModalSectionObjects,
   getInstrumentCopy,
-  loadInstrumentsFromNames
+  loadInstrumentsFromNames,
+  loadInstrumentsFromIds
 };
 
 export default instrumentsProvider;

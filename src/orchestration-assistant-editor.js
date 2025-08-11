@@ -20,19 +20,19 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const {
     width,
     showInstrEdit,
+    checkedInstruments,
     selectedInstrument,
     instrumentsSelection
   } = content;
 
   const updateContent = newContentValues => {
-    console.log('newContentValues:', newContentValues)
     onContentChanged({ ...content, ...newContentValues });
   };
   
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
   const [selectedItem, setSelectedItem] = useState(null);
-  const [modalSelections, setModalSelections] = useState([]);
+  const [modalSelections, setModalSelections] = useState(checkedInstruments);
 
   // Droppable section
   const droppableIdRef = useRef(nanoid(10)); 
@@ -85,7 +85,8 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const [loading, setLoading] = useState(false);
 
   const handleOk = () => {
-    console.log(modalSelections);
+    const newSelection = instrumentsProvider.loadInstrumentsFromIds(modalSelections);
+    updateContent({ instrumentsSelection: newSelection, checkedInstruments: modalSelections });
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
