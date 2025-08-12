@@ -57,16 +57,7 @@ const brass = {
 };
 const collection = { ...strings, ...winds, ... brass };
 
-const mergeSectionAndInstruments = (instruments, section) => {
-  const unique = [...new Set([...instruments, ...section])];
-  return unique;
-};
-
-const reduceSectionFromIntruments = (instruments, section) => {
-  const sectionSet = new Set(section);
-  return instruments.filter(item => !sectionSet.has(item));
-};
-
+// helper functions
 const getModalSectionObjects = section => {
   switch (section) {
     case 'strings':
@@ -96,7 +87,8 @@ const getModalSectionObjects = section => {
     }
   }
 };
-
+const includesAll = (set, ids) => ids.every(id => set.has(id));
+const includesAny = (set, ids) => ids.some(id => set.has(id));
 const getInstrumentCopy = (instrument, instrumentCopy) => {
   if (instrument && !instrumentCopy) {
     return defaultInstrument(
@@ -128,7 +120,6 @@ const getInstrumentCopy = (instrument, instrumentCopy) => {
   }
   return defaultInstrument();
 };
-
 const loadInstrumentsFromNames = names => {
   const selection = [];
   if (Array.isArray(names) && names.length > 0) {
@@ -157,7 +148,6 @@ const loadInstrumentsFromNames = names => {
   const unique = [...new Map(selection.map(item => [item.id, item])).values()];
   return unique;
 };
-
 const loadInstrumentsFromIds = ids => {
   const selection = [];
   if (Array.isArray(ids) && ids.length > 0) {
@@ -171,12 +161,12 @@ const loadInstrumentsFromIds = ids => {
 };
 
 const instrumentsProvider = {
-  getModalSectionObjects,
+  includesAll,
+  includesAny,
   getInstrumentCopy,
-  loadInstrumentsFromNames,
+  getModalSectionObjects,
   loadInstrumentsFromIds,
-  mergeSectionAndInstruments,
-  reduceSectionFromIntruments
+  loadInstrumentsFromNames
 };
 
 export default instrumentsProvider;
