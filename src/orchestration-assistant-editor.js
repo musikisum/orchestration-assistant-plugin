@@ -1,12 +1,13 @@
 import { nanoid } from 'nanoid';
 import { Form, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
+import EditName from './components/edit-name.js';
+import EditColor from './components/edit-color.js';
 import EditSplitter from './components/edit-splitter.js';
 import Info from '@educandu/educandu/components/info.js';
 import SelectDialog from './components/select-dialog.js';
 import React, { useRef, useState, useEffect } from 'react';
 import instrumentsProvider from './instruments-provider.js';
-import EditNameColor from './components/edit-name-color.js';
 import InstrumentEntry from './components/instrument-entry.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import InstrumentEditor from './components/instrument-editor.js';
@@ -26,7 +27,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     onContentChanged({ ...content, ...newContentValues });
   };  
 
-  const [selectedInstrument, setSelectedInstrment] = useState('');
+  const [selectedInstrument, setSelectedInstrument] = useState('');
   const [selectedInstrumentClass, setSelectedInstrumentClass] = useState(null);
   const [modalSelections, setModalSelections] = useState(instrumentsSelection.map(item => item.id));
   const [showInstrumentEditor, setShowInstrumentEditor] = useState(false);
@@ -66,18 +67,16 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
       if (index !== -1) {
         list[index] = instrument;        
       }
-      setSelectedInstrment('');
-      setShowInstrumentEditor(false);
       updateContent({ instrumentsSelection: list });
     } else { // handleInstrumentNameButtonClick
       if(id === selectedInstrument) { // deselect instrument name
         setShowInstrumentEditor(false);
-        setSelectedInstrment('');
+        setSelectedInstrument('');
         setSelectedInstrumentClass('');
         return;
       }
       setSelectedInstrumentClass(id);
-      setSelectedInstrment(id);
+      setSelectedInstrument(id);
       setShowInstrumentEditor(true);
     }    
   };
@@ -106,7 +105,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
 
   const handleOk = () => {
     const newSelection = instrumentsProvider.loadInstrumentsFromIds(modalSelections);
-    setSelectedInstrment('');
+    setSelectedInstrument('');
     updateContent({ instrumentsSelection: newSelection });
     setSelectedInstrumentClass('');
     setLoading(true);
@@ -178,10 +177,14 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         ? (
           <React.Fragment>
             <div className='prop-container-inspector'>
-              <EditNameColor 
+              <EditName 
                 instrument={getInstrumentCopy(selectedInstrument)}
                 saveInstrumentInContent={saveInstrumentInContent} 
                 />
+              <EditColor
+                instrument={getInstrumentCopy(selectedInstrument)}
+                saveInstrumentInContent={saveInstrumentInContent}
+              />
             </div>
             <InstrumentEditor
               instrument={getInstrumentCopy(selectedInstrument)}
