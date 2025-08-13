@@ -215,6 +215,10 @@
     "language": {
       "en": "en",
       "de": "de"
+    },
+    "nameInput": {
+      "en": "Name of instrument",
+      "de": "Name des Instruments"
     }
   }
 }

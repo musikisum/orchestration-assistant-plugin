@@ -1,7 +1,7 @@
 const colors = {
-  strings: '#5c4033',
-  wood: '#008800',
-  brass: '#efbf04',
+  strings: '#612500',
+  wood: '#228b22',
+  brass: '#ffc53d',
   default: '#6D8BB1'
 };
 

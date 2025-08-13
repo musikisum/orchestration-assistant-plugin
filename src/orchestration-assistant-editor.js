@@ -6,6 +6,7 @@ import Info from '@educandu/educandu/components/info.js';
 import SelectDialog from './components/select-dialog.js';
 import React, { useRef, useState, useEffect } from 'react';
 import instrumentsProvider from './instruments-provider.js';
+import EditNameColor from './components/edit-name-color.js';
 import InstrumentEntry from './components/instrument-entry.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import InstrumentEditor from './components/instrument-editor.js';
@@ -26,7 +27,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   };  
 
   const [selectedInstrument, setSelectedInstrment] = useState('');
-  const [selectedInstrumentClass, setSelectedInstrmentClass] = useState(null);
+  const [selectedInstrumentClass, setSelectedInstrumentClass] = useState(null);
   const [modalSelections, setModalSelections] = useState(instrumentsSelection.map(item => item.id));
   const [showInstrumentEditor, setShowInstrumentEditor] = useState(false);
 
@@ -59,7 +60,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
 
   // save einstrument edits
   const saveInstrumentInContent = (_event, id, instrument) => {
-    if (instrument) { // leaving markdpwn input
+    if (instrument) { // leaving markdown input
       const list = cloneDeep(instrumentsSelection);
       const index = list.findIndex(item => item.id === instrument.id);
       if (index !== -1) {
@@ -72,10 +73,10 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
       if(id === selectedInstrument) { // deselect instrument name
         setShowInstrumentEditor(false);
         setSelectedInstrment('');
-        setSelectedInstrmentClass('');
+        setSelectedInstrumentClass('');
         return;
       }
-      setSelectedInstrmentClass(id);
+      setSelectedInstrumentClass(id);
       setSelectedInstrment(id);
       setShowInstrumentEditor(true);
     }    
@@ -92,21 +93,10 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: [] });
   };
 
-  const handleNewInstrumnetClick = () => {
+  const handleNewInstrumentClick = () => {
+    const customInstrument = instrumentsProvider.getInstrumentCopy();
     const list = cloneDeep(instrumentsSelection);
-    const newInstrument = {
-      id: `custom-${nanoid(10)}`,
-      name: 'neues Instrument',
-      section: '',
-      begin: 1,
-      end: 51,
-      befor: false,
-      after: false,
-      color: '#6D8BB1',
-      de: '',
-      en: ''
-    };
-    list.push(newInstrument);
+    list.push(customInstrument);
     updateContent({ instrumentsSelection: list });
   };
 
@@ -118,7 +108,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     const newSelection = instrumentsProvider.loadInstrumentsFromIds(modalSelections);
     setSelectedInstrment('');
     updateContent({ instrumentsSelection: newSelection });
-    setSelectedInstrmentClass('');
+    setSelectedInstrumentClass('');
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -180,24 +170,24 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         <Button type="primary" color='' icon={<MinusOutlined />} onClick={handleSetTactetClick}>
           {t('tacetButton')}
         </Button>
-        <Button type="primary" color='' icon={<PlusOutlined />} onClick={handleNewInstrumnetClick}>
+        <Button type="primary" color='' icon={<PlusOutlined />} onClick={handleNewInstrumentClick}>
           {t('newInstrumentButton')}
         </Button>
       </div>
       {showInstrumentEditor
         ? (
-          <div>
-            <div className='instrument-editor-inspector'>
-              <div>Name & Farbe</div>
-              <div>Range left</div>
-              <div>Range right</div>
-              <div>before & after</div>
+          <React.Fragment>
+            <div className='prop-container-inspector'>
+              <EditNameColor 
+                instrument={getInstrumentCopy(selectedInstrument)}
+                saveInstrumentInContent={saveInstrumentInContent} 
+                />
             </div>
             <InstrumentEditor
               instrument={getInstrumentCopy(selectedInstrument)}
               saveInstrumentInContent={saveInstrumentInContent}
               />
-          </div>
+          </React.Fragment>
         )
         : null}
     </div>

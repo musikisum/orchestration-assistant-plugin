@@ -119,7 +119,7 @@ const getInstrumentCopy = (instrument, instrumentCopy) => {
       instrumentCopy.en
     );
   }
-  return defaultInstrument(nanoid(10));
+  return defaultInstrument(`custom-${nanoid(10)}`);
 };
 const loadInstrumentsFromNames = names => {
   const selection = [];

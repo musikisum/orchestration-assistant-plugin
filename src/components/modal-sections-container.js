@@ -1,20 +1,13 @@
 import { Checkbox } from 'antd';
 import PropTypes from 'prop-types';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from '../styles-modal-dialog.js';
-import React, { useState, useMemo } from 'react';
 import instrumentsProvider from '../instruments-provider.js';
 
 export default function ModalSectionsContainer({ modalSelections, setModalSelections }) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
-
-  // Hooks
-  const [tuttiSectionCheck, setTuttiSectionCheck] = useState();
-  const [stringsSectionCheck, setStringsSectionCheck] = useState();
-  const [windsSectionCheck, setWindsSectionCheck] = useState();
-  const [brassSectionCheck, setBrassSectionCheck] = useState();
-  const [customSectionCheck, setCustomSectionCheck] = useState();
   
   // Plugin collection
   const strings = instrumentsProvider.getModalSectionObjects('strings');
@@ -23,7 +16,6 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
   const tutti = instrumentsProvider.getModalSectionObjects();
   
   const selectionSet = useMemo(() => new Set(modalSelections), [modalSelections]);
-  console.log('modalSelectionsSet:', selectionSet);
   const sections = {
     strings: strings.map(i => i.id),
     winds: winds.map(i => i.id),

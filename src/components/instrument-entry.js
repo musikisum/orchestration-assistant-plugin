@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Button, Tooltip } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
-import OrchestrationUtilities from '../orchestration-utilities.js'; 
-import { Button, Collapse, Tooltip, Slider } from 'antd';
-import ColorPicker from '@educandu/educandu/components/color-picker.js';
-import MarkdownInput from '@educandu/educandu/components/markdown-input.js';
 import DeleteIcon from '@educandu/educandu/components/icons/general/delete-icon.js';
 import MoveUpIcon from '@educandu/educandu/components/icons/general/move-up-icon.js';
 import MoveDownIcon from '@educandu/educandu/components/icons/general/move-down-icon.js';
@@ -24,7 +21,6 @@ export default function InstrumentEntry({
   onDelete,
   onInstrumentName,
   content,
-  updateContent,
   className
 }) {
 
@@ -79,39 +75,39 @@ export default function InstrumentEntry({
     });
   }
 
-  const renderActionButtons = () => {
-    if (!actionButtons.length) {
-      return null;
-    }
-    return (
-      <div className='dadActionButtons'>
-        {actionButtons.map(actionButton => (
-          <div key={actionButton.key} onClick={event => handleActionButtonWrapperClick(event, actionButton)}>
-            <Tooltip title={actionButton.title}>
-              <Button
-                type="text"
-                size="small"
-                icon={actionButton.icon}
-                disabled={actionButton.disabled}
-                className={classNames('u-action-button', { 'u-danger-action-button': actionButton.danger })}
-                onClick={event => handleActionButtonClick(event, actionButton)}
-                />
-            </Tooltip>
-          </div>
-        ))}
-      </div>
-    );
-  };
-
   return (
-    <div className={`instrument-entry ${className}`} {...dragHandleProps}>
+    <div
+      className={classNames('instrument-entry', className, { 'is-dragged': isDragged, 'is-other-dragged': isOtherDragged }
+      )}
+      {...dragHandleProps}
+      >
       <div 
         className='instrument-name' 
         onClick={e => onInstrumentName(e, instrumentsSelection[index].id)}
         >
         {t(instrumentsSelection[index].name)}
       </div>
-      {renderActionButtons()}
+      <div className="dadActionButtons">
+        {actionButtons.map(actionButton => (
+          <div
+            key={actionButton.key}
+            onClick={event => handleActionButtonWrapperClick(event, actionButton)}
+            >
+            <Tooltip title={actionButton.title}>
+              <Button
+                type="text"
+                size="small"
+                icon={actionButton.icon}
+                disabled={actionButton.disabled || isDragged || isOtherDragged}
+                className={classNames('u-action-button', {
+                  'u-danger-action-button': actionButton.danger
+                })}
+                onClick={event => handleActionButtonClick(event, actionButton)}
+                />
+            </Tooltip>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -136,7 +132,7 @@ InstrumentEntry.propTypes = {
   onMoveUp: PropTypes.func,
   onInstrumentName: PropTypes.func,
   content: PropTypes.object,
-  updateContent: PropTypes.func
+  className: PropTypes.string
 };
 
 InstrumentEntry.defaultProps = {
@@ -153,5 +149,5 @@ InstrumentEntry.defaultProps = {
   onMoveUp: null,
   onInstrumentName: null,
   content: null,
-  updateContent: null
+  className: ''
 };

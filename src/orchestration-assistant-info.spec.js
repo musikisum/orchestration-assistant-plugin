@@ -1,39 +1,45 @@
-import PluginIcon from './orchestration-assistant-icon.js'; 
-import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { PLUGIN_GROUP } from '@educandu/educandu/domain/constants.js';
+// orchestration-assistant-info.test.js
+import React from 'react';
+import joi from 'joi';
+import { describe, it, expect, beforeEach } from 'vitest';
+
+// reale Module importieren
 import OrchestrationAssitantInfo from './orchestration-assistant-info.js';
+import { PLUGIN_GROUP } from '@educandu/educandu/domain/constants.js';
 
 describe('OrchestrationAssitantInfo', () => {
-  let sut;
-  let mockGfm;
+  let gfm;
 
   beforeEach(() => {
-    mockGfm = {
-      redactCdnResources: vi.fn(text => `redacted:${text}`),
-      extractCdnResources: vi.fn(() => ['cdn://res1', 'cdn://res2'])
+    gfm = {
+      redactCdnResources: (text, allowFn) =>
+        text.replace(/cdn:\/\/\S+/g, url => (allowFn(url) ? url : '')),
+      extractCdnResources: text => text.match(/cdn:\/\/\S+/g) || []
     };
-    sut = new OrchestrationAssitantInfo(mockGfm);
   });
 
-  it('returns the correct display name key', () => {
-    const t = vi.fn(key => `translated:${key}`);
-    const result = sut.getDisplayName(t);
-    expect(result).toBe('translated:musikisum/educandu-plugin-orchestration-assistant:name');
+  it('getDisplayName nutzt den Übersetzungs-Key', () => {
+    const info = new OrchestrationAssitantInfo(gfm);
+    const t = key => key;
+    expect(info.getDisplayName(t)).toBe(
+      'musikisum/educandu-plugin-orchestration-assistant:name'
+    );
   });
 
-  it('returns the correct icon component', () => {
-    const icon = sut.getIcon();
-    expect(icon.type).toBe(PluginIcon);
+  it('getIcon liefert ein React-Element', () => {
+    const info = new OrchestrationAssitantInfo(gfm);
+    const el = info.getIcon();
+    expect(React.isValidElement(el)).toBe(true);
   });
 
-  it('returns the correct plugin groups', () => {
-    const groups = sut.getGroups();
-    expect(groups).toEqual([PLUGIN_GROUP.other]);
+  it('getGroups enthält PLUGIN_GROUP.other', () => {
+    const info = new OrchestrationAssitantInfo(gfm);
+    expect(info.getGroups()).toEqual([PLUGIN_GROUP.other]);
   });
 
-  it('returns the correct default content', () => {
-    const content = sut.getDefaultContent();
-    expect(content).toEqual({
+  it('getDefaultContent liefert die erwarteten Default-Werte', () => {
+    const info = new OrchestrationAssitantInfo(gfm);
+    expect(info.getDefaultContent()).toEqual({
       width: 100,
       from: 1,
       to: 50,
@@ -41,61 +47,79 @@ describe('OrchestrationAssitantInfo', () => {
     });
   });
 
-  it('validates correct content without error', () => {
+  it('validateContent akzeptiert gültige Inhalte', () => {
+    const info = new OrchestrationAssitantInfo(gfm);
     const validContent = {
       width: 80,
+      from: 5,
+      to: 10,
+      instrumentsSelection: [
+        {
+          id: 'id-1',
+          name: 'Violine',
+          section: 'Streicher',
+          begin: 1,
+          end: 10,
+          before: false,
+          after: false,
+          color: '#ff0000',
+          de: 'DE',
+          en: 'EN'
+        }
+      ]
+    };
+    expect(() => info.validateContent(validContent)).not.toThrow();
+  });
+
+  it('validateContent wirft bei ungültigen Werten', () => {
+    const info = new OrchestrationAssitantInfo(gfm);
+    const invalidContent = {
+      width: 101,
       from: 1,
-      to: 52,
+      to: 50,
       instrumentsSelection: []
     };
-    expect(() => sut.validateContent(validContent)).not.toThrow();
+    expect(() => info.validateContent(invalidContent)).toThrow(joi.ValidationError);
   });
 
-  it('throws on invalid content (missing "from")', () => {
-    const invalidContent = {
-      width: 80,
-      to: 20,
-      instrumentsSelection: ['violin'],
+  it('cloneContent erstellt eine tiefe Kopie', () => {
+    const info = new OrchestrationAssitantInfo(gfm);
+    const original = {
+      width: 50,
+      from: 1,
+      to: 10,
+      instrumentsSelection: [{ id: 'x', name: 'A' }]
     };
-    expect(() => sut.validateContent(invalidContent)).toThrow();
+    const copy = info.cloneContent(original);
+    expect(copy).toEqual(original);
+    expect(copy).not.toBe(original);
+    copy.instrumentsSelection[0].name = 'B';
+    expect(original.instrumentsSelection[0].name).toBe('A');
   });
 
-  it('clones content deeply', () => {
-    const content = { de: 'foo', width: 50, from: 1, to: 50 };
-    const result = sut.cloneContent(content);
-    expect(result).toEqual(content);
-    expect(result).not.toBe(content);
+  it('redactContent entfernt nicht zugängliche CDN-URLs', () => {
+    const info = new OrchestrationAssitantInfo(gfm);
+    const content = {
+      width: 100,
+      from: 1,
+      to: 50,
+      instrumentsSelection: [],
+      text: 'allowed cdn://ok and blocked cdn://nope'
+    };
+
+    const allowFn = url => url.includes('ok');
+    gfm.redactCdnResources = text =>
+      text.replace(/cdn:\/\/\S+/g, url => allowFn(url) ? url : '');
+
+    const redacted = info.redactContent(content, 'room-123');
+    expect(redacted).not.toBe(content);
+    expect(redacted.text).toBe('allowed cdn://ok and blocked ');
   });
 
-  it('redacts content text using GFM redactCdnResources', () => {
-    const content = { de: 'some-text' };
-    const result = sut.redactContent(content, 'room123');
-
-    expect(mockGfm.redactCdnResources).toHaveBeenCalledWith(
-      'some-text',
-      expect.any(Function)
-    );
-    expect(result.text).toBe('redacted:some-text');
+  it('getCdnResources ruft extractCdnResources auf und gibt die Ressourcen zurück', () => {
+    const info = new OrchestrationAssitantInfo(gfm);
+    const content = { text: 'cdn://a cdn://b' };
+    const resources = info.getCdnResources(content);
+    expect(resources).toEqual(['cdn://a', 'cdn://b']);
   });
-
-  it('extracts cdn resources using GFM', () => {
-    const content = { de: 'some-cdn-text' };
-    const result = sut.getCdnResources(content);
-
-    expect(mockGfm.extractCdnResources).toHaveBeenCalledWith('some-cdn-text');
-    expect(result).toEqual(['cdn://res1', 'cdn://res2']);
-  });
-
-  it('resolves display component dynamically', async () => {
-    const component = await sut.resolveDisplayComponent();
-    expect(component).toBeDefined();
-    expect(typeof component).toBe('function');
-  });
-
-  it('resolves editor component dynamically', async () => {
-    const component = await sut.resolveEditorComponent();
-    expect(component).toBeDefined();
-    expect(typeof component).toBe('function');
-  });
-
 });

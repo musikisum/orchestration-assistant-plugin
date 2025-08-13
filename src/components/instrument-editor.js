@@ -1,42 +1,30 @@
 import PropTypes from 'prop-types';
-import React, { useState, useEffect } from 'react';
+import { useClickOutside } from '../useClickOutside.js';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import MarkdownInput from '@educandu/educandu/components/markdown-input.js';
 
-function InstrumentEditor({ instrument, saveInstrumentInContent }) {
+function InstrumentEditor({ instrument, saveInstrumentInContent, language }) {
 
-  const lang = 'de'; // erst mal statisch, dafür mache ich später einen switch-Button
+  const lang = language;
   const [description, setDescription] = useState(instrument[lang]);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     setDescription(instrument[lang]);
   }, [instrument, lang]);
 
-  useEffect(() => {
-    const handleClickOutside = event => {
-      const instrumentEditor = document.querySelector('.instrument-editor'); 
-      if (instrumentEditor && !instrumentEditor.contains(event.target)) {
-        if (description !== instrument[lang]) {
-          saveInstrumentInContent(null, null, { ...instrument, [lang]: description });
-        }        
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [instrument, lang, description, saveInstrumentInContent]);
+  const saveIfDirty = useCallback(() => {
+    if (description !== instrument[lang]) {
+      saveInstrumentInContent(null, null, { ... instrument, [lang]: description });
+    }
+  }, [description, instrument, lang, saveInstrumentInContent]);
 
-  // const handleChange = e => setDescription(e.target.value);
-  const handleChange = event => {
-    const text = event.target.value;
-    setDescription(text);
-  };
+  const handleChange = event => setDescription( event.target.value);
+
+  useClickOutside(containerRef, saveIfDirty);
 
   return (
-    <div className='instrument-editor'>
-      <div>
-        Einstellungen:
-      </div>
+    <div ref={containerRef} className='instrument-editor'>
       <MarkdownInput
         value={description}
         onChange={handleChange}
@@ -46,9 +34,15 @@ function InstrumentEditor({ instrument, saveInstrumentInContent }) {
   );
 }
 
+export default InstrumentEditor;
+
 InstrumentEditor.propTypes = {
   instrument: PropTypes.object.isRequired,
-  saveInstrumentInContent: PropTypes.func.isRequired
+  saveInstrumentInContent: PropTypes.func.isRequired,
+  language: PropTypes.string
 };
 
-export default InstrumentEditor;
+InstrumentEditor.defaultProps = {
+  language: 'de'
+};
+
