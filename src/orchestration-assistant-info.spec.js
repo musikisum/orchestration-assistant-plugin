@@ -13,7 +13,7 @@ describe('OrchestrationAssitantInfo', () => {
   beforeEach(() => {
     gfm = {
       redactCdnResources: (text, allowFn) =>
-        text.replace(/cdn:\/\/\S+/g, url => (allowFn(url) ? url : '')),
+        text.replace(/cdn:\/\/\S+/g, url => allowFn(url) ? url : ''),
       extractCdnResources: text => text.match(/cdn:\/\/\S+/g) || []
     };
   });
