@@ -1,7 +1,5 @@
-import { nanoid } from 'nanoid';
-
 export default function defaultInstrument(
-  id = nanoid(10),
+  id = null,
   name = 'neues Instrument',
   section = '',
   begin = 1,

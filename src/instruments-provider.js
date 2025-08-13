@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import Oboe from './instruments/oboe.js';
 import Horn from './instruments/horn.js';
 import Tuba from './instruments/tuba.js';
@@ -118,7 +119,7 @@ const getInstrumentCopy = (instrument, instrumentCopy) => {
       instrumentCopy.en
     );
   }
-  return defaultInstrument();
+  return defaultInstrument(nanoid(10));
 };
 const loadInstrumentsFromNames = names => {
   const selection = [];
@@ -139,7 +140,9 @@ const loadInstrumentsFromNames = names => {
           break;
         default: {
           const instrument = collection?.[name];
-          instrument ? selection.push(instrument) : selection.push(defaultInstrument());
+          if (instrument) {
+            selection.push(instrument);
+          }
           break;
         }
       }      
@@ -153,7 +156,9 @@ const loadInstrumentsFromIds = ids => {
   if (Array.isArray(ids) && ids.length > 0) {
     ids.forEach(id => {
       const instrument = Object.values(collection).find(item => item.id === id);
-      instrument ? selection.push(instrument) : selection.push(defaultInstrument());
+      if (instrument) {
+        selection.push(instrument);
+      }
     });
   }
   const unique = [...new Map(selection.map(item => [item.id, item])).values()];

@@ -60,6 +60,10 @@
       "en": "tacet",
       "de": "tacet"
     },
+    "newInstrumentButton": {
+      "en": "new Instrument",
+      "de": "neues Instrument"
+    },
     "addLabelTt": {
       "en": "Here you can add own instruments and descriptions to the collection.",
       "de": "Hier kannst du der Instrumentensammlung eigene Instrumente und Instrumentenbeschreibungen hinzufügen."

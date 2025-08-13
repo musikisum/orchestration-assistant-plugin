@@ -224,6 +224,9 @@
     display: flex;
     gap: 6px;
   }
+  .prop-container-header > :last-child {
+    margin-left: auto;
+  }
   .prop-container div {
     margin-bottom: 20px;
   }
@@ -250,6 +253,11 @@
     min-height: 200px;
   }
 
+  .instrument-editor-inspector {
+    display: flex;
+    flex-direction: column;
+  }
+
   /* small divices */
   @media (max-width: 800px) {
     .edit-container {
@@ -262,6 +270,12 @@
     }
     .section-container {
       display: block;
+    }
+    .prop-container-header {
+      flex-direction: column;
+    }
+    .prop-container-header > :last-child {
+      margin-left: 0;
     }
   }
 

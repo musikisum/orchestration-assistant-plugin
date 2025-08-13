@@ -92,6 +92,24 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: [] });
   };
 
+  const handleNewInstrumnetClick = () => {
+    const list = cloneDeep(instrumentsSelection);
+    const newInstrument = {
+      id: `custom-${nanoid(10)}`,
+      name: 'neues Instrument',
+      section: '',
+      begin: 1,
+      end: 51,
+      befor: false,
+      after: false,
+      color: '#6D8BB1',
+      de: '',
+      en: ''
+    };
+    list.push(newInstrument);
+    updateContent({ instrumentsSelection: list });
+  };
+
   // Modal dialog for instrument selection 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -162,12 +180,25 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         <Button type="primary" color='' icon={<MinusOutlined />} onClick={handleSetTactetClick}>
           {t('tacetButton')}
         </Button>
+        <Button type="primary" color='' icon={<PlusOutlined />} onClick={handleNewInstrumnetClick}>
+          {t('newInstrumentButton')}
+        </Button>
       </div>
       {showInstrumentEditor
-        ? <InstrumentEditor 
-            instrument={getInstrumentCopy(selectedInstrument)} 
-            saveInstrumentInContent={saveInstrumentInContent} 
-            />
+        ? (
+          <div>
+            <div className='instrument-editor-inspector'>
+              <div>Name & Farbe</div>
+              <div>Range left</div>
+              <div>Range right</div>
+              <div>before & after</div>
+            </div>
+            <InstrumentEditor
+              instrument={getInstrumentCopy(selectedInstrument)}
+              saveInstrumentInContent={saveInstrumentInContent}
+              />
+          </div>
+        )
         : null}
     </div>
   );
