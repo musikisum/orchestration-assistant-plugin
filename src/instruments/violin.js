@@ -1,7 +1,7 @@
 import colors from '../colors.js';
 
 const violin = {
-  id: 'oap-default-violine',
+  id: 'oap-default-violin',
   name: 'violin',
   begin: 19,
   end: 44,

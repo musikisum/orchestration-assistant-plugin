@@ -10,6 +10,7 @@ import Guitar from './instruments/guitar.js';
 import Violin from './instruments/violin.js';
 import Bassoon from './instruments/bassoon.js';
 import Trumpet from './instruments/trumpet.js';
+import Timpani from './instruments/timpani.js';
 import Clarinet from './instruments/clarinet.js';
 import Trombone from './instruments/trombone.js';
 import ElectricBass from './instruments/e-bass.js';
@@ -24,6 +25,7 @@ import PiccoloFlute from './instruments/piccoloFlute.js';
 import TenorSaxophone from './instruments/t-saxophone.js';
 import ContraBassoon from './instruments/contraBassoon.js';
 import defaultInstrument from './instruments/default-instrument.js';
+import timpani from './instruments/timpani.js';
 
 // section of instrument components
 const strings = { 
@@ -56,7 +58,10 @@ const brass = {
   trombone: Trombone,
   tuba: Tuba
 };
-const collection = { ...strings, ...winds, ... brass };
+const other = {
+  timpani: Timpani
+};
+const collection = { ...strings, ...winds, ... brass, ...other };
 
 // helper functions
 const getModalSectionObjects = section => {
@@ -79,6 +84,12 @@ const getModalSectionObjects = section => {
         accu.push(modalObj);
         return accu;
       }, []);
+    case 'other':
+      return [...Object.values(other)].reduce((accu, instr) => {
+        const modalObj = { id: instr.id, name: instr.name };
+        accu.push(modalObj);
+        return accu;
+      }, []);
     default: {
       return [...Object.values(collection)].reduce((accu, instr) => {
         const modalObj = { id: instr.id, name: instr.name };
@@ -89,7 +100,9 @@ const getModalSectionObjects = section => {
   }
 };
 const includesAll = (set, ids) => ids.every(id => set.has(id));
+
 const includesAny = (set, ids) => ids.some(id => set.has(id));
+
 const getInstrumentCopy = (instrument, instrumentCopy) => {
   if (instrument && !instrumentCopy) {
     return defaultInstrument(
@@ -121,6 +134,7 @@ const getInstrumentCopy = (instrument, instrumentCopy) => {
   }
   return defaultInstrument(`custom-${nanoid(10)}`);
 };
+
 const loadInstrumentsFromNames = names => {
   const selection = [];
   if (Array.isArray(names) && names.length > 0) {
@@ -151,6 +165,7 @@ const loadInstrumentsFromNames = names => {
   const unique = [...new Map(selection.map(item => [item.id, item])).values()];
   return unique;
 };
+
 const loadInstrumentsFromIds = ids => {
   const selection = [];
   if (Array.isArray(ids) && ids.length > 0) {
@@ -165,10 +180,29 @@ const loadInstrumentsFromIds = ids => {
   return unique;
 };
 
+const sets = { 
+  string3: ['oap-default-violin', 'oap-default-viola', 'oap-default-violoncello'],
+  piano3: ['oap-default-violin', 'oap-default-violoncello', 'oap-default-piano'],
+  piano4: ['oap-default-violin', 'oap-default-viola', 'oap-default-violoncello', 'oap-default-piano'],
+  orch1760: ['oap-default-flute', 'oap-default-oboe', 'oap-default-bassoon', 'oap-default-horn', 'oap-default-violin', 
+    'oap-default-viola', 'oap-default-violoncello', 'oap-default-doublebass'],
+  orch1810: ['oap-default-piccoloflute', 'oap-default-flute', 'oap-default-oboe', 'oap-default-clarinet', 'oap-default-bassoon', 
+    'oap-default-contrabassoon', 'oap-default-horn', 'oap-default-trumpet', 'oap-default-trombone', 'oap-default-timpani', 'oap-default-violin', 
+    'oap-default-viola', 'oap-default-violoncello', 'oap-default-doublebass']
+};
+
+const hasTheSameInstruments = (setA, setB) => 
+  Array.isArray(setA) 
+  && Array.isArray(setB) 
+  && setA.length === setB.length 
+  && setA.every(instr => setB.includes(instr));
+
 const instrumentsProvider = {
+  sets,
   includesAll,
   includesAny,
   getInstrumentCopy,
+  hasTheSameInstruments,
   getModalSectionObjects,
   loadInstrumentsFromIds,
   loadInstrumentsFromNames

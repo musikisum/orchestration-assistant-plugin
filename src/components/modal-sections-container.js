@@ -13,6 +13,7 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
   const strings = instrumentsProvider.getModalSectionObjects('strings');
   const winds = instrumentsProvider.getModalSectionObjects('winds');
   const brass = instrumentsProvider.getModalSectionObjects('brass');
+  const other = instrumentsProvider.getModalSectionObjects('other');
   const tutti = instrumentsProvider.getModalSectionObjects();
   
   const selectionSet = useMemo(() => new Set(modalSelections), [modalSelections]);
@@ -20,6 +21,7 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
     strings: strings.map(i => i.id),
     winds: winds.map(i => i.id),
     brass: brass.map(i => i.id),
+    other: other.map(i => i.id),
     tutti: tutti.map(i => i.id),
   };
 
@@ -57,6 +59,7 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
   const stringsState = sectionState('strings');
   const windsState   = sectionState('winds');
   const brassState   = sectionState('brass');
+  const otherState   = sectionState('other');
   const tuttiState   = sectionState('tutti');
 
   const renderSection = sec => {
@@ -114,13 +117,21 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
             {t('brass')}
           </Checkbox>
         </div>
-        <div style={styles.section}>fehlt noch</div>
+        <div style={styles.section}>
+          <Checkbox
+            checked={otherState.checked}
+            indeterminate={otherState.indeterminate}
+            onChange={e => onSectionToggle('other', e.target.checked)}
+            >
+            {t('other')}
+          </Checkbox>
+        </div>
       </div>
       <div style={styles.sectionContainer}>
         <div style={styles.section}>{renderSection(strings)}</div>
         <div style={styles.section}>{renderSection(winds)}</div>
         <div style={styles.section}>{renderSection(brass)}</div>
-        <div style={styles.section}>fehlt noch</div>
+        <div style={styles.section}>{renderSection(other)}</div>
       </div>      
     </div>
   );

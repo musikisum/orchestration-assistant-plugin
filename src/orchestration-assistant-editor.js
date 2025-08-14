@@ -3,10 +3,12 @@ import { Form, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
 import EditName from './components/edit-name.js';
 import EditColor from './components/edit-color.js';
+import ToneSlider from './components/tone-slider.js';
 import EditSplitter from './components/edit-splitter.js';
 import Info from '@educandu/educandu/components/info.js';
 import SelectDialog from './components/select-dialog.js';
 import React, { useRef, useState, useEffect } from 'react';
+import EditSetSelect from './components/edit-set-select.js';
 import instrumentsProvider from './instruments-provider.js';
 import InstrumentEntry from './components/instrument-entry.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
@@ -57,6 +59,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     setModalSelections(instrIdsCopy);
     const newSelection = removeItemAt(instrumentsSelection, index);
     updateContent({ instrumentsSelection: newSelection });
+    setShowInstrumentEditor(false);
   };
 
   // save einstrument edits
@@ -90,6 +93,9 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   };  
   const handleSetTactetClick = () => {
     updateContent({ instrumentsSelection: [] });
+  };
+  const handleInstrumentSetSelect = set => {
+    updateContent({ instrumentsSelection: instrumentsProvider.loadInstrumentsFromIds(set) });
   };
 
   const handleNewInstrumentClick = () => {
@@ -160,6 +166,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const propContainer = (
     <div className="prop-container">
       <div className='prop-container-header'>
+        <div style={{ marginLeft: '12px' }}><Info tooltip={t('selectionInfo')} /></div>        
         <Button type="primary" icon={<UnorderedListOutlined />} onClick={() => setOpen(true)}>
           {t('addButton')}
         </Button>
@@ -169,6 +176,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         <Button type="primary" color='' icon={<MinusOutlined />} onClick={handleSetTactetClick}>
           {t('tacetButton')}
         </Button>
+        <EditSetSelect modalSelections={modalSelections} handleInstrumentSetSelect={handleInstrumentSetSelect} />
         <Button type="primary" color='' icon={<PlusOutlined />} onClick={handleNewInstrumentClick}>
           {t('newInstrumentButton')}
         </Button>
@@ -184,7 +192,11 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
               <EditColor
                 instrument={getInstrumentCopy(selectedInstrument)}
                 saveInstrumentInContent={saveInstrumentInContent}
-              />
+                />
+            </div>
+            <div className='prop-container-slider'>
+              <div>Range-left-Slider as Component</div>
+              <div>Range-right-slider as Component</div>
             </div>
             <InstrumentEditor
               instrument={getInstrumentCopy(selectedInstrument)}
@@ -203,6 +215,12 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
           <EditSplitter panelA={dragAndDropContainer} panelB={propContainer} />
         </div>
         <Form labelAlign="left">
+          <Form.Item  
+            label={<Info tooltip={t('rangeTt')}>{t('range')}</Info>} 
+            {...FORM_ITEM_LAYOUT}
+            >               
+            <ToneSlider content={content} updateContent={updateContent} />
+          </Form.Item>
           <Form.Item
             label={<Info tooltip={t('common:widthInfo')}>{t('common:width')}</Info>}
             {...FORM_ITEM_LAYOUT}

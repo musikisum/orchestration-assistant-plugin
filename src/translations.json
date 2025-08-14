@@ -4,6 +4,10 @@
       "en": "Orchestration \nAssistant\n",
       "de": "Orchester-\nAssistent\n"
     },
+    "selectionInfo": {
+      "en": "The »select ...« button opens a dialog box for selecting specific instruments. The elements »+ tutti«, »- tacet« and the selection field offer quick selection options. Missing instruments can be created using the »new instrument« button.",
+      "de": "Die Schaltfläche »auswählen ...« öffent einen Dialog zum gezielten Auswählen von Instrumenten. Die Schaltflächen »tutti«, »tacet« und das Auswahlfeld bieten Schnellauswahlen. Mit der Schaltfläche »neues Instrument« können fehlende Instrumente erstellt werden."
+    },
     "selection": {
       "en": "Selection",
       "de": "Auswahl"
@@ -104,6 +108,10 @@
       "en": "Brass",
       "de": "Blechbläser"
     },
+    "other": {
+      "en": "other",
+      "de": "andere"
+    },
     "violin": {
       "en": "Violin",
       "de": "Violine"
@@ -200,6 +208,10 @@
       "en": "Tuba",
       "de": "Tuba"
     },
+    "timpani": {
+      "en": "Timpani",
+      "de": "Pauken"
+    },
     "ciColor": {
       "en": "Color",
       "de": "Farbe"
@@ -219,6 +231,30 @@
     "nameInput": {
       "en": "Name of instrument",
       "de": "Name des Instruments"
+    },
+    "sets": {
+      "en": "Genres",
+      "de": "Gattungen"
+    },
+    "string3": {
+      "en": "String trio and quartet",
+      "de": "Streichtrio und -quartett"
+    },
+    "piano3": {
+      "en": "Piano trio",
+      "de": "Klaviertrio"
+    },
+    "piano4": {
+      "en": "Piano quartet",
+      "de": "Klavierqartett"
+    },
+    "orch1760": {
+      "en": "Orchestra (1770)",
+      "de": "Orchester (1770)"
+    },
+    "orch1810": {
+      "en": "Orchestra (1810)",
+      "de": "Orchester (1810)"
     }
   }
 }
