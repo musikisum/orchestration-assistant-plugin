@@ -13,6 +13,7 @@ import instrumentsProvider from './instruments-provider.js';
 import InstrumentEntry from './components/instrument-entry.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import InstrumentEditor from './components/instrument-editor.js';
+import EditRangeSliders from './components/edit-range-sliders.js';
 import { FORM_ITEM_LAYOUT } from '@educandu/educandu/domain/constants.js';
 import { sectionEditorProps } from '@educandu/educandu/ui/default-prop-types.js';
 import ObjectWidthSlider from '@educandu/educandu/components/object-width-slider.js';
@@ -96,6 +97,16 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   };
   const handleInstrumentSetSelect = set => {
     updateContent({ instrumentsSelection: instrumentsProvider.loadInstrumentsFromIds(set) });
+  };
+  const handleEditChangeSliders = instrument => {
+    const clonedSelection = cloneDeep(instrumentsSelection);
+    const index = clonedSelection.findIndex(item => item.id === instrument.id);
+    if (index > -1) {
+      clonedSelection[index] = instrument;
+    } else {
+      clonedSelection.push(instrument);
+    }
+    updateContent({ instrumentsSelection: clonedSelection });
   };
 
   const handleNewInstrumentClick = () => {
@@ -195,8 +206,10 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
                 />
             </div>
             <div className='prop-container-slider'>
-              <div>Range-left-Slider as Component</div>
-              <div>Range-right-slider as Component</div>
+              <EditRangeSliders
+                instrument={getInstrumentCopy(selectedInstrument)} 
+                saveSliderData={handleEditChangeSliders} 
+                />
             </div>
             <InstrumentEditor
               instrument={getInstrumentCopy(selectedInstrument)}
