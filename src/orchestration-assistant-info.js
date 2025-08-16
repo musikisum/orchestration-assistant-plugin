@@ -1,6 +1,6 @@
 import joi from 'joi';
 import React from 'react';
-import PluginIcon from './orchestration-assistant-icon.js'; 
+import IconComponent from './orchestration-assistant-icon.js'; 
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import { PLUGIN_GROUP } from '@educandu/educandu/domain/constants.js';
 import { couldAccessUrlFromRoom } from '@educandu/educandu/utils/source-utils.js';
@@ -20,7 +20,7 @@ class OrchestrationAssitantInfo {
   }
 
   getIcon() {
-    return <PluginIcon />;
+    return <IconComponent />;
   }
 
   getGroups() {
