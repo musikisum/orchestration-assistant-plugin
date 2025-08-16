@@ -10,6 +10,7 @@ import SelectDialog from './components/select-dialog.js';
 import React, { useRef, useState, useEffect } from 'react';
 import EditSetSelect from './components/edit-set-select.js';
 import instrumentsProvider from './instruments-provider.js';
+import updateContentHelper  from './update-content-helper.js';
 import InstrumentEntry from './components/instrument-entry.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import InstrumentEditor from './components/instrument-editor.js';
@@ -23,12 +24,19 @@ import { swapItemsAt, removeItemAt, moveItem } from '@educandu/educandu/utils/ar
 
 export default function OrchestrationAssistantEditor({ content, onContentChanged }) {
 
-  const { width, instrumentsSelection } = content;
+  const { width, instrumentsSelection, customInstrumentsCache } = content;
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   const updateContent = newContentValues => {
     onContentChanged({ ...content, ...newContentValues });
-  };  
+  };
+  // const updateContent = (newContentValues, deleteFromCache = false) => {
+  //   updateContentHelper.updateContent(
+  //     content, 
+  //     newContentValues, 
+  //     onContentChanged, 
+  //     deleteFromCache);
+  // };
 
   const [selectedInstrument, setSelectedInstrument] = useState('');
   const [selectedInstrumentClass, setSelectedInstrumentClass] = useState(null);
@@ -63,26 +71,42 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     setShowInstrumentEditor(false);
   };
 
-  // save einstrument edits
+  // save instrument edits
   const saveInstrumentInContent = (_event, id, instrument) => {
-    if (instrument) { // leaving markdown input
+    const isCustom = id ? id.startsWith('custom') : instrument.id.startsWith('custom');
+    // when the instrument editor loses focus
+    if (instrument) {
       const list = cloneDeep(instrumentsSelection);
       const index = list.findIndex(item => item.id === instrument.id);
-      if (index !== -1) {
-        list[index] = instrument;        
+      if (index > -1) {
+        list[index] = instrument;
       }
-      updateContent({ instrumentsSelection: list });
-    } else { // handleInstrumentNameButtonClick
-      if(id === selectedInstrument) { // deselect instrument name
-        setShowInstrumentEditor(false);
-        setSelectedInstrument('');
-        setSelectedInstrumentClass('');
-        return;
+      let nextCache = customInstrumentsCache;
+      if (isCustom) {
+        const ciIndex = customInstrumentsCache.findIndex(item => item.id === instrument.id);
+        if (ciIndex > -1) {
+          const ciList = cloneDeep(customInstrumentsCache);
+          ciList[ciIndex] = instrument;
+          nextCache = ciList;
+        }
       }
-      setSelectedInstrumentClass(id);
-      setSelectedInstrument(id);
-      setShowInstrumentEditor(true);
-    }    
+      const payload = { instrumentsSelection: list };
+      if (isCustom && nextCache !== customInstrumentsCache) {
+        payload.customInstrumentsCache = nextCache;
+      }
+      updateContent(payload);
+      return;
+    }
+    // deselect instrument if instrument is null 
+    if (id === selectedInstrument) {
+      setShowInstrumentEditor(false);
+      setSelectedInstrument('');
+      setSelectedInstrumentClass('');
+      return;
+    }
+    setSelectedInstrumentClass(id);
+    setSelectedInstrument(id);
+    setShowInstrumentEditor(true);
   };
   
   // Select instrument 
@@ -109,21 +133,28 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: clonedSelection });
   };
 
-  const handleNewInstrumentClick = () => {
-    const customInstrument = instrumentsProvider.getInstrumentCopy();
+  const handleNewCustomInstrumentClick = () => {
+    const customInstrument = instrumentsProvider.getInstrumentCopy(); 
     const list = cloneDeep(instrumentsSelection);
+    const customList = cloneDeep(customInstrumentsCache); 
     list.push(customInstrument);
-    updateContent({ instrumentsSelection: list });
+    customList.push(customInstrument);
+    updateContent({ instrumentsSelection: list, customInstrumentsCache: customList });
   };
 
   // Modal dialog for instrument selection 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleOk = () => {
+  const handleModalOk = () => {
+    const cachedInstruments = customInstrumentsCache.filter(item => item.id.startsWith('custom'));
+    const customInstr = modalSelections
+      .map(id => cachedInstruments.find(instr => instr.id === id))
+      .filter(Boolean);
     const newSelection = instrumentsProvider.loadInstrumentsFromIds(modalSelections);
+    newSelection.push(...customInstr);
     setSelectedInstrument('');
-    updateContent({ instrumentsSelection: newSelection });
+    updateContent({ instrumentsSelection: newSelection, customInstrumentsCache: customInstr });
     setSelectedInstrumentClass('');
     setLoading(true);
     setTimeout(() => {
@@ -187,8 +218,11 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         <Button type="primary" color='' icon={<MinusOutlined />} onClick={handleSetTactetClick}>
           {t('tacetButton')}
         </Button>
-        <EditSetSelect modalSelections={modalSelections} handleInstrumentSetSelect={handleInstrumentSetSelect} />
-        <Button type="primary" color='' icon={<PlusOutlined />} onClick={handleNewInstrumentClick}>
+        <EditSetSelect 
+          modalSelections={modalSelections} 
+          handleInstrumentSetSelect={handleInstrumentSetSelect} 
+          />
+        <Button type="primary" color='' icon={<PlusOutlined />} onClick={handleNewCustomInstrumentClick}>
           {t('newInstrumentButton')}
         </Button>
       </div>
@@ -246,10 +280,11 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
       <SelectDialog
         open={open}
         loading={loading}
-        onOk={handleOk}
+        onOk={handleModalOk}
         onCancel={() => setOpen(false)}
         modalSelections={modalSelections}
         setModalSelections={setModalSelections}
+        customInstrumentsCache={customInstrumentsCache}
         />
     </div>
   );

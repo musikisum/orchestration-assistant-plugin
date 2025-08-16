@@ -36,7 +36,7 @@ function EditSetSelect({ modalSelections, handleInstrumentSetSelect }) {
         placeholder={t('sets')}
         value={t(current)}
         onChange={onSetChange}
-        style={{ width: 160 }}
+        className='edit-set-select'
         options={Object.keys(sets).map(key => {
           return { value: key, label: t(key) };
         })}

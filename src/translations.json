@@ -84,6 +84,22 @@
       "en": "Here you can specify the pitch at which the line of notes begins and ends.",
       "de": "Hier kannst du festlegen, mit welchem Ton die Tonskala beginnt und mit welchem sie endet."
     },
+    "rangeBottom": {
+      "en": "Lower limit",
+      "de": "Untergrenze"
+    },
+    "rangeBottomTt": {
+      "en": "Here you can set the lower limit of the playing range of an instrument.",
+      "de": "Hier kannst du die Untergrenze des Spielumfangs eines Instruments festlegen."
+    },
+    "rangeTop": {
+      "en": "Upper limit",
+      "de": "Obergrenze"
+    },
+    "rangeTopTt": {
+      "en": "Here you can set the upper limit of the playing range of an instrument.",
+      "de": "Hier kannst du die Obergrenze des Spielumfangs eines Instruments festlegen."
+    },
     "dialogReturn": {
       "en": "Return",
       "de": "Abbrechen"
@@ -111,6 +127,10 @@
     "other": {
       "en": "other",
       "de": "andere"
+    },
+    "custom": {
+      "en": "custom",
+      "de": "eigene"
     },
     "violin": {
       "en": "Violin",

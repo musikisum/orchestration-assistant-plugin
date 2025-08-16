@@ -5,26 +5,31 @@ import { useTranslation } from 'react-i18next';
 import styles from '../styles-modal-dialog.js';
 import instrumentsProvider from '../instruments-provider.js';
 
-export default function ModalSectionsContainer({ modalSelections, setModalSelections }) {
+export default function ModalSectionsContainer({ modalSelections, setModalSelections, customInstrumentsCache }) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   
-  // Plugin collection
+  // Plugin collections
   const strings = instrumentsProvider.getModalSectionObjects('strings');
   const winds = instrumentsProvider.getModalSectionObjects('winds');
   const brass = instrumentsProvider.getModalSectionObjects('brass');
   const other = instrumentsProvider.getModalSectionObjects('other');
   const tutti = instrumentsProvider.getModalSectionObjects();
+  // Custom instruments as section objects 
+  const custom = customInstrumentsCache.map(item => { return { id: item.id, name: item.name }; });
   
   const selectionSet = useMemo(() => new Set(modalSelections), [modalSelections]);
-  const sections = {
-    strings: strings.map(i => i.id),
-    winds: winds.map(i => i.id),
-    brass: brass.map(i => i.id),
-    other: other.map(i => i.id),
-    tutti: tutti.map(i => i.id),
+  
+  // Method for checking security (filter undefied) 
+  const sectionIds = {
+    tutti: tutti.map(item => item.id),
+    strings: strings.map(item => item.id),
+    winds: winds.map(item => item.id),
+    brass: brass.map(item => item.id),
+    other: other.map(item => item.id),
+    custom: custom.map(item => item.id)
   };
-
+  
   // Einzelnes Instrument toggeln
   const onInstrumentToggle = (id, checked) => {
     setModalSelections(prev => {
@@ -36,31 +41,31 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
 
   // Ganze Section toggeln (alle rein oder alle raus)
   const onSectionToggle = (sectionKey, checked) => {
-    const ids = sections[sectionKey] || [];
+    const ids = (sectionIds[sectionKey] || []).filter(Boolean);
     setModalSelections(prev => {
       const s = new Set(prev);
-      if (checked) {
-        ids.forEach(id => s.add(id));
-      } else {
-        ids.forEach(id => s.delete(id));
-      }
+      if (checked) {ids.forEach(id => s.add(id));} else {ids.forEach(id => s.delete(id));}
       return [...s];
     });
   };
 
   // UI-State pro Section
   const sectionState = key => {
-    const ids = sections[key];
+    const ids = (sectionIds[key] || []).filter(Boolean);
+    if (ids.length === 0) {
+      return { checked: false, indeterminate: false };
+    }
     const checked = instrumentsProvider.includesAll(selectionSet, ids);
-    const indeterminate = instrumentsProvider.includesAny(selectionSet, ids) && !checked;
+    const indeterminate = !checked && instrumentsProvider.includesAny(selectionSet, ids);
     return { checked, indeterminate };
   };
 
+  const tuttiState   = sectionState('tutti');
   const stringsState = sectionState('strings');
   const windsState   = sectionState('winds');
   const brassState   = sectionState('brass');
   const otherState   = sectionState('other');
-  const tuttiState   = sectionState('tutti');
+  const customState  = sectionState('custom');
 
   const renderSection = sec => {
     return sec.map(instrument => {
@@ -126,12 +131,24 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
             {t('other')}
           </Checkbox>
         </div>
+        {sectionIds.custom.length > 0 && (
+        <div style={styles.section}>
+          <Checkbox
+            checked={customState.checked}
+            indeterminate={customState.indeterminate}
+            onChange={e => onSectionToggle('custom', e.target.checked)}
+            >
+            {t('custom')}
+          </Checkbox>
+        </div>
+        )}
       </div>
       <div style={styles.sectionContainer}>
         <div style={styles.section}>{renderSection(strings)}</div>
         <div style={styles.section}>{renderSection(winds)}</div>
         <div style={styles.section}>{renderSection(brass)}</div>
         <div style={styles.section}>{renderSection(other)}</div>
+        {sectionIds.custom.length > 0 && <div style={styles.section}>{renderSection(custom)}</div>}
       </div>      
     </div>
   );
@@ -139,10 +156,12 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
 
 ModalSectionsContainer.propTypes = {
   modalSelections: PropTypes.array,
-  setModalSelections: PropTypes.func
+  setModalSelections: PropTypes.func,
+  customInstrumentsCache: PropTypes.array
 };
 
 ModalSectionsContainer.defaultProps = {
   modalSelections: [],
-  setModalSelections: null
+  setModalSelections: null,
+  customInstrumentsCache: []
 };

@@ -25,7 +25,6 @@ import PiccoloFlute from './instruments/piccoloFlute.js';
 import TenorSaxophone from './instruments/t-saxophone.js';
 import ContraBassoon from './instruments/contraBassoon.js';
 import defaultInstrument from './instruments/default-instrument.js';
-import timpani from './instruments/timpani.js';
 
 // section of instrument components
 const strings = { 
@@ -197,12 +196,17 @@ const hasTheSameInstruments = (setA, setB) =>
   && setA.length === setB.length 
   && setA.every(instr => setB.includes(instr));
 
+const loadcustomInstrumentsFromCache = col => {
+  return col.filter(item => item.id.startsWith('custom'));
+};
+
 const instrumentsProvider = {
   sets,
   includesAll,
   includesAny,
   getInstrumentCopy,
   hasTheSameInstruments,
+  loadcustomInstrumentsFromCache,
   getModalSectionObjects,
   loadInstrumentsFromIds,
   loadInstrumentsFromNames

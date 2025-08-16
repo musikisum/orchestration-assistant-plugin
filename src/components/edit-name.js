@@ -30,9 +30,11 @@ function EditName({ instrument, saveInstrumentInContent }) {
   return (
     <div ref={containerRef} className='name-container-inspector-child'>
       <span>Name:</span> 
-      <Input 
+      <Input
         size='small' 
         value={t(`${name}`)} 
+        style={{ minWidth: '100px' }}
+        name={instrument.name} 
         onChange={handleNameChance} 
         placeholder={t('nameInput')}
         />
