@@ -98,12 +98,17 @@ const tipFormatterList = [
   'c5'
 ];
 
+const rangeTestforVisibility = (from, to, begin, end) => {  
+  return to >= begin && end >= from;
+};
+
 const OrchestrationUtilities = {
-  getInfo: (toneName, toneIndex) => getOctaveComponent(toneName, toneIndex),
-  calculateGridColumnsForInstruments,
-  getOctaveLineFractions,
+  getToneNames,
   tipFormatterList,
-  getToneNames
+  getOctaveLineFractions,
+  rangeTestforVisibility,
+  calculateGridColumnsForInstruments,
+  getInfo: (toneName, toneIndex) => getOctaveComponent(toneName, toneIndex)
 };
 
 export default OrchestrationUtilities;

@@ -76,6 +76,22 @@
       "en": "Instrument",
       "de": "Instrument"
     },
+    "deleteCustomTitle": {
+      "en": "Are you sure",
+      "de": "Bist du sicher?"
+    },
+    "deleteCustom": {
+      "en": "delete",
+      "de": "löschen"
+    },
+    "deleteCustomText": {
+      "en": "Would you like to delete a custom instrument? If you delete it, you will not be able to display or edit it again. ATTENTION! A custom instrument that is deleted cannot be restored.",
+      "de": "Du möchtest ein individuell erstelltes Instrument löschen? Wenn du es löscht, kannst du es nicht wieder anzeigen lassen oder bearbeiten. ACHTUNG! Ein individuell erstelltes Instrument, das gelöscht wird, lässt sich nicht wiederherstellen."
+    },
+    "deleteCustomNo": {
+      "en": "cancel",
+      "de": "abbrechen"
+    },
     "range": {
       "en": "Range",
       "de": "Tonumfang"
@@ -253,8 +269,8 @@
       "de": "Name des Instruments"
     },
     "sets": {
-      "en": "Genres",
-      "de": "Gattungen"
+      "en": "Line-up",
+      "de": "Besetzungen"
     },
     "string3": {
       "en": "String trio and quartet",
@@ -264,17 +280,45 @@
       "en": "Piano trio",
       "de": "Klaviertrio"
     },
+    "horn3": {
+      "en": "Horn trio",
+      "de": "Horntrio"
+    },
     "piano4": {
       "en": "Piano quartet",
       "de": "Klavierqartett"
     },
+    "flute4": {
+      "en": "Flute quartet",
+      "de": "Flötenquartett"
+    },
+    "clarinet5": {
+      "en": "Clarinet quintet",
+      "de": "Klarinettenquintett"
+    },
+    "septett": {
+      "de": "Septet",
+      "en": "Septett"
+    },
+    "octett": {
+      "en": "Octett",
+      "de": "Oktett"
+    },
     "orch1760": {
-      "en": "Orchestra (1770)",
-      "de": "Orchester (1770)"
+      "en": "1760 (Mozart)",
+      "de": "1760 (Mozart)"
     },
     "orch1810": {
-      "en": "Orchestra (1810)",
-      "de": "Orchester (1810)"
+      "en": "1810 (Beethoven)",
+      "de": "1810 (Beethoven)"
+    },
+    "chamber": {
+      "en": "Chamber music",
+      "de": "Kammermusik"
+    },
+    "orchestra": {
+      "en": "Orchestra",
+      "de": "Orhester"
     }
   }
 }

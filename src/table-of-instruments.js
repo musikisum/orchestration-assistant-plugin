@@ -99,11 +99,13 @@ export default function TableOfInstruments({
         { getToneNameGrid() }
         {          
           selection.map((instrument, index) => {
-            return (
-              <React.Fragment key={index}>
-                { getInstrument(instrument, index) }
-              </React.Fragment>
-            );
+            return OrchestrationUtilities.rangeTestforVisibility(from, to, instrument.begin, instrument.end)
+              ? (
+                <React.Fragment key={index}>
+                  { getInstrument(instrument, index) }
+                </React.Fragment>
+              )
+              : null;
           })
         }
       </div>

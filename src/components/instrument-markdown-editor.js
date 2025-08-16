@@ -3,7 +3,7 @@ import { useClickOutside } from '../useClickOutside.js';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import MarkdownInput from '@educandu/educandu/components/markdown-input.js';
 
-function InstrumentEditor({ instrument, saveInstrumentInContent, language }) {
+function InstrumentMarkdownEditor({ instrument, saveInstrumentInContent, language }) {
 
   const lang = language;
   const [description, setDescription] = useState(instrument[lang]);
@@ -34,15 +34,15 @@ function InstrumentEditor({ instrument, saveInstrumentInContent, language }) {
   );
 }
 
-export default InstrumentEditor;
+export default InstrumentMarkdownEditor;
 
-InstrumentEditor.propTypes = {
+InstrumentMarkdownEditor.propTypes = {
   instrument: PropTypes.object.isRequired,
   saveInstrumentInContent: PropTypes.func.isRequired,
   language: PropTypes.string
 };
 
-InstrumentEditor.defaultProps = {
+InstrumentMarkdownEditor.defaultProps = {
   language: 'de'
 };
 

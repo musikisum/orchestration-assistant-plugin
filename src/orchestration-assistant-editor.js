@@ -10,15 +10,15 @@ import SelectDialog from './components/select-dialog.js';
 import React, { useRef, useState, useEffect } from 'react';
 import EditSetSelect from './components/edit-set-select.js';
 import instrumentsProvider from './instruments-provider.js';
-import updateContentHelper  from './update-content-helper.js';
 import InstrumentEntry from './components/instrument-entry.js';
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
-import InstrumentEditor from './components/instrument-editor.js';
 import EditRangeSliders from './components/edit-range-sliders.js';
 import { FORM_ITEM_LAYOUT } from '@educandu/educandu/domain/constants.js';
 import { sectionEditorProps } from '@educandu/educandu/ui/default-prop-types.js';
+import InstrumentMarkdownEditor from './components/instrument-markdown-editor.js';
 import ObjectWidthSlider from '@educandu/educandu/components/object-width-slider.js';
 import { PlusOutlined, UnorderedListOutlined, MinusOutlined } from '@ant-design/icons';
+import DeleteCustomInstrumentButton from './components/delete-custom-instrument-button.js';
 import DragAndDropContainer from '@educandu/educandu/components/drag-and-drop-container.js';
 import { swapItemsAt, removeItemAt, moveItem } from '@educandu/educandu/utils/array-utils.js';
 
@@ -30,13 +30,6 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const updateContent = newContentValues => {
     onContentChanged({ ...content, ...newContentValues });
   };
-  // const updateContent = (newContentValues, deleteFromCache = false) => {
-  //   updateContentHelper.updateContent(
-  //     content, 
-  //     newContentValues, 
-  //     onContentChanged, 
-  //     deleteFromCache);
-  // };
 
   const [selectedInstrument, setSelectedInstrument] = useState('');
   const [selectedInstrumentClass, setSelectedInstrumentClass] = useState(null);
@@ -67,8 +60,8 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     instrIdsCopy.splice(modalSelections.indexOf(id), 1);
     setModalSelections(instrIdsCopy);
     const newSelection = removeItemAt(instrumentsSelection, index);
-    updateContent({ instrumentsSelection: newSelection });
     setShowInstrumentEditor(false);
+    updateContent({ instrumentsSelection: newSelection });
   };
 
   // save instrument edits
@@ -136,16 +129,25 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const handleNewCustomInstrumentClick = () => {
     const customInstrument = instrumentsProvider.getInstrumentCopy(); 
     const list = cloneDeep(instrumentsSelection);
-    const customList = cloneDeep(customInstrumentsCache); 
     list.push(customInstrument);
+    const customList = cloneDeep(customInstrumentsCache);
     customList.push(customInstrument);
     updateContent({ instrumentsSelection: list, customInstrumentsCache: customList });
+  };
+  const handleCustomInstrumentDelete = instrument => {
+    if(instrument) {
+      const customList = customInstrumentsCache.filter(item => item.id !== instrument.id);
+      const list = instrumentsSelection.filter(item => item.id !== instrument.id);
+      updateContent({ instrumentsSelection: list, customInstrumentsCache: customList });
+      setShowInstrumentEditor(false);
+      setSelectedInstrument('');
+      setSelectedInstrumentClass('');
+    }
   };
 
   // Modal dialog for instrument selection 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-
   const handleModalOk = () => {
     const cachedInstruments = customInstrumentsCache.filter(item => item.id.startsWith('custom'));
     const customInstr = modalSelections
@@ -154,7 +156,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     const newSelection = instrumentsProvider.loadInstrumentsFromIds(modalSelections);
     newSelection.push(...customInstr);
     setSelectedInstrument('');
-    updateContent({ instrumentsSelection: newSelection, customInstrumentsCache: customInstr });
+    updateContent({ instrumentsSelection: newSelection });
     setSelectedInstrumentClass('');
     setLoading(true);
     setTimeout(() => {
@@ -238,6 +240,12 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
                 instrument={getInstrumentCopy(selectedInstrument)}
                 saveInstrumentInContent={saveInstrumentInContent}
                 />
+              { selectedInstrument?.startsWith('custom')
+                ? <DeleteCustomInstrumentButton
+                    instrument={getInstrumentCopy(selectedInstrument)}
+                    deleteCustomInstrument={handleCustomInstrumentDelete}
+                    />
+                : null}
             </div>
             <div className='prop-container-slider'>
               <EditRangeSliders
@@ -245,7 +253,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
                 saveSliderData={handleEditChangeSliders} 
                 />
             </div>
-            <InstrumentEditor
+            <InstrumentMarkdownEditor
               instrument={getInstrumentCopy(selectedInstrument)}
               saveInstrumentInContent={saveInstrumentInContent}
               />

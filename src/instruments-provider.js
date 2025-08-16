@@ -102,8 +102,8 @@ const includesAll = (set, ids) => ids.every(id => set.has(id));
 
 const includesAny = (set, ids) => ids.some(id => set.has(id));
 
-const getInstrumentCopy = (instrument, instrumentCopy) => {
-  if (instrument && !instrumentCopy) {
+const getInstrumentCopy = instrument => {
+  if (instrument) {
     return defaultInstrument(
       instrument.id, 
       instrument.name,
@@ -115,20 +115,6 @@ const getInstrumentCopy = (instrument, instrumentCopy) => {
       instrument.color,
       instrument.de,
       instrument.en
-    );
-  }
-  if(instrument && instrumentCopy) {
-    return defaultInstrument(
-      instrumentCopy.id, 
-      instrumentCopy.name,
-      instrumentCopy.section,
-      instrumentCopy.begin, 
-      instrumentCopy.end,
-      instrumentCopy.before,
-      instrumentCopy.after, 
-      instrumentCopy.color,
-      instrumentCopy.de,
-      instrumentCopy.en
     );
   }
   return defaultInstrument(`custom-${nanoid(10)}`);
@@ -179,16 +165,26 @@ const loadInstrumentsFromIds = ids => {
   return unique;
 };
 
-const sets = { 
-  string3: ['oap-default-violin', 'oap-default-viola', 'oap-default-violoncello'],
-  piano3: ['oap-default-violin', 'oap-default-violoncello', 'oap-default-piano'],
-  piano4: ['oap-default-violin', 'oap-default-viola', 'oap-default-violoncello', 'oap-default-piano'],
+const getOrchestraSets = { 
   orch1760: ['oap-default-flute', 'oap-default-oboe', 'oap-default-bassoon', 'oap-default-horn', 'oap-default-violin', 
     'oap-default-viola', 'oap-default-violoncello', 'oap-default-doublebass'],
   orch1810: ['oap-default-piccoloflute', 'oap-default-flute', 'oap-default-oboe', 'oap-default-clarinet', 'oap-default-bassoon', 
     'oap-default-contrabassoon', 'oap-default-horn', 'oap-default-trumpet', 'oap-default-trombone', 'oap-default-timpani', 'oap-default-violin', 
     'oap-default-viola', 'oap-default-violoncello', 'oap-default-doublebass']
 };
+
+const getChamberSets = { 
+  string3: ['oap-default-violin', 'oap-default-viola', 'oap-default-violoncello'],
+  piano3: ['oap-default-violin', 'oap-default-violoncello', 'oap-default-piano'],
+  horn3: ['oap-default-horn', 'oap-default-violin', 'oap-default-piano'],
+  piano4: ['oap-default-violin', 'oap-default-viola', 'oap-default-violoncello', 'oap-default-piano'],
+  flute4: ['oap-default-flute', 'oap-default-violin', 'oap-default-viola', 'oap-default-violoncello'],
+  clarinet5: ['oap-default-clarinet', 'oap-default-violin', 'oap-default-viola', 'oap-default-violoncello'],
+  septett: ['oap-default-clarinet', 'oap-default-horn', 'oap-default-bassoon', 'oap-default-violin', 'oap-default-viola', 'oap-default-violoncello'],
+  octett: ['oap-default-clarinet', 'oap-default-horn', 'oap-default-bassoon', 'oap-default-violin', 'oap-default-viola', 'oap-default-violoncello', 'oap-default-doublebass']
+};
+
+const getSets = { ...getOrchestraSets, ...getChamberSets };
 
 const hasTheSameInstruments = (setA, setB) => 
   Array.isArray(setA) 
@@ -201,7 +197,9 @@ const loadcustomInstrumentsFromCache = col => {
 };
 
 const instrumentsProvider = {
-  sets,
+  getOrchestraSets,
+  getChamberSets,
+  getSets,
   includesAll,
   includesAny,
   getInstrumentCopy,

@@ -43,7 +43,8 @@ describe('OrchestrationAssitantInfo', () => {
       width: 100,
       from: 1,
       to: 50,
-      instrumentsSelection: []
+      instrumentsSelection: [],
+      customInstrumentsCache: []
     });
   });
 
