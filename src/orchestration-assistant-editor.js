@@ -27,9 +27,6 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
 
   const { width, instrumentsSelection, customInstrumentsCache } = content;
 
-  // console.log('instrumentsSelection', instrumentsSelection)
-  // console.log('customInstrumentsCache', customInstrumentsCache)
-
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   const updateContent = newContentValues => {
     onContentChanged({ ...content, ...newContentValues });
