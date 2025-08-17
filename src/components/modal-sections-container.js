@@ -17,7 +17,7 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
   const tutti = instrumentsProvider.getModalSectionObjects();
   // Custom instruments as section objects 
   const custom = customInstrumentsCache.map(item => { return { id: item.id, name: item.name }; });
-  
+
   const selectionSet = useMemo(() => new Set(modalSelections), [modalSelections]);
   
   // Method for checking security (filter undefied) 
@@ -30,7 +30,6 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
     custom: custom.map(item => item.id)
   };
   
-  // Einzelnes Instrument toggeln
   const onInstrumentToggle = (id, checked) => {
     setModalSelections(prev => {
       const s = new Set(prev);
@@ -39,7 +38,6 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
     });
   };
 
-  // Ganze Section toggeln (alle rein oder alle raus)
   const onSectionToggle = (sectionKey, checked) => {
     const ids = (sectionIds[sectionKey] || []).filter(Boolean);
     setModalSelections(prev => {
@@ -49,7 +47,6 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
     });
   };
 
-  // UI-State pro Section
   const sectionState = key => {
     const ids = (sectionIds[key] || []).filter(Boolean);
     if (ids.length === 0) {

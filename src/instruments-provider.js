@@ -102,21 +102,7 @@ const includesAll = (set, ids) => ids.every(id => set.has(id));
 
 const includesAny = (set, ids) => ids.some(id => set.has(id));
 
-const getInstrumentCopy = instrument => {
-  if (instrument) {
-    return defaultInstrument(
-      instrument.id, 
-      instrument.name,
-      instrument.section,
-      instrument.begin, 
-      instrument.end, 
-      instrument.before,
-      instrument.after,
-      instrument.color,
-      instrument.de,
-      instrument.en
-    );
-  }
+const getDefaultInstrument = () => {
   return defaultInstrument(`custom-${nanoid(10)}`);
 };
 
@@ -202,7 +188,7 @@ const instrumentsProvider = {
   getSets,
   includesAll,
   includesAny,
-  getInstrumentCopy,
+  getDefaultInstrument,
   hasTheSameInstruments,
   loadcustomInstrumentsFromCache,
   getModalSectionObjects,

@@ -27,6 +27,9 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
 
   const { width, instrumentsSelection, customInstrumentsCache } = content;
 
+  // console.log('instrumentsSelection', instrumentsSelection)
+  // console.log('customInstrumentsCache', customInstrumentsCache)
+
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   const updateContent = newContentValues => {
     onContentChanged({ ...content, ...newContentValues });
@@ -65,6 +68,12 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: newSelection });
   };
 
+  const resetInstrumentListInSplitter = () => {
+    setSelectedInstrument('');
+    setShowInstrumentEditor(false);
+    setSelectedInstrumentClass('');
+  };
+
   // save instrument edits
   const saveInstrumentInContent = (_event, id, instrument) => {
     const isCustom = id ? id.startsWith('custom') : instrument.id.startsWith('custom');
@@ -93,9 +102,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     }
     // deselect instrument if instrument is null 
     if (id === selectedInstrument) {
-      setShowInstrumentEditor(false);
-      setSelectedInstrument('');
-      setSelectedInstrumentClass('');
+      resetInstrumentListInSplitter();
       return;
     }
     setSelectedInstrumentClass(id);
@@ -111,6 +118,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: instrumentsProvider.loadInstrumentsFromNames(['tutti']) });
   };  
   const handleSetTactetClick = () => {
+    resetInstrumentListInSplitter();
     updateContent({ instrumentsSelection: [] });
   };
   const handleInstrumentSetSelect = set => {
@@ -128,7 +136,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   };
 
   const handleNewCustomInstrumentClick = () => {
-    const customInstrument = instrumentsProvider.getInstrumentCopy(); 
+    const customInstrument = instrumentsProvider.getDefaultInstrument();
     const list = cloneDeep(instrumentsSelection);
     list.push(customInstrument);
     const customList = cloneDeep(customInstrumentsCache);
@@ -156,9 +164,8 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
       .filter(Boolean);
     const newSelection = instrumentsProvider.loadInstrumentsFromIds(modalSelections);
     newSelection.push(...customInstr);
-    setSelectedInstrument('');
+    resetInstrumentListInSplitter();
     updateContent({ instrumentsSelection: newSelection });
-    setSelectedInstrumentClass('');
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -171,9 +178,8 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ width: value });
   };
 
-  const getInstrumentCopy = id => {
-    const current = instrumentsSelection.find(item => item.id === id);
-    return instrumentsProvider.getInstrumentCopy(current);
+  const getInstrumentById = id => {
+    return instrumentsSelection.find(item => item.id === id);
   };
 
   // List with instrument entries (left plugin side)
@@ -234,32 +240,32 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
           <React.Fragment>
             <div className='prop-container-inspector'>
               <EditName 
-                instrument={getInstrumentCopy(selectedInstrument)}
+                instrument={getInstrumentById(selectedInstrument)}
                 saveInstrumentInContent={saveInstrumentInContent} 
                 />
               <EditColor
-                instrument={getInstrumentCopy(selectedInstrument)}
+                instrument={getInstrumentById(selectedInstrument)}
                 saveInstrumentInContent={saveInstrumentInContent}
                 />
               <BeforeAfter 
-                instrument={getInstrumentCopy(selectedInstrument)} 
+                instrument={getInstrumentById(selectedInstrument)} 
                 saveInstrumentInContent={saveInstrumentInContent} 
                 />
               { selectedInstrument?.startsWith('custom')
                 ? <DeleteCustomInstrumentButton
-                    instrument={getInstrumentCopy(selectedInstrument)}
+                    instrument={getInstrumentById(selectedInstrument)}
                     deleteCustomInstrument={handleCustomInstrumentDelete}
                     />
                 : null}
             </div>
             <div className='prop-container-slider'>
               <EditRangeSliders
-                instrument={getInstrumentCopy(selectedInstrument)} 
+                instrument={getInstrumentById(selectedInstrument)} 
                 saveSliderData={handleEditChangeSliders} 
                 />
             </div>
             <InstrumentMarkdownEditor
-              instrument={getInstrumentCopy(selectedInstrument)}
+              instrument={getInstrumentById(selectedInstrument)}
               saveInstrumentInContent={saveInstrumentInContent}
               />
           </React.Fragment>
