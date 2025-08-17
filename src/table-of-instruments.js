@@ -55,9 +55,13 @@ export default function TableOfInstruments({
 
   const getInstrument = (instrument, index) => {
     return (
-      <div key={instrument.id} className="orchester-grid" style={gridStyle}>
-        <InstrumentTemplate from={from} to={to} instrument={instrument} row={index} />
-      </div>      
+      <React.Fragment>
+        { instrument.before ? getToneNameGrid() : null }
+        <div key={instrument.id} className="orchester-grid" style={gridStyle}>
+          <InstrumentTemplate from={from} to={to} instrument={instrument} row={index} />
+        </div>
+        { instrument.after ? getToneNameGrid() : null }
+      </React.Fragment>
     );
   };
 

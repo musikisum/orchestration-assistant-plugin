@@ -92,6 +92,18 @@
       "en": "cancel",
       "de": "abbrechen"
     },
+    "beforeAfterInfo": {
+      "en": "Specify whether tone names should be displayed before or after the instrument.",
+      "de": "Bestimme, ob Tonnnamen vor oder nach dem Instrument angezeigt werden sollen."
+    },
+    "before": {
+      "en": "before",
+      "de": "davor"
+    },
+    "after": {
+      "en": "after",
+      "de": "danach"
+    },
     "range": {
       "en": "Range",
       "de": "Tonumfang"

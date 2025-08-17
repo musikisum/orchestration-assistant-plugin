@@ -18,7 +18,7 @@ describe('OrchestrationAssitantInfo', () => {
     };
   });
 
-  it('getDisplayName nutzt den Übersetzungs-Key', () => {
+  it('getDisplayName provide name', () => {
     const info = new OrchestrationAssitantInfo(gfm);
     const t = key => key;
     expect(info.getDisplayName(t)).toBe(
@@ -26,18 +26,18 @@ describe('OrchestrationAssitantInfo', () => {
     );
   });
 
-  it('getIcon liefert ein React-Element', () => {
+  it('getIcon provide an icon', () => {
     const info = new OrchestrationAssitantInfo(gfm);
     const el = info.getIcon();
     expect(React.isValidElement(el)).toBe(true);
   });
 
-  it('getGroups enthält PLUGIN_GROUP.other', () => {
+  it('getGroups provide PLUGIN_GROUP.other', () => {
     const info = new OrchestrationAssitantInfo(gfm);
     expect(info.getGroups()).toEqual([PLUGIN_GROUP.other]);
   });
 
-  it('getDefaultContent liefert die erwarteten Default-Werte', () => {
+  it('getDefaultContent provide default values', () => {
     const info = new OrchestrationAssitantInfo(gfm);
     expect(info.getDefaultContent()).toEqual({
       width: 100,
@@ -48,7 +48,7 @@ describe('OrchestrationAssitantInfo', () => {
     });
   });
 
-  it('validateContent akzeptiert gültige Inhalte', () => {
+  it('validateContent with valid content', () => {
     const info = new OrchestrationAssitantInfo(gfm);
     const validContent = {
       width: 80,
@@ -58,7 +58,6 @@ describe('OrchestrationAssitantInfo', () => {
         {
           id: 'id-1',
           name: 'Violine',
-          section: 'Streicher',
           begin: 1,
           end: 10,
           before: false,
@@ -72,7 +71,7 @@ describe('OrchestrationAssitantInfo', () => {
     expect(() => info.validateContent(validContent)).not.toThrow();
   });
 
-  it('validateContent wirft bei ungültigen Werten', () => {
+  it('validateContent with invalid content', () => {
     const info = new OrchestrationAssitantInfo(gfm);
     const invalidContent = {
       width: 101,
@@ -98,7 +97,7 @@ describe('OrchestrationAssitantInfo', () => {
     expect(original.instrumentsSelection[0].name).toBe('A');
   });
 
-  it('redactContent entfernt nicht zugängliche CDN-URLs', () => {
+  it('redactContent terminate urls from private rooms', () => {
     const info = new OrchestrationAssitantInfo(gfm);
     const content = {
       width: 100,
@@ -117,7 +116,7 @@ describe('OrchestrationAssitantInfo', () => {
     expect(redacted.text).toBe('allowed cdn://ok and blocked ');
   });
 
-  it('getCdnResources ruft extractCdnResources auf und gibt die Ressourcen zurück', () => {
+  it('getCdnResources provide cdn resources', () => {
     const info = new OrchestrationAssitantInfo(gfm);
     const content = { text: 'cdn://a cdn://b' };
     const resources = info.getCdnResources(content);

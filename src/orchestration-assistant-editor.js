@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import EditName from './components/edit-name.js';
 import EditColor from './components/edit-color.js';
 import ToneSlider from './components/tone-slider.js';
+import BeforeAfter from './components/before-after.js';
 import EditSplitter from './components/edit-splitter.js';
 import Info from '@educandu/educandu/components/info.js';
 import SelectDialog from './components/select-dialog.js';
@@ -210,7 +211,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const propContainer = (
     <div className="prop-container">
       <div className='prop-container-header'>
-        <div style={{ marginLeft: '12px' }}><Info tooltip={t('selectionInfo')} /></div>        
+        <div className='editor-top-info'><Info tooltip={t('selectionInfo')} /></div>
         <Button type="primary" icon={<UnorderedListOutlined />} onClick={() => setOpen(true)}>
           {t('addButton')}
         </Button>
@@ -239,6 +240,10 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
               <EditColor
                 instrument={getInstrumentCopy(selectedInstrument)}
                 saveInstrumentInContent={saveInstrumentInContent}
+                />
+              <BeforeAfter 
+                instrument={getInstrumentCopy(selectedInstrument)} 
+                saveInstrumentInContent={saveInstrumentInContent} 
                 />
               { selectedInstrument?.startsWith('custom')
                 ? <DeleteCustomInstrumentButton

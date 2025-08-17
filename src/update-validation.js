@@ -86,7 +86,6 @@ function sanitizeInstrumentItem(raw) {
   const out = {
     id: raw.id,
     name: raw.name === '' || raw.name === null || isStr(raw.name) ? raw.name ?? null : null,
-    section: raw.section === '' || raw.section === null || isStr(raw.section) ? raw.section ?? null : null,
     begin: isNum(raw.begin) ? clamp(raw.begin, 1, 49) : null,
     end: isNum(raw.end) ? clamp(raw.end, 2, 51) : null,
     before: isBool(raw.before) ? raw.before : false,

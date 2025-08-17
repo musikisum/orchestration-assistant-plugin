@@ -1,7 +1,7 @@
 import { Input } from 'antd';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { useClickOutside } from '../useClickOutside.js';
+import { useClickOutside } from '../use-click-outside.js';
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 
 function EditName({ instrument, saveInstrumentInContent }) {
@@ -28,7 +28,7 @@ function EditName({ instrument, saveInstrumentInContent }) {
   };
 
   return (
-    <div ref={containerRef} className='name-container-inspector-child'>
+    <div ref={containerRef} className='prop-container-inspector-child'>
       <span>Name:</span> 
       <Input
         size='small' 

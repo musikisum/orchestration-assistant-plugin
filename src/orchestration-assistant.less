@@ -1,5 +1,5 @@
-@import "@educandu/educandu/src/styles/greys.less";
-@import "@educandu/educandu/src/styles/global-variables.less";
+@import "@educandu/educandu/styles/greys.less";
+@import "@educandu/educandu/styles/global-variables.less";
 
 .EP_Educandu_Orchestration_Assistant_Display {
   
@@ -19,7 +19,6 @@
   .note-cell,
   .instrument-cell {
     display: flex;
-    // align-items: flex-start;
     align-items: stretch;
     justify-content: center;
     padding: 0;
@@ -44,7 +43,7 @@
     font-size: 12px;
     font-weight: bold;
     color: white;
-    pointer-events: none; /* Damit der Text keine Klicks blockiert */
+    pointer-events: none;
     z-index: 2;
   }
   .instrument {
@@ -215,19 +214,21 @@
   .prop-container-header > :last-child {
     margin-left: auto;
   }
+  .editor-top-info {
+    margin-left: 12px;
+  }
   .prop-container-inspector {
     display: flex;
     gap: 36px;
-    margin-top: 36px;
     padding-top: 36px;
     margin-left: 20.5px;
     border-top: 1px solid gray;
+    justify-content: flex-start;
     align-items: center;
   }
-  .name-container-inspector-child {
+  .prop-container-inspector-child {
     display: flex;
     gap: 6px;
-    justify-content: center;
     align-items: center;
   }
   .delete-button-inspector-child {
@@ -247,9 +248,8 @@
     gap: 6px;
     align-items: center;
   }
-}
 
-  /* small divices */
+    /* small divices */
   @media (max-width: 860px) {
     .edit-container {
         flex-direction: column;
@@ -268,8 +268,20 @@
     .prop-container-header > :last-child {
       margin-left: 0 !important;
     }
+    .editor-top-info {
+      margin-left: 12px;
+    }
+    .prop-container-inspector {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .prop-container-inspector-child {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
     .edit-set-select {
       width: 100% !important;
       max-width: 100% !important;
     }
   }
+}

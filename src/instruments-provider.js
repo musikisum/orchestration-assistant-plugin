@@ -14,16 +14,16 @@ import Timpani from './instruments/timpani.js';
 import Clarinet from './instruments/clarinet.js';
 import Trombone from './instruments/trombone.js';
 import ElectricBass from './instruments/e-bass.js';
-import DoubleBass from './instruments/doubleBass.js';
-import CorAnglais from './instruments/corAnglais.js';
+import DoubleBass from './instruments/double-bass.js';
+import CorAnglais from './instruments/cor-anglais.js';
 import Violoncello from './instruments/violoncello.js';
 import AltoRecorder from './instruments/a-recorder.js';
 import AltoSaxophone from './instruments/a-saxophone.js';
-import BassClarinet from './instruments/bassClarinet.js';
+import BassClarinet from './instruments/bass-clarinet.js';
 import SopranoRecorder from './instruments/s-recorder.js';
-import PiccoloFlute from './instruments/piccoloFlute.js';
+import PiccoloFlute from './instruments/piccolo-flute.js';
 import TenorSaxophone from './instruments/t-saxophone.js';
-import ContraBassoon from './instruments/contraBassoon.js';
+import ContraBassoon from './instruments/contra-bassoon.js';
 import defaultInstrument from './instruments/default-instrument.js';
 
 // section of instrument components

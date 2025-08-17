@@ -50,10 +50,11 @@ class OrchestrationAssitantInfo {
       width: joi.number().min(0).max(100).required(),
       from: joi.number().integer().min(1).max(50).required(),
       to: joi.number().integer().min(1).max(50).required(),
+      before: joi.bool(),
+      after: joi.bool(),
       instrumentsSelection: joi.array().items(joi.object({
         id: joi.string().required(),
         name: joi.string().allow(null, ''),
-        section: joi.string().allow(null, ''),
         begin: joi.number().min(1).max(49),
         end: joi.number().min(2).max(51),
         before: joi.bool(),
@@ -65,7 +66,6 @@ class OrchestrationAssitantInfo {
       customInstrumentsCache: joi.array().items(joi.object({
         id: joi.string().required(),
         name: joi.string().allow(null, ''),
-        section: joi.string().allow(null, ''),
         begin: joi.number().min(1).max(49),
         end: joi.number().min(2).max(51),
         before: joi.bool(),

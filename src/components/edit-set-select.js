@@ -46,7 +46,7 @@ function EditSetSelect({ modalSelections, handleInstrumentSetSelect }) {
   };
 
   return (
-    <div className='name-container-inspector-child'>
+    <div className='prop-container-inspector-child'>
       <Select
         placeholder={t('sets')}
         value={currentKey}

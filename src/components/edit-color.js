@@ -9,7 +9,7 @@ function EditColor({ instrument, saveInstrumentInContent }) {
   };
 
   return (
-    <div className='name-container-inspector-child'>
+    <div className='prop-container-inspector-child'>
       <span>Farbe:</span> 
       <ColorPicker 
         className='cp' 
