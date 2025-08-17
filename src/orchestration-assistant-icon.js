@@ -5,7 +5,7 @@ const Icon = iconNs.default || iconNs;
 
 export function OrchestrationIconComponent() {
   return (
-    <svg width="1em" height="1em" viewBox="0 0 1200 1200">
+    <svg width="1.2em" height="1.2em" viewBox="0 -150 1200 1200">
       <g transform="translate(6.766 29.882)">
         <rect
           width={357.025}
