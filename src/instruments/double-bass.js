@@ -10,7 +10,7 @@ const doublebass = {
   color: colors.strings,
   de: `# Der Kontrabass
     
-Der Kontrabass ist ein vier- (oder fünfsaitiges) Streichinstrument, das sowohl bauliche Merkmale der Geigen- als auch der Gambenfamilie aufweist. Für eine Zuordnung zur Geigenfamilie sprechen die F-förmigen Schalllöcher, die Anzahl der Saiten (bei viersaitigen Instrumenten), die Schnecke am Wirbelkasten sowie das bundlose Griffbrett. Merkmale, die auf die Gambenfamilie verweisen, sind die schräg abfallenden Schultern und die Stimmung in Quarten.
+Der Kontrabass ist ein vier- oder fünfsaitiges Streichinstrument, das sowohl bauliche Merkmale der Geigen- als auch der Gambenfamilie aufweist. Für eine Zuordnung zur Geigenfamilie sprechen die F-förmigen Schalllöcher, die Anzahl der Saiten (bei viersaitigen Instrumenten), die Schnecke am Wirbelkasten sowie das bundlose Griffbrett. Merkmale, die auf die Gambenfamilie verweisen, sind die schräg abfallenden Schultern und die Stimmung in Quarten.
 
 **Stimmung:** E₁–A₁–D–G
 
@@ -24,7 +24,7 @@ Der Kontrabass ist ein vier- (oder fünfsaitiges) Streichinstrument, das sowohl 
 
 **Flageolett:** Groß- und Kleinterzflageolett (mit Daumenaufsatz), ab der 7./8. Lage auch Quartflageolett möglich. In der Orchesterpraxis wird vorgeschriebenes natürliches Flageolett auf der tiefsten Saite in der Regel nicht gespielt, sondern auf einer höheren Saite gegriffen (»spricht zu schwer an«)
 
-**Spielweisen:** liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken Hand) gezupft (pizzicato), glissando (geschliffen), Vibrato / non Vibrato, mit Dämpfer
+**Spielweisen:** liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken Hand) gezupft (pizzicato), geschliffen (glissando), Vibrato / non Vibrato, mit Dämpfer
 
 Basis-Positionen der Finger 1–4: Große Sekunde, ab der 7. Lage = kleine Terz
 

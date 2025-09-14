@@ -3,22 +3,19 @@ import React from 'react';
 import joi from 'joi';
 import { describe, it, expect, beforeEach } from 'vitest';
 
-// reale Module importieren
 import OrchestrationAssitantInfo from './orchestration-assistant-info.js';
 import { PLUGIN_GROUP } from '@educandu/educandu/domain/constants.js';
+import { couldAccessUrlFromRoom } from '@educandu/educandu/utils/source-utils.js';
+import GithubFlavoredMarkdown from '@educandu/educandu/common/github-flavored-markdown.js';
 
 describe('OrchestrationAssitantInfo', () => {
   let gfm;
 
   beforeEach(() => {
-    gfm = {
-      redactCdnResources: (text, allowFn) =>
-        text.replace(/cdn:\/\/\S+/g, url => allowFn(url) ? url : ''),
-      extractCdnResources: text => text.match(/cdn:\/\/\S+/g) || []
-    };
+    gfm = new GithubFlavoredMarkdown();
   });
 
-  it('getDisplayName provide name', () => {
+  it('getDisplayName provides name', () => {
     const info = new OrchestrationAssitantInfo(gfm);
     const t = key => key;
     expect(info.getDisplayName(t)).toBe(
@@ -26,26 +23,27 @@ describe('OrchestrationAssitantInfo', () => {
     );
   });
 
-  it('getIcon provide an icon', () => {
+  it('getIcon provides an icon', () => {
     const info = new OrchestrationAssitantInfo(gfm);
     const el = info.getIcon();
     expect(React.isValidElement(el)).toBe(true);
   });
 
-  it('getGroups provide PLUGIN_GROUP.other', () => {
+  it('getGroups provides PLUGIN_GROUP.other', () => {
     const info = new OrchestrationAssitantInfo(gfm);
     expect(info.getGroups()).toEqual([PLUGIN_GROUP.other]);
   });
 
-  it('getDefaultContent provide default values', () => {
+  it('getDefaultContent provides default values', () => {
     const info = new OrchestrationAssitantInfo(gfm);
-    expect(info.getDefaultContent()).toEqual({
+    expect(info.getDefaultContent()).toEqual(expect.objectContaining({
+      _v: expect.stringMatching(/^\d+\.\d+\.\d+$/),
       width: 100,
       from: 1,
       to: 50,
       instrumentsSelection: [],
       customInstrumentsCache: []
-    });
+    }));
   });
 
   it('validateContent with valid content', () => {
@@ -56,17 +54,18 @@ describe('OrchestrationAssitantInfo', () => {
       to: 10,
       instrumentsSelection: [
         {
-          id: 'id-1',
+          id: 'oap-default-violin',
           name: 'Violine',
           begin: 1,
           end: 10,
           before: false,
           after: false,
-          color: '#ff0000',
-          de: 'DE',
-          en: 'EN'
+          color: '#612500',
+          de: 'Siehe cdn://ok/file-a',
+          en: 'See cdn://ok/file-b'
         }
-      ]
+      ],
+      customInstrumentsCache: []
     };
     expect(() => info.validateContent(validContent)).not.toThrow();
   });
@@ -74,7 +73,7 @@ describe('OrchestrationAssitantInfo', () => {
   it('validateContent with invalid content', () => {
     const info = new OrchestrationAssitantInfo(gfm);
     const invalidContent = {
-      width: 101,
+      width: 101, // ungültig > 100
       from: 1,
       to: 50,
       instrumentsSelection: []
@@ -88,7 +87,8 @@ describe('OrchestrationAssitantInfo', () => {
       width: 50,
       from: 1,
       to: 10,
-      instrumentsSelection: [{ id: 'x', name: 'A' }]
+      instrumentsSelection: [{ id: 'x', name: 'A', de: 'foo', en: 'bar' }],
+      customInstrumentsCache: []
     };
     const copy = info.cloneContent(original);
     expect(copy).toEqual(original);
@@ -97,29 +97,97 @@ describe('OrchestrationAssitantInfo', () => {
     expect(original.instrumentsSelection[0].name).toBe('A');
   });
 
-  it('redactContent terminate urls from private rooms', () => {
+  it('redactContent removes inaccessible URLs in de/en', () => {
     const info = new OrchestrationAssitantInfo(gfm);
+    const targetRoomId = 'room-123';
+
     const content = {
       width: 100,
       from: 1,
       to: 50,
-      instrumentsSelection: [],
-      text: 'allowed cdn://ok and blocked cdn://nope'
+      instrumentsSelection: [
+        {
+          id: 'i1',
+          name: 'Vl',
+          de: 'allow cdn://ok/a block cdn://nope/x',
+          en: 'also cdn://ok/b and cdn://nope/y'
+        }
+      ],
+      customInstrumentsCache: [
+        {
+          id: 'c1',
+          name: 'Vla',
+          de: 'mix cdn://nope/z and cdn://ok/c',
+          en: null
+        }
+      ]
     };
 
-    const allowFn = url => url.includes('ok');
-    gfm.redactCdnResources = text =>
-      text.replace(/cdn:\/\/\S+/g, url => allowFn(url) ? url : '');
-
-    const redacted = info.redactContent(content, 'room-123');
+    const redacted = info.redactContent(content, targetRoomId);
     expect(redacted).not.toBe(content);
-    expect(redacted.text).toBe('allowed cdn://ok and blocked ');
+    const expectedDeI1 = gfm.redactCdnResources(
+      content.instrumentsSelection[0].de,
+      url => couldAccessUrlFromRoom(url, targetRoomId)
+    );
+    const expectedEnI1 = gfm.redactCdnResources(
+      content.instrumentsSelection[0].en,
+      url => couldAccessUrlFromRoom(url, targetRoomId)
+    );
+    const expectedDeC1 = gfm.redactCdnResources(
+      content.customInstrumentsCache[0].de,
+      url => couldAccessUrlFromRoom(url, targetRoomId)
+    );
+
+    expect(redacted.instrumentsSelection[0].de).toBe(expectedDeI1);
+    expect(redacted.instrumentsSelection[0].en).toBe(expectedEnI1);
+    expect(redacted.customInstrumentsCache[0].de).toBe(expectedDeC1);
+
+    expect(redacted.width).toBe(100);
+    expect(redacted.from).toBe(1);
+    expect(redacted.to).toBe(50);
   });
 
-  it('getCdnResources provide cdn resources', () => {
+  it('getCdnResources collects and deduplicates resources', () => {
     const info = new OrchestrationAssitantInfo(gfm);
-    const content = { text: 'cdn://a cdn://b' };
+    const content = {
+      instrumentsSelection: [
+        { id: 'i1', de: 'x ![a](cdn://a) y ![b](cdn://b)', en: 'z [b](cdn://b)' },
+        { id: 'i2', de: null, en: '[c](cdn://c)' }
+      ],
+      customInstrumentsCache: [
+        { id: 'c1', de: '![a](cdn://a) <img src="cdn://d">', en: '' },
+        { id: 'c2', de: 42 }
+      ]
+    };
+
     const resources = info.getCdnResources(content);
-    expect(resources).toEqual(['cdn://a', 'cdn://b']);
+    const extract = val => typeof val === 'string' ? gfm.extractCdnResources(val) : [];
+    const seq = [
+      ...extract(content.instrumentsSelection[0].de),
+      ...extract(content.instrumentsSelection[0].en),
+      ...extract(content.instrumentsSelection[1].de),
+      ...extract(content.instrumentsSelection[1].en),
+      ...extract(content.customInstrumentsCache[0].de),
+      ...extract(content.customInstrumentsCache[0].en),
+      ...extract(content.customInstrumentsCache[1].de),
+      ...extract(content.customInstrumentsCache[1].en)
+    ];
+    const expected = [...new Set(seq)];
+
+    expect(resources).toEqual(expected);
+    expect(new Set(resources).size).toBe(resources.length);
+  });
+
+  it('getCdnResources returns an empty array if no fields are present', () => {
+    const info = new OrchestrationAssitantInfo(gfm);
+    const content = {
+      instrumentsSelection: [],
+      customInstrumentsCache: []
+    };
+    expect(info.getCdnResources(content)).toEqual([]);
+  });
+
+  it('couldAccessUrlFromRoom works with real function', () => {
+    expect(typeof couldAccessUrlFromRoom).toBe('function');
   });
 });

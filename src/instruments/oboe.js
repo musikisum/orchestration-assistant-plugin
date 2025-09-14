@@ -31,7 +31,7 @@ Da Bariton- und Bassoboe nur selten in Orchestern verfügbar sind, wird auch das
 
 **Klangfarbe:** Im untersten Register: schwach (aber voll), 1–2-gestrichene Oktave: weich (wenig Kraft), 2–3-gestrichene Oktave: klar, brilliant und im höchstes Register: zunehmend schrill
 
-**Spielweisen:** eingeschränktes Vibrato (bis zur großen Sekunde mit dem Zwerchfell), Legato, Staccato, Tripelzunge (nur bedingt), Fingerglissando (eingeschränkt), Lippenglissando (bis große Sekunde), Triller, Flageolett, bedingt Doppelflageolett, Mikrotöne, geringere Beweglichkeit als Flöteninstrumente
+**Spielweisen:** eingeschränktes Vibrato (bis zur großen Sekunde mit dem Zwerchfell), gebunden (legato), gestoßen (staccato) Tripelzunge (nur bedingt), Fingerglissando (eingeschränkt), Lippenglissando (bis große Sekunde), Triller, Flageolett, bedingt Doppelflageolett, Mikrotöne, geringere Beweglichkeit als Flöteninstrumente
 
 **Kombinationen:** sehr gut mit allen Holzbläsern, in der Oberoktave gebräuchlich mit Trompete und Horn, sonst selten mit Blechbläsern (dynamische Balance schwierig), sehr gute und gebräuchliche Kombinationen mit Streichern (z.B. unisono mit Violinen oder in Oktaven zu Celli)
 

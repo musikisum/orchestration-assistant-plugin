@@ -8,7 +8,7 @@ const flute = {
   before: false,
   after: false,
   color: colors.wood,
-  de: `# Die Flöte
+  de: `# Die Querflöte
 
 Die Querflöte (obwohl üblicherweise aus Metall und ohne Rohrblatt) zählt zu den Holzblasinstrumenten (historische Instrumente in Holzbauweise).
 
@@ -22,7 +22,7 @@ Die Querflöte (obwohl üblicherweise aus Metall und ohne Rohrblatt) zählt zu d
 **Klangfarbe:** im untersten Register: schwach (aber voll), in der 1–2-gestrichenen Oktave: weich und mit wenig Kraft, in der 2–3-gestrichenen Oktave: klar und brillant und im höchsten Register: zunehmend schriller
 
 **Spielweisen:**  
-Mit und ohne Vibrato, Legato (gebunden), Staccato (gestoßen), Flatterzunge, Gutturaltöne (gleichzeitig mit notierten Tönen), mit viel Luft (sibilando, sputato), glissandoartiges Ansetzen der Töne, *Whistle*-Ton (entspannter Ansatz und geringster Luftstrom: es erklingen harmonische Obertöne), Überblasen (Flageolett) und Unterblasen (Paukentöne), nur mit Klappengeräuschen, große dynamische Bandbreite
+Mit und ohne Vibrato, gebunden (legato),  gestoßen (staccato)), Flatterzunge, Gutturaltöne (gleichzeitig mit notierten Tönen), mit viel Luft (sibilando, sputato), geschliffenes Ansetzen der Töne,  entspannter Ansatz und geringster Luftstrom (*Whistle*-Ton, es erklingen harmonische Obertöne), Überblasen (Flageolett) und Unterblasen (Paukentöne), nur mit Klappengeräuschen, große dynamische Bandbreite
 
 **Kombinationen:**
 

@@ -27,14 +27,14 @@ In der Gruppe der elektrischen Gitarren unterscheidet man zwischen
 - Halbresonanz-Gitarre und 
 - Solidbody-Gitarre.
 
-Die **Vollresonanz-Gitarre** ist der älteste E-Gitarrentyp mit Resonanzkörper, F-Schallöchern, eingebauten Tonabnehmern und wird heute beinahe ausschließlich im Jazz verwendet. Die **Halbresonanz-Gitarre** ist ein Bindeglied zwischen akustischer und elektrischer Gitarre. Zur Verbesserung der Rückkoppelungseigenschaften wird seit 1955 in den hohlen Korpus ein massives Mittelsegment eingelassen.
+Die **Vollresonanz-Gitarre** ist der älteste E-Gitarrentyp mit Resonanzkörper, F-Schalllöchern, eingebauten Tonabnehmern und wird heute beinahe ausschließlich im Jazz verwendet. Die **Halbresonanz-Gitarre** ist ein Bindeglied zwischen akustischer und elektrischer Gitarre. Zur Verbesserung der Rückkoppelungseigenschaften wird seit 1955 in den hohlen Korpus ein massives Mittelsegment eingelassen.
 
 Die Bauweise heutiger elektrischer Gitarren lässt sich auf wenige Modelle zurückführen:
 
 - von Gibson: ES-150, »Les Paul«, ES-335 sowie *Firebird*  
 - von Fender: Telecaster und Stratocaster
 
-**Spielweisen:** Diverse Zupftechniken, Bottleneck-Spielweise (mit einem Glas- oder Metallröhrchen am Finger, das über die Saiten gleitet), Stringbending (Tonhöhenveränderung durch Ziehen an der Saite), Hammer-on und Pull-off (fließender Übergang zwischen Tönen ohne erneutes Anschlagen), Sustain (langes Aushalten von Tönen, z.B. durch Verstärkung), sowie bei elektronischer Verstärkung zusätzliche Effekte wie:
+**Spielweisen:** Diverse Zupftechniken, Bottleneck-Spielweise (mit einem Glas- oder Metallröhrchen am Finger, das über die Saiten gleitet), Stringbending (Tonhöhenveränderung durch Ziehen und Schieben an der Saite), Hammer-on und Pull-off (fließender Übergang zwischen Tönen ohne erneutes Anschlagen), Sustain (langes Aushalten von Tönen, z.B. durch Verstärkung), sowie bei elektronischer Verstärkung zusätzliche Effekte wie:
 
 - Flanger  
 - Chorus  

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import EditName from './components/edit-name.js';
 import EditColor from './components/edit-color.js';
 import ToneSlider from './components/tone-slider.js';
+import updateValidation from './update-validation.js';
 import BeforeAfter from './components/before-after.js';
 import EditSplitter from './components/edit-splitter.js';
 import Info from '@educandu/educandu/components/info.js';
@@ -25,7 +26,7 @@ import { swapItemsAt, removeItemAt, moveItem } from '@educandu/educandu/utils/ar
 
 export default function OrchestrationAssistantEditor({ content, onContentChanged }) {
 
-  const { width, instrumentsSelection, customInstrumentsCache } = content;
+  const { width, instrumentsSelection, customInstrumentsCache } = updateValidation.checkContentAfterUpdate(content);
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   const updateContent = newContentValues => {
@@ -74,7 +75,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   // save instrument edits
   const saveInstrumentInContent = (_event, id, instrument) => {
     const isCustom = id ? id.startsWith('custom') : instrument.id.startsWith('custom');
-    // when the instrument editor loses focus
+    // when instrument editor loses focus
     if (instrument) {
       const list = cloneDeep(instrumentsSelection);
       const index = list.findIndex(item => item.id === instrument.id);
@@ -119,7 +120,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: [] });
   };
   const handleInstrumentSetSelect = set => {
-    updateContent({ instrumentsSelection: instrumentsProvider.loadInstrumentsFromIds(set) });
+    updateContent({ instrumentsSelection: instrumentsProvider.loadInstrumentsFromIds(set, instrumentsSelection) });
   };
   const handleEditChangeSliders = instrument => {
     const clonedSelection = cloneDeep(instrumentsSelection);
@@ -132,6 +133,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: clonedSelection });
   };
 
+  // Handle custom instruments
   const handleNewCustomInstrumentClick = () => {
     const customInstrument = instrumentsProvider.getDefaultInstrument();
     const list = cloneDeep(instrumentsSelection);
@@ -159,7 +161,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     const customInstr = modalSelections
       .map(id => cachedInstruments.find(instr => instr.id === id))
       .filter(Boolean);
-    const newSelection = instrumentsProvider.loadInstrumentsFromIds(modalSelections);
+    const newSelection = instrumentsProvider.loadInstrumentsFromIds(modalSelections, instrumentsSelection);
     newSelection.push(...customInstr);
     resetInstrumentListInSplitter();
     updateContent({ instrumentsSelection: newSelection });
@@ -300,6 +302,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         onCancel={() => setOpen(false)}
         modalSelections={modalSelections}
         setModalSelections={setModalSelections}
+        instrumentsSelection={instrumentsSelection}
         customInstrumentsCache={customInstrumentsCache}
         />
     </div>

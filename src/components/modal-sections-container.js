@@ -5,16 +5,16 @@ import { useTranslation } from 'react-i18next';
 import styles from '../styles-modal-dialog.js';
 import instrumentsProvider from '../instruments-provider.js';
 
-export default function ModalSectionsContainer({ modalSelections, setModalSelections, customInstrumentsCache }) {
+export default function ModalSectionsContainer({ modalSelections, setModalSelections, instrumentsSelection, customInstrumentsCache }) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   
-  // Plugin collections
-  const strings = instrumentsProvider.getModalSectionObjects('strings');
-  const winds = instrumentsProvider.getModalSectionObjects('winds');
-  const brass = instrumentsProvider.getModalSectionObjects('brass');
-  const other = instrumentsProvider.getModalSectionObjects('other');
-  const tutti = instrumentsProvider.getModalSectionObjects();
+  // Plugin collections contains id-name-objects 
+  const strings = instrumentsProvider.getModalSectionObjects('strings', instrumentsSelection);
+  const winds = instrumentsProvider.getModalSectionObjects('winds', instrumentsSelection);
+  const brass = instrumentsProvider.getModalSectionObjects('brass', instrumentsSelection);
+  const other = instrumentsProvider.getModalSectionObjects('other', instrumentsSelection);
+  const tutti = instrumentsProvider.getModalSectionObjects('default', instrumentsSelection);
   // Custom instruments as section objects 
   const custom = customInstrumentsCache.map(item => { return { id: item.id, name: item.name }; });
 
@@ -154,11 +154,13 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
 ModalSectionsContainer.propTypes = {
   modalSelections: PropTypes.array,
   setModalSelections: PropTypes.func,
+  instrumentsSelection: PropTypes.array,
   customInstrumentsCache: PropTypes.array
 };
 
 ModalSectionsContainer.defaultProps = {
   modalSelections: [],
   setModalSelections: null,
+  instrumentsSelection: [],
   customInstrumentsCache: []
 };

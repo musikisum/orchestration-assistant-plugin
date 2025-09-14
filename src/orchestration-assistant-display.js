@@ -1,4 +1,5 @@
 import React from 'react';
+import updateValidation from './update-validation.js';
 import TableOfInstruments from './table-of-instruments.js'; 
 import { sectionDisplayProps } from '@educandu/educandu/ui/default-prop-types.js';
 
@@ -9,7 +10,7 @@ export default function OrchestrationAssistantDisplay({ content }) {
     to, 
     width,
     instrumentsSelection,
-  } = content;
+  } = updateValidation.checkContentAfterUpdate(content);
 
   return (
     <div className="EP_Educandu_Orchestration_Assistant_Display">

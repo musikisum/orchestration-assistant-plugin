@@ -14,7 +14,7 @@ Das Horn ist ein Blasinstrument aus Metall als Natur- oder Ventilhorn.
 
 **Tonumfang:** Naturhörner können nur einen begrenzten Tonvorrat produzieren (Naturtöne).
 
-[Grafik: Obertonreihe]
+![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/Obertonreihe-1.svg)
 
 Komponisten haben im 18. Jahrhundert diesen speziellen Tonvorrat berücksichtigt, die markierten (+) Töne sind unrein, Töne unter dem dritten und über dem 12. Oberton wurden selten verwendet. Darüber konnten ab ca. 1850 benötigte und nicht in der Obertonreihe vorhandene Töne durch sogenanntes „Stopfen“ mit einer anderen Klangqualität gespielt werden. Selbst im 19. Jahrhundert, in dem sich das Ventilhorn bereits durchgesetzt hatte, wurden gelegentlich noch Melodien komponiert, die auf den Tonvorrat der Naturinstrumente zugeschnitten waren, wie z.B. die berühmte Hornmelodie im vierten Satz der 1. Sinfonie von J. Brahms.
 

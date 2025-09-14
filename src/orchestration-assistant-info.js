@@ -1,5 +1,6 @@
 import joi from 'joi';
 import React from 'react';
+import version from './version.js';
 import IconComponent from './orchestration-assistant-icon.js'; 
 import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import { PLUGIN_GROUP } from '@educandu/educandu/domain/constants.js';
@@ -37,6 +38,7 @@ class OrchestrationAssitantInfo {
 
   getDefaultContent() {
     return {
+      _v: version.toString(),
       width: 100,
       from: 1,
       to: 50,
@@ -47,6 +49,7 @@ class OrchestrationAssitantInfo {
 
   validateContent(content) {
     const schema = joi.object({
+      _v: joi.string(),
       width: joi.number().min(0).max(100).required(),
       from: joi.number().integer().min(1).max(50).required(),
       to: joi.number().integer().min(1).max(50).required(),
@@ -85,16 +88,62 @@ class OrchestrationAssitantInfo {
   redactContent(content, targetRoomId) {
     const redactedContent = cloneDeep(content);
 
-    redactedContent.text = this.gfm.redactCdnResources(
-      redactedContent.text,
-      url => couldAccessUrlFromRoom(url, targetRoomId) ? url : ''
-    );
+    const redactField = str => {
+      if (typeof str === 'string') {
+        return this.gfm.redactCdnResources(str, url => { 
+          return couldAccessUrlFromRoom(url, targetRoomId) ? url : '';
+        });
+      } 
+      return str;      
+    };
 
+    const redactArray = arr => {
+      if (Array.isArray(arr)) {
+        return arr.map(item => {
+          if (!item || typeof item !== 'object') {
+            return item;
+          }
+          return {
+            ...item,
+            de: redactField(item.de),
+            en: redactField(item.en)
+          };
+        });
+      } 
+      return arr;
+      
+    };
+
+    redactedContent.instrumentsSelection = redactArray(redactedContent.instrumentsSelection);
+    redactedContent.customInstrumentsCache = redactArray(redactedContent.customInstrumentsCache);
     return redactedContent;
   }
 
   getCdnResources(content) {
-    return this.gfm.extractCdnResources(content.text);
+    const collectFromArray = arr => {
+      if (Array.isArray(arr)) {
+        return arr.flatMap(item => {
+          if (!item || typeof item !== 'object') {
+            return [];
+          }
+          const deRes = typeof item.de === 'string'
+            ? this.gfm.extractCdnResources(item.de)
+            : [];
+          const enRes = typeof item.en === 'string'
+            ? this.gfm.extractCdnResources(item.en)
+            : [];
+          return [...deRes, ...enRes];
+        });
+      } 
+      return [];      
+    };
+
+    const resources = [
+      ...collectFromArray(content.instrumentsSelection),
+      ...collectFromArray(content.customInstrumentsCache)
+    ];
+
+    return [...new Set(resources)];
   }
 }
 

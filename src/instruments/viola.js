@@ -25,7 +25,7 @@ Doppelgriffe: Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), 
 
 ![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/Flageolett-Viola-1.svg)
 
-**Spielweisen:** liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken) Hand gezupft (pizzicato), glissando (geschliffen), Vibrato / non Vibrato, mit Dämpfer (con sordino)
+**Spielweisen:** liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken) Hand gezupft (pizzicato), geschliffen (glissando), Vibrato / non Vibrato, mit Dämpfer (con sordino)
 
 **Kombinationen:** Streichinstrumente können gut zur Klangverstärkung von (anderen) Streichinstrumenten oktaviert werden (z.B. die Violine I durch Violine II, Viola oder auch Cello in der Unteroktave); hohe Klangverschmelzung mit allen Holzbläsern und dem Horn, geringere Klangverschmelzung mit Trompete, Posaune und Tuba.
 
@@ -56,25 +56,25 @@ Doppelgriffe: Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), 
 - 3. Akt (5. Szene)`,
   en: `# The Viola
 
-The viola is the alto instrument of the violin family (tuned in fifths, with F-holes and the typical body shape), reaching up into the tenor range.
+The viola is the alto instrument of the violin family (tuned in fifths, with f-holes and the characteristic body shape), extending into the tenor register.
 
-**Tuning:** C–G–D1–A1
+**Tuning:** C3–G3–D4–A4
 
-**Notation:** written at sounding pitch, highly agile
+**Notation:** sounding notation, highly flexible
 
-**Fingering range:** A string up to A5; in orchestral playing, range up to E5 is commonly achievable
+**Fingering range:** The A string extends to A5, but in orchestral playing the range is unsually limitet to E5.
 
-**Double stops:** Intervals involving an open string (very easy), sixths (easy), fifths, fourths, and thirds (difficult), octaves and unisons (very difficult)
+**Double stops:** Intervals including an open string (very easy), sixths (easy), fifths, fourths, and thirds (difficult), octaves and unisons (very difficult)
 
 **Harmonics:**
 
 ![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/Flageolett-Viola-1.svg)
 
-**Playing techniques:** sustained (*détaché*), connected (*legato*), detached (from *non-legato* to *staccato*), accented (*martelé*), bouncing bow (*spiccato*), falling on the string (*ricochet*), over the fingerboard (*flautando*), striking with the wood of the bow (*col legno*), plucked with the right hand (or also the left hand in solo playing) (*pizzicato*), *glissando* (sliding), *vibrato* / *non-vibrato*, muted (*con sordino*)
+**Playing techniques:** sustained (détaché), legato, non-legato up to staccato, accented (martelé), bouncing bow (spiccato), thrown bow (ricochet), over the fingerboard (flautando), striking the strings with the wood of the bow (col legno), plucked with the right hand, in solo playing also with the left hand (pizzicato), glissando (sliding), with or without vibrato, muted (con sordino)
 
-**Combinations:** String instruments can be effectively used to reinforce (other) string instruments by doubling at the octave (e.g. Violin I by Violin II, Viola, or even Cello in the lower octave); strong timbral blend with all woodwinds and the horn, weaker blend with trumpet, trombone, and tuba
+**Combinations:** String instruments can be effectively doubled in octaves for reinforcement (e.g. violin I doubled by violin II, viola, or even cello in the lower octave); strong sound blending with all woodwinds and the horn; weaker blending with trumpet, trombone, and tuba
 
-**Fingering technique:** Examples of basic positions for the major tetrachord played with fingers 1–4 on the D string:
+**Fingering technique:** Examples of basic positions of the major tetrachord as played with fingers 1–4 on the D string:
 
 | Notes     | ½ Position | 1st Position | 2nd Position | 3rd Position | 4th Position |
 |-----------|------------|--------------|--------------|--------------|---------------|
@@ -91,7 +91,7 @@ The viola is the alto instrument of the violin family (tuned in fifths, with F-h
 | C♯        |            |              |              |              | 3             |
 | D         |            |              |              |              | 4             |
 
-**School orchestra:** Avoid or use harmonics, double and multiple stops with caution; range above 3rd position (E6 / d''') should only be used in exceptional cases
+**School orchestra:** Avoid harmonics, double/triple stops or use with great caution; avoid demanding playing above 3rd position (A4) should only be used in exceptional cases
 
 **Repertoire examples for a solo viola within the orchestra:**
 

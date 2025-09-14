@@ -22,7 +22,7 @@ Das Violoncello ist das Bassinstrument der Geigenfamilie (Quintenstimmung, F-Lö
 
 **Flageolett:** Quart- und Quintflageolett (mit Daumenaufsatz) möglich
 
-**Spielweisen:** liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken) Hand gezupft (pizzicato), glissando (geschliffen), Vibrato / non Vibrato, mit Dämpfer (con sordino)
+**Spielweisen:** liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken) Hand gezupft (pizzicato), geschliffen (glissando), Vibrato / non Vibrato, mit Dämpfer (con sordino)
 
 **Basis-Positionen der Finger 1–4:** chromatisch
 
@@ -35,29 +35,29 @@ Das Violoncello ist das Bassinstrument der Geigenfamilie (Quintenstimmung, F-Lö
 - G. Puccini, Tosca, 3. Akt, Einleitung zur Arie des »Cavaradossi«
 - J. Brahms, Klavierkonzert Nr. 2, B-Dur, Op. 83, 3. Satz
 - G. Rossini, Ouverture Wilhelm Tell, Einleitung`,
-  en: `# The Cello
+  en: `# The Violoncello
 
-The cello is the bass instrument of the violin family (tuned in fifths, with F-holes and the typical body shape), reaching up into the tenor range.
+The violoncello is the bass instrument of the violin family (tuned in fifths, with f-holes and the characteristic body shape), extending into the tenor register.
 
-**Tuning:** C–G–D–A
+**Tuning:** C2–G2–D3–A3
 
-**Notation:** written at sounding pitch, highly agile
+**Notation:** sounding notation, highly flexible
 
-**Fingering range:** A string up to F♯5; in orchestral playing, range up to A4 is commonly achievable
+**Fingering range:** The A string up to F♯5, but in orchestral playing the range is unsually limitet to A4.
 
 **Double stops:** Intervals involving an open string (easy), fifths, fourths, thirds, sixths, and octaves from 7th position upward (very difficult)
 
 **Harmonics:** fourth and fifth harmonics (using thumb technique) are possible
 
-**Playing techniques:** sustained (*détaché*), connected (*legato*), detached (from *non-legato* to *staccato*), accented (*martelé*), bouncing bow (*spiccato*), falling on the string (*ricochet*), over the fingerboard (*flautando*), striking with the wood of the bow (*col legno*), plucked with the right hand (or also the left hand in solo playing) (*pizzicato*), *glissando* (sliding), *vibrato* / *non-vibrato*, muted (*con sordino*)
+**Playing techniques:** sustained (détaché), legato, non-legato up to staccato, accented (martelé), bouncing bow (spiccato), thrown bow (ricochet), over the fingerboard (flautando), striking the strings with the wood of the bow (col legno), plucked with the right hand (in solo playing also with the left hand) (pizzicato), glissando (sliding), with or without vibrato, muted (con sordino)
 
 **Basic positions of fingers 1–4:** chromatic
 
-**Combinations:** String instruments can be effectively used to reinforce (other) string instruments by doubling at the octave (note: due to the richness of the cello's tone, there's a risk that it may overpower other strings such as violins in combinations); good blend with woodwinds (oboe, clarinet, bassoon) and especially with the horn
+**Combinations:** tring instruments can be effectively doubled in octaves for reinforcement (note: due to the cello’s fullness of sound, there is a risk of overshadowing other string instruments such as violins in such doublings); combinations with woodwinds (oboe, clarinet, and bassoon) and especially with the horn are very effective.
 
-**School orchestra:** Avoid demanding the "thumb positions" (i.e. above G4)
+**School orchestra:** Do not require playing in ›thumb positions‹ (i.e., not above A5)
 
-**Repertoire examples for a solo cello within the orchestra:**
+**Repertoire examples for solo violoncello within the orchestra:**
 
 - G. Puccini, *Tosca*, Act 3, introduction to Cavaradossi's aria  
 - J. Brahms, Piano Concerto No. 2 in B-flat major, Op. 83, 3rd movement  

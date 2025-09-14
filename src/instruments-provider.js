@@ -26,7 +26,7 @@ import TenorSaxophone from './instruments/t-saxophone.js';
 import ContraBassoon from './instruments/contra-bassoon.js';
 import defaultInstrument from './instruments/default-instrument.js';
 
-// section of instrument components
+// section of instrument collections
 const strings = { 
   violin: Violin, 
   viola: Viola, 
@@ -37,6 +37,7 @@ const strings = {
   piano: Piano, 
   harp: Harp
 };
+
 const winds = { 
   sopranorecorder: SopranoRecorder, 
   altorecorder: AltoRecorder, 
@@ -51,56 +52,64 @@ const winds = {
   altosaxophone: AltoSaxophone,
   tenorsaxophone: TenorSaxophone
 };
+
 const brass = {
   horn: Horn,
   trumpet: Trumpet,
   trombone: Trombone,
   tuba: Tuba
 };
+
 const other = {
   timpani: Timpani
 };
+
 const collection = { ...strings, ...winds, ... brass, ...other };
 
-// helper functions
-const getModalSectionObjects = section => {
+// section for helper functions
+
+const getModalSectionObjects = (section, contentCollection) => {
+  // For speedy lookups
+  const contentById = new Map(
+    Array.isArray(contentCollection)
+      ? contentCollection.map(item => [item.id, item])
+      : []
+  );
+  let source;
   switch (section) {
     case 'strings':
-      return [...Object.values(strings)].reduce((accu, instr) => {
-        const modalObj = { id: instr.id, name: instr.name };
-        accu.push(modalObj);
-        return accu;
-      }, []);
+      source = strings;
+      break;
     case 'winds':
-      return [...Object.values(winds)].reduce((accu, instr) => {
-        const modalObj = { id: instr.id, name: instr.name };
-        accu.push(modalObj);
-        return accu;
-      }, []);
+      source = winds;
+      break;
     case 'brass':
-      return [...Object.values(brass)].reduce((accu, instr) => {
-        const modalObj = { id: instr.id, name: instr.name };
-        accu.push(modalObj);
-        return accu;
-      }, []);
+      source = brass;
+      break;
     case 'other':
-      return [...Object.values(other)].reduce((accu, instr) => {
-        const modalObj = { id: instr.id, name: instr.name };
-        accu.push(modalObj);
-        return accu;
-      }, []);
-    default: {
-      return [...Object.values(collection)].reduce((accu, instr) => {
-        const modalObj = { id: instr.id, name: instr.name };
-        accu.push(modalObj);
-        return accu;
-      }, []);
-    }
+      source = other;
+      break;
+    default:
+      source = collection;
   }
+  // Liste der Modal-Objekte bauen
+  return Object.values(source).map(instr => {
+    const content = contentById.get(instr.id);
+    const hasValidContentName = content && typeof content.name === 'string' && content.name.trim() !== '';
+    return {
+      id: instr.id,
+      name: hasValidContentName ? content.name : instr.name
+    };
+  });
 };
-const includesAll = (set, ids) => ids.every(id => set.has(id));
 
-const includesAny = (set, ids) => ids.some(id => set.has(id));
+const includesAll = (set, ids) => {
+  return ids.every(id => set.has(id));
+};
+
+const includesAny = (set, ids) => {
+  return ids.some(id => set.has(id));
+};
 
 const getDefaultInstrument = () => {
   return defaultInstrument(`custom-${nanoid(10)}`);
@@ -137,16 +146,25 @@ const loadInstrumentsFromNames = names => {
   return unique;
 };
 
-const loadInstrumentsFromIds = ids => {
+const loadInstrumentsFromIds = (ids, contentCollection) => {
   const selection = [];
+
   if (Array.isArray(ids) && ids.length > 0) {
     ids.forEach(id => {
-      const instrument = Object.values(collection).find(item => item.id === id);
+      // Save instrument from content collection
+      let instrument = contentCollection
+        ? Object.values(contentCollection).find(item => item.id === id)
+        : null;
+      // Otherwise restore instrument
+      if (!instrument) {
+        instrument = Object.values(collection).find(item => item.id === id);
+      }
       if (instrument) {
         selection.push(instrument);
       }
     });
   }
+  // Remove duplicates
   const unique = [...new Map(selection.map(item => [item.id, item])).values()];
   return unique;
 };
@@ -172,11 +190,12 @@ const getChamberSets = {
 
 const getSets = { ...getOrchestraSets, ...getChamberSets };
 
-const hasTheSameInstruments = (setA, setB) => 
-  Array.isArray(setA) 
+const hasTheSameInstruments = (setA, setB) => {
+  return Array.isArray(setA) 
   && Array.isArray(setB) 
   && setA.length === setB.length 
   && setA.every(instr => setB.includes(instr));
+};
 
 const loadcustomInstrumentsFromCache = col => {
   return col.filter(item => item.id.startsWith('custom'));
