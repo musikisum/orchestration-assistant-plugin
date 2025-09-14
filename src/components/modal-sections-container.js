@@ -145,7 +145,9 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
         <div style={styles.section}>{renderSection(winds)}</div>
         <div style={styles.section}>{renderSection(brass)}</div>
         <div style={styles.section}>{renderSection(other)}</div>
-        {sectionIds.custom.length > 0 && <div style={styles.section}>{renderSection(custom)}</div>}
+        {sectionIds.custom.length > 0 
+          ? <div style={styles.section}>{renderSection(custom)}</div>
+          : null}
       </div>      
     </div>
   );

@@ -97,12 +97,12 @@
       "de": "Bestimme, ob Tonnnamen vor oder nach dem Instrument angezeigt werden sollen."
     },
     "before": {
-      "en": "before",
-      "de": "davor"
+      "en": "above",
+      "de": "darüber"
     },
     "after": {
-      "en": "after",
-      "de": "danach"
+      "en": "below",
+      "de": "darunter"
     },
     "range": {
       "en": "Range",
@@ -129,12 +129,12 @@
       "de": "Hier kannst du die Obergrenze des Spielumfangs eines Instruments festlegen."
     },
     "dialogReturn": {
-      "en": "Return",
+      "en": "Cancel",
       "de": "Abbrechen"
     },
     "dialogSubmit": {
-      "en": "Submit",
-      "de": "Speichern"
+      "en": "Confirm",
+      "de": "Bestätigen"
     },
     "tutti": {
       "en": "All Instruments",
@@ -330,7 +330,11 @@
     },
     "orchestra": {
       "en": "Orchestra",
-      "de": "Orhester"
+      "de": "Orchester"
+    },
+    "instrumentSelection": {
+      "en": "Instrument selection",
+      "de": "Instrumentenauswahl"
     }
   }
 }

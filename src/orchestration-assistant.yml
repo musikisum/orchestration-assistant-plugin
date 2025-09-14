@@ -82,11 +82,11 @@ musikisum/educandu-plugin-orchestration-assistant:
     en: Specify whether tone names should be displayed before or after the instrument.
     de: Bestimme, ob Tonnnamen vor oder nach dem Instrument angezeigt werden sollen.
   before:
-    en: before
-    de: davor
+    en: above
+    de: darüber
   after:
-    en: after
-    de: danach
+    en: below
+    de: darunter
   range:
     en: Range
     de: Tonumfang
@@ -106,11 +106,11 @@ musikisum/educandu-plugin-orchestration-assistant:
     en: Here you can set the upper limit of the playing range of an instrument.
     de: Hier kannst du die Obergrenze des Spielumfangs eines Instruments festlegen. 
   dialogReturn:
-    en: Return 
+    en: Cancel 
     de: Abbrechen
   dialogSubmit:
-    en: Submit 
-    de: Speichern
+    en: Confirm 
+    de: Bestätigen
   tutti:
     en: All Instruments
     de: Alle Instrumente
@@ -257,4 +257,7 @@ musikisum/educandu-plugin-orchestration-assistant:
     de: Kammermusik
   orchestra:
     en: Orchestra
-    de: Orhester
+    de: Orchester
+  instrumentSelection:
+    en: Instrument selection
+    de: Instrumentenauswahl

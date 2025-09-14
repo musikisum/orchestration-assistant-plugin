@@ -52,8 +52,8 @@ Doppelgriffe: Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), 
 
 - H. Berlioz, Harold in Italien, Op. 16, 1. Satz
 - R. Wagner, Die Meistersinger
-- 2. Akt (3. und 7. Szene)
-- 3. Akt (5. Szene)`,
+  - 2\\. Akt (3. und 7. Szene)
+  - 3\\. Akt (5. Szene)`,
   en: `# The Viola
 
 The viola is the alto instrument of the violin family (tuned in fifths, with f-holes and the characteristic body shape), extending into the tenor register.

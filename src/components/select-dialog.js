@@ -20,7 +20,7 @@ function SelectDialog({ open, loading, onOk, onCancel, modalSelections, setModal
   return (
     <Modal
       open={open}
-      title='Instrumentenauswahl'
+      title={t('instrumentSelection')}
       onOk={onOk}
       onCancel={onCancel}
       footer={defaultFooter}

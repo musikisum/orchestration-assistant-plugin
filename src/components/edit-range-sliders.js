@@ -6,6 +6,7 @@ import Info from '@educandu/educandu/components/info.js';
 import OrchestrationUtilities from '../orchestration-utilities.js';
 
 function EditRangeSliders({ instrument, saveSliderData }) {
+
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
   const [range, setRange] = useState([instrument.begin, instrument.end]);

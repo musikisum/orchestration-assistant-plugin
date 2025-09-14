@@ -120,6 +120,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: [] });
   };
   const handleInstrumentSetSelect = set => {
+    setSelectedInstrument('');
     updateContent({ instrumentsSelection: instrumentsProvider.loadInstrumentsFromIds(set, instrumentsSelection) });
   };
   const handleEditChangeSliders = instrument => {
@@ -234,7 +235,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
           {t('newInstrumentButton')}
         </Button>
       </div>
-      {showInstrumentEditor
+      {showInstrumentEditor && selectedInstrument
         ? (
           <React.Fragment>
             <div className='prop-container-inspector'>
@@ -250,7 +251,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
                 instrument={getInstrumentById(selectedInstrument)} 
                 saveInstrumentInContent={saveInstrumentInContent} 
                 />
-              { selectedInstrument?.startsWith('custom')
+              { selectedInstrument.startsWith('custom')
                 ? <DeleteCustomInstrumentButton
                     instrument={getInstrumentById(selectedInstrument)}
                     deleteCustomInstrument={handleCustomInstrumentDelete}
@@ -260,7 +261,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
             <div className='prop-container-slider'>
               <EditRangeSliders
                 instrument={getInstrumentById(selectedInstrument)} 
-                saveSliderData={handleEditChangeSliders} 
+                saveSliderData={handleEditChangeSliders}
                 />
             </div>
             <InstrumentMarkdownEditor
