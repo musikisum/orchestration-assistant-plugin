@@ -197,10 +197,6 @@ const hasTheSameInstruments = (setA, setB) => {
   && setA.every(instr => setB.includes(instr));
 };
 
-const loadcustomInstrumentsFromCache = col => {
-  return col.filter(item => item.id.startsWith('custom'));
-};
-
 const instrumentsProvider = {
   getOrchestraSets,
   getChamberSets,
@@ -209,7 +205,6 @@ const instrumentsProvider = {
   includesAny,
   getDefaultInstrument,
   hasTheSameInstruments,
-  loadcustomInstrumentsFromCache,
   getModalSectionObjects,
   loadInstrumentsFromIds,
   loadInstrumentsFromNames

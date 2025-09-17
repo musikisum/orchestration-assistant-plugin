@@ -48,15 +48,15 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     const newSelection = moveItem(instrumentsSelection, fromIndex, toIndex);
     updateContent({ instrumentsSelection: newSelection });
   };
-  const handleMoveModelUp = index => {
+  const handleMovItemUp = index => {
     const newSelection = swapItemsAt(instrumentsSelection, index, index - 1);
     updateContent({ instrumentsSelection: newSelection });
   };
-  const handleMoveModelDown = index => {
+  const handleMoveItemDown = index => {
     const newSelection = swapItemsAt(instrumentsSelection, index, index + 1);
     updateContent({ instrumentsSelection: newSelection });
   };
-  const handleDeleteModel = index => {
+  const handleDeleteItem = index => {
     const id = instrumentsSelection[index].id;
     const instrIdsCopy = [...modalSelections];
     instrIdsCopy.splice(modalSelections.indexOf(id), 1);
@@ -124,6 +124,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: instrumentsProvider.loadInstrumentsFromIds(set, instrumentsSelection) });
   };
   const handleEditChangeSliders = instrument => {
+    //TODO: Hier muss noch die CustomList synchronisiert werden
     const clonedSelection = cloneDeep(instrumentsSelection);
     const index = clonedSelection.findIndex(item => item.id === instrument.id);
     if (index > -1) {
@@ -193,9 +194,9 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         dragHandleProps={dragHandleProps}
         itemsCount={arr.length}
         canDeleteLastItem
-        onMoveUp={handleMoveModelUp}
-        onMoveDown={handleMoveModelDown}
-        onDelete={handleDeleteModel}
+        onMoveUp={handleMovItemUp}
+        onMoveDown={handleMoveItemDown}
+        onDelete={handleDeleteItem}
         onInstrumentName={event => handleInstrumentNameButtonClick(event, instrument.id)}
         content={content}
         updateContent={updateContent}
