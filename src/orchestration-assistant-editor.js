@@ -66,41 +66,42 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: newSelection });
   };
 
-  const resetInstrumentListInSplitter = () => {
+  // Helper function to prevent selection in splitter list
+  const resetInstrumentSelectionInSplitter = () => {
     setSelectedInstrument('');
     setShowInstrumentEditor(false);
     setSelectedInstrumentClass('');
   };
 
-  // save instrument edits
+  // save instrument properties
   const saveInstrumentInContent = (_event, id, instrument) => {
-    const isCustom = id ? id.startsWith('custom') : instrument.id.startsWith('custom');
-    // when instrument editor loses focus
+    const targetId = instrument?.id ?? id;
+    const isCustom = !!targetId?.startsWith('custom');
+    const payload = {};
+    // when instrument editor looses focus
     if (instrument) {
       const list = cloneDeep(instrumentsSelection);
-      const index = list.findIndex(item => item.id === instrument.id);
-      if (index > -1) {
-        list[index] = instrument;
+      const idx = list.findIndex(item => item.id === instrument.id);
+      if (idx > -1) {
+        list[idx] = instrument;
       }
-      let nextCache = customInstrumentsCache;
+      payload.instrumentsSelection = list;
+
       if (isCustom) {
-        const ciIndex = customInstrumentsCache.findIndex(item => item.id === instrument.id);
-        if (ciIndex > -1) {
+        const ciIdx = customInstrumentsCache.findIndex(item => item.id === instrument.id);
+        if (ciIdx > -1) {
           const ciList = cloneDeep(customInstrumentsCache);
-          ciList[ciIndex] = instrument;
-          nextCache = ciList;
+          ciList[ciIdx] = instrument;
+          payload.customInstrumentsCache = ciList;
+        } else {
+          payload.customInstrumentsCache = [...customInstrumentsCache, instrument];
         }
-      }
-      const payload = { instrumentsSelection: list };
-      if (isCustom && nextCache !== customInstrumentsCache) {
-        payload.customInstrumentsCache = nextCache;
-      }
+      } 
       updateContent(payload);
       return;
     }
-    // deselect instrument if instrument is null 
     if (id === selectedInstrument) {
-      resetInstrumentListInSplitter();
+      resetInstrumentSelectionInSplitter();
       return;
     }
     setSelectedInstrumentClass(id);
@@ -112,30 +113,45 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const handleInstrumentNameButtonClick = (_event, id, instrument) => {
     saveInstrumentInContent(null, id, instrument);
   };
+
+  // Set tutti instruments from instrument provider (default) 
   const handleSetTuttiClick = () => {
+    resetInstrumentSelectionInSplitter();
     updateContent({ instrumentsSelection: instrumentsProvider.loadInstrumentsFromNames(['tutti']) });
-  };  
+  };
+
   const handleSetTactetClick = () => {
-    resetInstrumentListInSplitter();
+    resetInstrumentSelectionInSplitter();
     updateContent({ instrumentsSelection: [] });
   };
   const handleInstrumentSetSelect = set => {
     setSelectedInstrument('');
     updateContent({ instrumentsSelection: instrumentsProvider.loadInstrumentsFromIds(set, instrumentsSelection) });
   };
-  const handleEditChangeSliders = instrument => {
-    //TODO: Hier muss noch die CustomList synchronisiert werden
+
+  // Save range in instrument
+  const handleEditRangeSlider = instrument => {
     const clonedSelection = cloneDeep(instrumentsSelection);
     const index = clonedSelection.findIndex(item => item.id === instrument.id);
-    if (index > -1) {
-      clonedSelection[index] = instrument;
-    } else {
-      clonedSelection.push(instrument);
+    if (index === -1) {
+      return;
     }
-    updateContent({ instrumentsSelection: clonedSelection });
+    clonedSelection[index] = instrument;
+    const payload = { instrumentsSelection: clonedSelection };
+    if (instrument.id?.startsWith('custom')) {
+      const ciIndex = customInstrumentsCache.findIndex(ci => ci.id === instrument.id);
+      if (ciIndex > -1) {
+        const ciList = cloneDeep(customInstrumentsCache);
+        ciList[ciIndex] = instrument;
+        payload.customInstrumentsCache = ciList;
+      } else {
+        payload.customInstrumentsCache = [...customInstrumentsCache, instrument];
+      }
+    }
+    updateContent(payload);
   };
 
-  // Handle custom instruments
+  // Add new custom instruments in instrumentsSelection and customInstrumentsCache
   const handleNewCustomInstrumentClick = () => {
     const customInstrument = instrumentsProvider.getDefaultInstrument();
     const list = cloneDeep(instrumentsSelection);
@@ -144,6 +160,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     customList.push(customInstrument);
     updateContent({ instrumentsSelection: list, customInstrumentsCache: customList });
   };
+  // Delete custom instruments from instrumentsSelection and customInstrumentsCache
   const handleCustomInstrumentDelete = instrument => {
     if(instrument) {
       const customList = customInstrumentsCache.filter(item => item.id !== instrument.id);
@@ -159,13 +176,21 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const handleModalOk = () => {
-    const cachedInstruments = customInstrumentsCache.filter(item => item.id.startsWith('custom'));
-    const customInstr = modalSelections
-      .map(id => cachedInstruments.find(instr => instr.id === id))
-      .filter(Boolean);
-    const newSelection = instrumentsProvider.loadInstrumentsFromIds(modalSelections, instrumentsSelection);
-    newSelection.push(...customInstr);
-    resetInstrumentListInSplitter();
+    const checkedIds = Array.from(new Set(modalSelections));
+    const newSelectionRaw = checkedIds
+      .map(id => {
+        const fromInstSel = instrumentsSelection.find(it => it.id === id);
+        if (fromInstSel) {
+          return cloneDeep(fromInstSel);
+        }
+        const fromDefault = instrumentsProvider.loadInstrumentsFromIds([id]);
+        if (fromDefault.length && fromDefault[0]) {
+          return fromDefault[0];
+        }
+        return customInstrumentsCache.find(custom => custom.id === id);
+      }).filter(Boolean);
+    const newSelection = instrumentsProvider.uniqueById(newSelectionRaw);
+    resetInstrumentSelectionInSplitter();
     updateContent({ instrumentsSelection: newSelection });
     setLoading(true);
     setTimeout(() => {
@@ -179,7 +204,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ width: value });
   };
 
-  const getInstrumentById = id => {
+  const getInstrumentByIdFromInstrumentsSelection = id => {
     return instrumentsSelection.find(item => item.id === id);
   };
 
@@ -241,32 +266,32 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
           <React.Fragment>
             <div className='prop-container-inspector'>
               <EditName 
-                instrument={getInstrumentById(selectedInstrument)}
+                instrument={getInstrumentByIdFromInstrumentsSelection(selectedInstrument)}
                 saveInstrumentInContent={saveInstrumentInContent} 
                 />
               <EditColor
-                instrument={getInstrumentById(selectedInstrument)}
+                instrument={getInstrumentByIdFromInstrumentsSelection(selectedInstrument)}
                 saveInstrumentInContent={saveInstrumentInContent}
                 />
               <BeforeAfter 
-                instrument={getInstrumentById(selectedInstrument)} 
+                instrument={getInstrumentByIdFromInstrumentsSelection(selectedInstrument)} 
                 saveInstrumentInContent={saveInstrumentInContent} 
                 />
               { selectedInstrument.startsWith('custom')
                 ? <DeleteCustomInstrumentButton
-                    instrument={getInstrumentById(selectedInstrument)}
+                    instrument={getInstrumentByIdFromInstrumentsSelection(selectedInstrument)}
                     deleteCustomInstrument={handleCustomInstrumentDelete}
                     />
                 : null}
             </div>
             <div className='prop-container-slider'>
               <EditRangeSliders
-                instrument={getInstrumentById(selectedInstrument)} 
-                saveSliderData={handleEditChangeSliders}
+                instrument={getInstrumentByIdFromInstrumentsSelection(selectedInstrument)} 
+                saveSliderData={handleEditRangeSlider}
                 />
             </div>
             <InstrumentMarkdownEditor
-              instrument={getInstrumentById(selectedInstrument)}
+              instrument={getInstrumentByIdFromInstrumentsSelection(selectedInstrument)}
               saveInstrumentInContent={saveInstrumentInContent}
               />
           </React.Fragment>

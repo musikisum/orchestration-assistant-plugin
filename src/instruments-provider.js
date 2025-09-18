@@ -24,6 +24,7 @@ import SopranoRecorder from './instruments/s-recorder.js';
 import PiccoloFlute from './instruments/piccolo-flute.js';
 import TenorSaxophone from './instruments/t-saxophone.js';
 import ContraBassoon from './instruments/contra-bassoon.js';
+import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import defaultInstrument from './instruments/default-instrument.js';
 
 // section of instrument collections
@@ -68,13 +69,18 @@ const collection = { ...strings, ...winds, ... brass, ...other };
 
 // section for helper functions
 
-const getModalSectionObjects = (section, contentCollection) => {
-  // For speedy lookups
-  const contentById = new Map(
-    Array.isArray(contentCollection)
-      ? contentCollection.map(item => [item.id, item])
-      : []
-  );
+const uniqueById = list => {
+  const seen = new Set();
+  return list.filter(item => {
+    if (!seen.has(item.id)) {
+      seen.add(item.id);
+      return true;
+    } 
+    return false;
+  });
+};
+
+const getModalSectionObjects = (section, instrumentsSelection) => {
   let source;
   switch (section) {
     case 'strings':
@@ -92,14 +98,20 @@ const getModalSectionObjects = (section, contentCollection) => {
     default:
       source = collection;
   }
-  // Liste der Modal-Objekte bauen
   return Object.values(source).map(instr => {
-    const content = contentById.get(instr.id);
-    const hasValidContentName = content && typeof content.name === 'string' && content.name.trim() !== '';
-    return {
-      id: instr.id,
-      name: hasValidContentName ? content.name : instr.name
-    };
+    const content = Array.isArray(instrumentsSelection)
+      ? instrumentsSelection.find(it => it.id === instr.id)
+      : null;
+
+    let name;
+    if (content && typeof content.name === 'string' && content.name.trim()) {
+      name = content.name;
+    } else if (typeof instr.name === 'string' && instr.name.trim()) {
+      name = instr.name;
+    } else {
+      name = '(unnamed)';
+    }
+    return { id: instr.id, name };
   });
 };
 
@@ -121,52 +133,57 @@ const loadInstrumentsFromNames = names => {
     names.forEach(name => {
       switch (name) {
         case 'tutti':
-          selection.push(...Object.values(collection));
+          selection.push(...Object.values(collection).map(cloneDeep));
           break;
         case 'strings':
-          selection.push(...Object.values(strings));
+          selection.push(...Object.values(strings).map(cloneDeep));
           break;
         case 'winds':
-          selection.push(...Object.values(winds));
+          selection.push(...Object.values(winds).map(cloneDeep));
           break;
         case 'brass':
-          selection.push(...Object.values(brass));
+          selection.push(...Object.values(brass).map(cloneDeep));
           break;
         default: {
           const instrument = collection?.[name];
           if (instrument) {
-            selection.push(instrument);
+            selection.push(cloneDeep(instrument));
           }
           break;
         }
       }      
     });
   }
-  const unique = [...new Map(selection.map(item => [item.id, item])).values()];
+  // Remove duplicates (first wins)
+  const seen = new Set();
+  const unique = selection.filter(item => {
+    if (seen.has(item.id)) { 
+      return false;
+    };
+    seen.add(item.id);
+    return true;
+  });
   return unique;
 };
 
-const loadInstrumentsFromIds = (ids, contentCollection) => {
-  const selection = [];
-
-  if (Array.isArray(ids) && ids.length > 0) {
-    ids.forEach(id => {
-      // Save instrument from content collection
-      let instrument = contentCollection
-        ? Object.values(contentCollection).find(item => item.id === id)
-        : null;
-      // Otherwise restore instrument
-      if (!instrument) {
-        instrument = Object.values(collection).find(item => item.id === id);
-      }
-      if (instrument) {
-        selection.push(instrument);
-      }
-    });
-  }
-  // Remove duplicates
-  const unique = [...new Map(selection.map(item => [item.id, item])).values()];
-  return unique;
+const loadInstrumentsFromIds = (ids, contentList) => {
+  if (!Array.isArray(ids) || ids.length === 0) {
+    return [];
+  };
+  const selection = ids.map(id => {
+    if (!id) {
+      return null;
+    }
+    const fromContent = Array.isArray(contentList)
+      ? contentList.find(item => item.id === id)
+      : null;
+    if (fromContent) {
+      return fromContent;
+    }
+    const fromDefault = Object.values(collection).find(item => item.id === id);
+    return fromDefault ? cloneDeep(fromDefault) : null;
+  }).filter(Boolean);
+  return uniqueById(selection);
 };
 
 const getOrchestraSets = { 
@@ -201,6 +218,7 @@ const instrumentsProvider = {
   getOrchestraSets,
   getChamberSets,
   getSets,
+  uniqueById,
   includesAll,
   includesAny,
   getDefaultInstrument,
