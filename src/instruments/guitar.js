@@ -53,34 +53,34 @@ Die Bauweise heutiger elektrischer Gitarren lässt sich auf wenige Modelle zurü
 - Van Halen – *Jump*`,
   en: `# The Guitar
 
-The guitar is a string instrument with frets.
+The guitar is a fretted string instrument.
 
-**Tuning:** E–A–D–G–B–e¹
+**Tuning:** E1–A1–D2–G2–B2–E3
 
 **Notation:**  
-Written one octave higher than it sounds (transposing instrument), highly agile
+written one octave higher than sounding (transposing instrument), highly agile
 
 **Range:**  
-Up to E5 is playable on all guitar types; guitars with 19 frets can reach B5; electric guitars with a "cutaway" (body indentation) can reach up to E6
+On all standard guitars, the range goes up to about E5 without difficulty.
+Classical guitars with 19 frets reach up to B5, and those with 20 frets up to C6. Steel-string acoustics and electrics usually have 21–24 frets, extending the range to D♯6/E♭6, E6, or even up to E7 on 24-fret instruments. A *cutaway* does not extend the range itself but makes access to the highest frets easier.
 
 **Construction:**  
-Acoustic guitars have a resonating body (e.g. classical guitar, steel-string acoustic or "western guitar") and can be amplified using pickups for use in band settings.
+Acoustic guitars have a resonating body (classical guitar, western guitar) and can be amplified for band use with pickups.
 
-Among electric guitars, a distinction is made between:
+Among electric guitars, distinctions are made between:
 
-- Hollow-body guitars  
-- Semi-hollow-body guitars  
-- Solid-body guitars
+- Hollow-body  
+- Semi-hollow-body  
+- Solid-body
 
-The **hollow-body guitar** is the oldest type of electric guitar, with a resonating body, F-holes, and built-in pickups; today it is used almost exclusively in jazz. The **semi-hollow-body guitar** bridges the gap between acoustic and electric models. To reduce feedback, a solid center block has been added to the hollow body since 1955.
+The **hollow-body guitar** is the oldest electric guitar type with a resonant body, f-shaped sound holes, built-in pickups, and today is almost exclusively used in jazz. The **semi-hollow guitar** is a hybrid between acoustic and electric guitar. Since 1955, a solid center block is being built into the hollow body to improve feedback resistance.
 
 Modern electric guitar construction can be traced back to a few key models:
 
 - Gibson: ES-150, "Les Paul", ES-335, *Firebird*  
 - Fender: Telecaster and Stratocaster
 
-**Playing techniques:**  
-Various plucking techniques, bottleneck/slide playing (using a glass or metal tube on the finger to glide over the strings), string bending (pitch change by pulling the string), hammer-on and pull-off (smooth transitions without re-plucking), sustain (long tone duration, often via amplification), and a wide range of effects when electronically amplified, including:
+**Playing techniques:** various plucking techniques, bottleneck playing (sliding a glass or metal tube on the finger along the strings), string bending (changing pitch by pulling the string), hammer-on and pull-off (smooth transition between notes without re-plucking), sustain (prolonged sound of notes, e.g., by amplification), and with electronic amplification, additional effects such as:
 
 - Flanger  
 - Chorus  
@@ -92,7 +92,7 @@ Various plucking techniques, bottleneck/slide playing (using a glass or metal tu
 - Whammy bar (vibrato arm)  
 - Wah-wah pedal (filter producing vocal-like sounds), and many more
 
-**Repertoire examples demonstrating the sound possibilities of electric guitar:**
+**Repertoire examples for the sound possibilities of an electric guitar:**
 
 - Jimi Hendrix – *Star Spangled Banner*  
 - Santana – *Samba Pa Ti*  

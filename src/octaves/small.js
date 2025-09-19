@@ -27,7 +27,7 @@ const small = ({ toneName }) => {
         Das <b>Horn</b> ist in der kleine Oktave klangvoll, mit dunklerer Färbung.<br />
         In der kleinen Oktave kann die <b>Posaune</b> kraftvoll und mit großer Klangentfaltung spielen (vgl. G. Rossini, Ouverture zu Wilhelm Tell, T. 92, Buchstabe C und Schubert, Sinfonie Nr. 8 in C-Dur, 1. Satz, T. 304, Durchführung).<br />
         Für die <b>Bassklarinette</b> ist die kleine Oktave eine Mittellage, für die <b>Tuba</b> zählt die untere Hälfte der kleinen Oktave zum Hauptklangbereich, in der obere Hälfte ist ein Spiel mit zunehmender Klangstärke möglich.<br />
-        Die <b>Trompete</b> wird in der kleinen Oktave im klassischen Repertoire nur in lauten Passagen mit Liegetöne zur Erzeugung von größerer Klangfülle eingesetzt.
+        Die <b>Trompete</b> wird in der kleinen Oktave im klassischen Repertoire in lauten Passagen mit Liegetönen zur Erzeugung von größerer Klangfülle eingesetzt.
       </p>
       <p>
         Für die folgenden Instrumente sind die Töne der kleinen Oktave nicht oder überwiegend nicht spielbar:

@@ -60,9 +60,9 @@ The violin is the soprano instrument of the violin family (tuned in fifths, with
 
 **Notation:** sounding notation, highly flexible
 
-**Fingering limit:** The E string extends to G6, but in orchestral playing the range is unsually limitet to C6.
+**Fingering limit:** the E string extends to G6, but in orchestral playing the range is unsually limitet to C6.
 
-**Double stops:** Intervals including an open string (very easy), sixths (easy), fifths, fourths, and thirds (difficult), octaves and unisons (very difficult)
+**Double stops:** intervals including an open string (very easy), sixths (easy), fifths, fourths, and thirds (difficult), octaves and unisons (very difficult)
 
 **Harmonics:**
 
@@ -70,7 +70,7 @@ The violin is the soprano instrument of the violin family (tuned in fifths, with
 
 **Playing techniques:** sustained (détaché), legato, non-legato up to staccato, accented (martelé), bouncing bow (spiccato), thrown bow (ricochet), over the fingerboard (flautando), striking the strings with the wood of the bow (col legno), plucked with the right hand, in solo playing also with the left hand (pizzicato), glissando (sliding), with or without vibrato, muted (con sordino)
 
-**Combinations:** String instruments can be effectively doubled in octaves for reinforcement (e.g. violin I doubled by violin II, viola, or even cello in the lower octave); strong sound blending with all woodwinds and the horn; weaker blending with trumpet, trombone, and tuba
+**Combinations:** string instruments can be effectively doubled in octaves for reinforcement (e.g. violin I doubled by violin II, viola, or even cello in the lower octave); strong sound blending with all woodwinds and the horn; weaker blending with trumpet, trombone, and tuba
 
 **Fingering technique:** Examples for the basic positions of the major tetrachord as played with fingers 1–4 on the a'-string::
 

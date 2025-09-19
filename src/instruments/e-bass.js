@@ -21,22 +21,15 @@ Der E-Bass wurde Mitte des 20. Jahrhunderts entwickelt. Er hat einen massiven Ho
 **Spielweisen:** diverse Zupftechniken, insbesondere **Slap-Technik** (mit dem Daumen der Zupfhand angeschlagen, angerissen, gedämpft etc.) und mit **Oktaver** (Oktavkoppel). Weitere Effekte siehe *Gitarre* (in der Praxis werden elektronische Effekte selten bzw. ausschließlich zum Solospiel verwendet). Hohe Beweglichkeit.`,
   en: `# The Electric Bass (E-Bass)
 
-The electric bass was developed in the mid-20th century. It features a solid wooden body and four steel strings, tuned like the double bass. In addition to this standard form, there are many variations, including models with more strings, alternative tunings, hollow bodies, or fretless fingerboards (*fretless*).
+The electric bass was developed in the mid-20th century. It has a solid wooden body and four steel strings (tuned like the double bass). Besides this standard form, numerous variants exist, such as models with more strings, alternate tunings, hollow bodies, or fretless fingerboards.
 
-**Tuning:**  
-E₁–A₁–D–G  
-Five-string bass: with a low B₀ or C₁ string  
-Six-string bass: with an additional high C string
+**Tuning:** E1–A1–D2–G2, five-string models include a low B0 or C1 string; six-string models add a high C3 string
 
-**Notation:**  
-Written one octave higher than it sounds (transposing instrument, like the double bass)
+**Notation:** written one octave higher than sounding (transposing instrument, cf. double bass)
 
-**Construction:**  
-Typically built with up to 22 frets
+**Construction:** Most electric basses have 20 or 21 frets, though many modern models offer 22, and some extended-range instruments go up to 24 frets.
 
-**Playing techniques:**  
-Various plucking techniques, especially the **slap technique** (played with the thumb of the plucking hand—slapped, popped, muted, etc.), and use of an **octaver** (octave-doubling effect).  
-Additional effects are similar to those used with electric guitar (see *Guitar* section), though in practice, electronic effects are rarely used outside of solo playing. Highly agile instrument.`
+**Playing techniques:** various plucking techniques, especially the **slap technique** (striking, pulling, muting with the thumb of the plucking hand), and use of an **octaver** (octave doubling effect). Additional effects as listed for the *guitar* (in practice, electronic effects are rarely used or mostly reserved for solo playing). Highly agile.`
 
 };
 

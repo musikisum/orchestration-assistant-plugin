@@ -45,7 +45,7 @@ The violoncello is the bass instrument of the violin family (tuned in fifths, wi
 
 **Fingering range:** The A string up to F♯5, but in orchestral playing the range is unsually limitet to A4.
 
-**Double stops:** Intervals involving an open string (easy), fifths, fourths, thirds, sixths, and octaves from 7th position upward (very difficult)
+**Double stops:** intervals involving an open string (easy), fifths, fourths, thirds, sixths, and octaves from 7th position upward (very difficult)
 
 **Harmonics:** fourth and fifth harmonics (using thumb technique) are possible
 
@@ -53,7 +53,7 @@ The violoncello is the bass instrument of the violin family (tuned in fifths, wi
 
 **Basic positions of fingers 1–4:** chromatic
 
-**Combinations:** tring instruments can be effectively doubled in octaves for reinforcement (note: due to the cello’s fullness of sound, there is a risk of overshadowing other string instruments such as violins in such doublings); combinations with woodwinds (oboe, clarinet, and bassoon) and especially with the horn are very effective.
+**Combinations:** String instruments can be effectively doubled in octaves for reinforcement (note: due to the cello’s fullness of sound, there is a risk of overshadowing other string instruments such as violins in such doublings); combinations with woodwinds (oboe, clarinet, and bassoon) and especially with the horn are very effective.
 
 **School orchestra:** Do not require playing in ›thumb positions‹ (i.e., not above A5)
 

@@ -62,9 +62,9 @@ The viola is the alto instrument of the violin family (tuned in fifths, with f-h
 
 **Notation:** sounding notation, highly flexible
 
-**Fingering range:** The A string extends to A5, but in orchestral playing the range is unsually limitet to E5.
+**Fingering range:** the A string extends to A5, but in orchestral playing the range is unsually limitet to E5.
 
-**Double stops:** Intervals including an open string (very easy), sixths (easy), fifths, fourths, and thirds (difficult), octaves and unisons (very difficult)
+**Double stops:** intervals including an open string (very easy), sixths (easy), fifths, fourths, and thirds (difficult), octaves and unisons (very difficult)
 
 **Harmonics:**
 
