@@ -10,13 +10,13 @@ const violoncello = {
   color: colors.strings,
   de: `# Das Violoncello
     
-Das Violoncello ist das Bassinstrument der Geigenfamilie (Quintenstimmung, F-Löcher und die typische Korpusform), das bis in die Tenorlage hineinreicht.
+Das Violoncello ist das Bassinstrument der Geigenfamilie (Quintenstimmung, F-Löcher und die typische Korpusform), das über die Tenor- bis in die Altlage hineinreicht.
 
 **Stimmung:** C-G-d-a
 
 **Notation:** klingend, hohe Beweglichkeit
 
-**Griffbrettgrenze:** A-Saite = fis³, im Orchester Umfang bis a² gut möglich
+**Tonumfang:** in Orchesterliteratur von dem großen C (leere Saite) bis zum e³, in Sololiteratur, Kammermusik oder zeitgenössischen Werken bis c⁴ oder sogar höher möglich
 
 **Doppelgriffe:** Intervalle mit einer leeren Saite (leicht), Quinten, Quarten, Terzen und Sexten sowie Oktaven ab der 7. Lage (sehr schwer)
 
@@ -28,7 +28,7 @@ Das Violoncello ist das Bassinstrument der Geigenfamilie (Quintenstimmung, F-Lö
 
 **Kombinationen:** Streichinstrumente können gut zur Klangverstärkung von (anderen) Streichinstrumenten oktaviert werden (Achtung: durch die Klangfülle der Celli besteht Gefahr, dass in Koppelungen mit anderen Streichinstrumenten wie z.B. den Violinen diese überdeckt werden), Kombinationen mit den Holzbläsern (Oboe, Klarinette und Fagott) und insbesondere dem Horn gut möglich.
 
-**Schulorchester:** Umfang nicht in den »Daumenlagen« fordern (d.h. nicht über g¹).
+**Schulorchester:** Umfang nicht in ›Daumenlagen‹ fordern (d.h. nicht über e¹).
 
 **Literaturbeispiele für ein solistisches Violoncello im Orchestersatz:**
 
@@ -37,13 +37,13 @@ Das Violoncello ist das Bassinstrument der Geigenfamilie (Quintenstimmung, F-Lö
 - G. Rossini, Ouverture Wilhelm Tell, Einleitung`,
   en: `# The Violoncello
 
-The violoncello is the bass instrument of the violin family (tuned in fifths, with f-holes and the characteristic body shape), extending into the tenor register.
+The violoncello is the bass instrument of the violin family (tuned in fifths, with f-holes and the characteristic body shape), extending into the tenor and alto register.
 
 **Tuning:** C2–G2–D3–A3
 
 **Notation:** sounding notation, highly flexible
 
-**Fingering range:** The A string up to F♯5, but in orchestral playing the range is unsually limitet to A4.
+**Fingering range:** in orchestral playing from C2 (open string) up to E6, in solo, chamber, or contemporary works up to c7, occasionally higher
 
 **Double stops:** intervals involving an open string (easy), fifths, fourths, thirds, sixths, and octaves from 7th position upward (very difficult)
 
@@ -55,7 +55,7 @@ The violoncello is the bass instrument of the violin family (tuned in fifths, wi
 
 **Combinations:** String instruments can be effectively doubled in octaves for reinforcement (note: due to the cello’s fullness of sound, there is a risk of overshadowing other string instruments such as violins in such doublings); combinations with woodwinds (oboe, clarinet, and bassoon) and especially with the horn are very effective.
 
-**School orchestra:** Do not require playing in ›thumb positions‹ (i.e., not above A5)
+**School orchestra:** Do not require playing in ›thumb positions‹ (i.e., not above E4)
 
 **Repertoire examples for solo violoncello within the orchestra:**
 

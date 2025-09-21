@@ -116,10 +116,16 @@ const getModalSectionObjects = (section, instrumentsSelection) => {
 };
 
 const includesAll = (set, ids) => {
+  if (!(set instanceof Set) || !Array.isArray(ids)) {
+    return false;
+  };
   return ids.every(id => set.has(id));
 };
 
 const includesAny = (set, ids) => {
+  if (!(set instanceof Set) || !Array.isArray(ids)) {
+    return false;
+  };
   return ids.some(id => set.has(id));
 };
 
@@ -169,21 +175,24 @@ const loadInstrumentsFromNames = names => {
 const loadInstrumentsFromIds = (ids, contentList) => {
   if (!Array.isArray(ids) || ids.length === 0) {
     return [];
-  };
-  const selection = ids.map(id => {
-    if (!id) {
-      return null;
-    }
-    const fromContent = Array.isArray(contentList)
-      ? contentList.find(item => item.id === id)
-      : null;
-    if (fromContent) {
-      return fromContent;
-    }
-    const fromDefault = Object.values(collection).find(item => item.id === id);
-    return fromDefault ? cloneDeep(fromDefault) : null;
-  }).filter(Boolean);
-  return uniqueById(selection);
+  }  
+  const selection = ids
+    .filter(id => id && typeof id === 'string')
+    .map(id => {
+      const fromContent = Array.isArray(contentList)
+        ? contentList.find(item => item?.id === id)
+        : null;      
+      if (fromContent) {
+        return fromContent;
+      };      
+      const fromDefault = Object.values(collection)
+        .find(item => item?.id === id);      
+      return fromDefault && typeof fromDefault === 'object' 
+        ? cloneDeep(fromDefault) 
+        : null;
+    })
+    .filter(Boolean);  
+  return uniqueById(selection); 
 };
 
 const getOrchestraSets = { 

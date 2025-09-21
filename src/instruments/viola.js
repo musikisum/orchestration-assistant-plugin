@@ -12,12 +12,11 @@ const viola = {
     
 Die Viola (Bratsche) ist das Altinstrument der Geigenfamilie (Quintenstimmung, F-Löcher und die typische Korpusform), das bis in die Tenorlage hineinreicht.
 
-**Stimmung:** c-g-d1-a1
+**Stimmung:** c-g-d¹-a¹
 
 **Notation:** klingend, hohe Beweglichkeit
 
-**Griffbrettgrenze:** A-Saite = a3, im Orchester Umfang bis e3 gut möglich
-Doppelgriffe: Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), Quinten, Quarten und Terzen (schwer), Oktave und Einklang (sehr schwer)
+**Tonumfang:** in Orchesterliteratur vom kleinen c (leere Saite) bis zum c³, in virtuoser Sololiteratur oder zeitgenössischen Werken bis e³ oder sogar a³
 
 **Doppelgriffe:** Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), Quinten, Quarten und Terzen (schwer), Oktave und Einklang (sehr schwer)
 
@@ -46,7 +45,7 @@ Doppelgriffe: Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), 
 | c♯'  |          |         |         |         |   3
 | d'   |          |         |         |         |   4
 
-**Schulorchester:** Flageolett, Doppel- und Mehrfachgriffe meiden bzw. mit besonderer Vorsicht einsetzen, Umfang nur in Ausnahmefällen über der 3. Lage fordern (d''').
+**Schulorchester:** Flageolett, Doppel- und Mehrfachgriffe meiden bzw. mit besonderer Vorsicht einsetzen, Umfang nur in Ausnahmefällen über der 4. Lage fordern (a²).
 
 **Literaturbeispiele für eine solistische Viola im Orchestersatz:**
 
@@ -62,7 +61,7 @@ The viola is the alto instrument of the violin family (tuned in fifths, with f-h
 
 **Notation:** sounding notation, highly flexible
 
-**Fingering range:** the A string extends to A5, but in orchestral playing the range is unsually limitet to E5.
+**Fingering range:** in orchestral playing from C3 (open string) up to C6, in solo or contemporary works up to E6, occasionally A6
 
 **Double stops:** intervals including an open string (very easy), sixths (easy), fifths, fourths, and thirds (difficult), octaves and unisons (very difficult)
 
@@ -91,7 +90,7 @@ The viola is the alto instrument of the violin family (tuned in fifths, with f-h
 | C♯        |            |              |              |              | 3             |
 | D         |            |              |              |              | 4             |
 
-**School orchestra:** Avoid harmonics, double/triple stops or use with great caution; avoid demanding playing above 3rd position (A4) should only be used in exceptional cases
+**School orchestra:** Avoid harmonics, double/triple stops or use with great caution; avoid demanding playing above 4th position (A5) should only be used in exceptional cases
 
 **Repertoire examples for a solo viola within the orchestra:**
 

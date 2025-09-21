@@ -12,11 +12,11 @@ const violin = {
   
 Die Violine ist das Sopraninstrument der Geigenfamilie (Quintenstimmung, F-Löcher und die typische Korpusform), das bis in die Altlage hineinreicht.
 
-**Stimmung:** g-d1-a1-e2
+**Stimmung:** g-d¹-a¹-e²
 
 **Notation:** klingend, hohe Beweglichkeit
 
-**Griffbrettgrenze:** E-Saite = g4, im Orchester Umfang bis c4 gut möglich
+**Tonumfang:** in Orchesterliteratur von dem kleinen g (leere Saite) bis zum e⁴, in Sololiteratur oder zeitgenössischen Werken bis h⁴ oder sogar höher möglich
 
 **Doppelgriffe:** Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), Quinten, Quarten und Terzen (schwer), Oktave und Einklang (sehr schwer)
 
@@ -28,7 +28,7 @@ Die Violine ist das Sopraninstrument der Geigenfamilie (Quintenstimmung, F-Löch
 
 **Kombinationen:** Streichinstrumente können gut zur Klangverstärkung von (anderen) Streichinstrumenten oktaviert werden (z. B. die Violine I durch Violine II, Viola oder auch Cello in der Unteroktave); hohe Klangverschmelzung mit allen Holzbläsern und dem Horn, geringere Klangverschmelzung mit Trompete, Posaune und Tuba.
 
-**Grifftechnik:** Beispiele für die Basis-Positionen des Dur-Tetrachords, das mit den Fingern 1–4 gespielt wird auf der a'-Saite:
+**Grifftechnik:** Beispiele für die Basis-Positionen des Dur-Tetrachords, das mit den Fingern 1–4 gespielt wird auf der a-Saite:
 
 | Töne | 1/2 Lage | 1. Lage | 2. Lage | 3. Lage | 4. Lage
 | -----|----------|---------|---------|---------|--------
@@ -45,7 +45,7 @@ Die Violine ist das Sopraninstrument der Geigenfamilie (Quintenstimmung, F-Löch
 | g♯'  |          |         |         |         |    3
 | a'   |          |         |         |         |    4
 
-**Schulorchester:** Flageolett, Doppel- und Mehrfachgriffe meiden bzw. mit besonderer Vorsicht einsetzen, Umfang nur in Ausnahmefällen über der 3. Lage fordern (d''').
+**Schulorchester:** Flageolett, Doppel- und Mehrfachgriffe meiden bzw. mit besonderer Vorsicht einsetzen, Umfang nur in Ausnahmefällen über der 4. Lage fordern (e³).
 
 **Literaturbeispiele für eine solistische Violine im Orchestersatz:**
 
@@ -60,7 +60,7 @@ The violin is the soprano instrument of the violin family (tuned in fifths, with
 
 **Notation:** sounding notation, highly flexible
 
-**Fingering limit:** the E string extends to G6, but in orchestral playing the range is unsually limitet to C6.
+**Fingering range:** in orchestral playing from G3 (open string) up to E7, in solo or contemporary works up to B7, occasionally higher
 
 **Double stops:** intervals including an open string (very easy), sixths (easy), fifths, fourths, and thirds (difficult), octaves and unisons (very difficult)
 
@@ -89,7 +89,7 @@ The violin is the soprano instrument of the violin family (tuned in fifths, with
 | G♯           |            |              |              |              | 3             |
 | A            |            |              |              |              | 4             |
 
-**School orchestra:** Avoid harmonics and double/triple stops or use with great caution; avoid demanding playing above 3rd position (D5) except in exceptional cases.
+**School orchestra:** Avoid harmonics and double/triple stops or use with great caution; avoid demanding playing above 4th position (E6) except in exceptional cases.
 
 **Repertoire examples for a solo violin within the orchestra:**
 
