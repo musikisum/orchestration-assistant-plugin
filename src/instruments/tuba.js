@@ -10,20 +10,20 @@ const tuba = {
   color: colors.brass,
   de: `# Die Tuba
     
-Die Tuba ist ein Instrument aus Metall aus der Familie der Blechblasinstrumente.
+Die Tuba ist ein Instrument aus Metall aus der Familie der Blechblasinstrumente. Die Tuba ist derzeitig in vier Stimmungen gebräuchlich:
 
-- Altposaune  
-- Tenorposaune  
-- Bassposaune  
-- Kontrabassposaune (z.B. bei Wagner)
+- Tuba in E♭
+- Tuba in F
+- Kontrabasstuba in C
+- Kontrabasstuba in B♭
 
 **Stimmumfang:** D₁–g¹
 
-**Notation:** klingend
+**Notation:** in Deutschland, Italien und England klingend (unabhängig von dem verwendeten Instrument), in anderen Ländern auch transponierend (im Bass- oder Violinschlüssel). Entgegen einem verbreiteten Vorurteil relativ hohe Beweglichkeit
 
-**Spielweisen:** Zungentechnik (Doppel-, Tripel- und Flatterzunge), Vibrato, Legato, mit Dämpfer, Triller, Glissando, etc. Entgegen einem verbreiteten Vorurteil relativ hohe Beweglichkeit
+**Spielweisen:** Zungentechnik (Doppel-, Tripel- und Flatterzunge), Vibrato, Legato, mit Dämpfer, Triller, Glissando, etc.
 
-**Klangfarbe:** Die tiefsten Pedaltöne sprechen nur schwer an, für das tiefe Register sind weiche, jedoch tragfähige Töne charakteristisch, das Mittelregister (Fis–f) kann als Hauptregister der Tuba bezeichnet werden, in der Höhe zunehmend lauter.
+**Klangfarbe:** Die tiefsten Pedaltöne sprechen nur schwer an, für das tiefe Register sind weiche, jedoch tragfähige Töne charakteristisch, das Mittelregister (F♯-f) kann als Hauptregister der Tuba bezeichnet werden, in der Höhe zunehmend lauter.
 
 **Kombinationen:** Mit allen Blechbläsern gebräuchlich (Bassinstrument der Blechbläser), wenig Klangverschmelzung mit der Trompete; Tuba und Kontrabasstuba in Oktaven bewirkt große Klangmassierung, Koppelungen mit den Bassinstrumenten der Holzbläser (tutti) üblich, mit den höheren Holzblasinstrumenten dagegen selten (B. Britten, Violinkonzert, Solo von Tuba und Piccoloflöte), sehr homogene Klangverschmelzung mit dem Kontrabass der Streicher.
 
@@ -34,22 +34,22 @@ Die Tuba ist ein Instrument aus Metall aus der Familie der Blechblasinstrumente.
 - I. Stravinsky, *Circus Polka*, komponiert für einen jungen Elefanten für Orchester (1944)`,
   en: `# The Tuba
 
-The tuba is a brass instrument made of metal and belongs to the brass instrument family.
+The tuba is a brass instrument made of metal that belongs to the brass family. Currently, the tuba is commonly used in four tunings:
 
-- Alto trombone  
-- Tenor trombone  
-- Bass trombone  
-- Contrabass trombone (e.g. in Wagner)
+- Tuba in E♭
+- Tuba in F
+- Kontrabasstuba in C
+- Kontrabasstuba in B♭
 
 **Range:** D₁–G4
 
-**Notation:** written at sounding pitch
+**Notation:** In Germany, Italy, and England, it is written in concert pitch (regardless of the instrument used); in other countries, it is also transposed (in bass or treble clef). Contrary to a widespread prejudice, it is relatively agile.
 
-**Playing techniques:** tonguing techniques (double, triple, and flutter tongue), vibrato, legato, with mute, trills, glissando, etc. Contrary to common belief, the tuba is relatively agile
+**Playing techniques:** Tonguing (double, triple, and flutter tonguing), vibrato, legato, with mute, trill, glissando, etc.
 
-**Timbre:** The lowest pedal tones are difficult to produce; the low register is characterized by soft yet resonant tones. The middle register (F♯2–F4) can be considered the tuba's core range. In the upper register, the sound becomes increasingly louder.
+**Timbre:** The lowest pedal notes are difficult to produce. The low register is characterized by soft but resonant tones. The middle register (F♯–f) can be considered the main register of the tuba, while the sound in the high register becomes increasingly louder.
 
-**Combinations:** Commonly used with all brass instruments (it is the bass instrument of the brass section); limited blending with the trumpet; tuba and contrabass tuba in octaves create a powerful, massive sound. Doubling with low woodwinds in tutti passages is typical, while blending with higher woodwinds is rare (e.g. B. Britten, *Violin Concerto*, tuba and piccolo solo). Very homogeneous blend with the string double bass.
+**Combinations:** Often used together with all brass instruments (as the bass instrument of the brass family), little blending with the trumpet; the tuba and contrabass tuba produce a massive sound in octaves. Combinations with the bass instruments of the woodwinds (tutti) are common, but rarely with the higher woodwinds (e.g., Britten, Violin Concerto, solo by tuba and piccolo). Very homogeneous blend with the double bass of the strings.
 
 **Repertoire examples:**
 
@@ -57,7 +57,6 @@ The tuba is a brass instrument made of metal and belongs to the brass instrument
 - M. Mussorgsky, *Pictures at an Exhibition* (orch. by M. Ravel), 4th movement (*Bydlo*)  
 - I. Stravinsky, *Circus Polka*, composed for a young elephant and orchestra (1944)
 `
-
 };
 
 export default tuba;
