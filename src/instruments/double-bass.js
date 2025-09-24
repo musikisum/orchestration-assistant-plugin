@@ -14,15 +14,15 @@ Der Kontrabass ist ein vier- oder fünfsaitiges Streichinstrument, das sowohl ba
 
 **Stimmung:** E₁–A₁–D–G
 
-**Stimmung (fünf Saiten):** H² oder C₁–E₁–A₁–D–G
+**Stimmung (fünf Saiten):** H₁ oder C₁–E₁–A₁–D–G
 
 **Notation:** eine Oktave höher als klingend (transponierendes Instrument), als Orchesterinstrument geringere Beweglichkeit als die hohen Streicher
 
-**Griffbrettgrenze:** G-Saite = h¹, im Orchester Umfang bis d¹ gut möglich
+**Tonumfang:** sehr vom individuellen Vermögen abhängig, in Instrumentationlehren wird üblicher Weise das g¹ (notiert g²) angegeben, in der Orchesterliteratur gelten dagegen schon das kleine g (notiert g¹) als sehr hoch.
 
 **Doppelgriffe:** eingeschränkt möglich, im Orchesterspiel unüblich
 
-**Flageolett:** Groß- und Kleinterzflageolett (mit Daumenaufsatz), ab der 7./8. Lage auch Quartflageolett möglich. In der Orchesterpraxis wird vorgeschriebenes natürliches Flageolett auf der tiefsten Saite in der Regel nicht gespielt, sondern auf einer höheren Saite gegriffen (»spricht zu schwer an«)
+**Flageolett:** Groß- und Kleinterzflageolett (mit Daumenaufsatz), ab der 7./8. Lage auch Quartflageolett möglich. In der Orchesterpraxis wird ein vorgeschriebenes natürliches Flageolett auf der tiefsten Saite in der Regel nicht gespielt, sondern auf einer höheren Saite gegriffen (»spricht zu schwer an«)
 
 **Spielweisen:** liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken Hand) gezupft (pizzicato), geschliffen (glissando), Vibrato / non Vibrato, mit Dämpfer
 
@@ -47,7 +47,7 @@ The double bass is a four- (or five-) stringed bowed instrument that shows struc
 **Notation:**  
 Written one octave higher than sounding (transposing instrument); as an orchestral instrument, less agile than the higher strings
 
-**Fingering range:** G string up to B4; in orchestras, range up to D4 is commonly used
+**Fingering range:** highly dependent on individual ability; in instrumentation manuals, g¹ (notated as g²) is usually specified, whereas in orchestral literature, even the low g (notated as g¹) is considered very high.
 
 **Double stops:** limited possibilities; in orchestral playing uncommon
 
