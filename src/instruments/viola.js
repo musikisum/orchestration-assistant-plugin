@@ -16,7 +16,7 @@ Die Viola (Bratsche) ist das Altinstrument der Geigenfamilie (Quintenstimmung, F
 
 **Notation:** klingend, hohe Beweglichkeit
 
-**Tonumfang:** in Orchesterliteratur vom kleinen c (leere Saite) bis zum c³, in virtuoser Sololiteratur oder zeitgenössischen Werken bis e³ oder sogar a³
+**Tonumfang:** in Orchesterliteratur vom kleinen c (leere Saite) bis zum c³ (z.B. g² in *9. Symphonie*, 2. Satz von G. Mahler), in virtuoser Sololiteratur oder zeitgenössischen Werken bis e³ oder sogar a³
 
 **Doppelgriffe:** Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), Quinten, Quarten und Terzen (schwer), Oktave und Einklang (sehr schwer)
 
@@ -61,7 +61,7 @@ The viola is the alto instrument of the violin family (tuned in fifths, with f-h
 
 **Notation:** sounding notation, highly flexible
 
-**Fingering range:** in orchestral playing from C3 (open string) up to C6, in solo or contemporary works up to E6, occasionally A6
+**Fingering range:** in orchestral playing from C3 (open string) up to C6 (e.g., G5 in *9th Symphony*, 2nd movement by G. Mahler), in solo or contemporary works up to E6, occasionally A6
 
 **Double stops:** intervals including an open string (very easy), sixths (easy), fifths, fourths, and thirds (difficult), octaves and unisons (very difficult)
 

@@ -335,6 +335,10 @@
     "instrumentSelection": {
       "en": "Instrument selection",
       "de": "Instrumentenauswahl"
+    },
+    "octLang": {
+      "en": "en",
+      "de": "de"
     }
   }
 }

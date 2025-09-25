@@ -16,7 +16,7 @@ Das Violoncello ist das Bassinstrument der Geigenfamilie (Quintenstimmung, F-Lö
 
 **Notation:** klingend, hohe Beweglichkeit
 
-**Tonumfang:** in Orchesterliteratur von dem großen C (leere Saite) bis zum e³, in Sololiteratur, Kammermusik oder zeitgenössischen Werken bis c⁴ oder sogar höher möglich
+**Tonumfang:** in Orchesterliteratur von dem großen C (leere Saite) bis zum e³ (z.B. a² in *4. Symphonie*, 4. Satz von G. Mahler), in Sololiteratur, Kammermusik oder zeitgenössischen Werken bis c⁴ oder sogar höher möglich
 
 **Doppelgriffe:** Intervalle mit einer leeren Saite (leicht), Quinten, Quarten, Terzen und Sexten sowie Oktaven ab der 7. Lage (sehr schwer)
 
@@ -43,7 +43,7 @@ The violoncello is the bass instrument of the violin family (tuned in fifths, wi
 
 **Notation:** sounding notation, highly flexible
 
-**Fingering range:** in orchestral playing from C2 (open string) up to E6, in solo, chamber, or contemporary works up to c7, occasionally higher
+**Fingering range:** in orchestral playing from C2 (open string) up to E6 (e.g., A5 in *4th Symphony*, 4th movement by G. Mahler), in solo, chamber, or contemporary works up to c7, occasionally higher
 
 **Double stops:** intervals involving an open string (easy), fifths, fourths, thirds, sixths, and octaves from 7th position upward (very difficult)
 

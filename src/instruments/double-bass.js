@@ -18,7 +18,7 @@ Der Kontrabass ist ein vier- oder fünfsaitiges Streichinstrument, das sowohl ba
 
 **Notation:** eine Oktave höher als klingend (transponierendes Instrument), als Orchesterinstrument geringere Beweglichkeit als die hohen Streicher
 
-**Tonumfang:** sehr vom individuellen Vermögen abhängig, in Instrumentationlehren wird üblicher Weise das g¹ (notiert g²) angegeben, in der Orchesterliteratur gelten dagegen schon das kleine g (notiert g¹) als sehr hoch.
+**Tonumfang:** sehr vom individuellen Vermögen abhängig, in Instrumentationlehren wird üblicher Weise das g¹ (notiert g²) angegeben (z.B. d¹ (notiert d²) in *Eine Alpensinfonie* Op. 64 von R. Strauß), in der Orchesterliteratur gelten dagegen schon das kleine g (notiert g¹) als sehr hoch.
 
 **Doppelgriffe:** eingeschränkt möglich, im Orchesterspiel unüblich
 
@@ -47,7 +47,7 @@ The double bass is a four- (or five-) stringed bowed instrument that shows struc
 **Notation:**  
 Written one octave higher than sounding (transposing instrument); as an orchestral instrument, less agile than the higher strings
 
-**Fingering range:** highly dependent on individual ability; in instrumentation manuals, g¹ (notated as g²) is usually specified, whereas in orchestral literature, even the low g (notated as g¹) is considered very high.
+**Fingering range:** highly dependent on individual ability; in instrumentation manuals, G4 (notated as G5) is usually specified  (e.g. D4 (notated as D5) in *Eine Alpensinfonie* Op. 64 by R. Strauss), whereas in orchestral literature, even the low G3 (notated as G4) is considered very high.
 
 **Double stops:** limited possibilities; in orchestral playing uncommon
 

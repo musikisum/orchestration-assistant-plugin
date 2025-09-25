@@ -1,16 +1,35 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
+import Markdown from '@educandu/educandu/components/markdown.js';
 
-const five = ({ toneName }) => {
+export default function Five({ toneName }) {
+
+  const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
+  
+  const de = `***Das ${toneName[0]}''''' liegt in der fünfgestrichenen Oktave (${toneName[0]}⁵).***
+
+# Die fünfgestrichene Oktave
+
+Im Orchesterklang ist die fünfgestrichene Oktave nicht relevant.
+`;
+
+  const en = `***The note ${toneName[0].toUpperCase()}8 is placed in the 8th octave.***
+
+# The eighth Octave
+
+In the orchestral sound, the 8th octave is not relevant.
+`;
 
   return (
-    <div>
-      <p><b><i>Das {toneName[0]}&apos;&apos;&apos;&apos;&apos; liegt in der fünfgestrichenen Oktave.</i></b></p>
-      <h1>Die fünfgestrichene Oktave</h1>
-      <p>
-        Im Orchesterklang ist die fünfgestrichene Oktave nicht relevant.
-      </p>
-    </div>
+    <Markdown className='instrumentDescription' renderAnchors>{t('octLang') === 'de' ? de : en}</Markdown>
   );
 };
 
-export default five;
+Five.propTypes = {
+  toneName: PropTypes.string
+};
+
+Five.defaultProps = {
+  toneName: ''
+};

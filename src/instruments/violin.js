@@ -16,7 +16,7 @@ Die Violine ist das Sopraninstrument der Geigenfamilie (Quintenstimmung, F-Löch
 
 **Notation:** klingend, hohe Beweglichkeit
 
-**Tonumfang:** in Orchesterliteratur von dem kleinen g (leere Saite) bis zum e⁴, in Sololiteratur oder zeitgenössischen Werken bis h⁴ oder sogar höher möglich
+**Tonumfang:** in Orchesterliteratur von dem kleinen g (leere Saite) bis zum e⁴ (z.B. c⁴ in *Eine Alpensinfonie* Op. 64 von R. Strauß), in Sololiteratur oder zeitgenössischen Werken bis h⁴ oder sogar höher möglich
 
 **Doppelgriffe:** Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), Quinten, Quarten und Terzen (schwer), Oktave und Einklang (sehr schwer)
 
@@ -60,7 +60,7 @@ The violin is the soprano instrument of the violin family (tuned in fifths, with
 
 **Notation:** sounding notation, highly flexible
 
-**Fingering range:** in orchestral playing from G3 (open string) up to E7, in solo or contemporary works up to B7, occasionally higher
+**Fingering range:** in orchestral playing from G3 (open string) up to E7 (e.g., C7 in the *Eine Alpensinfonie*, Op. 64, by R. Strauss), in solo or contemporary works up to B7, occasionally higher
 
 **Double stops:** intervals including an open string (very easy), sixths (easy), fifths, fourths, and thirds (difficult), octaves and unisons (very difficult)
 

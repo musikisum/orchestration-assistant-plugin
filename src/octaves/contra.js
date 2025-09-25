@@ -1,27 +1,59 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
+import Markdown from '@educandu/educandu/components/markdown.js';
 
-const contra = ({ toneName }) => {
+export default function Contra({ toneName }) {
+
+  const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
+
+  const de = `***Das Kontra-${toneName[0].toUpperCase()} liegt in der Kontraoktave (${toneName[0].toUpperCase()}₁).***  
+
+# Die Kontraoktave
+
+Töne in der Kontraoktave können im Orchester nur noch von den ausgesprochenen Bassinstrumenten gespielt werden:
+
+- Kontrabass  
+- Kontrafagott  
+- Tuba  
+
+Für den viersaitigen **Kontrabass** ist die Kontraoktave nur eingeschränkt spielbar (tiefster Ton = leere E₁-Saite).
+
+Die **Tuba** kann als tiefsten Ton das D₁ erzeugen.
+
+Für das **Kontrafagott** sind alle Töne der Kontraoktave noch spielbar.  
+
+Für den Orchesterklang ist die Kontraoktave bis auf die beschriebenen Ausnahmen nicht charakteristisch.
+`;
+
+  const en = `***The note ${toneName[0].toUpperCase()}1 is placed in the 1st octave***  
+
+# The first Octave
+
+Notes in the first octave can be played in the orchestra only by the true bass instruments:
+
+- Double bass  
+- Contrabassoon  
+- Tuba  
+
+For the four-string **double bass**, the first octave is only partly playable (lowest note = open E₁ string).
+
+The **tuba** can produce D₁ as its lowest note.
+
+For the **contrabassoon**, all notes of the first octave are playable.  
+
+For the orchestral sound, the first octave is not characteristic apart from these exceptions.
+`;
 
   return (
-    <div className='octave-info'>
-      <p><b><i>Das kontra {toneName[0].toUpperCase()}<sub>1</sub> liegt in der Kontraoktave.</i></b></p>
-      <h1>Die Kontraoktave</h1>
-      <p>
-        Töne in der Kontraoktave können im Orchester nur noch von den ausgesprochenen Bassinstrumenten gespielt werden: 
-      </p>
-      <ul>
-        <li>Kontrabass,</li>
-        <li>Kontrafagott und</li>
-        <li>Tuba</li>
-      </ul>
-      <p>
-        Für den viersaitigen <b>Kontrabass</b> ist die große Oktave nur noch eingeschränkt spielbar (tiefster Ton = leere E<sub>1</sub>-Saite). Die <b>Tuba</b> kann als tiefsten Ton das D<sub>1</sub> erzeugen, für das <b>Kontrafagott</b> sind alle Töne der Kontraoktave noch spielbar.
-      </p>
-      <p>
-        Für den Orchesterklang ist die Kontraoktave bis auf die beschriebenen Ausnahmen nicht charakteristisch.
-      </p>
-    </div>
+    <Markdown className='instrumentDescription' renderAnchors>{t('octLang') === 'de' ? de : en}</Markdown>
   );
 };
 
-export default contra;
+Contra.propTypes = {
+  toneName: PropTypes.string
+};
+
+Contra.defaultProps = {
+  toneName: ''
+};
