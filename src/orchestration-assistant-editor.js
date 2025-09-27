@@ -153,7 +153,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
 
   // Add new custom instruments in instrumentsSelection and customInstrumentsCache
   const handleNewCustomInstrumentClick = () => {
-    const customInstrument = instrumentsProvider.getDefaultInstrument();
+    const customInstrument = instrumentsProvider.getDefaultInstrument(null, t('newInstrument'));
     const list = cloneDeep(instrumentsSelection);
     list.push(customInstrument);
     const customList = cloneDeep(customInstrumentsCache);

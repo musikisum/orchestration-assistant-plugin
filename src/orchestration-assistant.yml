@@ -264,3 +264,6 @@ musikisum/educandu-plugin-orchestration-assistant:
   octLang:
     en: en
     de: de
+  newInstrument:
+    en: new instrument
+    de: neues Instrument

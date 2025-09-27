@@ -19,7 +19,7 @@ Das Altsaxofon ist ein Instrument aus der Saxofonfamilie. Dazu gehören:
 - Baritonsaxophon in Es  
 - Basssaxophon in B
 
-**Stimmumfänge:** Alle Saxophone haben einen notierten Umfang von b–fis³. Daraus ergibt sich für das Sopranino ein klingender Umfang von des¹–³, für das Sopransaxophon von as–e³, für das Altsaxophon von des–a², für das Tenorsaxophon von As–e², für das Baritonsaxophon von Des–a¹ und für das Basssaxophon von As¹–e¹. Töne über der angegebenen oberen Ambitusgrenze zählen zum Flageolett.
+**Stimmumfänge:** Alle Saxophone haben einen notierten Umfang von b–fis³. Daraus ergibt sich für das Sopranino ein klingender Umfang von des¹–des³, für das Sopransaxophon von as–e³, für das Altsaxophon von des–a², für das Tenorsaxophon von As–e², für das Baritonsaxophon von Des–a¹ und für das Basssaxophon von As₁–e¹. Töne über der angegebenen oberen Ambitusgrenze werden als Altissimo-Register bezeichnet bzw. zählen zum Flageolett.
 
 **Notation:** transponierend, d.h.  
 – eine kleine Terz höher als klingend (Sopranino),  
@@ -47,32 +47,18 @@ The alto saxophone is part of the saxophone family, which includes:
 - Baritone saxophone in E♭  
 - Bass saxophone in B♭
 
-**Ranges:**  
-All saxophones have a **written range** of B♭3–F♯6. This corresponds to the following **sounding ranges**:
+**Ranges:** All saxophones have a written range from B3 to F♯6. This corresponds to a sounding range of D♭4–F6 for the sopranino, A♭3–E6 for the soprano saxophone, D♭4–A5 for the alto saxophone, A♭2–E5 for the tenor saxophone, D♭3–A4 for the baritone saxophone, and A♭1–E4 for the bass saxophone. Notes above the indicated upper limit are considered harmonic (altissimo register).
 
-- Sopranino: D♭5–D♭7  
-- Soprano saxophone: A♭3–E6  
-- Alto saxophone: D♭4–A5  
-- Tenor saxophone: A♭2–E5  
-- Baritone saxophone: D♭3–A4  
-- Bass saxophone: A♭1–E4  
+**Notation:** Transposing instruments, specifically:
+- Written a minor third higher than sounding (sopranino)
+- Written a major second, major ninth, or a major second plus two octaves lower than sounding (soprano, tenor, and bass saxophones)
+- Written a major sixth or a major sixth plus an octave lower than sounding (alto and baritone saxophones)
 
-Notes above the standard range are considered part of the altissimo (harmonic) register.
+**Playing techniques:** Legato, staccato, trills, vibrato, growling, key effects and false fingerings, flutter tonguing, slap tongue, glissando (bending), overblowing (octave and twelfth), underblowing (with much air or breath only), subtone, and high agility.
 
-**Notation:**  
-Transposing instruments:  
-- Sopranino: written a minor third higher than sounding  
-- Soprano, tenor, and bass saxophones: written a major second (soprano), major ninth (tenor), or major second + two octaves (bass) higher than sounding  
-- Alto and baritone saxophones: written a major sixth (or major sixth + octave) higher than sounding
+**Special features:** Four- to five-part reed sections, e.g., the *Four Brothers* sound (three tenor saxophones and one baritone saxophone, famous since 1948 through Woody Herman’s orchestra) in classical modernism (Stravinsky, Gershwin, Berg, Webern, etc.) as well as in popular music (Miller, Ellington, etc.). The five-part section (popularized by Benny Carter) has become the standard big band saxophone section (2 altos, 2 tenors, 1 baritone).
 
-**Playing techniques:**  
-Legato, staccato, trills, vibrato, growling, key-click effects and false fingerings, flutter tongue, slap tongue, glissando (bending), overblowing (octave and twelfth), underblowing (with lots of air or just air tone), subtone, etc. — very agile instrument
-
-**Special features:**  
-Four- to five-part *reed section* voicings, such as the *Four Brothers sound* (3 tenor saxes and 1 baritone sax, known since 1948 from Woody Herman’s band), appear in classical modernism (Stravinsky, Gershwin, Berg, Webern, etc.) as well as in popular music (Miller, Ellington, etc.).  
-The five-part reed section (popularized by Benny Carter) is considered the **standard sax section** in big bands: 2 altos, 2 tenors, 1 baritone.
-
-**Repertoire examples:**
+**Repertoire examples within the orchestra:**
 
 - M. Ravel, *Boléro* (after rehearsal 7: sopranino in F and soprano in B♭)  
 - D. Milhaud, *Suite Scaramouche*  

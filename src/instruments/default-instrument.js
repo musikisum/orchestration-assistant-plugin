@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid';
+
 export default function defaultInstrument(
   id = null,
   name = 'neues Instrument',
@@ -9,16 +11,16 @@ export default function defaultInstrument(
   de = '',
   en = ''
 ) {
-  const template = {
-    id,
+  const finalId = id ?? `custom-${nanoid(10)}`;
+  return {
+    id: finalId,
     name,
-    begin, 
+    begin,
     end,
     before,
     after,
     color,
     de,
     en
-  };  
-  return template;
+  };
 }

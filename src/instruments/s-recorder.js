@@ -39,10 +39,9 @@ The recorder is a vertical (duct) flute made of wood, available in various sizes
 - Bass recorder in F3, range: F3–E5 (up to A♭5)  
 - Additionally: Great bass and sub-bass recorders (in C and F), ranges: C3–E♭5 and F2–G4 respectively
 
-**Notation:** octave-transposing (transposing instruments, exception: solo literature for alto recorder is typically written at sounding pitch)
+**Notation:** written transposed at the octave (transposing instruments, exception: solo literature for alto recorder)
 
-**Playing techniques:**  
-Legato (smooth), staccato (detached), with much breath noise (sibilando, sputato), "white noise" (soundless air), overblowing (harmonics), etc. The recorder is highly agile.
+**Playing techniques:** legato, staccato, with a lot of breath noise (sibilando, sputato), ›white noise‹ (breathy/tone-less), overblowing (harmonics), etc.; highly agile
 
 **Repertoire example:**
 

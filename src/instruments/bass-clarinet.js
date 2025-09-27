@@ -25,24 +25,15 @@ Die Bassklarinette ist ein Längsblasinstrument aus Holz mit einfachem Rohrblatt
 - R. Strauss, *Salome*, Ziffer 320`,
   en: `# The Bass Clarinet
 
-The bass clarinet is a vertical woodwind instrument with a single reed, pitched in B♭.
+The bass clarinet is a woodwind instrument with a single reed, pitched in B♭.
 
-**Range:**  
-Written: E3–E6  
-Sounding: D2–D5
+**Range:** written E3–E6, sounding D2–D5 (concert pitch)
 
-**Notation:**  
-Transposing instrument, written a major ninth higher than it sounds
+**Notation:** A transposing instrument, notated a major ninth higher than it sounds.
 
-**Timbre:**  
-See B♭ clarinet for tone color and playing techniques
+**Timbre:** Similar in character to the B♭ clarinet, but darker, richer, and more sonorous in the low register.
 
-**Combinations:**  
-- Good tonal blending with the B♭ clarinet (an octave lower)  
-- Effective in the upper octave when paired with contrabassoon  
-- Strong combinations with other low woodwinds (bassoon, English horn)  
-- Excellent blend with lower strings (cello, double bass)  
-- Among brass instruments, it pairs best with the horn (high degree of tonal fusion)
+**Combinations:** The bass clarinet blends particularly well with the B♭ clarinet an octave above and with the contrabassoon an octave below. Other effective pairings include bassoon, English horn, cellos, and double basses. Among the brass, the horn provides the closest blend.
 
 **Repertoire example:**
 

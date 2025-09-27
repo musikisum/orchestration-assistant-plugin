@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import { describe, it, expect } from 'vitest';
 import instrumentsProvider from './instruments-provider.js';
 
@@ -99,13 +100,33 @@ describe('instrumentsProvider – helper functions', () => {
 });
 
 describe('instrumentsProvider – getDefaultInstrument', () => {
-  it('provide new default instrument with custom-* ID', () => {
+  it('provide new default instrument without parameter', () => {
     const inst = getDefaultInstrument();
     expect(inst).toBeTypeOf('object');
     expect(typeof inst.id).toBe('string');
     expect(inst.id.startsWith('custom-')).toBe(true);
     const inst2 = getDefaultInstrument();
     expect(inst2.id).not.toBe(inst.id);
+  });
+
+  it('provide new default instrument with ID parameter', () => {
+    const nanoId = nanoid(10);
+    const inst = getDefaultInstrument(`custom-${nanoId}`);
+    expect(inst).toBeTypeOf('object');
+    expect(typeof inst.id).toBe('string');
+    expect(inst.id.startsWith('custom-')).toBe(true);
+    const inst2 = getDefaultInstrument();
+    expect(inst2.id).not.toBe(inst.id);
+  });
+
+  it('provide new default instrument with ID and name parameter', () => {
+    const inst = getDefaultInstrument(null, 'new instrument');
+    expect(inst).toBeTypeOf('object');
+    expect(typeof inst.id).toBe('string');
+    expect(['neues Instrument', 'new instrument']).toContain(inst.name);
+    expect(inst.id.startsWith('custom-')).toBe(true);
+    const inst2 = getDefaultInstrument();
+    expect(['neues Instrument', 'new instrument']).toContain(inst2.name);
   });
 });
 

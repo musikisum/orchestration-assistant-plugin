@@ -16,7 +16,7 @@ Die Piccoloflöte ist ein Blasinstrument aus Metall (auch Holz), erweitert den U
 
 **Notation:** eine Oktave tiefer als klingend (transponierendes Instrument)
 
-**Klangfarbe:** im untersten Register leiser und hohler Klang, in der 2.–3. gestrichenen Oktave dann weich und lieblich, in der 3.–4. gestrichenen Oktave sehr hell und klar und im obersten Register schrill und schneidend
+**Klangfarbe:** im untersten Register leiser und hohler Klang, in der zwei- und dreigestrichenen Oktave dann weich und lieblich, in der höheren drei- und der viergestrichenen Oktave sehr hell und klar sowie im höchsten Register schrill und schneidend
 
 **Spielweisen:** mit und ohne Vibrato, gebunden (legato), gestoßen (staccato), Flatterzunge, Gutturaltöne (gleichzeitig mit notierten Tönen), mit viel Luft (sibilando, sputato), glissandoartiges Ansetzen der Töne, Whistle-Ton (entspannter Ansatz und geringster Luftstrom: es erklingen harmonische Obertöne), Überblasen (Flageolett) und Unterblasen (Paukentöne), nur mit Klappengeräuschen, große dynamische Bandbreite etc.
 
@@ -29,26 +29,19 @@ Die Piccoloflöte ist ein Blasinstrument aus Metall (auch Holz), erweitert den U
 - I. Stravinsky, *Petruschka*, *Russian Dance*`,
   en: `# The Piccolo
 
-The piccolo is a wind instrument made of metal (sometimes wood) that extends the range of the (concert) flute upward by one octave in the orchestra.
+The piccolo is a woodwind instrument, usually made of metal or sometimes wood, that sounds an octave higher than the concert flute and extends the orchestra’s tonal range upward.
 
 **Range:** D5–C8
 
-**Notation:** written one octave lower than sounding (transposing instrument)
+**Notation:** written an octave lower than it sounds (transposing instrument)
 
-**Timbre:**  
-In the lowest register: soft and hollow sound  
-In the 2nd to 3rd octave: smooth and sweet  
-In the 3rd to 4th octave: very bright and clear  
-In the highest register: shrill and piercing
+**Timbre:** In the low register: quiet and hollow, in the middle register (second to third octave above middle C): soft and gentle, in the upper register: bright and clear, and in the extreme high register: piercing and sharp.
 
-**Playing techniques:**  
-With or without vibrato, legato (connected), staccato (detached), flutter tongue, guttural tones (simultaneous with pitched notes), with much breath noise (sibilando, sputato), glissando-like tone attacks, whistle tones (relaxed embouchure and minimal air for overtone harmonics), overblowing (harmonics), underblowing (percussive "drum tones"), key clicks only, wide dynamic range, etc.
+**Playing techniques:** with or without vibrato, legato, staccato, flutter-tonguing, guttural sounds (produced simultaneously with the notated tones), pronounced breath noise (sibilando, sputato), glissando-like tone onset, whistle tones (relaxed embouchure and minimal airflow producing harmonic overtones), overblowing (harmonics) and underblowing (pedal tones), key clicks only, wide dynamic range, etc.
 
-**Combinations:**  
-High degree of blending with the concert flute (for reinforcement via octave doubling); can also be combined with other woodwinds — for example, piccolo, clarinet, and bassoon in G. Rossini's *Overture to The Thieving Magpie* (*La Gazza Ladra*), rehearsal letter D.  
-Piccolo and snare drum form a traditional pairing for a military color.
+**Combinations:** The piccolo blends particularly well with the flute, often reinforcing its sound through octave doubling. It can also be paired with other woodwinds—for example, piccolo, clarinet, and bassoon appear together in Rossini’s Overture *La Gazza Ladra* (Letter D). Piccolo and snare drum form a traditional instrumental pair associated with a military character.
 
-**Repertoire examples featuring solo piccolo in orchestral writing:**
+**Literature examples for solo piccolo within the orchestra:**
 
 - Cl. Debussy, *Ibéria* (especially rehearsal 33, bars 1–6)  
 - D. Shostakovich, *Symphony No. 6*, 2nd movement  

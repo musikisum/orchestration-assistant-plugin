@@ -129,8 +129,8 @@ const includesAny = (set, ids) => {
   return ids.some(id => set.has(id));
 };
 
-const getDefaultInstrument = () => {
-  return defaultInstrument(`custom-${nanoid(10)}`);
+const getDefaultInstrument = (_id, name) => {
+  return defaultInstrument(`custom-${nanoid(10)}`, name);
 };
 
 const loadInstrumentsFromNames = names => {

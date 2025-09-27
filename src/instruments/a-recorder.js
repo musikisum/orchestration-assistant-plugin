@@ -29,7 +29,7 @@ Die Blockflöte ist eine Längsflöte aus Holz in verschiedenen Größen:
 - J. S. Bach, *Brandenburgisches Konzert Nr. 4, G-Dur*, BWV 1049`,
   en: `# The Alto Recorder
 
-The recorder is a vertical (duct) flute made of wood and comes in various sizes:
+The recorder is a vertical (duct) flute made of wood, available in various sizes:
 
 - Garklein recorder in C6, range: C6–D8 (up to G8)  
 - Sopranino (piccolo, descant) in F5, range: F5–A♭7 (up to C8)  
@@ -37,14 +37,11 @@ The recorder is a vertical (duct) flute made of wood and comes in various sizes:
 - Alto recorder in F4, range: F4–A♭6 (up to C7)  
 - Tenor recorder in C4, range: C4–E♭6 (up to G6)  
 - Bass recorder in F3, range: F3–E5 (up to A♭5)  
-- Also: great bass and sub-bass recorders (in C and F), ranges: C3–E♭5 and F2–G4 respectively
+- Additionally: Great bass and sub-bass recorders (in C and F), ranges: C3–E♭5 and F2–G4 respectively
 
-**Notation:**  
-Octave-transposing (transposing instruments),  
-*except* in solo literature for the alto recorder, which is typically written at sounding pitch.
+**Notation:** written transposed at the octave (transposing instruments, exception: solo literature for alto recorder)
 
-**Playing techniques:**  
-Legato (smooth), staccato (detached), with much breath noise (sibilando, sputato), “white noise” (soundless air), overblowing (harmonics), etc. — the recorder is a highly agile instrument.
+**Playing techniques:** legato, staccato, with a lot of breath noise (sibilando, sputato), ›white noise‹ (breathy/tone-less), overblowing (harmonics), etc.; highly agile
 
 **Repertoire example:**
 
