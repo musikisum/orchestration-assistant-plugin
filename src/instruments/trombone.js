@@ -17,7 +17,7 @@ Die Posaune ist ein Instrument aus Metall aus der Familie der Blechblasinstrumen
 - Bassposaune  
 - Kontrabassposaune (z.B. bei Wagner)
 
-**Stimmumfänge:** Die Altposaune von A–es², die Tenorposaune von E–d² (f²) und die Bassposaune von B₁–f¹, dazu jeweils 7 sog. Pedaltöne (Grundtöne der Zugpositionen, früher wegen schwerer Ansprache nur selten gefordert, heute dagegen gebräuchlich und auf modernen Instrumenten auch leichter realisierbar). Der Tonumfang in der Höhe ist stark abhängig vom Spielvermögen.
+**Stimmumfänge:** Die Altposaune von A–es², die Tenorposaune von E–f² (d²) und die Bassposaune von B₁–b¹ (d¹), dazu Pedaltöne (Grundtöne der Zugpositionen, früher wegen schwerer Ansprache nur selten gefordert, heute dagegen gebräuchlich und auf modernen Instrumenten auch leichter realisierbar). Der Tonumfang in der Höhe ist stark abhängig vom Spielvermögen.
 
 **Notation:** Trotz verschiedener Grundstimmungen werden Posaunen klingend notiert (im Bassschlüssel, höhere Lagen auch im Tenorschlüssel).
 
@@ -34,32 +34,24 @@ Die Posaune ist ein Instrument aus Metall aus der Familie der Blechblasinstrumen
 - P. Tschaikowsky, *Sinfonie Nr. 6 in h-Moll*, 1. Satz, Ziffer 16`,
   en: `# The Trombone
 
-The trombone is a brass instrument made of metal and belongs to the brass instrument family. Instruments of the trombone family are built in different registers:
+The trombone is a brass instrument. Instruments of the trombone family are constructed in various ranges:
 
 - Alto trombone  
 - Tenor trombone  
 - Bass trombone  
 - Contrabass trombone (e.g. in Wagner)
 
-**Ranges:**  
-- Alto trombone: A2–E♭5  
-- Tenor trombone: E2–D5 (F5)  
-- Bass trombone: B♭1–F4  
-Each also includes seven so-called pedal tones (fundamental tones of each slide position, rarely used in the past due to difficulty of production, but now common and more easily playable on modern instruments). The upper range depends strongly on the player's ability.
+**Ranges:** The alto trombone from A2 to E♭5, the tenor trombone from E2 to D5 (F5), and the bass trombone from B1 to F4, each also having so-called pedal tones (fundamental tones of the slide positions, in the past rarely demanded due to difficult articulation, now common and easier to play on modern instruments). The upper range depends greatly on the player’s skill.
 
-**Notation:**  
-Despite having different fundamental tunings, trombones are notated at concert pitch (in bass clef; higher ranges may be written in tenor clef).
+**Notation:** Despite different fundamental tunings, trombones are written at concert pitch (bass clef, higher registers also in tenor clef).
 
-**Playing techniques:**  
-Various articulation options (different consonants when tonguing), tonguing techniques (double, triple, and flutter tongue), vibrato, legato, with mute, trills (lip trills), *glissando* (up to the span of a diminished fifth), etc. The slide mechanism limits agility somewhat compared to valved instruments.
+**Playing techniques:** Various articulation methods (different consonants on attack), tonguing techniques (double, triple, and flutter tonguing), vibrato, legato, muted playing, trills (lip trills), glissando (up to a diminished fifth range), etc. Due to the slide system, agility is limited.
 
-**Timbre:**  
-Pedal tones have a metallic, dark, and narrow timbre. In the low register, trombones sound weighty and dark, threatening in forte; in the middle register, heroic and powerful, full and solemn in piano; in the high register, the tone becomes softer (similar in quality to the horn in this range).
+**Timbre:** Pedal tones have a metallic, dark, and narrow sound; in the low register, trombones sound weighty, dark, and threatening at forte; in the mid-register, heroic with great power, full and serious at piano; in the high register, softness increases (with a tone resemblance to the horn in this range).
 
-**Combinations:**  
-Excellent blending with all brass instruments. Despite timbral differences, the tuba is used as the bass instrument in the trombone section. Less blend with woodwinds (minimal fusion), though it can be used in forte (tutti) with low woodwinds for reinforcement. Very homogeneous tonal blend with the strings is possible.
+**Combinations:** Very good blends with all brass instruments. Despite timbral differences, the tuba serves as the bass instrument of the trombone section. Combinations with woodwinds are less effective (little blending); the trombone can reinforce the sound with low woodwinds at forte (tutti). Very homogeneous sound effects are possible in combination with strings.
 
-**Repertoire examples:**
+**Repertoire examples within the orchestra:**
 
 - W. A. Mozart, *Requiem*, *Tuba mirum*, opening  
 - G. Rossini, *William Tell Overture*, letter C (from bar 92)  

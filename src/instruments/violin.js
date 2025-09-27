@@ -32,18 +32,18 @@ Die Violine ist das Sopraninstrument der Geigenfamilie (Quintenstimmung, F-Löch
 
 | Töne | 1/2 Lage | 1. Lage | 2. Lage | 3. Lage | 4. Lage
 | -----|----------|---------|---------|---------|--------
-| b'   |    1     |         |         |         | 
-| h'   |          |    1    |         |         | 
-| c'   |    2     |         |    1    |         | 
-| c♯'  |          |    2    |         |         | 
-| d'   |    3     |         |    2    |    1    | 
-| e♭'/d♯'|  4     |    3    |         |         | 
-| e'   |          |    4    |    3    |    2    |    1
-| f'   |          |         |    4    |         | 
-| f♯'  |          |         |         |    3    |    2
-| g'   |          |         |         |    4    | 
-| g♯'  |          |         |         |         |    3
-| a'   |          |         |         |         |    4
+| b¹   |    1     |         |         |         | 
+| h¹   |          |    1    |         |         | 
+| c²   |    2     |         |    1    |         | 
+| c♯²  |          |    2    |         |         | 
+| d²   |    3     |         |    2    |    1    | 
+| e♭²/d♯² |  4    |    3    |         |         | 
+| e²   |          |    4    |    3    |    2    |    1
+| f²   |          |         |    4    |         | 
+| f♯²  |          |         |         |    3    |    2
+| g²   |          |         |         |    4    | 
+| g♯²  |          |         |         |         |    3
+| a²   |          |         |         |         |    4
 
 **Schulorchester:** Flageolett, Doppel- und Mehrfachgriffe meiden bzw. mit besonderer Vorsicht einsetzen, Umfang nur in Ausnahmefällen über der 4. Lage fordern (e³).
 
@@ -76,18 +76,18 @@ The violin is the soprano instrument of the violin family (tuned in fifths, with
 
 | Notes        | ½ Pos.     | 1st Pos.     | 2nd Pos.     | 3rd Pos.     | 4th Pos.      |
 |--------------|------------|--------------|--------------|--------------|---------------|
-| B            | 1          |              |              |              |               |
-| B♯ / C       |            | 1            |              |              |               |
-| C            | 2          |              | 1            |              |               |
-| C♯           |            | 2            |              |              |               |
-| D            | 3          |              | 2            | 1            |               |
-| D♯ / E♭      | 4          | 3            |              |              |               |
-| E            |            | 4            | 3            | 2            | 1             |
-| F            |            |              | 4            |              |               |
-| F♯           |            |              |              | 3            | 2             |
-| G            |            |              |              | 4            |               |
-| G♯           |            |              |              |              | 3             |
-| A            |            |              |              |              | 4             |
+| B♭4          | 1          |              |              |              |               |
+| B4           |            | 1            |              |              |               |
+| C5           | 2          |              | 1            |              |               |
+| C♯5          |            | 2            |              |              |               |
+| D5           | 3          |              | 2            | 1            |               |
+| D♯5 / E♭5    | 4          | 3            |              |              |               |
+| E5           |            | 4            | 3            | 2            | 1             |
+| F5           |            |              | 4            |              |               |
+| F♯5          |            |              |              | 3            | 2             |
+| G5           |            |              |              | 4            |               |
+| G♯5          |            |              |              |              | 3             |
+| A5           |            |              |              |              | 4             |
 
 **School orchestra:** Avoid harmonics and double/triple stops or use with great caution; avoid demanding playing above 4th position (E6) except in exceptional cases.
 

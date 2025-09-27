@@ -47,11 +47,11 @@ The tuba is a brass instrument made of metal that belongs to the brass family. C
 
 **Playing techniques:** Tonguing (double, triple, and flutter tonguing), vibrato, legato, with mute, trill, glissando, etc.
 
-**Timbre:** The lowest pedal notes are difficult to produce. The low register is characterized by soft but resonant tones. The middle register (F♯–f) can be considered the main register of the tuba, while the sound in the high register becomes increasingly louder.
+**Timbre:** The lowest pedal tones respond with difficulty; the low register is characterized by soft yet carrying tones. The middle register (F♯–f) can be considered the main register of the tuba; it becomes increasingly loud in the upper register.
 
 **Combinations:** Often used together with all brass instruments (as the bass instrument of the brass family), little blending with the trumpet; the tuba and contrabass tuba produce a massive sound in octaves. Combinations with the bass instruments of the woodwinds (tutti) are common, but rarely with the higher woodwinds (e.g., Britten, Violin Concerto, solo by tuba and piccolo). Very homogeneous blend with the double bass of the strings.
 
-**Repertoire examples:**
+**Repertoire examples within the orchestra::**
 
 - G. Mahler, *Symphony No. 1 in D major*, 3rd movement, bars 15 ff.  
 - M. Mussorgsky, *Pictures at an Exhibition* (orch. by M. Ravel), 4th movement (*Bydlo*)  

@@ -28,22 +28,22 @@ Die Viola (Bratsche) ist das Altinstrument der Geigenfamilie (Quintenstimmung, F
 
 **Kombinationen:** Streichinstrumente können gut zur Klangverstärkung von (anderen) Streichinstrumenten oktaviert werden (z.B. die Violine I durch Violine II, Viola oder auch Cello in der Unteroktave); hohe Klangverschmelzung mit allen Holzbläsern und dem Horn, geringere Klangverschmelzung mit Trompete, Posaune und Tuba.
 
-**Grifftechnik:** Beispiele für die Basis-Positionen des Dur-Tetrachords, das mit den Fingern 1–4 gespielt wird auf der d'-Saite:
+**Grifftechnik:** Beispiele für die Basis-Positionen des Dur-Tetrachords, das mit den Fingern 1–4 gespielt wird auf der d¹-Saite:
 
 | Töne | 1/2 Lage | 1. Lage | 2. Lage | 3. Lage | 4. Lage
 | -----|----------|---------|---------|---------|--------
-| e♭'  |    1     |         |         |         | 
-| e'   |          |    1    |         |         | 
-| f'   |    2     |         |    1    |         | 
-| f♯'  |          |    2    |         |         | 
-| g'   |    3     |         |    2    |    1    | 
-| a♭'/d♯'|  4     |    3    |         |         | 
-| a'   |          |    4    |    3    |    2    |   1
-| b'   |          |         |    4    |         | 
-| h'   |          |         |         |    3    |   2
-| c'   |          |         |         |    4    | 
-| c♯'  |          |         |         |         |   3
-| d'   |          |         |         |         |   4
+| e♭¹  |    1     |         |         |         | 
+| e¹   |          |    1    |         |         | 
+| f¹   |    2     |         |    1    |         | 
+| f♯¹  |          |    2    |         |         | 
+| g¹   |    3     |         |    2    |    1    | 
+| a♭¹/g♯¹ |  4    |    3    |         |         | 
+| a¹   |          |    4    |    3    |    2    |   1
+| b¹   |          |         |    4    |         | 
+| h¹   |          |         |         |    3    |   2
+| c²   |          |         |         |    4    | 
+| c♯²  |          |         |         |         |   3
+| d²   |          |         |         |         |   4
 
 **Schulorchester:** Flageolett, Doppel- und Mehrfachgriffe meiden bzw. mit besonderer Vorsicht einsetzen, Umfang nur in Ausnahmefällen über der 4. Lage fordern (a²).
 
@@ -73,22 +73,22 @@ The viola is the alto instrument of the violin family (tuned in fifths, with f-h
 
 **Combinations:** String instruments can be effectively doubled in octaves for reinforcement (e.g. violin I doubled by violin II, viola, or even cello in the lower octave); strong sound blending with all woodwinds and the horn; weaker blending with trumpet, trombone, and tuba
 
-**Fingering technique:** Examples of basic positions of the major tetrachord as played with fingers 1–4 on the D string:
+**Fingering technique:** Examples of basic positions of the major tetrachord as played with fingers 1–4 on the D4 string:
 
 | Notes     | ½ Position | 1st Position | 2nd Position | 3rd Position | 4th Position |
 |-----------|------------|--------------|--------------|--------------|---------------|
-| E♭        | 1          |              |              |              |               |
-| E         |            | 1            |              |              |               |
-| F         | 2          |              | 1            |              |               |
-| F♯        |            | 2            |              |              |               |
-| G         | 3          |              | 2            | 1            |               |
-| A♭ / G♯   | 4          | 3            |              |              |               |
-| A         |            | 4            | 3            | 2            | 1             |
-| B♭ / A♯   |            |              | 4            |              |               |
-| B         |            |              |              | 3            | 2             |
-| C         |            |              |              | 4            |               |
-| C♯        |            |              |              |              | 3             |
-| D         |            |              |              |              | 4             |
+| E♭4       | 1          |              |              |              |               |
+| E4        |            | 1            |              |              |               |
+| F4        | 2          |              | 1            |              |               |
+| F♯4       |            | 2            |              |              |               |
+| G4        | 3          |              | 2            | 1            |               |
+| A♭4 / G♯4 | 4          | 3            |              |              |               |
+| A4        |            | 4            | 3            | 2            | 1             |
+| B♭4 / A♯4 |            |              | 4            |              |               |
+| B4        |            |              |              | 3            | 2             |
+| C5        |            |              |              | 4            |               |
+| C♯5       |            |              |              |              | 3             |
+| D5        |            |              |              |              | 4             |
 
 **School orchestra:** Avoid harmonics, double/triple stops or use with great caution; avoid demanding playing above 4th position (A5) should only be used in exceptional cases
 
