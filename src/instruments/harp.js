@@ -10,9 +10,9 @@ const harp = {
   color: colors.strings,
   de: `# Die Harfe
     
-Die Doppelharfe ist ein Saiteninstrument mit Ces-Dur-Stimmung und 47 Saiten.
+Die Pedalharfe (Doppelpedal) ist ein Saiteninstrument mit Ces-Dur-Stimmung und 47 Saiten.
 
-**Notation:** Klingend, in zwei Systemen (wie das Pianoforte)
+**Notation:** Klingend notiert, in zwei Systemen (wie das Klavier)
 
 **Tonumfang:** Ces₁–g⁴
 
@@ -38,11 +38,9 @@ Beispiel: Die Pedalstellung für die harmonische d-Molltonleiter (Zählung der P
 
 Eine Pedalbewegung wirkt sich auf einen Ton und alle seine Oktaväquivalente aus.
 
-**Spielweisen:**  
-Mit der Hand, dem Handballen, den Fingern (der kleine Finger wird nicht verwendet), Handflächen und -rücken, schlagen, zupfen und reißen, mit den Fingernägeln gedämpft (Klirreffekt), bzw. gleich nach dem Zupfen abgedämpft (*sons étouffés*), nahe am Resonanzkörper (*prés de la table*), Glissando (nicht chromatisch), Flageolett (nur Oktav-) etc.
+**Spielweisen:** Mit der Hand, dem Handballen, den Fingern (der kleine Finger wird nicht verwendet), Handflächen und Handrücken, schlagen, zupfen und reißen, mit den Fingernägeln (klirrend), bzw. gleich nach dem Zupfen abgedämpft (*sons étouffés*), nahe am Resonanzkörper (*près de la table*), *glissando* (nicht chromatisch), Flageolett (nur Oktavflageolett) etc.
 
-**Kombinationen:**  
-Die Harfe ist ein bevorzugt solistisches Instrument, das sehr leise ist und leicht überdeckt werden kann. Gute Klangverbindungen bestehen mit den Streichern (z.B. Harfenflageolett und Violinen), im *piano* kann die Harfe mit ihren tiefen Tönen auch den Kontrabass ersetzen. Gute Kombinationen gibt es auch mit Flöte und Horn.
+**Kombinationen:** Die Harfe ist ein bevorzugt solistisches Instrument, das sehr leise ist und leicht überdeckt werden kann. Gute Klangverbindungen bestehen mit den Streichern (z.B. Harfenflageolett und Violinen), im *piano* kann die Harfe die Basslage stützen. Gute Kombinationen gibt es auch mit Flöte und Horn.
 
 **Literaturbeispiele:**
 
@@ -52,16 +50,13 @@ Die Harfe ist ein bevorzugt solistisches Instrument, das sehr leise ist und leic
 - A. Webern, *Sechs Stücke für Orchester*, Op. 6`,
   en: `# The Harp
 
-The double-action harp is a string instrument tuned to C♭ major and has 47 strings.
+The pedal harp is a string instrument with a C-flat major tuning and 47 strings.
 
-**Notation:**  
-Written at concert pitch, using two staves (as in piano notation)
+**Notation:** written at concert pitch, on two staves (as for piano)  
 
-**Range:**  
-C♭1–G7
+**Range:** C♭1–G7
 
-**Pedal technique:**  
-There are 7 pedals used to chromatically alter the pitch of the diatonic tones.
+**Pedal technique:** There are 7 pedals for the chromatic alteration of the seven diatonic pitch classes
 
 ![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/pedalstellungen-Seite001.svg)
 
@@ -81,13 +76,11 @@ There are 7 pedals used to chromatically alter the pitch of the diatonic tones.
 - B♭ = top position of the 3rd pedal  
 - C♯ = bottom position of the 2nd pedal  
 
-A pedal movement affects the given note and all of its octave equivalents across the entire instrument.
+A pedal movement affects one pitch and all its octave equivalents.
 
-**Playing techniques:**  
-Played with the hands, palms, fingers (the little finger is not used), backs of the hands, plucking, striking, snapping the strings, damped with the fingernails (creating a metallic sound), or immediately after plucking (*sons étouffés*), playing close to the soundboard (*près de la table*), glissando (non-chromatic), harmonics (only octave harmonics), etc.
+**Playing techniques:** With the hand, palm, fingers (the little finger is not used), palms and backs of the hands; striking, plucking, and pulling; with fingernails (clangorous effect), or damped immediately after plucking (*sons étouffés*); near the soundboard (*près de la table*); glissando (non-chromatic); harmonics (octave only), etc.
 
-**Combinations:**  
-The harp is primarily a soloistic instrument. It is relatively soft and easily overpowered. It blends well with the strings (e.g., harp harmonics and violins); in *piano*, its low tones can even substitute for the double bass. It also combines well with the flute and horn.
+**Combinations:** The harp is primarily a solo instrument; it is very soft and easily masked. Good sound blending occurs with the strings (e.g., harp harmonics and violins). The harp’s low tones can support the bass register at piano dynamics. Good combinations also exist with flute and horn.
 
 **Repertoire examples:**
 

@@ -14,10 +14,9 @@ Die Gitarre ist ein Saiteninstrument mit Bünden.
 
 **Stimmung:** E–A–d–g–h–e¹
 
-**Notation:**  
-Eine Oktave höher als klingend (transponierendes Instrument), hohe Beweglichkeit
+**Notation:** Notiert eine Oktave höher als klingend (transponierendes Instrument), hohe Beweglichkeit
 
-**Tonumfänge:** Bis e² mit allen Gitarrentypen möglich, Gitarren mit 19 Bünden in der Höhe bis h², elektrische Gitarren mit »Cutaway« (Einbuchtung im Korpus) sogar bis e³
+**Tonumfänge:** Bis e² mit allen Gitarrentypen möglich, Gitarren mit 19 Bünden in der Höhe bis h², elektrische Gitarren mit *Cutaway* (Einbuchtung im Korpus) sogar bis e³
 
 **Bauweise:** Akustische Gitarren haben einen Resonanzkörper (Konzertgitarre, Western-Gitarre) und können für das Spiel in der Band mit Tonabnehmern (Pick-ups) verstärkt werden. 
 
@@ -27,7 +26,7 @@ In der Gruppe der elektrischen Gitarren unterscheidet man zwischen
 - Halbresonanz-Gitarre und 
 - Solidbody-Gitarre.
 
-Die **Vollresonanz-Gitarre** ist der älteste E-Gitarrentyp mit Resonanzkörper, F-Schalllöchern, eingebauten Tonabnehmern und wird heute beinahe ausschließlich im Jazz verwendet. Die **Halbresonanz-Gitarre** ist ein Bindeglied zwischen akustischer und elektrischer Gitarre. Zur Verbesserung der Rückkoppelungseigenschaften wird seit 1955 in den hohlen Korpus ein massives Mittelsegment eingelassen.
+Die **Vollresonanz-Gitarre** ist der älteste E-Gitarrentyp mit Resonanzkörper, F-Schalllöchern, eingebauten Tonabnehmern und wird heute beinahe ausschließlich im Jazz verwendet. Die **Halbresonanz-Gitarre** ist ein Bindeglied zwischen akustischer und elektrischer Gitarre. Zur Verbesserung der Rückkopplungseigenschaften wird seit 1955 in den hohlen Korpus ein massives Mittelsegment eingelassen.
 
 Die Bauweise heutiger elektrischer Gitarren lässt sich auf wenige Modelle zurückführen:
 
@@ -49,7 +48,7 @@ Die Bauweise heutiger elektrischer Gitarren lässt sich auf wenige Modelle zurü
 **Literaturbeispiele für die Klangmöglichkeiten einer elektrischen Gitarre:**
 
 - Jimi Hendrix – *Star Spangled Banner*  
-- Santana – *Samba PaTi*  
+- Santana – *Samba Pa Ti*  
 - Van Halen – *Jump*`,
   en: `# The Guitar
 
@@ -57,15 +56,12 @@ The guitar is a fretted string instrument.
 
 **Tuning:** E1–A1–D2–G2–B2–E3
 
-**Notation:**  
-written one octave higher than sounding (transposing instrument), highly agile
+**Notation:** written one octave higher than sounding (transposing instrument), highly agile
 
-**Range:**  
-On all standard guitars, the range goes up to about E5 without difficulty.
+**Range:** On all standard guitars, the range goes up to about E5 without difficulty.
 Classical guitars with 19 frets reach up to B5, and those with 20 frets up to C6. Steel-string acoustics and electrics usually have 21–24 frets, extending the range to D♯6/E♭6, E6, or even up to E7 on 24-fret instruments. A *cutaway* does not extend the range itself but makes access to the highest frets easier.
 
-**Construction:**  
-Acoustic guitars have a resonating body (classical guitar, western guitar) and can be amplified for band use with pickups.
+**Construction:** Acoustic guitars have a resonating body (classical guitar, steel-string acoustic) and can be amplified for band use with pickups.
 
 Among electric guitars, distinctions are made between:
 
@@ -73,7 +69,7 @@ Among electric guitars, distinctions are made between:
 - Semi-hollow-body  
 - Solid-body
 
-The **hollow-body guitar** is the oldest electric guitar type with a resonant body, f-shaped sound holes, built-in pickups, and today is almost exclusively used in jazz. The **semi-hollow guitar** is a hybrid between acoustic and electric guitar. Since 1955, a solid center block is being built into the hollow body to improve feedback resistance.
+The **hollow-body guitar** is the oldest electric guitar type with a resonant body, f-shaped sound holes, built-in pickups, and today is almost exclusively used in jazz. The **semi-hollow guitar** is a hybrid between acoustic and electric guitar. Since 1955, a solid center block has been built into the hollow body to improve feedback resistance.
 
 Modern electric guitar construction can be traced back to a few key models:
 
@@ -94,7 +90,7 @@ Modern electric guitar construction can be traced back to a few key models:
 
 **Repertoire examples for the sound possibilities of an electric guitar:**
 
-- Jimi Hendrix – *Star Spangled Banner*  
+- Jimi Hendrix – *The Star-Spangled Banner*  
 - Santana – *Samba Pa Ti*  
 - Van Halen – *Jump*`
 

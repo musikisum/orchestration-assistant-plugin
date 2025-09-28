@@ -14,9 +14,9 @@ Die Viola (Bratsche) ist das Altinstrument der Geigenfamilie (Quintenstimmung, F
 
 **Stimmung:** c-g-d¹-a¹
 
-**Notation:** klingend, hohe Beweglichkeit
+**Notation:** Klingend, hohe Beweglichkeit
 
-**Tonumfang:** in Orchesterliteratur vom kleinen c (leere Saite) bis zum c³ (z.B. g² in *9. Symphonie*, 2. Satz von G. Mahler), in virtuoser Sololiteratur oder zeitgenössischen Werken bis e³ oder sogar a³
+**Tonumfang:** In Orchesterliteratur vom kleinen c (leere Saite) bis zum c³ (z.B. g² in *9. Symphonie*, 2. Satz von G. Mahler), in virtuoser Sololiteratur oder zeitgenössischen Werken bis e³ oder sogar a³
 
 **Doppelgriffe:** Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), Quinten, Quarten und Terzen (schwer), Oktave und Einklang (sehr schwer)
 

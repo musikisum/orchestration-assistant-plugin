@@ -10,7 +10,7 @@ const piccoloflute = {
   color: colors.wood,
   de: `# Die Piccoloflöte
 
-Die Piccoloflöte ist ein Blasinstrument aus Metall (auch Holz), erweitert den Umfang der (großen) Flöten im Orchester um eine Oktave nach oben.
+Die Piccoloflöte ist ein Blasinstrument aus Holz (auch Metall), das den Umfang der (großen) Flöten im Orchester um eine Oktave nach oben erweitert.
 
 **Tonumfang:** d²–c⁵
 
@@ -18,9 +18,9 @@ Die Piccoloflöte ist ein Blasinstrument aus Metall (auch Holz), erweitert den U
 
 **Klangfarbe:** im untersten Register leiser und hohler Klang, in der zwei- und dreigestrichenen Oktave dann weich und lieblich, in der höheren drei- und der viergestrichenen Oktave sehr hell und klar sowie im höchsten Register schrill und schneidend
 
-**Spielweisen:** mit und ohne Vibrato, gebunden (legato), gestoßen (staccato), Flatterzunge, Gutturaltöne (gleichzeitig mit notierten Tönen), mit viel Luft (sibilando, sputato), glissandoartiges Ansetzen der Töne, Whistle-Ton (entspannter Ansatz und geringster Luftstrom: es erklingen harmonische Obertöne), Überblasen (Flageolett) und Unterblasen (Paukentöne), nur mit Klappengeräuschen, große dynamische Bandbreite etc.
+**Spielweisen:** mit und ohne Vibrato, *legato* (gebunden), *staccato* (gestoßen), Flatterzunge, Gutturaltöne (gleichzeitig mit notierten Tönen), *sibilando*, *sputato* (mit viel Luft), glissandoartiges Ansetzen der Töne, Whistle-Ton (entspannter Ansatz und geringster Luftstrom für harmonische Obertöne), Überblasen (Flageolett) und Unterblasen (luftige Töne; *Paukentöne* bei der großen Querflöte), nur mit Klappengeräuschen, große dynamische Bandbreite etc.
 
-**Kombinationen:** Hoher Verschmelzungsgrad mit der Flöte (Klangverstärkung durch Oktavspiel), Koppelungen auch mit den anderen Holzbläsern möglich: Piccoloflöte, Klarinette und Fagott z.B. in G. Rossini, *Ouvertüre *Die diebische Elster* (*La Gazza Ladra*), Buchstabe D. Piccoloflöte und Trommel bilden ein traditionelles Instrumentenpaar für militärisches Kolorit.
+**Kombinationen:** Hoher Verschmelzungsgrad mit der Flöte (Klangverstärkung durch Oktavspiel), Koppelungen auch mit den anderen Holzbläsern möglich (z.B. Piccoloflöte, Klarinette und Fagott in G. Rossinis Ouvertüre *Die diebische Elster* bzw. *La Gazza Ladra*), Buchstabe D. Piccoloflöte und kleine Trommel (Snare Drum) bilden ein traditionelles Instrumentenpaar für militärisches Kolorit.
 
 **Literaturbeispiele für eine solistische Piccoloflöte im Orchestersatz:**
 
@@ -29,7 +29,7 @@ Die Piccoloflöte ist ein Blasinstrument aus Metall (auch Holz), erweitert den U
 - I. Stravinsky, *Petruschka*, *Russian Dance*`,
   en: `# The Piccolo
 
-The piccolo is a woodwind instrument, usually made of metal or sometimes wood, that sounds an octave higher than the concert flute and extends the orchestra’s tonal range upward.
+The piccolo is a woodwind instrument, commonly made of wood (or metal/composite), that sounds an octave higher than the concert flute and extends the orchestra’s tonal range upward.
 
 **Range:** D5–C8
 

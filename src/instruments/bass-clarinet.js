@@ -10,11 +10,11 @@ const bassclarinet = {
   color: colors.wood,
   de: `# Die Bassklarinette
     
-Die Bassklarinette ist ein Längsblasinstrument aus Holz mit einfachem Rohrblatt in B-Stimmung.
+Die Bassklarinette ist ein Holzblasinstrument mit einfachem Rohrblatt in B-Stimmung.
 
-**Tonumfang:** notiert von e–e³, klingend von D–d²
+**Tonumfang:** Notiert von e–e³, klingend eine große None tiefe von D–d²
 
-**Notation:** transponierend, eine große None höher als klingend
+**Notation:** Transponierend, eine große None höher als klingend
 
 **Klangfarbe:** Zur Klangfarbe und Spielweise vgl. Klarinette in B
 
@@ -22,22 +22,26 @@ Die Bassklarinette ist ein Längsblasinstrument aus Holz mit einfachem Rohrblatt
 
 **Literaturbeispiele:**
 
-- R. Strauss, *Salome*, Ziffer 320`,
+- R. Strauss, *Salome*, Zählziffer 320G. 
+- G. Mahler, Symphony No. 6 (Scherzo)
+- M. Ravel, Boléro (als Teil des harmonischen Fundaments)`,
   en: `# The Bass Clarinet
 
-The bass clarinet is a woodwind instrument with a single reed, pitched in B♭.
+The bass clarinet is a single-reed woodwind instrument, pitched in B♭.
 
 **Range:** written E3–E6, sounding D2–D5 (concert pitch)
 
-**Notation:** A transposing instrument, notated a major ninth higher than it sounds.
+**Notation:** a transposing instrument, notated a major ninth higher than it sounds.
 
-**Timbre:** Similar in character to the B♭ clarinet, but darker, richer, and more sonorous in the low register.
+**Timbre:** darker and more resonant than the B♭ clarinet, but similar in character
 
-**Combinations:** The bass clarinet blends particularly well with the B♭ clarinet an octave above and with the contrabassoon an octave below. Other effective pairings include bassoon, English horn, cellos, and double basses. Among the brass, the horn provides the closest blend.
+**Combinations:** The bass clarinet blends well with the B♭ clarinet an octave above and with the contrabassoon an octave below. It also combines effectively with other bass woodwinds such as bassoon and English horn, and with the lower strings (cellos and double basses). Among the brass, the closest blend is with the horn.
 
-**Repertoire example:**
+**Repertoire examples:**
 
-- R. Strauss, *Salome*, rehearsal number 320`
+- R. Strauss, *Salome*, rehearsal number 320G. 
+- G. Mahler, Symphony No. 6 (Scherzo)
+- M. Ravel, Boléro (as part of the harmonic foundation)`
 
 };
 

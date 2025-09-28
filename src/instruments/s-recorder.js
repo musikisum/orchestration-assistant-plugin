@@ -20,16 +20,16 @@ Die Blockflöte ist eine Längsflöte aus Holz in verschiedenen Größen:
 - Bassblockflöte in f, Stimmumfang: f–e² (as²)  
 - Daneben noch Großbass- und Subbassblockflöte (in c und F), Stimmumfänge: c–es² bzw. F–g¹
 
-**Notation:** oktavierend (transponierende Instrumente, Ausnahme: Sololiteratur für Altblockflöte)
+**Notation:** Oktavierend (transponierende Instrumente, Ausnahme: Sololiteratur der Altblockflöte)
 
-**Spielweisen:** legato (gebunden), gestoßen (staccato), mit viel Nebenluft (sibilando, sputato), „weißes Rauschen“ (tonlos), Überblasen (Flageolett) etc., hohe Beweglichkeit
+**Spielweisen:** *legato* (gebunden), *staccato* (gestoßen), mit viel Nebenluft (*sibilando*, *sputato*), »weißes Rauschen« (tonlos), Überblasen (in der Oktave) und Flageolett (in zeitgenössischen Musik), etc., hohe Beweglichkeit
 
 **Literaturbeispiel:**
 
 - J. S. Bach, *Brandenburgisches Konzert Nr. 4, G-Dur*, BWV 1049`,
   en: `# The Soprano Recorder
 
-The recorder is a vertical (duct) flute made of wood, available in various sizes:
+he recorder is a vertical (duct) flute made of wood, available in various sizes:
 
 - Garklein recorder in C6, range: C6–D8 (up to G8)  
 - Sopranino (piccolo, descant) in F5, range: F5–A♭7 (up to C8)  
@@ -39,9 +39,9 @@ The recorder is a vertical (duct) flute made of wood, available in various sizes
 - Bass recorder in F3, range: F3–E5 (up to A♭5)  
 - Additionally: Great bass and sub-bass recorders (in C and F), ranges: C3–E♭5 and F2–G4 respectively
 
-**Notation:** written transposed at the octave (transposing instruments, exception: solo literature for alto recorder)
+**Notation:** Written at pitch, sounding one octave higher (transposing instruments, exception: solo literature for alto recorder)
 
-**Playing techniques:** legato, staccato, with a lot of breath noise (sibilando, sputato), ›white noise‹ (breathy/tone-less), overblowing (harmonics), etc.; highly agile
+**Playing techniques:** legato, staccato, with much breath noise (sibilando, sputato), ›white noise‹ (without definite pitch), overblowing (at the octave), flageolet tones (in contemporary repertoire), etc.; highly agile
 
 **Repertoire example:**
 

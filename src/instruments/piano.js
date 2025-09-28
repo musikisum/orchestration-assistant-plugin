@@ -15,13 +15,11 @@ Klavierinstrumente (von lat. *claves* = Taste) gibt es in unterschiedlichen Bauw
 - **Pianoforte** (Piano, Flügel; umgangssprachlich das Klavier/Piano im engeren Sinne): Instrument mit Stimmumfang von über 7 Oktaven (A₂–c⁵, abhängig von der Bauweise)  
 - **Orgel**: als modernes Instrument mit größtem Umfang (C–c⁴), durch 32-Fuß- und 2-Fuß-Register kann der Umfang um jeweils eine bzw. zwei Oktaven erweitert werden  
 - **Cembalo**: Tonumfänge je nach Bauart verschieden, moderne Instrumente von F₁–c³, durch 16-Fuß- und 4-Fuß-Register erweiterbar um jeweils eine Oktave.  
-  *Klang:* gerissene Saite (mit Mechanikgeräusch)  
-- **Celesta**: oberschlägige Hammermechanik (auf Stahlplatten und hölzernen Resonatoren), langer Nachhall kann durch Pedaltritt gedämpft werden, mit einem Tonumfang von c–c⁴.  
+  *Klang:* angerissene Saite (mit Mechanikgeräusch)  
+- **Celesta**: oberschlägige Hammermechanik (auf Stahlplatten und hölzernen Resonatoren), langer Nachhall kann durch Pedaltritt gedämpft werden, mit einem Tonumfang von c–c⁵.  
   *Klang:* zarter Ton mit einer dem Glockenspiel bzw. der Glasharmonika ähnlichen Klangfarbe
 
-**Notation:**  
-*Celesta:* eine Oktave höher als klingend (transponierendes Instrument, vgl. Kontrabass und Bassgitarre)  
-*Übrige Klavierinstrumente:* klingend, mit Registervorzeichnung oktavierend (in der Oktave bzw. Doppeloktave)
+**Notation:** Celesta eine Oktave tiefer notiert als klingend (transponierendes Instrument, vgl. Kontrabass und Bassgitarre), die übrigen Klavierinstrumente klingend, mit Registervorzeichnung oktavierend (in der Oktave bzw. Doppeloktave)
 
 Die Celesta ist das häufigste Klavierinstrument im Orchester.
 
@@ -41,12 +39,9 @@ Keyboard instruments (from the Latin *clavis* = ›key‹) come in various const
 
 - **Harpsichord (historical and modern)**: A plucked keyboard instrument whose range varied considerably. Most Baroque instruments span about four and a half to five octaves (typically C2–F6 or C1–F6). Modern concert harpsichords are usually built with a five-octave range (F1–F6 or C1–F6), with some extended instruments reaching up to G6 or even C7.
 
-- **Celesta**: Celesta (keyboard percussion instrument): a struck keyboard instrument with a typical range of five octaves, from C3 to C8 (older four-octave models extend only from C4 to C8). The upper limit coincides with the highest note of the piano.
-  *Sound:* delicate tone with a timbre similar to a glockenspiel or glass harmonica
+- **Celesta**: Celesta (percussion instrument) is a struck keyboard instrument with a typical range of five octaves, from C3 to C8 (older four-octave models extend only from C4 to C8). The upper limit coincides with the highest note of the piano. Sound is similar to a glockenspiel or glass harmonica.
 
-**Notation:**  
-- *Celesta:* written one octave lower than sounding (transposing instrument, cf. double bass and bass guitar)  
-- *Other keyboard instruments:* sounding notation, sometimes notated with octave signs such as 8va or 15ma for convenience
+**Notation:** The Celesta is written one octave lower than sounding (transposing instrument, cf. double bass and bass guitar), other keyboard instruments with sounding notation, sometimes notated with octave signs such as 8va or 15ma for convenience
 
 The celesta is the most common keyboard instrument in the orchestra.
 

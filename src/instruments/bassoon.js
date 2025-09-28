@@ -12,52 +12,44 @@ const bassoon = {
     
 Das Fagott ist ein Blasinstrument aus Holz mit doppeltem Rohrblatt.
 
-**Tonumfang:** b₁–d² (bis f² mit speziellem Doppelrohr)
+**Tonumfang:** B₁–d² (bis f² mit speziellem Doppelrohr)
 
-**Notation:** klingend
+**Notation:** Klingend
 
 **Klangfarbe:** In allen Lagen für den solistischen Einsatz geeignet. Im untersten Register klangvoll und dunkel, in der kleinen Oktave eher weich und weniger dominierend, in der eingestrichenen dünn, jedoch ausdrucksvoll.
 
-**Spielweisen:** Mit und ohne Vibrato, gebunden (*legato*), gestoßen (*staccato*), Flatterzunge (nicht in allen Lagen), gehauchtes Blasen ohne Tonerregung, *Glissando* von A–f möglich, *Triller* (nicht in höchsten und tiefsten Registern) und Überblasen (in der Oktave ab fis), Mikrotöne (von D–d²) etc.
+**Spielweisen:** Mit und ohne Vibrato, *legato* (gebunden), *staccato* (gestoßen), Flatterzunge (nicht in allen Lagen), gehauchtes Blasen ohne Tonerregung, *glissando* über begrenzte Intervalle (z. B. von A bis f), Triller (nicht in höchsten und tiefsten Registern) und Überblasen (in der Oktave ab fis), Mikrotöne (von D–d²) etc.
 
 **Kombinationen:** Koppelungen zu allen Holzbläsern sind sehr gut möglich: zwischen hohem Fagottregister und tiefem Register der Flöte und Oboe im Unisono, sonst in der Oktave bzw. Doppeloktave. Im Unisonospiel ist die Fagottfarbe nicht dominierend. Durch eine Koppelung mit der Posaune im Einklang wird das Metallische des Blechblasinstruments abgeschwächt. Gute Klangmischung mit dem Horn (Klangverschmelzung). Die Doppelung der Bassstimme der Streicher ist der Normalfall der Instrumentation in der 2. Hälfte des 18. Jahrhunderts sowie im frühen 19. Jahrhundert (Haydn, Mozart, Beethoven).
 
+**Schulorchester**: Möglichst den Umfang von C bis e¹ nicht überschreiten
+
 **Literaturbeispiele:**
 
+- L. v. Beethoven, *Sinfonie Nr. 5*, 2. Satz
 - P. Tschaikowsky, *Sinfonie Nr. 4*, 2. Satz  
 - G. Donizetti, *Liebestrank*, 2. Akt, Nr. 19, »Una furtiva lagrima«  
 - I. Stravinsky, *Le sacre du printemps*, Einleitung
 - S. Prokofjew, *Peter und der Wolf*, Op. 67 (»Großvater«)`,
   en: `# The Bassoon
 
-The bassoon is a wooden wind instrument with a double reed.
+The bassoon is a double-reed woodwind instrument.
 
-**Range:**  
-B♭1–D5 (up to F5 with a special reed)
+**Range:** B♭1–D5 (up to F5 with a special reed)
 
-**Notation:**  
-Written at concert pitch
+**Notation:** Non-transposing, written at concert pitch.
 
-**Timbre:**  
-Suitable for solo use in all registers:  
-- Lowest register: full and dark  
-- Small octave: soft and less prominent  
-- First octave (middle range): thin but expressive
+**Timbre:** Suitable as a solo voice in all registers. In the low register it is sonorous and dark. In the middle register it becomes softer and less prominent. In the upper register (around C5–D5) it is thinner and more reedy, yet still expressive.
 
-**Playing techniques:**  
-With or without vibrato, legato (smooth), staccato (detached), flutter tongue (not in all ranges), breathy blowing without tone production, glissando possible between A2–F5, trills (not in the extreme low or high registers), overblowing at the octave (starting from F♯3), microtones (D2–D5), etc.
+**Playing techniques:** With or without vibrato, legato and staccato, flutter-tonguing (not equally effective in all registers), breathy tone without definite pitch, glissandi possible over limited ranges, trills (except highest and lowest registers), overblowing at the octave from F♯ upward, microtones are possible throughout most of the range (roughly from D2 up to D5), etc.
 
-**Combinations:**  
-Excellent pairings with all woodwinds:  
-- In unison between the bassoon’s high register and the low register of flute and oboe  
-- Otherwise commonly used in octave or double-octave doublings  
-- In unison, the bassoon does not dominate in color  
-- Unison pairing with trombone reduces the metallic edge of the brass instrument  
-- Very good blend with horn (rich fusion)  
-- Doubling the bass line of the strings was standard orchestration practice in the late 18th and early 19th centuries (e.g. Haydn, Mozart, Beethoven)
+**Combinations:** The bassoon blends well with all woodwinds. In unison its upper register can match the low flute or oboe, otherwise it often appears in octaves or double octaves. Its tone is not dominant in unison passages. In unison with trombone it softens the metallic brass color, and it also combines effectively with horn. Doubling the bass string section was a typical orchestration practice from the late 18th to early 19th century (Haydn, Mozart, Beethoven).
+
+**School orchestra:** preferably keep within the range C2 to E4.
 
 **Repertoire examples:**
 
+- L. v. Beethoven, *Symphony No. 5*, 2nd movement
 - P. Tchaikovsky, *Symphony No. 4*, 2nd movement  
 - G. Donizetti, *L'elisir d'amore*, Act II, No. 19, “Una furtiva lagrima”  
 - I. Stravinsky, *The Rite of Spring*, Introduction  
