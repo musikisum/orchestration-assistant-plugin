@@ -4,9 +4,12 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import OrchestrationAssistantInfo from './orchestration-assistant-info.js';
 import GithubFlavoredMarkdown from '@educandu/educandu/common/github-flavored-markdown.js';
 
+const CURRENT_VERSION = version.toString();
+
 describe('updateValidation.checkContentAfterUpdate', () => {
   let baseInstrument;
   let gfm;
+  let REAL_DEFAULTS;
 
   beforeEach(() => {
     baseInstrument = {
@@ -21,13 +24,12 @@ describe('updateValidation.checkContentAfterUpdate', () => {
       en: 'Violin',
     };
     gfm = new GithubFlavoredMarkdown();
+    REAL_DEFAULTS = new OrchestrationAssistantInfo(gfm).getDefaultContent();
   });
-
-  const REAL_DEFAULTS = new OrchestrationAssistantInfo(gfm).getDefaultContent();
 
   it('return content if version is matching', () => {
     const db = {
-      _v: version.toString(),
+      _v: CURRENT_VERSION,
       width: 80,
       from: 5,
       to: 8,
@@ -53,7 +55,7 @@ describe('updateValidation.checkContentAfterUpdate', () => {
       unknownKey: 'remove-me',
     };
     const res = updateValidation.checkContentAfterUpdate(db);
-    expect(res._v).toBe(version.toString());
+    expect(res._v).toBe(CURRENT_VERSION);
     expect(res.from).toBe(REAL_DEFAULTS.from);
     expect(res.width).toBe(80);
     expect(res.to).toBe(10);
@@ -74,7 +76,7 @@ describe('updateValidation.checkContentAfterUpdate', () => {
       customInstrumentsCache: [],
     };
     const res = updateValidation.checkContentAfterUpdate(db);
-    expect(res._v).toBe(version.toString());
+    expect(res._v).toBe(CURRENT_VERSION);
   });
 
   it('sanitize content if MINOR is not equal', () => {
@@ -86,7 +88,7 @@ describe('updateValidation.checkContentAfterUpdate', () => {
     };
 
     const res = updateValidation.checkContentAfterUpdate(db);
-    expect(res._v).toBe(version.toString());
+    expect(res._v).toBe(CURRENT_VERSION);
   });
 
   it('sanitize content if version is not parsable', () => {
@@ -98,13 +100,13 @@ describe('updateValidation.checkContentAfterUpdate', () => {
     };
 
     const res = updateValidation.checkContentAfterUpdate(db);
-    expect(res._v).toBe(version.toString());
+    expect(res._v).toBe(CURRENT_VERSION);
   });
 
   it('sanitize content and keys but not values', () => {
     const db = {
-      _v: '0.1.2',
-      width: 60, 
+      _v: '0.0.0',
+      width: 60,
       to: 7,
       before: true,
       after: false,
@@ -120,7 +122,7 @@ describe('updateValidation.checkContentAfterUpdate', () => {
   it('sanitize instruments', () => {
     const db = {
       ...REAL_DEFAULTS,
-      _v: '0.1.0',
+      _v: '0.0.0',
       instrumentsSelection: [{
         ...baseInstrument,
         extra: 'will-be-dropped-implicitly-by-sanitizeInstrumentItem',
