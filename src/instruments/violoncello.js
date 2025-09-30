@@ -14,19 +14,19 @@ Das Violoncello ist das Bassinstrument der Geigenfamilie (Quintenstimmung, F-Lö
 
 **Stimmung:** C-G-d-a
 
-**Notation:** klingend, hohe Beweglichkeit
+**Notation:** Klingend notiert; hohe Beweglichkeit.
 
-**Tonumfang:** in Orchesterliteratur von dem großen C (leere Saite) bis zum e³ (z.B. a² in *4. Symphonie*, 4. Satz von G. Mahler), in Sololiteratur, Kammermusik oder zeitgenössischen Werken bis c⁴ oder sogar höher möglich
+**Tonumfang:** In Orchesterliteratur von dem großen C (leere Saite) bis zum d³ (z.B. ein a² in *4. Symphonie*, 4. Satz von G. Mahler), in Sololiteratur, Kammermusik oder zeitgenössischen Werken bis c⁴ oder sogar höher möglich.
 
 **Doppelgriffe:** Intervalle mit einer leeren Saite (leicht), Quinten, Quarten, Terzen und Sexten sowie Oktaven ab der 7. Lage (sehr schwer)
 
-**Flageolett:** Quart- und Quintflageolett (mit Daumenaufsatz) möglich
+**Flageolett:** Quart- und Quintflageolett (mit Daumenaufsatz) möglich.
 
-**Spielweisen:** liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken) Hand gezupft (pizzicato), geschliffen (glissando), Vibrato / non Vibrato, mit Dämpfer (con sordino)
+**Spielweisen:** *détaché* (liegend), *legato* (gebunden), *non legato* bis *staccato* (getrennt), *martelé* (akzentuiert), *spiccato* (Bogen hüpfend), *ricochet* (Bogen auf die Saite fallend), *flautando* (über dem Griffbrett), *col legno* (mit der Bogenstange schlagend), *pizzicato* (gezupft), *glissando* (gleitend), Vibrato / non Vibrato, *con sordino* (mit Dämpfer)
 
 **Basis-Positionen der Finger 1–4:** chromatisch
 
-**Kombinationen:** Streichinstrumente können gut zur Klangverstärkung von (anderen) Streichinstrumenten oktaviert werden (Achtung: durch die Klangfülle der Celli besteht Gefahr, dass in Koppelungen mit anderen Streichinstrumenten wie z.B. den Violinen diese überdeckt werden), Kombinationen mit den Holzbläsern (Oboe, Klarinette und Fagott) und insbesondere dem Horn gut möglich.
+**Kombinationen:** Streichinstrumente können gut zur Klangverstärkung von (anderen) Streichinstrumenten oktaviert werden. Achtung: durch die Klangfülle der Celli besteht Gefahr, dass in Koppelungen mit anderen Streichinstrumenten die höheren Streicher überdeckt werden, Kombinationen mit den Holzbläsern (Oboe, Klarinette und Fagott) und insbesondere dem Horn gut möglich.
 
 **Schulorchester:** Umfang nicht in ›Daumenlagen‹ fordern (d.h. nicht über e¹).
 
@@ -41,17 +41,17 @@ The violoncello is the bass instrument of the violin family (tuned in fifths, wi
 
 **Tuning:** C2–G2–D3–A3
 
-**Notation:** sounding notation, highly flexible
+**Notation:** Written at concert pitch; highly agile.
 
-**Fingering range:** in orchestral playing from C2 (open string) up to E6 (e.g., A5 in *4th Symphony*, 4th movement by G. Mahler), in solo, chamber, or contemporary works up to c7, occasionally higher
+**Range:** In orchestral playing from C2 (open string) up to D6 (e.g., A5 in *4th Symphony*, 4th movement by G. Mahler), in solo, chamber, or contemporary works up to c7, occasionally higher.
 
-**Double stops:** intervals involving an open string (easy), fifths, fourths, thirds, sixths, and octaves from 7th position upward (very difficult)
+**Double stops:** Intervals involving an open string (easy), fifths, fourths, thirds, sixths, and octaves from 7th position upward (very demanding)
 
-**Harmonics:** fourth and fifth harmonics (using thumb technique) are possible
+**Harmonics:** Harmonics at the fourth and fifth (with thumb technique).
 
-**Playing techniques:** sustained (détaché), legato, non-legato up to staccato, accented (martelé), bouncing bow (spiccato), thrown bow (ricochet), over the fingerboard (flautando), striking the strings with the wood of the bow (col legno), plucked with the right hand (in solo playing also with the left hand) (pizzicato), glissando (sliding), with or without vibrato, muted (con sordino)
+**Playing techniques:** *détaché* (sustained), *legato*, *non-legato* up to *staccato* (separately), *martelé* (accented), *spiccato* (bouncing bow), *ricochet* (thrown bow), *flautando* (over the fingerboard), *col legno* (striking the strings with the wood of the bow), *pizzicato* (plucked), *glissando* (sliding), with or without vibrato, *con sordino* (muted)
 
-**Basic positions of fingers 1–4:** chromatic
+**Basic positions of fingers 1–4:** Basic chromatic fingerings for positions 1–4.
 
 **Combinations:** String instruments can be effectively doubled in octaves for reinforcement (note: due to the cello’s fullness of sound, there is a risk of overshadowing other string instruments such as violins in such doublings); combinations with woodwinds (oboe, clarinet, and bassoon) and especially with the horn are very effective.
 

@@ -24,7 +24,7 @@ Der Kontrabass ist ein vier- oder fünfsaitiges Streichinstrument, das sowohl ba
 
 **Flageolett:** Groß- und Kleinterzflageolett (mit Daumenaufsatz), ab der 7./8. Lage auch Quartflageolett möglich. In der Orchesterpraxis wird ein vorgeschriebenes natürliches Flageolett auf der tiefsten Saite in der Regel nicht gespielt, sondern auf einer höheren Saite gegriffen (»spricht zu schwer an«)
 
-**Spielweisen:** liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken Hand) gezupft (pizzicato), geschliffen (glissando), Vibrato / non Vibrato, mit Dämpfer
+**Spielweisen:** détaché* (liegend), *legato* (gebunden), *non legato* bis *staccato* (getrennt), *martelé* (akzentuiert), *spiccato* (Bogen hüpfend), *ricochet* (Bogen auf die Saite fallend), *flautando* (über dem Griffbrett), *col legno* (mit der Bogenstange schlagend), *pizzicato* (gezupft), *glissando* (geschliffen), Vibrato / non Vibrato, *con sordino* (mit Dämpfer)
 
 **Basis-Positionen der Finger 1–4:** Große Sekunde, ab der 7. Lage = kleine Terz
 

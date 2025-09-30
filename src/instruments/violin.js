@@ -10,13 +10,13 @@ const violin = {
   color: colors.strings,
   de: `# Die Violine
   
-Die Violine ist das Sopraninstrument der Geigenfamilie (Quintenstimmung, F-Löcher und die typische Korpusform), das bis in die Altlage hineinreicht.
+Die Violine ist das Sopraninstrument der Geigenfamilie (Quintenstimmung, F-Löcher und die typische Korpusform), das nach unten bis in die Altlage hineinreicht.
 
 **Stimmung:** g-d¹-a¹-e²
 
-**Notation:** klingend, hohe Beweglichkeit
+**Notation:** Klingend notiert; hohe Beweglichkeit.
 
-**Tonumfang:** in Orchesterliteratur von dem kleinen g (leere Saite) bis zum e⁴ (z.B. c⁴ in *Eine Alpensinfonie* Op. 64 von R. Strauß), in Sololiteratur oder zeitgenössischen Werken bis h⁴ oder sogar höher möglich
+**Tonumfang:** in Orchesterliteratur von dem kleinen g (leere Saite) bis zum e⁴ (z.B. ein c⁴ in *Eine Alpensinfonie* Op. 64 von R. Strauß), in Sololiteratur oder zeitgenössischen Werken bis h⁴ oder sogar höher möglich
 
 **Doppelgriffe:** Intervalle mit einer leeren Saite (sehr leicht), Sexten (leicht), Quinten, Quarten und Terzen (schwer), Oktave und Einklang (sehr schwer)
 
@@ -24,9 +24,9 @@ Die Violine ist das Sopraninstrument der Geigenfamilie (Quintenstimmung, F-Löch
 
 ![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/Flageolett-Violine-1.svg)
 
-**Spielweisen:** liegend (détaché), gebunden (legato), nicht gebunden (von non legato bis staccato), akzentuiert (martelé), Bogen hüpfend (spiccato), auf die Saite fallend (ricochet), über dem Griffbrett (flautando), mit der Bogenstange schlagend (col legno), mit der rechten (im Solospiel auch mit der linken) Hand gezupft (pizzicato), geschliffen (glissando), Vibrato / non Vibrato, mit Dämpfer (con sordino)
+**Spielweisen:** *détaché* (liegend), *legato* (gebunden), *non legato* bis *staccato* (getrennt), *martelé* (akzentuiert), *spiccato* (Bogen hüpfend), *ricochet* (Bogen auf die Saite fallend), *flautando* (über dem Griffbrett), *col legno* (mit der Bogenstange schlagend), *pizzicato* (gezupft mit der rechten, im Solospiel auch mit der linken Hand), *glissando* (gleitend), Vibrato / non Vibrato, *con sordino* (mit Dämpfer)
 
-**Kombinationen:** Streichinstrumente können gut zur Klangverstärkung von (anderen) Streichinstrumenten oktaviert werden (z. B. die Violine I durch Violine II, Viola oder auch Cello in der Unteroktave); hohe Klangverschmelzung mit allen Holzbläsern und dem Horn, geringere Klangverschmelzung mit Trompete, Posaune und Tuba.
+**Kombinationen:** Streichinstrumente können gut zur Klangverstärkung von (anderen) Streichinstrumenten oktaviert werden (z.B. die Violine I durch Violine II, Viola oder auch Violoncello in der Unteroktave); starke Klangverschmelzung mit allen Holzbläsern und dem Horn, geringere Klangverschmelzung mit Trompete, Posaune und Tuba.
 
 **Grifftechnik:** Beispiele für die Basis-Positionen des Dur-Tetrachords, das mit den Fingern 1–4 gespielt wird auf der a-Saite:
 
@@ -47,32 +47,32 @@ Die Violine ist das Sopraninstrument der Geigenfamilie (Quintenstimmung, F-Löch
 
 **Schulorchester:** Flageolett, Doppel- und Mehrfachgriffe meiden bzw. mit besonderer Vorsicht einsetzen, Umfang nur in Ausnahmefällen über der 4. Lage fordern (e³).
 
-**Literaturbeispiele für eine solistische Violine im Orchestersatz:**
+**Literaturbeispiele für eine solistische Violine im Orchestersatz und in der Popmusik:**
 
-- J. Haydn, Sinfonie Nr. 6 (Hob.I:6), »Le Matin«, 4. Satz
-- J. Brahms, 1. Sinfonie, Op. 68, 2. Satz
-- City, Am Fenster`,
+- J. Haydn, *Sinfonie Nr. 6* (Hob.I:6), »Le Matin«, 4. Satz
+- J. Brahms, *1. Sinfonie* Op. 68, 2. Satz
+- City, *Am Fenster*`,
   en:`# The Violin
 
 The violin is the soprano instrument of the violin family (tuned in fifths, with f-holes and the characteristic body shape), extending into the alto register.
 
 **Tuning:** G3–D4–A4–E5
 
-**Notation:** sounding notation, highly flexible
+**Notation:** Written at concert pitch; highly agile.
 
-**Fingering range:** in orchestral playing from G3 (open string) up to E7 (e.g., C7 in the *Eine Alpensinfonie*, Op. 64, by R. Strauss), in solo or contemporary works up to B7, occasionally higher
+**Range:** In orchestral playing from G3 (open string) to E7 (e.g., C7 in *Eine Alpensinfonie*, Op. 64, by R. Strauss), in solo or contemporary works up to B7, occasionally higher.
 
-**Double stops:** intervals including an open string (very easy), sixths (easy), fifths, fourths, and thirds (difficult), octaves and unisons (very difficult)
+**Double stops:** intervals including an open string (very easy), sixths (easy), fifths, fourths, and thirds (difficult), octaves and unisons (very demanding)
 
 **Harmonics:**
 
 ![](https://raw.githubusercontent.com/musikisum/orchestration-assistant-plugin-media/41f968c83a86a0ed3bbc4ce415997bda7b88a40e/Flageolett-Violine-1.svg)
 
-**Playing techniques:** sustained (détaché), legato, non-legato up to staccato, accented (martelé), bouncing bow (spiccato), thrown bow (ricochet), over the fingerboard (flautando), striking the strings with the wood of the bow (col legno), plucked with the right hand, in solo playing also with the left hand (pizzicato), glissando (sliding), with or without vibrato, muted (con sordino)
+**Playing techniques:** *détaché* (sustained), *legato*, *non-legato* to *staccato*, *martelé* (accented), *spiccato* (bouncing bow), *ricochet* (thrown bow), *flautando* (over the fingerboard), *col legno* (striking the strings with the wood of the bow), *pizzicato* (plucked with the right hand, in solo playing also with the left hand), *glissando* (sliding), with or without vibrato, *con sordino* (muted)
 
-**Combinations:** string instruments can be effectively doubled in octaves for reinforcement (e.g. violin I doubled by violin II, viola, or even cello in the lower octave); strong sound blending with all woodwinds and the horn; weaker blending with trumpet, trombone, and tuba
+**Combinations:** String instruments can be effectively reinforced by octave doublings (e.g. violin I doubled by violin II, viola, or even cello in the lower octave); excellent blend with all woodwinds and horn; poorer blend with trumpet, trombone, and tuba.
 
-**Fingering technique:** Examples for the basic positions of the major tetrachord as played with fingers 1–4 on the a'-string::
+**Fingering technique:** Examples of basic positions of the major tetrachord as played with fingers 1–4 on the A-string:
 
 | Notes        | ½ Pos.     | 1st Pos.     | 2nd Pos.     | 3rd Pos.     | 4th Pos.      |
 |--------------|------------|--------------|--------------|--------------|---------------|
@@ -89,12 +89,12 @@ The violin is the soprano instrument of the violin family (tuned in fifths, with
 | G♯5          |            |              |              |              | 3             |
 | A5           |            |              |              |              | 4             |
 
-**School orchestra:** Avoid harmonics and double/triple stops or use with great caution; avoid demanding playing above 4th position (E6) except in exceptional cases.
+**School orchestra:** Avoid harmonics and double/triple stops or use them with great caution. Playing above 4th position (up to E6) should only be required in exceptional cases.
 
-**Repertoire examples for a solo violin within the orchestra:**
+**Repertoire examples for a solo violin within the orchestra and popular music:**
 
-- J. Haydn, Symphony No. 6 (Hob.I:6), *"Le Matin"*, 4th movement  
-- J. Brahms, Symphony No. 1, Op. 68, 2nd movement  
+- J. Haydn, *Symphony No. 6* (Hob.I:6), *"Le Matin"*, 4th movement  
+- J. Brahms, *Symphony No. 1*, Op. 68, 2nd movement  
 - City, *Am Fenster*`
   
 };
