@@ -46,7 +46,7 @@ For the orchestral sound, the first octave is not characteristic apart from thes
 `;
 
   return (
-    <Markdown className='instrumentDescription' renderAnchors>{t('octLang') === 'de' ? de : en}</Markdown>
+    <Markdown className='instrumentDescription' renderAnchors>{t('language') === 'de' ? de : en}</Markdown>
   );
 };
 

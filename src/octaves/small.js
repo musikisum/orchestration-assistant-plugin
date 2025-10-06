@@ -94,7 +94,7 @@ For the following instruments, notes in the 3rd octave are not or only rarely pl
 `;
 
   return (
-    <Markdown className='instrumentDescription' renderAnchors>{t('octLang') === 'de' ? de : en}</Markdown>
+    <Markdown className='instrumentDescription' renderAnchors>{t('language') === 'de' ? de : en}</Markdown>
   );
 };
 

@@ -38,7 +38,7 @@ For the orchestral sound, the 7th octave is not characteristic apart from these 
 `;
 
   return (
-    <Markdown className='instrumentDescription' renderAnchors>{t('octLang') === 'de' ? de : en}</Markdown>
+    <Markdown className='instrumentDescription' renderAnchors>{t('language') === 'de' ? de : en}</Markdown>
   );
 };
 

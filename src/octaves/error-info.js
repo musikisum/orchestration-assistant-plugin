@@ -9,6 +9,6 @@ export default function ErrorInfo() {
   const en = 'An error has occurred; there is no information for the requested octave.';
 
   return (
-    <Markdown className='instrumentDescription' renderAnchors>{t('octLang') === 'de' ? de : en}</Markdown>
+    <Markdown className='instrumentDescription' renderAnchors>{t('language') === 'de' ? de : en}</Markdown>
   );
 };

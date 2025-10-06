@@ -336,9 +336,9 @@
       "en": "Instrument selection",
       "de": "Instrumentenauswahl"
     },
-    "octLang": {
-      "en": "en",
-      "de": "de"
+    "newInstrument": {
+      "en": "new instrument",
+      "de": "neues Instrument"
     }
   }
 }

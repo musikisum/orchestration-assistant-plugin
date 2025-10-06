@@ -84,7 +84,7 @@ For the following instruments, notes in the 5th octave are either unplayable or 
 `;
 
   return (
-    <Markdown className='instrumentDescription' renderAnchors>{t('octLang') === 'de' ? de : en}</Markdown>
+    <Markdown className='instrumentDescription' renderAnchors>{t('language') === 'de' ? de : en}</Markdown>
   );
 };
 

@@ -84,7 +84,7 @@ For the following instruments, notes in the 6th octave are unplayable or used in
 `;
 
   return (
-    <Markdown className='instrumentDescription' renderAnchors>{t('octLang') === 'de' ? de : en}</Markdown>
+    <Markdown className='instrumentDescription' renderAnchors>{t('language') === 'de' ? de : en}</Markdown>
   );
 };
 

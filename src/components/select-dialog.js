@@ -4,17 +4,22 @@ import { Modal, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
 import ModalSectionsContainer from './modal-sections-container.js';
 
-function SelectDialog({ open, loading, onOk, onCancel, modalSelections, setModalSelections, instrumentsSelection, customInstrumentsCache }) {
+function SelectDialog({ 
+  open, 
+  loading, 
+  onOk, 
+  onCancel, 
+  modalSelections, 
+  onSelectionsChange, 
+  instrumentsSelection, 
+  customInstrumentsCache 
+}) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   
   const defaultFooter = [
-    <Button key="back" onClick={onCancel}>
-      {t('dialogReturn')}
-    </Button>,
-    <Button key="submit" type="primary" loading={loading} onClick={onOk}>
-      {t('dialogSubmit')}
-    </Button>,
+    <Button key="back" onClick={onCancel}>{t('dialogReturn')}</Button>,
+    <Button key="submit" type="primary" loading={loading} onClick={onOk}>{t('dialogSubmit')}</Button>,
   ];
 
   return (
@@ -30,7 +35,7 @@ function SelectDialog({ open, loading, onOk, onCancel, modalSelections, setModal
       >
       <ModalSectionsContainer 
         modalSelections={modalSelections}
-        setModalSelections={setModalSelections}
+        onSelectionsChange={onSelectionsChange}
         instrumentsSelection={instrumentsSelection}
         customInstrumentsCache={customInstrumentsCache}
         />
@@ -46,7 +51,7 @@ SelectDialog.propTypes = {
   onOk: PropTypes.func,
   onCancel: PropTypes.func,
   modalSelections: PropTypes.array,
-  setModalSelections: PropTypes.func,
+  onSelectionsChange: PropTypes.func,
   instrumentsSelection: PropTypes.array,
   customInstrumentsCache: PropTypes.array
 };
@@ -57,7 +62,7 @@ SelectDialog.defaultProps = {
   onOk: null,
   onCancel: null,
   modalSelections: [],
-  setModalSelections: null,
+  onSelectionsChange: null,
   instrumentsSelection: [],
   customInstrumentsCache: []
 };

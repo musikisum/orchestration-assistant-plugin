@@ -27,57 +27,79 @@ import { swapItemsAt, removeItemAt, moveItem } from '@educandu/educandu/utils/ar
 export default function OrchestrationAssistantEditor({ content, onContentChanged }) {
 
   const { width, instrumentsSelection, customInstrumentsCache } = updateValidation.checkContentAfterUpdate(content);
-
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   const updateContent = newContentValues => {
     onContentChanged({ ...content, ...newContentValues });
   };
 
-  const [selectedInstrument, setSelectedInstrument] = useState('');
-  const [selectedInstrumentClass, setSelectedInstrumentClass] = useState(null);
-  const [modalSelections, setModalSelections] = useState(instrumentsSelection.map(item => item.id));
-  const [showInstrumentEditor, setShowInstrumentEditor] = useState(false);
-
+  // const [modalSelections, setModalSelections] = useState(instrumentsSelection.map(item => item.id));
+  const [modalSelections, setModalSelections] = useState(instrumentsSelection.map(i => i.id));
   useEffect(() => {
-    setModalSelections(instrumentsSelection.map(item => item.id));
+    setModalSelections(instrumentsSelection.map(i => i.id));
   }, [instrumentsSelection]);
 
-  // Droppable section
+  const [selectedInstrument, setSelectedInstrument] = useState('');
+  const [selectedInstrumentClass, setSelectedInstrumentClass] = useState(null);
+  const [showInstrumentEditor, setShowInstrumentEditor] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  // Drag & Drop
   const droppableIdRef = useRef(nanoid(10)); 
   const handleItemMove = (fromIndex, toIndex) => {
     const newSelection = moveItem(instrumentsSelection, fromIndex, toIndex);
     updateContent({ instrumentsSelection: newSelection });
+    setModalSelections(newSelection.map(i => i.id));
   };
   const handleMovItemUp = index => {
     const newSelection = swapItemsAt(instrumentsSelection, index, index - 1);
     updateContent({ instrumentsSelection: newSelection });
+    setModalSelections(newSelection.map(i => i.id));
   };
   const handleMoveItemDown = index => {
     const newSelection = swapItemsAt(instrumentsSelection, index, index + 1);
     updateContent({ instrumentsSelection: newSelection });
-  };
-  const handleDeleteItem = index => {
-    const id = instrumentsSelection[index].id;
-    const instrIdsCopy = [...modalSelections];
-    instrIdsCopy.splice(modalSelections.indexOf(id), 1);
-    setModalSelections(instrIdsCopy);
-    const newSelection = removeItemAt(instrumentsSelection, index);
-    setShowInstrumentEditor(false);
-    updateContent({ instrumentsSelection: newSelection });
+    setModalSelections(newSelection.map(i => i.id));
   };
 
-  // Helper function to prevent selection in splitter list
+  // Reset & Sync
   const resetInstrumentSelectionInSplitter = () => {
     setSelectedInstrument('');
     setShowInstrumentEditor(false);
     setSelectedInstrumentClass('');
+  };
+  // Delete item from instrumentSelection and update modalselection
+  const handleDeleteItem = index => {
+    if (index < 0 || index >= instrumentsSelection.length) {
+      return;
+    }
+    const id = instrumentsSelection[index]?.id;
+    const newSelection = removeItemAt(instrumentsSelection, index);
+    if (id) {
+      setModalSelections(prev => {
+        const pos = prev.indexOf(id);
+        if (pos === -1) {
+          return newSelection.map(i => i.id);;
+        }
+        const next = prev.slice();
+        next.splice(pos, 1);
+        return next;
+      });
+    } else {
+      setModalSelections(newSelection.map(i => i.id));
+    }
+    if (selectedInstrument === id) {
+      resetInstrumentSelectionInSplitter();
+    } else {
+      setShowInstrumentEditor(false);
+    }
+    updateContent({ instrumentsSelection: newSelection });
   };
 
   // save instrument properties
   const saveInstrumentInContent = (_event, id, instrument) => {
     const targetId = instrument?.id ?? id;
     const isCustom = !!targetId?.startsWith('custom');
-    const payload = {};
     // when instrument editor looses focus
     if (instrument) {
       const list = cloneDeep(instrumentsSelection);
@@ -85,8 +107,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
       if (idx > -1) {
         list[idx] = instrument;
       }
-      payload.instrumentsSelection = list;
-
+      const payload = { instrumentsSelection: list };
       if (isCustom) {
         const ciIdx = customInstrumentsCache.findIndex(item => item.id === instrument.id);
         if (ciIdx > -1) {
@@ -96,7 +117,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         } else {
           payload.customInstrumentsCache = [...customInstrumentsCache, instrument];
         }
-      } 
+      }
       updateContent(payload);
       return;
     }
@@ -114,19 +135,43 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     saveInstrumentInContent(null, id, instrument);
   };
 
+  // Helper function for tutti and tacet buttons
+  const applySelection = ids => {
+    const uniqueIds = Array.from(new Set(ids)).filter(Boolean);
+    const resolved = uniqueIds.map(id => {
+      // 1. from current instrument selection
+      const fromSel = instrumentsSelection.find(it => it.id === id);
+      if (fromSel) {
+        return cloneDeep(fromSel);
+      }
+      // 2) from provider defaults
+      const fromDefault = instrumentsProvider.loadInstrumentsFromIds([id]);
+      if (fromDefault.length && fromDefault[0]) {
+        return fromDefault[0];
+      }
+      // 3) from custom cache
+      return customInstrumentsCache.find(ci => ci.id === id) || null;
+    }).filter(Boolean);
+    const next = instrumentsProvider.uniqueById(resolved);
+    updateContent({ instrumentsSelection: next });
+    setModalSelections(next.map(i => i.id));
+  };
+
   // Set tutti instruments from instrument provider (default) 
   const handleSetTuttiClick = () => {
     resetInstrumentSelectionInSplitter();
-    updateContent({ instrumentsSelection: instrumentsProvider.loadInstrumentsFromNames(['tutti']) });
+    const tutti = instrumentsProvider.loadInstrumentsFromNames(['tutti']);
+    applySelection(tutti.map(item => item.id));
   };
 
   const handleSetTactetClick = () => {
     resetInstrumentSelectionInSplitter();
-    updateContent({ instrumentsSelection: [] });
+    applySelection([]);
   };
+
   const handleInstrumentSetSelect = set => {
     setSelectedInstrument('');
-    updateContent({ instrumentsSelection: instrumentsProvider.loadInstrumentsFromIds(set, instrumentsSelection) });
+    applySelection(set);
   };
 
   // Save range in instrument
@@ -154,49 +199,34 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
   // Add new custom instruments in instrumentsSelection and customInstrumentsCache
   const handleNewCustomInstrumentClick = () => {
     const customInstrument = instrumentsProvider.getDefaultInstrument(null, t('newInstrument'));
-    const list = cloneDeep(instrumentsSelection);
-    list.push(customInstrument);
-    const customList = cloneDeep(customInstrumentsCache);
-    customList.push(customInstrument);
+    const list = [...instrumentsSelection, customInstrument];
+    const customList = [...customInstrumentsCache, customInstrument];
     updateContent({ instrumentsSelection: list, customInstrumentsCache: customList });
+    setModalSelections(list.map(i => i.id));
   };
   // Delete custom instruments from instrumentsSelection and customInstrumentsCache
   const handleCustomInstrumentDelete = instrument => {
-    if(instrument) {
-      const customList = customInstrumentsCache.filter(item => item.id !== instrument.id);
-      const list = instrumentsSelection.filter(item => item.id !== instrument.id);
-      updateContent({ instrumentsSelection: list, customInstrumentsCache: customList });
-      setShowInstrumentEditor(false);
-      setSelectedInstrument('');
-      setSelectedInstrumentClass('');
+    if (!instrument) {
+      return;
     }
+    const customList = customInstrumentsCache.filter(item => item.id !== instrument.id);
+    const list = instrumentsSelection.filter(item => item.id !== instrument.id);
+    updateContent({ instrumentsSelection: list, customInstrumentsCache: customList });
+    setModalSelections(list.map(i => i.id));
+    resetInstrumentSelectionInSplitter();
   };
 
   // Modal dialog for instrument selection 
-  const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
   const handleModalOk = () => {
-    const checkedIds = Array.from(new Set(modalSelections));
-    const newSelectionRaw = checkedIds
-      .map(id => {
-        const fromInstSel = instrumentsSelection.find(it => it.id === id);
-        if (fromInstSel) {
-          return cloneDeep(fromInstSel);
-        }
-        const fromDefault = instrumentsProvider.loadInstrumentsFromIds([id]);
-        if (fromDefault.length && fromDefault[0]) {
-          return fromDefault[0];
-        }
-        return customInstrumentsCache.find(custom => custom.id === id);
-      }).filter(Boolean);
-    const newSelection = instrumentsProvider.uniqueById(newSelectionRaw);
-    resetInstrumentSelectionInSplitter();
-    updateContent({ instrumentsSelection: newSelection });
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
       setOpen(false);
     }, 300);
+  };
+
+  const handleModalSelectionsChange = nextIds => {
+    applySelection(Array.from(new Set(nextIds)));
   };
 
   // Plugin width
@@ -293,6 +323,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
             <InstrumentMarkdownEditor
               instrument={getInstrumentByIdFromInstrumentsSelection(selectedInstrument)}
               saveInstrumentInContent={saveInstrumentInContent}
+              language={t('language')}
               />
           </React.Fragment>
         )
@@ -328,9 +359,9 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         onOk={handleModalOk}
         onCancel={() => setOpen(false)}
         modalSelections={modalSelections}
-        setModalSelections={setModalSelections}
         instrumentsSelection={instrumentsSelection}
         customInstrumentsCache={customInstrumentsCache}
+        onSelectionsChange={handleModalSelectionsChange}
         />
     </div>
   );

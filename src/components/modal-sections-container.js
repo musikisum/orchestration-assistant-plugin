@@ -5,7 +5,12 @@ import { useTranslation } from 'react-i18next';
 import styles from '../styles-modal-dialog.js';
 import instrumentsProvider from '../instruments-provider.js';
 
-export default function ModalSectionsContainer({ modalSelections, setModalSelections, instrumentsSelection, customInstrumentsCache }) {
+export default function ModalSectionsContainer({ 
+  modalSelections, 
+  onSelectionsChange, 
+  instrumentsSelection, 
+  customInstrumentsCache 
+}) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
   
@@ -31,20 +36,24 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
   };
   
   const onInstrumentToggle = (id, checked) => {
-    setModalSelections(prev => {
-      const s = new Set(prev);
-      checked ? s.add(id) : s.delete(id);
-      return [...s];
-    });
+    const s = new Set(modalSelections);
+    if(checked) {
+      s.add(id);
+    } else {
+      s.delete(id);
+    }
+    onSelectionsChange(Array.from(s));
   };
 
   const onSectionToggle = (sectionKey, checked) => {
     const ids = (sectionIds[sectionKey] || []).filter(Boolean);
-    setModalSelections(prev => {
-      const s = new Set(prev);
-      if (checked) {ids.forEach(id => s.add(id));} else {ids.forEach(id => s.delete(id));}
-      return [...s];
-    });
+    const s = new Set(modalSelections);
+    if (checked) { 
+      ids.forEach(id => s.add(id)); 
+    } else { 
+      ids.forEach(id => s.delete(id)); 
+    }
+    onSelectionsChange(Array.from(s)); 
   };
 
   const sectionState = key => {
@@ -155,14 +164,14 @@ export default function ModalSectionsContainer({ modalSelections, setModalSelect
 
 ModalSectionsContainer.propTypes = {
   modalSelections: PropTypes.array,
-  setModalSelections: PropTypes.func,
+  onSelectionsChange: PropTypes.func,
   instrumentsSelection: PropTypes.array,
   customInstrumentsCache: PropTypes.array
 };
 
 ModalSectionsContainer.defaultProps = {
   modalSelections: [],
-  setModalSelections: null,
+  onSelectionsChange: null,
   instrumentsSelection: [],
   customInstrumentsCache: []
 };
