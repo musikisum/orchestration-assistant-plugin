@@ -2,42 +2,71 @@ import { Input } from 'antd';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { useClickOutside } from '../use-click-outside.js';
-import React, { useState, useCallback, useRef, useEffect } from 'react';
+import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 
 function EditName({ instrument, saveInstrumentInContent }) {
+  const { t, i18n } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
-  const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
-  
-  const [name, setName] = useState(instrument.name);
   const containerRef = useRef(null);
+  const isCustom = !!instrument?.id?.startsWith?.('custom');
+
+  const displayName = useMemo(() => {
+    if (!instrument) {
+      return '';
+    };
+    const raw = instrument.name ?? '';
+    if (isCustom) {
+      return raw;
+    };
+    return i18n.exists(raw) ? t(raw) : raw;
+  }, [instrument, isCustom, i18n, t]);
+
+  const [name, setName] = useState(displayName);
 
   useEffect(() => {
-    setName(instrument.name);
-  }, [instrument]);
+    setName(displayName);
+  }, [displayName]);
 
   const saveIfDirty = useCallback(() => {
-    if (name !== instrument.name) {
-      saveInstrumentInContent(null, null, { ... instrument, name });
+    if (!instrument) {
+      return;
+    };
+    if ((name ?? '') !== (displayName ?? '')) {
+      saveInstrumentInContent?.(null, instrument.id, { ...instrument, name });
     }
-  }, [instrument, name, saveInstrumentInContent]);
+  }, [instrument, name, displayName, saveInstrumentInContent]);
 
   useClickOutside(containerRef, saveIfDirty);
 
-  const handleNameChance = event => {
-    setName(event.target.value);
-  };
+  const handleNameChange = e => setName(e.target.value);
+
+  if (!instrument) {
+    return (
+      <div ref={containerRef} className="prop-container-inspector-child">
+        <span>Name:</span>
+        <Input
+          size="small"
+          value=""
+          disabled
+          style={{ minWidth: '100px' }}
+          placeholder={t('nameInput')}
+        />
+      </div>
+    );
+  }
 
   return (
-    <div ref={containerRef} className='prop-container-inspector-child'>
-      <span>Name:</span> 
+    <div ref={containerRef} className="prop-container-inspector-child">
+      <span>Name:</span>
       <Input
-        size='small' 
-        value={t(`${name}`)} 
+        size="small"
+        value={name}
         style={{ minWidth: '100px' }}
-        name={instrument.name} 
-        onChange={handleNameChance} 
+        onChange={handleNameChange}
+        onBlur={saveIfDirty}
+        onPressEnter={saveIfDirty}
         placeholder={t('nameInput')}
-        />
+      />
     </div>
   );
 }
