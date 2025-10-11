@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Button, Tooltip } from 'antd';
 import { useTranslation } from 'react-i18next';
-import cloneDeep from '@educandu/educandu/utils/clone-deep.js';
 import DeleteIcon from '@educandu/educandu/components/icons/general/delete-icon.js';
 import MoveUpIcon from '@educandu/educandu/components/icons/general/move-up-icon.js';
 import MoveDownIcon from '@educandu/educandu/components/icons/general/move-down-icon.js';

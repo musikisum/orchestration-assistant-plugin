@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { useClickOutside } from '../use-click-outside.js';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import MarkdownInput from '@educandu/educandu/components/markdown-input.js';
-import instrumentsProvider from '../instruments-provider.js';
 
 function InstrumentMarkdownEditor({ instrument, saveInstrumentInContent, language }) {
 

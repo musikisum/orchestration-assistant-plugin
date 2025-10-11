@@ -32,7 +32,7 @@ function EditRangeSliders({ instrument, saveSliderData }) {
         onChangeComplete={handleSave}
         tooltip={{ formatter: value => OrchestrationUtilities.tipFormatterList[value - 1] }}
         aria-label={t('range')}
-      />
+        />
     </div>
   );
 }
