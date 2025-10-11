@@ -8,8 +8,8 @@ function EditSetSelect({ modalSelections, handleInstrumentSetSelect }) {
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
   const orchestra = useMemo(() => instrumentsProvider.getOrchestraSets, []);
-  const chamber   = useMemo(() => instrumentsProvider.getChamberSets, []);
-  const sets      = useMemo(() => instrumentsProvider.getSets, []);
+  const chamber = useMemo(() => instrumentsProvider.getChamberSets, []);
+  const sets = useMemo(() => instrumentsProvider.getSets, []);
 
   const [currentKey, setCurrentKey] = useState();
 
@@ -25,7 +25,7 @@ function EditSetSelect({ modalSelections, handleInstrumentSetSelect }) {
     };
   }, [orchestra, chamber, t]);
 
-  // Initial/Sync-Auswahl anhand modalSelections ermitteln
+  // Set initial or sync selection
   useEffect(() => {
     if (!Array.isArray(modalSelections) || !sets) { 
       return; 
@@ -40,9 +40,15 @@ function EditSetSelect({ modalSelections, handleInstrumentSetSelect }) {
     setCurrentKey(prev => prev === nextKey ? prev : nextKey);
   }, [modalSelections, sets]);
 
-  const onSetChange = (key /* string */) => {
+  const onSetChange = key => {
     setCurrentKey(key);
-    handleInstrumentSetSelect?.(sets[key]); // callback bekommt das Array
+    if (!sets) {
+      return;
+    }
+    const next = sets[key];
+    if (next && typeof handleInstrumentSetSelect === 'function') {
+      handleInstrumentSetSelect(next);
+    }
   };
 
   return (

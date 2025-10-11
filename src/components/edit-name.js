@@ -27,18 +27,27 @@ function EditName({ instrument, saveInstrumentInContent }) {
     setName(displayName);
   }, [displayName]);
 
+  const normalize = value => {
+    return (value ?? '').trim();
+  };
+
   const saveIfDirty = useCallback(() => {
     if (!instrument) {
       return;
     };
-    if ((name ?? '') !== (displayName ?? '')) {
-      saveInstrumentInContent?.(null, instrument.id, { ...instrument, name });
+    if (!saveInstrumentInContent) {
+      return;
+    }
+    if (normalize(name) !== normalize(displayName)) {
+      saveInstrumentInContent(null, instrument.id, { ...instrument, name });
     }
   }, [instrument, name, displayName, saveInstrumentInContent]);
 
   useClickOutside(containerRef, saveIfDirty);
 
-  const handleNameChange = e => setName(e.target.value);
+  const handleNameChange = e => {
+    setName(e.target.value);
+  };
 
   if (!instrument) {
     return (
@@ -50,7 +59,8 @@ function EditName({ instrument, saveInstrumentInContent }) {
           disabled
           style={{ minWidth: '100px' }}
           placeholder={t('nameInput')}
-        />
+          aria-label={t('nameInput')}
+          />
       </div>
     );
   }
@@ -66,7 +76,9 @@ function EditName({ instrument, saveInstrumentInContent }) {
         onBlur={saveIfDirty}
         onPressEnter={saveIfDirty}
         placeholder={t('nameInput')}
-      />
+        aria-label={t('nameInput')}
+        spellCheck={false}
+        />
     </div>
   );
 }

@@ -8,22 +8,32 @@ function BeforeAfter({ instrument, saveInstrumentInContent }) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
+  if (!instrument) {
+    return null;
+  }
+
   const handleCheckChange = (key, value) => {
+    if (typeof saveInstrumentInContent !== 'function') {
+      return;
+    }
+    if (instrument[key] === value) {
+      return;
+    }
     const updatedInstrument = { ...instrument, [key]: value };
-    saveInstrumentInContent(null, null, updatedInstrument);
+    saveInstrumentInContent(null, instrument.id, updatedInstrument);
   };
 
   return (
     <div className='prop-container-inspector-child'>
       <div><Info tooltip={t('beforeAfterInfo')} /></div>
       <Checkbox
-        checked={instrument.before}
+        checked={!!instrument.before}
         onChange={e => handleCheckChange('before', e.target.checked)}
         >
         {t('before')}
       </Checkbox>
       <Checkbox
-        checked={instrument.after}
+        checked={!!instrument.after}
         onChange={e => handleCheckChange('after', e.target.checked)}
         >
         {t('after')}

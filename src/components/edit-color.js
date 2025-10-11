@@ -1,11 +1,16 @@
 import React from 'react';
+import colors from '../colors.js';
 import PropTypes from 'prop-types';
 import ColorPicker from '@educandu/educandu/components/color-picker.js';
 
 function EditColor({ instrument, saveInstrumentInContent }) {
 
+  if (!instrument) {
+    return null;
+  }
+
   const handleColorChange = changedColor => {
-    saveInstrumentInContent(null, null, { ... instrument, color: changedColor });
+    saveInstrumentInContent(null, instrument.id, { ... instrument, color: changedColor });
   };
 
   return (
@@ -13,7 +18,7 @@ function EditColor({ instrument, saveInstrumentInContent }) {
       <span>Farbe:</span> 
       <ColorPicker 
         className='cp' 
-        color={instrument.color} 
+        color={instrument.color ?? colors.default} 
         onChange={handleColorChange}
         />
     </div>

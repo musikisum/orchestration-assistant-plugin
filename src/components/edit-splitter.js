@@ -7,10 +7,10 @@ export default function EditSplitter({ panelA, panelB }) {
     <div style={{ width: '100%', height: '100%' }}>
       <Splitter layout="horizontal" style={{ width: '100%', height: '100%' }}>
         <Splitter.Panel defaultSize='25%' min='20%' resizable>
-          {panelA}
+          {panelA ?? <div />}
         </Splitter.Panel>
         <Splitter.Panel defaultSize='75%' min='50%' resizable>
-          {panelB}
+          {panelB ?? <div />}
         </Splitter.Panel>
       </Splitter>
     </div>
@@ -18,8 +18,8 @@ export default function EditSplitter({ panelA, panelB }) {
 }
 
 EditSplitter.propTypes = {
-  panelA: PropTypes.object,
-  panelB: PropTypes.object
+  panelA: PropTypes.node,
+  panelB: PropTypes.node
 };
 
 EditSplitter.defaultProps = {

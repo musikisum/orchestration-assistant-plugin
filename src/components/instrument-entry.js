@@ -25,7 +25,8 @@ export default function InstrumentEntry({
 }) {
 
   const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
-  const instrumentsSelection = cloneDeep(content.instrumentsSelection);
+  const instrumentsSelection = content.instrumentsSelection;
+  const item = instrumentsSelection[index];
 
   const handleActionButtonWrapperClick = (event, actionButton) => {
     if (actionButton.disabled) {
@@ -41,6 +42,9 @@ export default function InstrumentEntry({
       case 'moveDown':
         return onMoveDown(index);
       case 'delete':
+        if (!item) {
+          return null;
+        }
         return confirmDeleteItem(t, instrumentsSelection[index].name, () => onDelete(index));
       default:
         return null;
@@ -83,9 +87,13 @@ export default function InstrumentEntry({
       >
       <div 
         className='instrument-name' 
-        onClick={e => onInstrumentName(e, instrumentsSelection[index].id)}
+        onClick={e => {
+          if (item) {
+            onInstrumentName(e, item.id);
+          }
+        }}
         >
-        {t(instrumentsSelection[index].name)}
+        {item ? t(item.name) : ''}
       </div>
       <div className="dadActionButtons">
         {actionButtons.map(actionButton => (

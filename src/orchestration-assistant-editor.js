@@ -51,7 +51,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     updateContent({ instrumentsSelection: newSelection });
     setModalSelections(newSelection.map(i => i.id));
   };
-  const handleMovItemUp = index => {
+  const handleMoveItemUp = index => {
     const newSelection = swapItemsAt(instrumentsSelection, index, index - 1);
     updateContent({ instrumentsSelection: newSelection });
     setModalSelections(newSelection.map(i => i.id));
@@ -79,7 +79,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
       setModalSelections(prev => {
         const pos = prev.indexOf(id);
         if (pos === -1) {
-          return newSelection.map(i => i.id);;
+          return newSelection.map(i => i.id);
         }
         const next = prev.slice();
         next.splice(pos, 1);
@@ -203,6 +203,9 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
     const customList = [...customInstrumentsCache, customInstrument];
     updateContent({ instrumentsSelection: list, customInstrumentsCache: customList });
     setModalSelections(list.map(i => i.id));
+    setSelectedInstrument(customInstrument.id);
+    setSelectedInstrumentClass(customInstrument.id);
+    setShowInstrumentEditor(true);
   };
   // Delete custom instruments from instrumentsSelection and customInstrumentsCache
   const handleCustomInstrumentDelete = instrument => {
@@ -249,7 +252,7 @@ export default function OrchestrationAssistantEditor({ content, onContentChanged
         dragHandleProps={dragHandleProps}
         itemsCount={arr.length}
         canDeleteLastItem
-        onMoveUp={handleMovItemUp}
+        onMoveUp={handleMoveItemUp}
         onMoveDown={handleMoveItemDown}
         onDelete={handleDeleteItem}
         onInstrumentName={event => handleInstrumentNameButtonClick(event, instrument.id)}

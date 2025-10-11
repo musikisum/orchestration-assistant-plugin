@@ -15,10 +15,15 @@ function DeleteCustomInstrumentButton({ instrument, deleteCustomInstrument }) {
     setOpen(false);
   };
   const handleOnOkClick = () => {
-    deleteCustomInstrument(instrument);
+    if (typeof deleteCustomInstrument === 'function') {
+      deleteCustomInstrument(instrument);
+    }
     hideModal();
   };
 
+  if (!instrument) {
+    return null;
+  }
   return (
     <div className='delete-button-inspector-child'>
       <Button type='primary' onClick={showModal} danger>{t('deleteCustom')}</Button>
