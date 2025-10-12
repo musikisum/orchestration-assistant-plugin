@@ -5,7 +5,7 @@ import { useClickOutside } from '../use-click-outside.js';
 import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 
 function EditName({ instrument, saveInstrumentInContent }) {
-  const { t, i18n } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
+  const { t } = useTranslation('musikisum/educandu-plugin-orchestration-assistant');
 
   const containerRef = useRef(null);
   const isCustom = !!instrument?.id?.startsWith?.('custom');
@@ -18,8 +18,8 @@ function EditName({ instrument, saveInstrumentInContent }) {
     if (isCustom) {
       return raw;
     };
-    return i18n.exists(raw) ? t(raw) : raw;
-  }, [instrument, isCustom, i18n, t]);
+    return t(raw, { defaultValue: raw });
+  }, [instrument, isCustom, t]);
 
   const [name, setName] = useState(displayName);
 
@@ -35,18 +35,37 @@ function EditName({ instrument, saveInstrumentInContent }) {
     if (!instrument) {
       return;
     };
-    if (!saveInstrumentInContent) {
+    if (typeof saveInstrumentInContent !== 'function') {
       return;
     }
-    if (normalize(name) !== normalize(displayName)) {
-      saveInstrumentInContent(null, instrument.id, { ...instrument, name });
+    if (!isCustom) {
+      return;
     }
-  }, [instrument, name, displayName, saveInstrumentInContent]);
+
+    let nextName = normalize(name);
+    if (nextName === '') {
+      nextName = t('newInstrument');
+    }
+    if (nextName !== normalize(displayName)) {
+      saveInstrumentInContent(null, instrument.id, { ...instrument, name: nextName });
+    }
+    setName(nextName);
+  }, [instrument, name, displayName, saveInstrumentInContent, isCustom, t]);
 
   useClickOutside(containerRef, saveIfDirty);
 
   const handleNameChange = e => {
+    if (!isCustom) {
+      return;
+    }
     setName(e.target.value);
+  };
+
+  const inputStyle = {
+    minWidth: '100px',
+    backgroundColor: isCustom ? 'white' : '#f5f5f5',
+    cursor: isCustom ? 'text' : 'not-allowed',
+    opacity: isCustom ? 1 : 0.8
   };
 
   if (!instrument) {
@@ -57,7 +76,7 @@ function EditName({ instrument, saveInstrumentInContent }) {
           size="small"
           value=""
           disabled
-          style={{ minWidth: '100px' }}
+          style={inputStyle}
           placeholder={t('nameInput')}
           aria-label={t('nameInput')}
           />
@@ -71,7 +90,8 @@ function EditName({ instrument, saveInstrumentInContent }) {
       <Input
         size="small"
         value={name}
-        style={{ minWidth: '100px' }}
+        readOnly={!isCustom}
+        style={inputStyle}
         onChange={handleNameChange}
         onBlur={saveIfDirty}
         onPressEnter={saveIfDirty}

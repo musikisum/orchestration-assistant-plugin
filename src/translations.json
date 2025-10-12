@@ -6,7 +6,7 @@
     },
     "selectionInfo": {
       "en": "The »select ...« button opens a dialog box for selecting specific instruments. The elements »+ tutti«, »- tacet« and the selection field offer quick selection options. Missing instruments can be created using the »new instrument« button.",
-      "de": "Die Schaltfläche »auswählen ...« öffent einen Dialog zum gezielten Auswählen von Instrumenten. Die Schaltflächen »tutti«, »tacet« und das Auswahlfeld bieten Schnellauswahlen. Mit der Schaltfläche »neues Instrument« können fehlende Instrumente erstellt werden."
+      "de": "Die Schaltfläche »auswählen ...« öffnet einen Dialog zum gezielten Auswählen von Instrumenten. Die Schaltflächen »tutti«, »tacet« und das Auswahlfeld bieten Schnellauswahlen. Mit der Schaltfläche »neues Instrument« können fehlende Instrumente erstellt werden."
     },
     "selection": {
       "en": "Selection",
@@ -86,15 +86,15 @@
     },
     "deleteCustomText": {
       "en": "Would you like to delete a custom instrument? If you delete it, you will not be able to display or edit it again. ATTENTION! A custom instrument that is deleted cannot be restored.",
-      "de": "Du möchtest ein individuell erstelltes Instrument löschen? Wenn du es löscht, kannst du es nicht wieder anzeigen lassen oder bearbeiten. ACHTUNG! Ein individuell erstelltes Instrument, das gelöscht wird, lässt sich nicht wiederherstellen."
+      "de": "Du möchtest ein individuell erstelltes Instrument löschen? Wenn du es löschst, kannst du es nicht wieder anzeigen lassen oder bearbeiten. ACHTUNG! Ein individuell erstelltes Instrument, das gelöscht wird, lässt sich nicht wiederherstellen."
     },
     "deleteCustomNo": {
       "en": "cancel",
       "de": "abbrechen"
     },
     "beforeAfterInfo": {
-      "en": "Specify whether tone names should be displayed before or after the instrument.",
-      "de": "Bestimme, ob Tonnnamen vor oder nach dem Instrument angezeigt werden sollen."
+      "en": "Specify whether tone names should be displayed above or below the instrument.",
+      "de": "Bestimme, ob Tonnnamen über oder unter dem Instrument angezeigt werden sollen."
     },
     "before": {
       "en": "above",
@@ -202,7 +202,7 @@
     },
     "flute": {
       "en": "Flute",
-      "de": "Flöte"
+      "de": "Querflöte"
     },
     "piccoloflute": {
       "en": "Flautino",
