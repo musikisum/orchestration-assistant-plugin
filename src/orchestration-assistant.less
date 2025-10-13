@@ -1,0 +1,291 @@
+@import "@educandu/educandu/styles/greys.less";
+@import "@educandu/educandu/styles/global-variables.less";
+
+.EP_Educandu_Orchestration_Assistant_Display {
+  
+  .orchester-grid {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, auto);
+    grid-auto-flow: row;
+    width: 100%;
+    max-width: 100%;
+    gap: 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+  .lightGray {
+    color: @edu-text-color-secondary-dark;
+  }
+  .note-cell,
+  .instrument-cell {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .instrument-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  .instrument-label {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .instrument {
+    font-size: smaller;
+    text-align: center;
+    margin-bottom: 12px;
+    padding: 0;
+  }
+
+  .toneName-grid {
+    margin: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+    width: max-content;
+    gap: 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+  }
+
+  .instrumentDescription {
+    background-color: white;
+    line-height: normal;
+    color:black;
+    text-align: left;
+    padding: 6px;
+    white-space: normal;
+  }
+  .instrumentDescription > h1 {
+    margin-top: 12px;
+  }
+  .instrumentDescription > p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 6px;    
+    margin: 0;
+    margin-bottom: 6px;
+    position: relative;
+    white-space: wrap;
+  }
+  .instrumentDescription > table {
+    margin: 12px;
+    max-width: 95%;
+  }
+  .instrumentDescription img {
+    margin: 12px;
+    max-width: 95%;
+  }  
+
+  .octave-info-container {
+    margin-top: 16px;
+    padding: 6px;
+    border: 1px solid @grey-6;
+    border-radius: 6px;
+    position: relative;
+    line-height: normal;
+  }
+  .octave-info-container > p {
+    line-height: normal !important;
+    margin-bottom: 6px;
+  }
+  .octave-info {
+    font-size: @edu-font-size-base;
+  }
+  .octave-info h1 {
+    font-size: @edu-heading-1-size;
+    margin: 0 auto 10px 0;
+    color: @grey-9;
+  }
+  .oc-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    vertical-align: baseline;
+    cursor: pointer;
+    font-size: 1.2rem;
+    background-color: @edu-banner-red-background-color;
+    border: 1px solid @edu-banner-red-border-color;
+    color: white;
+    z-index: 999;
+  }
+
+  .instrumentDescription {
+    cursor: default;
+  }
+
+  .note-highligted {
+    background-color: @edu-banner-orange-background-color;
+  }
+
+  .octave-line {
+    margin-top: 12px;
+    display: grid;
+    width: 100%;
+    max-width: 100%;
+    gap: 0;
+    box-sizing: border-box;
+  }
+  .octave-line-marker {    
+    height: 4px;
+    background-color: @edu-primary-color-light;
+  }
+}
+
+.EP_Educandu_Orchestration_Assistant_Editor {
+
+  /* container elements */
+  .edit-wrapper {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  .edit-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid @grey-6;
+  }
+
+    /* left splitter site | y - 1/3 */
+  .instruments-list {
+    width: 100%;
+    flex: 1;
+    min-width: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  .instrument-entry {
+    cursor: grab;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 6px;
+    width: 100%;
+  }
+  .dadActionButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .instrument-name {
+    cursor: pointer;
+  }
+  .instrumentText {
+    margin-top: 26px;
+    min-height: 200px;
+  }
+  .selected-item {
+    background-color: @edu-background-color-base;
+  }
+
+  /* Right splitter side | y = 2/3 */  
+  .prop-container {
+    flex: 2;
+    min-width: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  .prop-container-header {
+    margin-bottom: 36px;
+    display: flex;
+    gap: 6px;
+  }
+  .prop-container-header > :last-child {
+    margin-left: auto;
+  }
+  .editor-top-info {
+    margin-left: 12px;
+  }
+  .prop-container-inspector {
+    display: flex;
+    gap: 36px;
+    padding-top: 36px;
+    margin-left: 20.5px;
+    border-top: 1px solid gray;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .prop-container-inspector-child {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .delete-button-inspector-child {
+    margin-left: auto;
+  }
+  .edit-set-select {
+    max-width: 200px;
+  }
+  .prop-container-slider {
+    margin: 36px 0;
+  }
+  .prop-container-slider-child {
+    max-width: 100%;
+    margin-left: 20.5px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+  }
+
+    /* small divices */
+  @media (max-width: 860px) {
+    .edit-container {
+        flex-direction: column;
+      }
+    .instruments-list,
+    .prop-container {
+      width: 100%;
+      flex: none;
+    }
+    .section-container {
+      display: block;
+    }
+    .prop-container-header {
+      flex-direction: column;
+    }
+    .prop-container-header > :last-child {
+      margin-left: 0 !important;
+    }
+    .editor-top-info {
+      margin-left: 12px;
+    }
+    .prop-container-inspector {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .prop-container-inspector-child {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    .edit-set-select {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+}
