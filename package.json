@@ -1,6 +1,6 @@
 {
   "name": "@musikisum/educandu-plugin-orchestration-assistant",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An educandu plugin musical instruments, orchestration, and instrumentation.",
   "type": "module",
   "exports": {
